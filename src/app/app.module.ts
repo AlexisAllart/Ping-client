@@ -33,6 +33,7 @@ import { TitleDarkBlueComponent } from './layouts/title-dark-blue/title-dark-blu
 import { UserCardComponent } from './layouts/user-card/user-card.component';
 import { BtnSkillsComponent } from './layouts/btn-skills/btn-skills.component';
 import { HomeComponent } from './general/home/home.component';
+import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { HomeComponent } from './general/home/home.component';
     TitleDarkBlueComponent,
     UserCardComponent,
     BtnSkillsComponent,
-    HomeComponent
+    HomeComponent,
+    SelectionCompanyComponent
   ],
   imports: [
     BrowserModule,

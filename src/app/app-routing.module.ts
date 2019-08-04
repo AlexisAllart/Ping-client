@@ -14,6 +14,7 @@ import { IdentificationUserComponent } from './user/identification-user/identifi
 import { ProfileUserComponent } from './user/profile-user/profile-user.component';
 import { SearchUserComponent } from './user/search-user/search-user.component';
 import { HomeComponent } from './general/home/home.component';
+import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 
 
 
@@ -29,7 +30,7 @@ const routes: Routes = [
   {path: 'price', component: PriceComponent},
   {path: 'profil-company', component: ProfileCompanyComponent},
   {path: 'search-company', component: SearchCompanyComponent},
-  {path: 'selection', component: SelectionCardComponent},
+  {path: 'selection-company', component: SelectionCompanyComponent},
   {path: 'sign-in-company', component: SignInComponent},
   {path: 'sign-up-company', component: SignUpComponent},
   

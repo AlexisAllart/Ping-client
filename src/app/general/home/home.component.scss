@@ -5,12 +5,18 @@
     display: flex;
     font-family: 'Nunito', sans-serif;
     flex-direction: column;
-    // background-image: url(assets/illustration/background.png);
+    // background-image: url(assets/background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
 
+}
+
+.background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .header {
@@ -30,8 +36,7 @@
 
 .buttons-top {
     display:flex;
-    justify-content: space-between;
-    flex-grow: 1;
+    justify-content: flex-end;
     margin: 10px;
 }
 
@@ -107,9 +112,9 @@
    
 .buttons-top {
     display:flex;
-    justify-content: space-between;
     flex-grow: 1;
-    margin: 5px;
+    display:flex;
+    justify-content: flex-end;
 }
 
 .btn-white-top {
@@ -167,6 +172,7 @@
 
     .btn-white-top {
         display:none;
+        
     }
 
     .container {    
@@ -189,10 +195,8 @@
 
 @media only screen and (max-width : 320px) {
     .container {    
-        width:100%;
-        
+        width:100%;   
     }
-
     .info {
     display: flex;
     flex-direction: column;
