@@ -1,8 +1,22 @@
+
+///////// GÉNÉRAL ////////
 .general {
     display: flex;
     height:100vh;
     // background-color: rgb(175, 106, 106);
 }
+
+.img {
+    display: flex;
+    // background-color: rgb(80, 52, 52);
+    width:90%;
+    margin:20px;
+    padding:10px;
+
+}
+
+///////// INSCRIPTION ////////
+
 
 .inscription {
     display: flex;
@@ -12,38 +26,133 @@
     width:60%;
     background-color: #60A4FF;
     height:100vh;
-
+    border-radius: 0% 30% 0% 0%;
+    position: relative;
 }
 
 .title-white {
     background-color:white;
-    padding:20px 50px 20px 50px;
+    padding:15px 50px 15px 50px;
     color: #60A4FF;
     border-radius: 10px;
     font-weight: 100;
     text-transform: uppercase;
     font-size: 17px;
     letter-spacing: 3px;
-    margin-top:10%; 
+   
 }
 
 .title-blue {
     background-color:#60A4FF;
-    padding:20px 50px 20px 50px;
+    padding:15px 50px 15px 50px;
     color: white;
     border-radius: 10px;
     font-weight: 100;
     text-transform: uppercase;
     font-size: 17px;
     letter-spacing: 3px;
-    margin-top:14%;
+    margin-top:24%;
 }
+
+///////// CONNEXION ////////
+
 .connexion {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-color: rgb(76, 19, 141);
+    // background-color: rgb(76, 19, 141);
     height:100vh;
     width:40%;
+    position: relative;
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-blue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:50px;
+}
+
+.input {
+
+    width:140%;
+    padding:19px 30px 19px 9px;
+    border:1px solid white;
+    background-color:#60A4FF;
+    outline:none;
+    color: white;
+    margin:10px;
+    font-size:10px;
+}
+
+::placeholder {
+    color: white;
+    font-size: 1.5em;
+  }
+
+::placeholder:hover {
+    display: none;
+}
+
+
+.input-blue {
+
+    width:140%;
+    padding:19px 30px 19px 9px;
+    border:1px solid #60A4FF;
+    background-color:white;
+    outline:none;
+    color: white;
+    margin:10px;
+    font-size:10px;
+}
+
+.input-blue::placeholder {
+    color: #60A4FF;
+}
+
+
+.register {
+
+    color: #B0DBFF;
+    font-size:10px;
+}
+
+.register span {
+    color: #60A4FF;
+    font-weight: bolder;
+    background-color: #fff;
+    padding:1px 3px;
+    border-radius: 5px;
+}
+
+.btn-white {
+    text-decoration: none;
+    color: #60A4FF;
+    background-color: #fff;
+    padding:10px 20px;
+    border-radius: 20px;
+    position:absolute;
+    bottom:50px;
+    right:240px;
+
+}
+
+.btn-blue {
+    text-decoration: none;
+    color: white;
+    background-color: #60A4FF;
+    padding:10px 20px;
+    border-radius: 20px;
+    position:absolute;
+    bottom:50px;
+    left:280px;
 }
