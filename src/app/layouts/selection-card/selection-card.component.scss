@@ -1,0 +1,105 @@
+/************************* GÉNÉRAL *******************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: "Nunito", sans-serif;
+  height: 100vh;
+}
+
+/************************* CARD *******************/
+.container-candidate {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  width: 120%;
+  height: 10%;
+}
+
+.container-blue {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1.5px solid #60a4ff;
+  padding: 10px;
+  margin: 0px;
+  width: 40%;
+}
+.text {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  color: #60a4ff;
+}
+p {
+  margin: 10px;
+}
+/************************* Picture*******************/
+.picture {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 20%;
+  padding: 5px;
+  display: flex;
+  align-self: center;
+}
+
+/************************* statut*******************/
+.statut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+  background: #3fef4c;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+/************************* btn download*******************/
+
+.fleche{
+  /* flex-direction: row;
+  align-content: center;
+  justify-content: center; */
+  background-color: none;
+  font-size: light;
+  color: grey;
+  border: 1px solid grey;
+  border-radius: 30px;
+  padding: 5px;
+  cursor: pointer;
+
+}
+/************************* btn small details*******************/
+
+.btn-detail-small{
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+.plus {
+  flex-direction: row;
+  align-content: flex-end;
+  justify-content: flex-end;
+  width: 5px;
+  height: 5px;
+  padding: 10px;
+  color: #60a4ff;
+  cursor: pointer;
+}

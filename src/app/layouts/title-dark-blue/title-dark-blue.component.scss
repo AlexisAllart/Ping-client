@@ -1,0 +1,37 @@
+/************************* GÉNÉRAL *******************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-family: "Nunito", sans-serif;
+    height: 100vh;
+  }
+  /************************* Small Title*******************/
+
+.small-title {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color:  #60a4ff;;
+  width: 200px;
+  height: 40px;
+  padding: 10px;
+  margin: 10%;
+}
+
+h3 {
+  padding: 10px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  color: #FFFFFF;
+  
+}
