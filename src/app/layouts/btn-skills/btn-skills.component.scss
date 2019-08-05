@@ -1,0 +1,38 @@
+/************************* GÉNÉRAL *******************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-family: "Nunito", sans-serif;
+    height: 100vh;
+  }
+  /************************* Title*******************/
+
+.skills-title {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border-radius: 30px;
+  background-color:  #E9F6FF ;
+  width: 80px;
+  height: 30px;
+  padding: 10px;
+  margin: 10px;
+}
+
+h4 {
+  padding: 5px;
+  font-size: 60%;
+  display: flex;
+  align-self: center;
+  text-align: center;
+  color:   #60A4FF;
+}

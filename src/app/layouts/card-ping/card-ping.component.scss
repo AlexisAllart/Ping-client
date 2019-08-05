@@ -1,0 +1,87 @@
+/************************* GÉNÉRAL *******************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: "Nunito", sans-serif;
+  height: 100vh;
+}
+
+/************************* CARD *******************/
+.container-company {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  width: 120%;
+  height: 10%;
+}
+
+.container-blue {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1.5px solid #60a4ff;
+  padding: 10px;
+  margin: 0px;
+  width: 40%;
+}
+.text {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  color: #60a4ff;
+}
+p {
+  margin: 10px;
+}
+/************************* logo*******************/
+.logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 40%;
+  margin: 6%;
+  padding: 5px;
+}
+
+/************************* statut*******************/
+.statut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+  background: #3fef4c;
+  padding: 5px;
+  margin: 5px;
+}
+
+/************************* btn medium details*******************/
+
+.btn-detail-medium {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+.plus {
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  padding: 20px;
+  color: #60a4ff;
+}
