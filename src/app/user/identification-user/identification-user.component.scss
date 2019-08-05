@@ -1,8 +1,16 @@
 .general {
     display: flex;
+    height:100vh;
+    background-color: rgb(175, 106, 106);
 }
 
 .inscription {
-    width:60%;
+    width:50%;
     background-color: #60A4FF;
+    height:100vh;
+}
+
+.connexion {
+    background-color: rgb(76, 19, 141);
+    height:100vh;
 }
