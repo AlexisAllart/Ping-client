@@ -1,0 +1,78 @@
+
+.body {
+  height: 100%;
+  background-color: #60A4FF;
+}
+
+.test {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top:50px;
+  
+}
+.inp {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
+    border:blue; 
+    display:flex;
+    flex-direction:column;
+    padding:10px;
+    font-family: Avenir;
+    margin-top: 19px;
+    
+}
+.inp .label {
+  position: absolute;
+  top: 34px;
+  left: 16px;
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+  transform-origin: 0 0;
+  transition: all 0.2s ease;
+  
+}
+
+.inp input {
+  -webkit-appearance: none;
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  padding: 25px 10px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 2px solid white;
+  background: none;
+  border-radius: 0;
+  color: white;
+  transition: all 0.15s ease;
+  margin-top:5px;
+  
+}
+
+.label {
+    margin-left:10px;
+}
+.inp input:hover {
+  background: rgba(34,50,84,0.03);
+}
+.inp input:not(:placeholder-shown) + span {
+  color: white;
+  transform: translateY(-26px) scale(0.75);
+}
+.inp input:focus {
+  background: none;
+  outline: none;
+}
+.inp input:focus + span {
+  color: white;
+  transform: translateY(-50px) scale(0.75);
+}
+.inp input:focus + span + .border {
+  transform: scaleX(1);
+}
