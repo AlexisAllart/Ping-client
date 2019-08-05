@@ -1,0 +1,40 @@
+ /************************* Input *******************/
+
+ .search{
+    display: flex;
+    flex-direction: row;
+    margin-top:40px;
+    margin-left:30px;
+    // background-color: rgb(129, 125, 125);
+
+  }  
+  .input-wrapper {
+    border: 1px solid #60A4FF;
+    max-width: 26rem;
+    margin: 1rem; 
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+    min-width: 10rem;
+   
+  }
+  ::placeholder{
+    color: #60A4FF ;
+    text-align: center;
+    padding:0.5rem;
+  }
+  input {
+    border:white;
+    border-radius: 30px;
+    min-width: 0;
+    outline: none;
+    padding: 0.5rem;
+  }
+
+  /************************* font awesome search and map *******************/
+  .input-icon {
+    background-color: white;
+    padding: 0.6rem 0.8rem 0.5rem;
+    color: #60A4FF;
+  }
+  

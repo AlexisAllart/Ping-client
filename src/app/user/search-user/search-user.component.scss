@@ -1,0 +1,51 @@
+.general {
+    display: flex;
+    
+}
+
+.sous-general {
+    // background-color: aquamarine;
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+
+/************************* CONTRACT TYPE *******************/
+
+.contract {
+    border-bottom: 1px solid #60A4FF;
+    border-top: 1px solid #60A4FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 20px;
+    width:100%;
+
+}
+
+.search {
+    // background-color: rgb(10, 51, 105);
+    width:40%;
+    
+}
+
+.type {
+
+    /* margin:10px; */
+    padding:10px;
+    color:#60A4FF;
+}
+
+.type:hover {
+    background-color:#60A4FF;
+    color: white;
+}
+
+/************************* MAP *******************/
+
+.carte {
+    margin:20px;
+}
