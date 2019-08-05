@@ -1,16 +1,49 @@
 .general {
     display: flex;
     height:100vh;
-    background-color: rgb(175, 106, 106);
+    // background-color: rgb(175, 106, 106);
 }
 
 .inscription {
-    width:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width:60%;
     background-color: #60A4FF;
     height:100vh;
+
 }
 
+.title-white {
+    background-color:white;
+    padding:20px 50px 20px 50px;
+    color: #60A4FF;
+    border-radius: 10px;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 3px;
+    margin-top:10%; 
+}
+
+.title-blue {
+    background-color:#60A4FF;
+    padding:20px 50px 20px 50px;
+    color: white;
+    border-radius: 10px;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 3px;
+    margin-top:14%;
+}
 .connexion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     background-color: rgb(76, 19, 141);
     height:100vh;
+    width:40%;
 }
