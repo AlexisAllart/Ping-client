@@ -1,0 +1,143 @@
+
+///////// GÉNÉRAL ////////
+.general {
+    display: flex;
+    height:100vh;
+    // background-color: rgb(175, 106, 106);
+}
+
+.img {
+    display: flex;
+    // background-color: rgb(80, 52, 52);
+    width:90%;
+    margin:20px;
+    padding:10px;
+
+}
+
+///////// INSCRIPTION ////////
+
+
+.inscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width:60%;
+    background-color: #60A4FF;
+    height:100vh;
+    border-radius: 0% 30% 0% 0%;
+    position: relative;
+}
+
+.title-white {
+    background-color:white;
+    padding:15px 50px 15px 50px;
+    color: #60A4FF;
+    border-radius: 10px;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 3px;
+   
+}
+
+.back {
+    position:absolute;
+    text-decoration: none;
+    bottom:45px;
+    left: 30px;
+    background-color: #60A4FF;
+    padding: 10px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 30% 0% 0% 0%;
+}
+
+
+///////// CONNEXION ////////
+
+.connexion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    // background-color: rgb(76, 19, 141);
+    height:100vh;
+    width:40%;
+    position: relative;
+
+
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid #60A4FF;
+    padding:20px;
+    height:80vh;
+    margin-top:30px;
+    width:40%;
+    border-radius: 80px 0 0 0;
+}
+
+.title {
+    color: #60A4FF;
+    text-align:center;
+}
+
+.subscribe {
+    color: #60A4FF;
+    text-align:center;
+    font-weight:100;
+    font-size:17px;
+}
+
+.fleche {
+    border: 1px solid #60A4FF;
+    border-radius:50%;
+    color: #60A4FF;
+    padding: 10px;
+    
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+
+    width:140%;
+    padding:19px 30px 19px 9px;
+    border:1px solid white;
+    background-color:#60A4FF;
+    outline:none;
+    color: white;
+    margin:10px;
+    font-size:10px;
+}
+
+::placeholder {
+    color: white;
+    font-size: 1.5em;
+  }
+
+::placeholder:hover {
+    display: none;
+}
+
+.btn-white {
+    text-decoration: none;
+    color: #60A4FF;
+    background-color: #fff;
+    padding:10px 20px;
+    border-radius: 20px;
+    position:absolute;
+    bottom:50px;
+    right:240px;
+
+}
