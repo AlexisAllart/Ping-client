@@ -1,27 +1,13 @@
-/************************* GÉNÉRAL *******************/
-
-.body {
-    background-color: white;
-    font-family: 'Nunito', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:100vh;
-  
-
-
-}
 
 /************************* CARD *******************/
 
 .container {
     background-color: #E9F6FF;
-    width:50%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    padding:20px;
+    padding:0px 15px 0px 15px;
     -webkit-box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
     -moz-box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
     box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
@@ -36,8 +22,8 @@
 
 .logo {
     border-radius:50%;
-    height:150px;
-    width:150px;
+    height:90px;
+    width:90px;
     margin:6%;
 }
 
@@ -51,7 +37,7 @@
 }
 
 .line {
-    width:70%;
+    width:100%;
 }
 
 .company {
@@ -63,15 +49,20 @@
 .description {
     color: #60A4FF;
     margin-bottom:30px;
-    font-size:13px;
+    font-size:12px;
     margin-top: 20px;
 
 }
 .right-side{
-    color:#707070;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+.modif {
     background-color: white;
-    padding:20px;
-
+    padding:10px;
     border-radius:50%;
     border: 1px solid #707070;
+    color:#707070;
 }
+
