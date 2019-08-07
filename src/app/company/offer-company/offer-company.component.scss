@@ -1,0 +1,55 @@
+.general {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: rgb(46, 35, 35);
+    width:100%;
+}
+
+.title-un {
+   display: flex;
+   justify-content: flex-start;
+    
+}
+
+.new-offre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #E9F6FF;
+    width:70%;
+    height:80vh;
+    
+}
+
+.formulaires {
+    display: flex;
+    flex-direction: row;
+}
+
+.un {
+    display: flex;
+    flex-direction: column;
+    margin:10px;
+}
+
+.deux {
+    display: flex;
+    flex-direction: column;
+    margin:10px;
+}
+
+.offres {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width:60%;
+    height: 80vh;
+    // background-color: rgb(48, 77, 48);
+}
+
+.offre {
+    width:80%;
+}

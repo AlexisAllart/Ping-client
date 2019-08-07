@@ -1,16 +1,56 @@
+///////// GENERAL /////////
 .body {
     background-color: #60A4FF;
     display: flex;
     flex-direction: column;
+    height:100vh;
+    position: relative;
 }
+
+///////// LOGO /////////
+
+.logo {
+    padding:30px;
+}
+
+///////// ERROR /////////
 
 .error {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top:-50px;
+   
 }
 
 .quatre {
     color: white;
-    font-size:30px;
+    font-weight: 200;
+    font-size:250px;
+    margin:0;
 }
 
+.error-text {
+    color:#B8DCFA;
+    font-size:90px;
+    margin:-60px;
+    padding-left:20px;
+    letter-spacing:27px;
+}
+
+.paragraph {
+    color:#E9F6FF;
+    font-size:40px;
+     margin:40px;
+    padding:0;
+}
+
+.back {
+position: absolute;
+bottom:30px;
+left: 30px;
+font-size: 30px;
+color: white;
+outline:none;
+}
