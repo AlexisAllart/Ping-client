@@ -15,6 +15,7 @@ import { ProfileUserComponent } from './user/profile-user/profile-user.component
 import { SearchUserComponent } from './user/search-user/search-user.component';
 import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
+import { OfferUserComponent } from './user/offer-user/offer-user.component';
 
 
 
@@ -37,7 +38,7 @@ const routes: Routes = [
   //component user
   {path: 'dashboard-user', component: DashboardUserComponent},
   {path: 'identification-user', component: IdentificationUserComponent},
-  {path: 'offer-user', component: OfferCompanyComponent},
+  {path: 'offer-user', component: OfferUserComponent},
   {path: 'profile-user', component: ProfileUserComponent},
   {path: 'search-user', component: SearchUserComponent},
 ];
