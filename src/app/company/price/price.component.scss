@@ -1,0 +1,200 @@
+.body {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    display: flex;
+    font-family: 'Nunito', sans-serif;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+}
+
+.logo-container {
+    padding:15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.back{
+    margin: 17px;
+    color: #60A4FF;
+    font-size: 30px;
+}
+
+.logo-white {
+    display: none;
+}
+
+.container{
+    width: 1100px;
+    margin: 100px auto;
+    box-sizing: border-box;
+    margin-top: 40px;
+    display:flex;
+    flex-direction: row;
+}
+
+.container .column{
+    width: calc(33.3% - 30px);
+    float: left;
+    padding: 0;
+    margin: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 10px rgba(0,0,0,.2);
+    transition: .5s;
+    border-style: solid;
+    border-color: #60A4FF;
+    border-width: 1px;
+}
+
+.container .column:hover{
+    transform: scale(1.05);
+    border-style: solid;
+    border-color: #60A4FF;
+    border-width: 5px;
+}
+
+.title{
+    background: #fff;
+    padding:20px 0;
+    height: 20px;
+}
+
+.list{
+    height: 20px;
+    margin: auto;
+}
+
+.souscription-title{
+    display: inline-block;
+    width: 20%;
+    margin: 0 0 0 620px;
+}
+
+.souscription-title h1{
+    margin: 0;
+    text-align: center;
+    background: #60A4FF;
+    padding:20px 0;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+.title h2{
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    color: #60A4FF;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.title .fas{
+    color: #fff;
+    font-size: 50px;
+}
+
+.price{
+    padding: 10px;
+    height:124px;
+}
+
+.price h4 span{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.option ul{
+    margin: 0;
+    padding: 0;
+}
+
+.option ul li{
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    font-weight: 300;
+    font-size: 0.8em;
+    color: #60A4FF;
+}
+
+.option ul li:last-child{
+    border-bottom: none;
+}
+
+.option ul li .fa-check{
+    color: #3FEF4C;
+    font-size: 20px;
+}
+
+.option ul li .fa-times{
+    color:#EF3F3F;
+    font-size: 20px;
+}
+
+
+.column a{
+    text-decoration: none;
+    padding: 10px 40px;
+    background: #fff;
+    color: #60A4FF;
+    margin: 20px 0 10px;
+    display: inline-block;
+    border-radius: 40px;
+    text-transform: uppercase;
+    border-style: solid;
+    border-color: #60A4FF;
+    border-width: 2px;
+}
+
+.column a:hover{
+    background: #60A4FF;
+    color: #fff;
+}
+
+.container .column-prestation{
+    width: calc(33.3% - 30px);
+    float: left;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    margin: 15px;
+    
+}
+
+.prestation ul{
+    margin: 0;
+    padding: 0;
+}
+
+.prestation ul li{
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #60A4FF;
+}
+
+.prestation ul li:last-child{
+    border-bottom: none;
+}
