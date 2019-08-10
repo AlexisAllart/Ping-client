@@ -9,6 +9,11 @@
 .title-un {
    display: flex;
    justify-content: flex-start;
+   background-color: #60A4FF;
+   margin:0;
+   padding:15px;
+   color: white;
+   font-size:16px;
     
 }
 
@@ -25,19 +30,69 @@
 
 .formulaires {
     display: flex;
+    width:100%;
+    height:70%;
+    justify-content: center;
+    margin-top: 50px;
     flex-direction: row;
+}
+
+.label {
+    color:#707070;
+    margin: 10px 0px 10px 0px;
+    font-size:10px;
+}
+
+.input {
+    background-color: white;
+    border: 1px solid #60A4FF;
+    padding:10px 20px;
+    width:100%;
+    outline:none;
+    color: #707070;
+
+}
+
+.input-description {
+    width:100%;
+    height:180px;
+    border: 1px solid #60A4FF;
+    outline:none;
+    padding:10px 20px;
 }
 
 .un {
     display: flex;
     flex-direction: column;
-    margin:10px;
+    margin:12px;
+    padding:20px;
 }
+
 
 .deux {
     display: flex;
     flex-direction: column;
     margin:10px;
+    padding:20px;
+
+}
+
+.btn-add {
+    display: flex;
+    width:115%;
+    margin:20px;
+    // background-color:blue;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.button {
+    border: 1px solid #60A4FF;
+    background-color: #fff;
+    padding:5px 10px;
+    border-radius:20px;
+    color: #60A4FF;
+    font-size:12px;
 }
 
 .offres {
@@ -45,11 +100,31 @@
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    width:60%;
+    align-items: center;
+    width:50%;
+    margin:25px;
     height: 80vh;
+    padding:40px;
     // background-color: rgb(48, 77, 48);
 }
 
 .offre {
-    width:80%;
+    width:99%;
+}
+
+.title-container {
+    display: flex;
+    justify-content: flex-start;
+    width:100%;
+    
+}
+
+.title-deux {
+  
+    background-color: #60A4FF;
+    margin:0;
+    padding:15px 40px;
+    margin-left:30px;
+    color: white;
+    font-size:16px;
 }

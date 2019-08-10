@@ -9,7 +9,7 @@
                 <label class="label" for="">Nom de votre entreprise*</label>
                 <input class="input" type="text">
                 <label class="label" for="">Description de l'offre*</label>
-                <input class="input" type="text">
+                <input class="input-description" type="text">
 
             </form>
             <form class="deux" action="">
@@ -19,18 +19,22 @@
                 <input class="input" type="text">
                 <label class="label" for="">Mots clés de l'annonce</label>
                 <input class="input" type="text">
+                <!-- <div class="keywords">
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                </div> -->
                 <div class="btn-add">
-                    <button class="button">Ajouter</button>
+                    <div class="button">Ajouter</div>
                 </div>
-                
             </form>
-            
-
         </div>
-
     </div>
     <div class="offres">
-        <h2 class="title-deux">Vos offres</h2>
+        <div class="title-container">
+            <h2 class="title-deux">Vos offres</h2>
+        </div>
+      
         <div class="offre">
             <app-offer-card></app-offer-card>
         </div>
