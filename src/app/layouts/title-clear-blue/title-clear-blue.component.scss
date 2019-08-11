@@ -1,35 +1,35 @@
 /************************* GÉNÉRAL *******************/
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .body {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    font-family: "Nunito", sans-serif;
-    height: 100vh;
-  }
-  /************************* Title*******************/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: "Nunito", sans-serif;
+  padding:20px;
+}
+/************************* Title*******************/
 
 .title-company {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  background-color:  #E9F6FF ;
-  width: 400px;
-  height: 60px;
-  padding: 10px;
-  margin: 10%;
+display: flex;
+text-align: center;
+justify-content: center;
+background-color:  #E9F6FF ;
+width: 450px;
+height: 80px;
+padding: 10px;
+margin: 10%;
 }
 
 h3 {
-  padding: 10px;
-  display: flex;
-  text-align: center;
-  color:   #60A4FF;
+padding-top: 15px;
+display: flex;
+text-align: center;
+color:   #60A4FF;
 }

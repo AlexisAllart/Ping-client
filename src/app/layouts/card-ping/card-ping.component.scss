@@ -6,13 +6,10 @@
   box-sizing: border-box;
 }
 .body {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+
   background-color: white;
   font-family: "Nunito", sans-serif;
-  height: 100vh;
+  width: 100%;
 }
 
 /************************* CARD *******************/
@@ -20,39 +17,58 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 10px;
-  margin: 10px;
-  width: 120%;
-  height: 10%;
+  margin-bottom: 16px;
+  margin: 16px;
+  width: inherit;
+  
+  
 }
 
 .container-blue {
   display: flex;
   flex-direction: row;
+  text-align: center;
   justify-content: space-between;
   align-items: center;
   border: 1.5px solid #60a4ff;
-  padding: 10px;
-  margin: 0px;
-  width: 40%;
+  padding: 20px;
+  padding-left: 0px;
+  height: 70px;
 }
 .text {
   text-align: center;
   display: flex;
+  align-content: space-between;
   flex-direction: row;
+  height: 50px;
   font-size: 15px;
   color: #60a4ff;
 }
-p {
-  margin: 10px;
+.company{
+  width: 100px;
+  padding-top:10px;
+}
+.job-title{
+  width: 100px;
+  padding-top:10px;
+}
+.date{
+  width: 100px;
+  padding-top:10px;
 }
 /************************* logo*******************/
+.container-logo{
+  width:100px;
+  height:70px;
+  padding:10px;
+  margin:10px;
+  
+}
+
 .logo {
-  height: 60px;
-  width: 60px;
-  border-radius: 40%;
-  margin: 6%;
-  padding: 5px;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
 }
 
 /************************* statut*******************/
@@ -60,28 +76,27 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10px;
+  width: 100px;
+  height: 50px;
+  
+}
+.lepoint{
+  width:10px;
   height: 10px;
-  border-radius: 20px;
   background: #3fef4c;
-  padding: 5px;
-  margin: 5px;
+  border-radius: 100%;
 }
 
 /************************* btn medium details*******************/
 
 .btn-detail-medium {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
+  margin: 20px;
+  width: 32px;
+  height: 32px;
 }
 .plus {
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
+  font-size: 30px;
   width: 10px;
   height: 10px;
-  padding: 20px;
   color: #60a4ff;
 }

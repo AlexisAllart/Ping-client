@@ -1,29 +1,115 @@
+/************************* GÉNÉRAL *******************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 .general {
     display: flex;
+    
 }
-
-.sous-general {
-    width:100%;
-    height:100vh;
-    // background-color: blanchedalmond;
-    display: flex;
+/******************** Alignement centrale*****************/
+.sous-genral{
+    width:400%;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
+    
 }
-
-.ping {
+/***********************tittle***************************/
+.container-title-clear-blue {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: blue;
-    height:80vh;
-    background-color:paleturquoise;
-    width:60%;
-	overflow-x: hidden;
-    overflow-y: scroll;
+    width: inherit;
+    margin-left: 150px;
+  
 }
 
+/********************* les labels ***************************/
+.container-blue {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  height: 40px;
+  margin-left: 150px;
+}
+.container-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 10px;
+  align-content: space-between;
+  text-align: center;
+  margin-left: 50px;
+  width: inherit;
+  
+}
+
+.label-logo-decoy{
+  height: 20px;
+  width: 100px;
+  align-content: center;
+  display:flex;
+  flex-direction: center;
+}
+.label-logo-decoy2{
+  
+  height: 20px;
+  width: 100px;
+  align-content: center;
+}
+
+.label-company {
+  height: 20px;
+  width: 100px;
+  text-align: center;
+  
+}
+
+.label-job-title {
+  height: 20px;
+  width: 100px;
+  text-align: center;
+  
+}
+
+.label-date{
+  height: 20px;
+  width: 100px;
+  text-align: center;
+}
+.label-statut{
+  height: 20px;
+  width: 100px;
+  text-align: center;
+}
+.label-date{
+  height: 20px;
+  width: 100px;
+  text-align: center;
+}
+
+.label-statut {
+  height: 20px;
+  width: 100px;
+  text-align: center;
+}
+
+/***********************component card ping*************************/
+
+.card-ping{
+  overflow-x: hidden; 
+  overflow-y: scroll;
+  height: 57vh;
+  width: inherit;
+  margin:0px 0px 0px 150px;
+
+}
+
+/*************************scrollbar******************************/
 ::-webkit-scrollbar{
 	width: 10px;
 }
@@ -31,30 +117,4 @@
 ::-webkit-scrollbar-thumb{
 	border-radius: 5px;
 	background: #60A4FF;
-}
-
-.value {
-    // background-color:rgb(25, 77, 77);
-    margin:20px;
-    padding:20px;
-}
-
-.number {
-    margin-right:20px;
-    font-size: 60px;
-}
-
-.info {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #60A4FF;
-    // background-color: rgb(161, 97, 97);
-    padding:10px;
-    margin: 20px;
-}
-
-.text {
-    color:#B0DBFF;
 }
