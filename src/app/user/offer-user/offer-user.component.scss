@@ -1,56 +1,58 @@
-.body {
-    margin:0;
-    padding:0;
+/************************* GÉNÉRAL *******************/
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    display: flex;
-    font-family: 'Nunito', sans-serif;
-    flex-direction: column;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh;
-
-}
-
-.header {
+  }
+.general {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width:100%;
+    align-content: space-between;
+    font-family: 'Nunito', sans-serif;
+    margin:0px;
+    padding:0px;
 }
 
-.logo-container {
-    padding:15px;
+/************************* Logo and keywords *******************/
+
+.left-side {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width:200px;
+
+}
+
+.logo-ping{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin:30px;
+
+}
+.ping{
+    height: 60px;
+    width:60px;
     
 }
+.keywords{
+    display: flex;
+    flex-direction: column;
+    width:200px
 
-.back{
-    margin: 17px;
-    color: #60A4FF;
-    font-size: 30px;
 }
-
-.logo-white {
-    display: none;
-}
-
 .menu-keywords{
-    margin: 0 ;
+    margin: 20px ;
     padding: 20px;
     background: #60A4FF;
     width: 200px;
-    border-radius: 0 60px 60px 0;
-    margin-top: 50px;
+    height: 350px;
+    border-radius: 0 100px 100px 0px;
     justify-content: center;
 }
-
 ul{
     padding: 20px;
 }
-
 li{
     text-decoration: none;
     padding: 10px 0;
@@ -67,4 +69,77 @@ li{
     text-align: center;
     margin-right: 20px
 }
+
+/************************* offer *******************/
+
+.container-center{
+    background-color: #E9F6FF;
+    display: flex;
+    flex-direction: row;
+    width:300px;
+    height: 350px;
+    margin: 70px 30px 30px 30px;
+    border-radius: 0px 50px 0px 0px;
+
+    justify-content: space-evenly;
+    align-items: center;
+    // padding:0px 15px 0px 15px;
+    // -webkit-box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
+    // -moz-box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
+    // box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
+    
+}
+
+/************************* right-side *******************/
+
+
+.right-side{
+    display: flex;
+    flex-direction: column;
+    width:500px;
+    height:250px;
+}
+
+.company-card{
+    display: flex;
+    flex-direction: row;
+    background-color: #E9F6FF;
+    width: 300px;
+
+}
+.logo-company{
+display:center;
+align-content: center;
+}
+.logo{
+    display:flex;
+    align-content: center;
+    height:60px;
+    width:60px;
+}
+
+.container-text{
+    width:200px;
+}
+
+.title{
+
+}
+line{
+    padding:2px;
+}
+
+.description{
+    height:80px;
+    width:200px;
+    font-size: 15px;
+}
+
+.map{
+    height:80px;
+    width: 120px;
+}
+
+/************************* btn blue Ping *******************/
+
 
