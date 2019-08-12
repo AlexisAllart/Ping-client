@@ -1,145 +1,226 @@
-/************************* GÉNÉRAL *******************/
-* {
-    margin: 0;
-    padding: 0;
+/********************** Body *****************/
+.body {
+    margin:0;
+    padding:0;
     box-sizing: border-box;
-  }
-.general {
+    display: flex;
+    font-family: 'Nunito', sans-serif;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+/********************** Key-words left side****************************/
+.logo-and-keywords{
+    width:45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
     display: flex;
     flex-direction: row;
-    align-content: space-between;
-    font-family: 'Nunito', sans-serif;
-    margin:0px;
-    padding:0px;
-}
-
-/************************* Logo and keywords *******************/
-
-.left-side {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    width:200px;
-
-}
-
-.logo-ping{
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    margin:30px;
-
-}
-.ping{
-    height: 60px;
-    width:60px;
     
 }
-.keywords{
-    display: flex;
-    flex-direction: column;
-    width:200px
 
+.logo-container {
+    margin-top:30px;
+    padding:15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
 }
+
+.logo-white{
+    display: none;
+}
+
 .menu-keywords{
-    margin: 20px ;
+    margin: 0 ;
     padding: 20px;
     background: #60A4FF;
-    width: 200px;
-    height: 350px;
-    border-radius: 0 100px 100px 0px;
+    width: 100px;
+    height: 300px;
+    border-radius: 0 60px 60px 0;
+    margin-top: 130px;
     justify-content: center;
+    align-content: center;
 }
-ul{
+
+.skills{
+    color:#60A4FF;
+    border-radius: 40px;
+    background-color: #FFFFFF;
+    font-size: 13px;
+    align-content: center;
+    justify-content: space-evenly;
+    padding:10px;
+    margin-top: 40px;
+    text-align: center;
+}
+.return{
+position: absolute;
+bottom:30px;
+left: 30px;
+font-size: 40px;
+color: #60A4FF;
+outline:none;
+cursor: pointer;
+}
+/*********************************container center card-offer*************************/
+.container-center{
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    width: inherit;
+    margin-left:40px;
+    margin-top:150px; 
+   
+}
+.container-text-offer{
+    background-color:  #E9F6FF;
+    padding-right: 20px;
+    border-radius: 0px 100px 0px 0px;
+    box-shadow: 0 10px 10px rgba(0,0,0,.2);
+    margin-left:40px; 
+}
+.title{
+    color: #666666;
+    margin-bottom:4px;
+    font-size:20px;
     padding: 20px;
 }
-li{
-    text-decoration: none;
-    padding: 10px 0;
-    background: #fff;
-    color: #60A4FF;
-    margin: 20px 0 10px;
-    border-radius: 40px;
-    border-style: solid;
-    border-color: #60A4FF;
-    border-width: 2px;
-    display: flex;
-    flex-direction: column;
-    width: 150px;
-    text-align: center;
-    margin-right: 20px
+
+.line-offer{
+    width:80%;
 }
 
-/************************* offer *******************/
+.company{
+    color: #60A4FF;
+    padding-left: 20px;
+}
 
-.container-center{
-    background-color: #E9F6FF;
+.description-offer {
+    align-content: space-between;
+    color: #60A4FF;
+    padding: 20px;
+    font-size:13px;
+}
+.key-words {
     display: flex;
     flex-direction: row;
-    width:300px;
-    height: 350px;
-    margin: 70px 30px 30px 30px;
-    border-radius: 0px 50px 0px 0px;
-
-    justify-content: space-evenly;
-    align-items: center;
-    // padding:0px 15px 0px 15px;
-    // -webkit-box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
-    // -moz-box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
-    // box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
-    
+    align-content: center;
+    justify-content: space-evenly; 
+    width:60%;
+    height:50px;
+    padding-left: 20px;
+    background-color:white;
+    border-radius: 0px 60px 0 0px;
+    background-color:#FFFFFF;
 }
 
-/************************* right-side *******************/
-
-
+.words {
+    width:30%;
+    height: 20px;
+    background-color: #60A4FF;
+    color:white;
+    font-size:10px;
+    text-align: center;
+    align-self: center;
+    align-content:space-between;
+    border-radius:20px;
+}
+/*************************** About company  ***************************************/
 .right-side{
     display: flex;
-    flex-direction: column;
-    width:500px;
-    height:250px;
+    flex-direction: column; 
+    height: inherit;
+    width: inherit;
+    margin-left:40px;
+    margin-top:150px; 
 }
-
+.card-and-mapp{
+width: 600px;
+padding: 20px;
+margin-left: 40px;
+margin-bottom: 0;
+}
 .company-card{
     display: flex;
     flex-direction: row;
-    background-color: #E9F6FF;
-    width: 300px;
+    height:200px;
+    margin:10px;
+    padding:15px;
+    background-color:  #E9F6FF;
+    box-shadow: 0 10px 10px rgba(0,0,0,.2);
+    border-radius: 10px;
+}
 
-}
 .logo-company{
-display:center;
-align-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding:15px;
 }
-.logo{
+
+ .logo-picture{
     display:flex;
     align-content: center;
     height:60px;
     width:60px;
+    border-radius:100%;
 }
 
-.container-text{
-    width:200px;
+
+.title-company{
+    color: #666666;
+    margin-bottom:4px;
+    font-size:20px;
 }
 
-.title{
-
-}
-line{
-    padding:2px;
+.line-company{
+    width:100%;
+    margin: 5px;
 }
 
-.description{
-    height:80px;
-    width:200px;
-    font-size: 15px;
+.description-company{
+    font-size:13px;
+    color: #60A4FF;
+    padding: 15px;
 }
 
+/************************ Mapp ***************************/
 .map{
-    height:80px;
-    width: 120px;
+    width: 100%;
+    padding-top:15px; 
+}
+.carte{
+    width: 100%;
+    height: 200px;
 }
 
-/************************* btn blue Ping *******************/
+/*********************Btn Ping ********************************/
 
+.ping{
+    display: flex;
+    flex-direction: row-reverse; 
+    margin-left:40px; 
+    margin-right: 10px;
+    
+}
 
+.btn-ping{
+    background-color:  #60A4FF;
+    border-radius: 30px;
+    width: 150px;
+    float: right;
+    display: flex;
+    align-content: flex-end; 
+    cursor: pointer;
+}
+p{
+    color: #fff;
+}
