@@ -69,13 +69,16 @@ color: #60A4FF;
 outline:none;
 cursor: pointer;
 }
+.return-bis{
+    outline:none;
+}
 /*********************************container center card-offer*************************/
 .container-center{
     display: flex;
     flex-direction: column;
     height: inherit;
     width: inherit;
-    margin-left:40px;
+    margin-left:10px;
     margin-top:150px; 
    
 }
@@ -84,7 +87,7 @@ cursor: pointer;
     padding-right: 20px;
     border-radius: 0px 100px 0px 0px;
     box-shadow: 0 10px 10px rgba(0,0,0,.2);
-    margin-left:40px; 
+    margin-left:10px; 
 }
 .title{
     color: #666666;
@@ -208,12 +211,12 @@ margin-bottom: 0;
     display: flex;
     flex-direction: row-reverse; 
     margin-left:40px; 
-    margin-right: 10px;
-    
+    margin-right: 40px;
 }
 
 .btn-ping{
     background-color:  #60A4FF;
+    outline: none;
     border-radius: 30px;
     width: 150px;
     float: right;
