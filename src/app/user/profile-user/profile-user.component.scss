@@ -1,0 +1,220 @@
+/************************* GÉNÉRAL *******************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // border: 1px solid black;
+}
+
+.general {
+    display: flex;
+    font-family: "Nunito", sans-serif;
+}
+
+.btn-social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 30%;
+}
+
+.socialfb {
+    font-size: 2em;
+    color: white;
+    padding-top: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    text-align: center;
+    background-color:#3b5998;
+}
+
+.socialtw {
+    font-size: 2em;
+    color: white;
+    padding-top: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    text-align: center;
+    background-color:#1da1f2;
+}
+
+.sociallnk {
+    font-size: 2em;
+    color: white;
+    padding-top: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    text-align: center;
+    background-color:#0077B5;
+}
+
+/********************* Sous-general*****************/
+.sous-general{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+}
+
+/***************** left-part ********************/
+.left-part{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    margin: 48px;
+    // overflow-y: scroll;
+}
+
+.profile-top{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    margin-bottom: 48px;
+    min-height: 400px;
+}
+
+.profile-top-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dark-title{
+    width: auto;
+    align-self: center;
+    text-align: center;
+    margin: 48px 0;
+    padding:15px;
+    background-color:  #60a4ff;;
+    color:#FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    min-width: 280px;
+}
+
+.on-off{
+    background-color: pink;
+    margin: 48px 0;
+}
+/***********************card user *******************/
+
+.temp-profile-user-card{
+    display: flex;
+    flex-direction: row;
+    background-color: pink;
+    height: 100%; 
+}
+
+.profile-bottom{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    min-height: 400px;
+}
+/********************** under the card user ****************/
+
+.profile-bleft{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.cv-import{
+    display: flex;
+    flex-direction: row;
+    margin: 16px;
+    justify-content: space-between;
+    border: 1px solid #60A4FF;
+    color: #60A4FF;
+    height: 48px;
+    align-items: center;
+    padding: 16px;
+}
+
+.cv-import-button {
+    font-family: "Nunito", sans-serif;
+    font-size: 0.75em;
+    background-color: #FFF;
+    color: grey;
+    border: 1px solid grey;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.cv-import-button:focus {
+    outline: none;
+}
+
+.cv-import-button:hover {
+    outline: none;
+    background-color: grey;
+    color: #FFF;
+}
+
+.cv-download{
+    display: flex;
+    flex-direction: row;
+    margin: 16px;
+    justify-content: space-between;
+    border: 1px solid #60A4FF;
+    color: #60A4FF;
+    height: 48px;
+    align-items: center;
+    padding: 16px;
+}
+
+.btn-dl {
+    background-color: grey;
+    font-size: light;
+    color: #FFF;
+    border: 1px solid grey;
+    border-radius: 100%;
+    font-size: 1.5em;
+}
+
+.btn-dl:hover {
+    background-color: #FFF;
+    color: grey;
+    border-color: #FFF;
+}
+
+.profile-bright{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+/******************** right-part *********************/
+
+.right-part{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 48px;
+}
+
+.edit-form{
+    background-color: pink;
+}
+
+.edit-submit{
+  
+    width: 100px;
+    border-radius: 30px;
+    align-self: flex-end;
+    margin: 16px 0;
+}
+.submit{
+    outline: none;
+    background-color:#60A4FF;
+    color:#ffff;
+    border-radius:30px;
+    width: 100px;
+    height:30px;
+    font-weight: bold;
+}

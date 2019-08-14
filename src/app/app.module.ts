@@ -34,6 +34,7 @@ import { UserCardComponent } from './layouts/user-card/user-card.component';
 import { BtnSkillsComponent } from './layouts/btn-skills/btn-skills.component';
 import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
+import { BlueCardUserComponent } from './layouts/blue-card-user/blue-card-user.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { SelectionCompanyComponent } from './company/selection-company/selection
     UserCardComponent,
     BtnSkillsComponent,
     HomeComponent,
-    SelectionCompanyComponent
+    SelectionCompanyComponent,
+    BlueCardUserComponent
   ],
   imports: [
     BrowserModule,
