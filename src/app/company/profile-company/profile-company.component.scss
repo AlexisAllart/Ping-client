@@ -11,8 +11,9 @@
 
 .main {
     display: flex;
-    // background-color: blanchedalmond;
+    // background-color: rgb(148, 151, 170);
     height:100vh;
+    width: 100%;
 
 }
 
@@ -20,117 +21,77 @@
 
 .info {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    flex-direction: center;
-    height:100vh;
-    width:50%;
-    background-color: rgb(238, 208, 255);
-
+    justify-content: center;
+    // background-color: rgb(141, 140, 140);
+    width:45%;
 }
 
-.informations {
-    height:100vh;
-    width:80%;
-    // background-color: rgb(68, 41, 41);
-
-}
-
-
-.title {
+.info-bloc {
     display: flex;
-    background-color: #60A4FF;
-    padding:15px 50px;
-    color: white;
-    margin-top:100px;
-    font-size: 20px;
-}
-
-.form {
-    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     flex-direction: column;
-    width:90%;
-}
-
-label {
-    margin-bottom:5px;
-    margin-top:5px;
-    font-size:9px;
-    color:grey;
+    background-color:#E9F6FF;
+    width:70%;
+    height:80vh;
 }
 
 .input {
-    border:1px solid #60A4FF;
-    padding:10px;
-    width:100%;
-    outline:none;
-}
-
-.btn {
     display: flex;
-    justify-content: flex-end;
-    margin-right: 30px;
-    width:100%;
-    margin-top:20px;
+    flex-direction: column;
+    // background-color: rgb(134, 87, 87);
+    width:70%;
+    height:100%;
 }
 
-.modif {
-
-    
-    background-color: #60A4FF;
-    border:none;
-    color: white;
-    padding: 10px 19px;
-    border-radius: 15px;
-}
 
 ///////////// ABOUT /////////////
 
 .about {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // background-color: rgb(153, 158, 202);
+    width:55%;
+}
+
+.about-bloc {
     display: flex;
     flex-direction: column;
-    width: 60%;
-    padding: 90px;
-    background-color: rgb(54, 37, 95);
+    align-items: center;
+    justify-content: flex-start;
+    padding:10%;
+    // background-color: rgb(47, 45, 68);
+    width:80%;
+    height:80vh;
 }
 
-.title-header {
-    display: flex;
-    width:100%;
-    justify-content: center;
-}
-
-.title-reseau {
-    
+.info-title {
     background-color: #60A4FF;
-    color: white; 
-    width: 40%;
-    text-align: center;
-    font-size: 20px;
-    padding:10px 20px;
+    padding: 5px 40px;
+    margin:7%;
+
 }
 
-.btn-social {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-.social {
+.title {
     color: white;
-    background-color:#60A4FF;
-    margin:4px;
+    font-size:14px;
+}
+
+.reseaux {
+    margin: 15px;
+}
+
+.network {
+    color: white;
+    background-color: #60A4FF;
     padding:10px;
+    margin-left: 10px;
 }
 
-.deux {
-    background-color: rgb(116, 122, 139);
-    padding:20px;
-}
-
-/////////////COMPANY CARD///////////////////
-
-.company-card {
-    width: 300px;
-    background-color: rgb(107, 69, 69);
+.website {
+    color: #60A4FF;
+    text-decoration: none;
 }
