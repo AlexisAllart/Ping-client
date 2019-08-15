@@ -1,20 +1,44 @@
 <div class="general">
     <app-navbar-company></app-navbar-company>
     <div class="main">
-       <div class="info">
-          <div class="info-bloc">
-            <div class="info-title">
-                <h2 class="title">Informations</h2>
-            </div> 
-            <div class="input">
-                <!-- <div class="btn-modifier">
+        <div class="info">
+            <div class="info-bloc">
+                <div class="info-title">
+                    <h2 class="title">Informations</h2>
+                </div>
+
+                <div class="example-container">
+                    <mat-form-field>
+                        <input matInput placeholder="Input">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                            <mat-label>Outline form field</mat-label>
+                            <input matInput placeholder="Placeholder">
+                            <mat-hint>Hint</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <textarea matInput placeholder="Textarea"></textarea>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-select placeholder="Select">
+                            <mat-option value="option">Option</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="input">
+                    <!-- <div class="btn-modifier">
                     <div class="modifier">Modifier</div>
                 </div> -->
+                </div>
             </div>
-          </div>
-       </div>
-       <div class="about">
-           <div class="about-bloc">
+        </div>
+        <div class="about">
+            <div class="about-bloc">
                 <app-company-card></app-company-card>
                 <div class="info-title">
                     <h2 class="title">Réseaux</h2>
@@ -27,7 +51,7 @@
                 <div class="website-link">
                     <a class="website" href="#">http://silicon-salad.com</a>
                 </div>
-           </div>
-       </div>
+            </div>
+        </div>
     </div>
 </div>
