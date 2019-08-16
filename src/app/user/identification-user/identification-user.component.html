@@ -9,10 +9,26 @@
         
         <h2 class="title-blue">Inscription</h2>
         <form class="form-blue" action="">
-            <input class="input-blue" type="text"placeholder="Nom">
+            <!-- <input class="input-blue" type="text"placeholder="Nom">
             <input class="input-blue" type="text" placeholder="Prenom">
             <input class="input-blue" type="text" placeholder="Mail">
-            <input class="input-blue" type="text" placeholder="Mot de passe">
+            <input class="input-blue" type="text" placeholder="Mot de passe"> -->
+            <mat-form-field >
+                <mat-label>Nom</mat-label>
+                <input matInput placeholder="Dupont">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Prenom</mat-label>
+                <input matInput placeholder="Hugues">
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>Mail</mat-label>
+                <input matInput placeholder="exemple@gmail.com">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Mot de passe</mat-label>
+                <input matInput placeholder="*******">
+            </mat-form-field>
         </form>
         <p class="register">Votre entreprise n'est pas enregistrée ? Cliquez <span>ici</span></p>
         <a class="btn-blue" href="">Enregistrer</a>
@@ -22,10 +38,23 @@
     
     <div class="connexion">
         <h2 class="title-white">Connexion</h2>
-        <form class="form" action="">
+        <!-- <form class="form" action="">
             <input class="input" type="text"placeholder="Mail">
             <input class="input" type="text" placeholder="Mot de passe">
+        </form> -->
+        <form class="form" action="">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="exemple@gmail.com">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Mot de passe</mat-label>
+                <input matInput placeholder="*******">
+            </mat-form-field>
         </form>
+           
+        
+       
     <a class="btn-white" href="">Connexion</a>
     </div>
 </div>
