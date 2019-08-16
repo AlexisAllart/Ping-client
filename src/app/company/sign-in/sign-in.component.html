@@ -4,17 +4,29 @@
         <!------------Inscription-------------->
         <div class="inscription">
             <div class="img">
-                <img src="assets/logo-ping/logo-blanc.png" alt="">
+                <img src="assets/logo-ping/blue_logo.png" alt="">
             </div>
             
             <h2 class="title-white">Inscription</h2>
             <form class="form" action="">
-                <input class="input" type="text"placeholder="Nom entreprise">
-                <input class="input" type="text" placeholder="Mot de passe">
-                <input class="input" type="text" placeholder="user nom">
-                <input class="input" type="text" placeholder="user mot de passe">
+                <mat-form-field >
+                    <mat-label>Nom entreprise</mat-label>
+                    <input matInput placeholder="IBM">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Mot de passe</mat-label>
+                    <input matInput placeholder="*******">
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>User nom</mat-label>
+                    <input matInput placeholder="Hugues Dupont">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>User mot de passe</mat-label>
+                    <input matInput placeholder="*******">
+                </mat-form-field>
             </form>
-            <p class="register">Votre entreprise n'est pas enregistrée ? Cliquez <span>ici</span></p>
+            <p class="register">Votre entreprise n'est pas enregistrée ? Cliquez <span routerLink="/sign-up-company">ici</span></p>
             <a class="btn-white" href="">Enregistrer</a>
         </div>
         
@@ -23,8 +35,14 @@
         <div class="connexion">
             <h2 class="title-blue">Connexion</h2>
             <form class="form-blue" action="">
-                <input class="input-blue" type="text"placeholder="Nom entreprise">
-                <input class="input-blue" type="text" placeholder="Mot de passe">
+                <mat-form-field >
+                    <mat-label>User Email</mat-label>
+                    <input matInput placeholder="catherine.dupont@ibm.com">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>User Mot de passe</mat-label>
+                    <input matInput placeholder="*******">
+                </mat-form-field>
             </form>
         <a class="btn-blue" href="">Connexion</a>
         </div>

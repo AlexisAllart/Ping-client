@@ -2,13 +2,19 @@
     <!------------Inscription-------------->
     <div class="inscription">
         <div class="img">
-            <img src="assets/logo-ping/logo-blanc.png" alt="">
+            <img src="assets/logo-ping/blue_logo.png" alt="">
         </div>
 
         <h2 class="title-white">Inscription Entreprise</h2>
         <form class="form" action="">
-            <input class="input" type="text" placeholder="Nom entreprise">
-            <input class="input" type="text" placeholder="Mot de passe entreprise">
+            <mat-form-field >
+                <mat-label>Nom entreprise</mat-label>
+                <input matInput placeholder="IBM">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Mot de passe Entreprise</mat-label>
+                <input matInput placeholder="*******">
+            </mat-form-field>
         </form>
         <a class="btn-white" href="">Enregistrer</a>
         <a class="back" href="">Retour</a>
