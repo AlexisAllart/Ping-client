@@ -10,10 +10,31 @@
                     <p class="type">ALTERNANCE</p>
                     <p class="type">FREELANCE</p>
             </div>
-            <app-offer-card></app-offer-card>
+            <div *ngIf="offerListLoaded && companyListLoaded && contractTypeListLoaded && keyWordListLoaded" class="container">
+                <div *ngFor="let offer of offerList" class="box">
+                    <div class="sous-container">
+                        <div class="container-text">
+                            <h2 class="title">{{ offer.title }}</h2>
+                            <hr class="line">
+                            <h4 class="company">{{ companyList[offer.company_id-1].name }}</h4>
+                            <p class="description">{{ offer.description }}</p>
+                        </div>
+                        <div class="right-side">
+                            <p class="contract-type">{{ contractTypeList[offer.contractType_id-1].name }}</p>
+                        </div>
+                    </div>
+                    <div class="key-words">
+                        <p class="words">{{ keyWordList[offer.keyWordOne_id-1].name }}</p>
+                        <p class="words">{{ keyWordList[offer.keyWordTwo_id-1].name }}</p>
+                        <p class="words">{{ keyWordList[offer.keyWordThree_id-1].name }}</p>
+                    </div>
+                    <i class="fas fa-plus-circle plus search-btn" routerLink="/offer-user"></i>
+                </div>
+            </div>
         </section>
-        <section class="map">
+        <section class="map" id="map"></section>
+        <!-- <section class="map">
                 <iframe class="carte" width="500" height="560" margin="3px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=3.0698096752166752%2C50.61767404307959%2C3.0730175971984863%2C50.61957666224991&amp;layer=mapnik" style="border: 1px solid black"></iframe>
-        </section>
+        </section> -->
     </div>
 </div>

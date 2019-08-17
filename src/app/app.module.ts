@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import {
   MatToolbarModule,
@@ -100,6 +100,7 @@ import { BlueCardUserComponent } from './layouts/blue-card-user/blue-card-user.c
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
