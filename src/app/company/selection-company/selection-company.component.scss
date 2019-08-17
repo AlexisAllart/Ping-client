@@ -155,3 +155,142 @@
 	border-radius: 5px;
 	background: #60A4FF;
 }
+
+
+/************************* CARD *******************/
+.container-candidate {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  margin: 16px;
+  width: 800px;
+
+  // background-color: cadetblue;
+}
+
+.container-blue{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  border: 1.5px solid #60a4ff;
+  padding: 20px;
+  margin-right: 20px;
+  padding-left: 0px;
+  width: 800px;
+  height: 70px;
+
+}
+.text {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  align-content: space-between;
+  flex-direction: row;
+  margin-left: 50px;
+  height: 50px;
+  font-size: 15px;
+  color: #60a4ff;
+  width: inherit;
+}
+.name{
+  width: 100px;
+  height: inherit;
+  padding:10px;
+  margin:10px;
+}
+
+.job-title{
+  width: 100px;
+  height: inherit;
+  padding:10px;
+  margin:10px;
+}
+
+.date{
+  width: 100px;
+  height: inherit;
+  padding:10px;
+  margin:10px;
+}
+/************************* Picture*******************/
+.container-img{
+  width:100px;
+  height:100px;
+  padding:20px;
+  margin:20px;
+}
+
+.picture {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  object-position: top;
+}
+
+/************************* Message*******************/
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 10px;
+  border-radius: 20px;
+  
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+.lepoint{
+  width: 10px;
+  height: 10px;
+  background: #3fef4c;
+  border-radius: 100%;
+}
+
+/************************* btn download*******************/
+
+.btn-download{
+  width: 100px;
+  height: 50px;;
+  padding:10px;
+  margin:10px;
+}
+
+.fleche{
+
+  background-color: none;
+  font-size: light;
+  color: grey;
+  border: 1px solid grey;
+  border-radius: 30px;
+  padding: 10px;
+  cursor: pointer;
+
+}
+/************************* btn small details*******************/
+
+.btn-detail-small{
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  justify-self: flex-end;
+  width: 100px;
+  height: 31px;
+}
+.plus {
+  flex-direction: row;
+  align-content: flex-end;
+  align-self: flex-end;
+  justify-content: flex-end;
+  width: 5px;
+  height: 5px;
+  padding: 10px;
+  color: #60a4ff;
+  cursor: pointer;
+}
+
