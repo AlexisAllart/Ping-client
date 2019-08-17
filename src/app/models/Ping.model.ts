@@ -6,3 +6,4 @@ export interface Ping {
     status_id: number;
     user_id: number;
 }
+

@@ -7,6 +7,7 @@ import { KeyWord } from '../../models/KeyWord.model';
 import { HttpClient } from '@angular/common/http';
 import { interval } from 'rxjs';
 
+// Permet de manipuler leaflet
 declare let L;
 
 @Component({
@@ -16,14 +17,16 @@ declare let L;
 })
 export class SearchUserComponent implements OnInit {
 
-  // Icons
+  // Icons 
   private defaultIcon = L.icon({
     iconUrl: '../../../assets/leaflet/images/marker-icon.png',
+    //pop up quand on clique, le met juste au dessus
     popupAnchor: [13,-2],
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
   });
 
   // Lists
+  // Tableau d'offer (typage) - déclaration des listes !
   offerList: Array<Offer> = {} as Array<Offer>;
   companyList: Array<Company> = {} as Array<Company>;
   contractTypeList: Array<ContractType> = {} as Array<ContractType>;
@@ -63,19 +66,13 @@ export class SearchUserComponent implements OnInit {
     this.getKeyWordList();
   }
 
-  addMarker(coords,desc,map) {
-    L.marker(coords,{icon:this.defaultIcon}).addTo(map)
-    .bindPopup(desc);
-  }
-
+  //Poser les markers sur la map
   populateMarkers(): void {
     this.markerLayer?this.markerLayer.clearLayers():'';
-    let i;
-    for(i=0;i<this.offerList.length;i++){
-      this.markers[i]=L.marker([this.offerList[i].latitude,this.offerList[i].longitude],{icon:this.defaultIcon}).bindPopup(this.offerList[i].title);    
+    for(let i=0;i<this.offerList.length;i++){
+      this.markers[i]=L.marker([this.offerList[i].latitude,this.offerList[i].longitude],{icon:this.defaultIcon}).bindPopup(this.offerList[i].title+" : "+this.offerList[i].description);
     }
     this.markerLayer=L.layerGroup(this.markers);
-    console.log(this.markerLayer);
     this.map.addLayer(this.markerLayer);
   }
 

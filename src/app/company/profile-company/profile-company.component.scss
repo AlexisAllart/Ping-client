@@ -25,6 +25,7 @@
     justify-content: center;
     // background-color: rgb(141, 140, 140);
     width:45%;
+    margin-top: 40px;
 }
 
 .info-bloc {
@@ -32,17 +33,53 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    background-color:#60A4FF;
+    // background-color:#60A4FF;
     width:70%;
     height:80vh;
 }
 
-.input {
+
+.form {
     display: flex;
     flex-direction: column;
-    // background-color: rgb(134, 87, 87);
-    width:70%;
-    height:100%;
+    width:80%;
+}
+
+// .input {
+//     display: flex;
+//     flex-direction: column;
+//     // background-color: rgb(134, 87, 87);
+//     width:70%;
+//     height:100%;
+// }
+
+.label {
+    color: grey;
+    margin: 5px 0px 5px 0px;
+}
+
+.input {
+    background-color: white;
+    border: 1px solid #60A4FF;
+    padding:10px 10px;
+}
+
+.modifier  {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    // background-color: rgb(83, 63, 63);
+    width: 85%;
+    padding:20px;
+    margin:5px;
+   
+}
+
+.btn-modifier {
+    color: white;
+    background-color: #60A4FF;
+    padding:10px 15px;
+    border-radius: 20px;
 }
 
 
@@ -98,17 +135,3 @@
 
 
 //// INPUT ///
-
-.example-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.mat-label {
-    color: white!important;
-    outline: white!important;
-}
-
-.mat-form-field-appearance-outline .mat-form-field-outline-thick {
-    color: white!important;
-}

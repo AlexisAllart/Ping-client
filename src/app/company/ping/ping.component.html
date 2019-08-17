@@ -6,7 +6,7 @@
             <div class="container-title-clear-blue">
                 <div class="body-title">
                     <div class="title-company">
-                        <h3 class="clear-blue-title"> Les candidats vous ayant pingés </h3>
+                        <h3 class="clear-blue-title"> Ping des candidats </h3>
                     </div>
                 </div>
             </div>
@@ -23,14 +23,32 @@
                 </div>
             </div>
     
-            <div class="selection-card">
-                <app-selection-card></app-selection-card>
-                <app-selection-card></app-selection-card>
-                <app-selection-card></app-selection-card>
-                <app-selection-card></app-selection-card>
-                <app-selection-card></app-selection-card>
-                <app-selection-card></app-selection-card>
-                <app-selection-card></app-selection-card>
+            <div *ngIf="pingListLoaded && userListLoaded" class="selection-card">
+                <div *ngFor="let ping of pingList" class="container-candidate">
+
+                    <div class=container-blue>
+            
+                        <div class="text">
+                            <div class="container-img">
+                                <img class="picture" src="assets/avatar/portrait.jpg">
+                            </div>
+                            <div class="name">{{ ping.user_id }}</div>
+                            <div class="job-title"> {{ ping.offer_id }}</div>
+                            <!--a verifier-->
+                            <div class="date">{{ ping.datetime }}</div>
+                            <div class="message">
+                                <div class="lepoint">{{ ping.status_id }}</div>
+                            </div>  
+                            <div class="btn-download">
+                                <i class="fas fa-arrow-down fleche">{{ user.cv }}</i>
+                            </div>
+                        
+                            <div class="btn-detail-small">
+                                <i class="fas fa-plus-circle plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
                 
         </div>

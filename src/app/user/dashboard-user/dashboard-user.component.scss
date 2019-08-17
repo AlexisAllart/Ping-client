@@ -6,14 +6,14 @@
   }
 .general {
     display: flex;
+    height: 100vh;
     
 }
 /******************** Alignement centrale*****************/
-.sous-genral{
-    width:400%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.sous-general{
+    // background-color: rgb(97, 97, 97);
+    width: 100%;
+    
     
 }
 /***********************tittle***************************/
@@ -22,7 +22,7 @@
     flex-direction: column;
     align-items: center;
     width: inherit;
-    margin-left: 150px;
+    // margin-left: 150px;
   
 }
 
@@ -30,11 +30,11 @@
 .container-blue {
   display: flex;
   flex-direction: row;
+  width:100%;
   justify-content: space-between;
   align-items: center;
   padding-top: 40px;
   height: 40px;
-  margin-left: 150px;
 }
 .container-label {
   display: flex;
@@ -99,13 +99,18 @@
 }
 
 /***********************component card ping*************************/
+.container-card-ping {
+  width:100%;
+}
+
 
 .card-ping{
   overflow-x: hidden; 
   overflow-y: scroll;
   height: 57vh;
-  width: inherit;
-  margin:0px 0px 0px 150px;
+  width: 100%;
+  // background-color: rgb(110, 87, 87);
+  // margin:0px 0px 0px 150px;
 
 }
 

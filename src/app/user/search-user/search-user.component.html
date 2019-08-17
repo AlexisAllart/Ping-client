@@ -10,6 +10,7 @@
                     <p class="type">ALTERNANCE</p>
                     <p class="type">FREELANCE</p>
             </div>
+            <!--Pour vérifier que tous les éléments soient chargés-->
             <div *ngIf="offerListLoaded && companyListLoaded && contractTypeListLoaded && keyWordListLoaded" class="container">
                 <div *ngFor="let offer of offerList" class="box">
                     <div class="sous-container">
