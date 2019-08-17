@@ -30,9 +30,9 @@
 }
 
 .title-white {
-    background-color:white;
+    background-color:#60A4FF;
     padding:15px 50px 15px 50px;
-    color: #60A4FF;
+    color: white;
     border-radius: 10px;
     font-weight: 100;
     text-transform: uppercase;
@@ -61,7 +61,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-color:#60A4FF;
+    background-color:#E9F6FF;
     height:100vh;
     width:40%;
     position: relative;
@@ -95,14 +95,14 @@
     font-size:10px;
 }
 
-::placeholder {
-    color: white;
-    font-size: 1.5em;
-  }
+// ::placeholder {
+//     color: white;
+//     font-size: 1.5em;
+//   }
 
-::placeholder:hover {
-    display: none;
-}
+// ::placeholder:hover {
+//     display: none;
+// }
 
 
 .input-blue {
@@ -121,7 +121,6 @@
     color: #60A4FF;
 }
 
-
 .register {
 
     color: #B0DBFF;
@@ -138,12 +137,12 @@
 
 .btn-white {
     text-decoration: none;
-    color: #60A4FF;
-    background-color: #fff;
+    color:white;
+    background-color: #60A4FF;
     padding:10px 20px;
     border-radius: 20px;
     position:absolute;
-   
+
     bottom:50px;
     left:280px;
 
