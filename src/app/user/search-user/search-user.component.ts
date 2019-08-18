@@ -6,6 +6,7 @@ import { ContractType } from '../../models/ContractType.model';
 import { KeyWord } from '../../models/KeyWord.model';
 import { HttpClient } from '@angular/common/http';
 import { interval } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 
 // Permet de manipuler leaflet
 declare let L;
@@ -41,7 +42,7 @@ export class SearchUserComponent implements OnInit {
   private markers=[];
   private markerLayer;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private authService: AuthService) { }
 
   ngOnInit() {
     this.initMap();

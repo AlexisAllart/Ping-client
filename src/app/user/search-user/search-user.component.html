@@ -1,5 +1,10 @@
 <div class="general">
-    <app-navbar-user></app-navbar-user>
+    <div *ngIf="authService.isLoggedIn | async as isLoggedIn else noLogin">
+        <app-navbar-user></app-navbar-user>
+    </div>
+    <ng-template #noLogin>
+        <app-navbar-nologin></app-navbar-nologin>
+    </ng-template>
     <div class="sous-general">
         <section class="search">
             <app-input-search></app-input-search>

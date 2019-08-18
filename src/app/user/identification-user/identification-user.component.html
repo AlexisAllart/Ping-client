@@ -41,19 +41,19 @@
             <input class="input" type="text"placeholder="Mail">
             <input class="input" type="text" placeholder="Mot de passe">
         </form> -->
-        <form class="form" action="">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
             <mat-form-field>
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="exemple@gmail.com">
+                <input matInput placeholder="exemple@gmail.com" formControlName="email" required>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Mot de passe</mat-label>
-                <input matInput placeholder="*******">
+                <input matInput placeholder="*******" formControlName="password" required>
             </mat-form-field>
+            <button class="btn-white">Connexion</button>
         </form>
            
         
        
-    <a class="btn-white" href="">Connexion</a>
     </div>
 </div>

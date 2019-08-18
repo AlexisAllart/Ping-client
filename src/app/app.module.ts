@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {
@@ -61,6 +62,7 @@ import { BtnSkillsComponent } from './layouts/btn-skills/btn-skills.component';
 import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 import { BlueCardUserComponent } from './layouts/blue-card-user/blue-card-user.component';
+import { NavbarNologinComponent } from './general/navbar-nologin/navbar-nologin.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +98,8 @@ import { BlueCardUserComponent } from './layouts/blue-card-user/blue-card-user.c
     BtnSkillsComponent,
     HomeComponent,
     SelectionCompanyComponent,
-    BlueCardUserComponent
+    BlueCardUserComponent,
+    NavbarNologinComponent
   ],
   imports: [
     BrowserModule,
@@ -118,7 +121,7 @@ import { BlueCardUserComponent } from './layouts/blue-card-user/blue-card-user.c
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
