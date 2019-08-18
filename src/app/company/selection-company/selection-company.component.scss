@@ -15,6 +15,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position:relative;
     
 }
 /*********************** title***************************/
@@ -297,26 +298,20 @@
 
 //////// pop up /////////
 
-#popup
+.content
 {
-  background-color: rgba(0, 0, 0, 0.5);
-  bottom: 0;
-  display: none;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: all 1s;
+  
+  margin-left:35%;
+  width:50%;
+  height:30%;
+  background-color: rgb(71, 67, 67);
   z-index: 9999;
 }
-#popup p
-{
-  background-color: #333;
-  color: #ccc;
-  height: 200px;
-  margin: 2em auto;
-  width: 200px;
-}
 
+.content-text {
+  color: white;
+  margin:0 auto;
+  text-align: center;
+  padding-top:50px;
+}
 

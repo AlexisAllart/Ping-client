@@ -5,7 +5,7 @@
 
         <div class="container-title-clear-blue">
             <div class="body-title">
-                <div (click)="onClick()" class="title-company">
+                <div (click)="show=!show" class="title-company">
                     <h3 class="clear-blue-title">Candidats sélectionnés</h3>
                 </div>
             </div>
@@ -48,6 +48,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="content" [hidden]="show">
+            <p class="content-text">Ceci est un pop-up !!!! </p>
         </div>
 
     </div>

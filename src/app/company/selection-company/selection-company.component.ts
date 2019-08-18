@@ -18,12 +18,12 @@ export class SelectionCompanyComponent implements OnInit {
 
     //   button.style.backgroundColor= 'yellow';
     // }
-    
-    onClick(){
-      console.log('hello');
-      const button = event.target as HTMLButtonElement;
-      button.style.backgroundColor = 'blue';
-    }
+
+    show = false;
+  
+    // onClick(){
+    //   console.log('hello');
+    // }
 
 
 
