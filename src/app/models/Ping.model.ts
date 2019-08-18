@@ -5,5 +5,7 @@ export interface Ping {
     offer_id: number;
     status_id: number;
     user_id: number;
+    createdAt: Date;
+    updatedAt: Date;
 }
 

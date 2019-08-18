@@ -5,4 +5,6 @@ export interface CompanyUser {
     password: string;
     company_id: number;
     role_id: number;
+    createdAt: Date;
+    updatedAt: Date;
 }

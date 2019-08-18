@@ -11,4 +11,6 @@ export interface Company {
     password: string;
     phone: string;
     twitter: string;
+    createdAt: Date;
+    updatedAt: Date;
 }

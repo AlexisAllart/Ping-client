@@ -14,4 +14,6 @@ export interface User {
     keyWordOne_id: number;
     keyWordTwo_id: number;
     keyWordThree_id: number;
+    createdAt: Date;
+    updatedAt: Date;
 }

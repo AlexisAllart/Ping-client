@@ -4,4 +4,6 @@ export interface Selection {
     companyUser_id: number;
     tag_id: number;
     user_id: number;
+    createdAt: Date;
+    updatedAt: Date;
 }
