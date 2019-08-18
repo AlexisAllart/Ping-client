@@ -3,6 +3,7 @@ import { interval } from 'rxjs';
 import { Ping } from 'src/app/models/Ping.model';
 import { User } from 'src/app/models/User.model';
 import { HttpClient } from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-ping',

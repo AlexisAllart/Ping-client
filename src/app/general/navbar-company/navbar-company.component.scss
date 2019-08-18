@@ -41,7 +41,8 @@
     justify-content: flex-start;
     flex-direction: column;
     margin-top:20%;
-    width:68%;
+  
+    width:100%;
 }
 
 .container-element {
@@ -51,6 +52,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding:5px;
     // width:100%;
 }
 
@@ -63,6 +65,12 @@
     background-color: white;
     color:#60A4FF;
 }
+
+.router-active {
+    background-color: white;
+    color:#60A4FF;
+}
+
 
 .icon {
     font-size: 27px;

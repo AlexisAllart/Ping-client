@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 import { User } from 'src/app/models/User.model';
 import { Selection } from 'src/app/models/Selection.model';
@@ -11,15 +11,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SelectionCompanyComponent implements OnInit {
 
-    click(event: Event): void {
-      console.log("hello");
+    // click(event: Event): void {
+    //   console.log("hello");
 
-      const button = event.target as HTMLButtonElement;
+    //   const button = event.target as HTMLButtonElement;
 
-      button.style.backgroundColor= 'yellow';
-    }
-      
+    //   button.style.backgroundColor= 'yellow';
+    // }
     
+    onClick(){
+      console.log('hello');
+      const button = event.target as HTMLButtonElement;
+      button.style.backgroundColor = 'blue';
+    }
+
+
 
     //Lists
     selectionList: Array<Selection> ={} as Array<Selection>;
