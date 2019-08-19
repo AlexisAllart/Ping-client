@@ -11,6 +11,7 @@
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
+    position:relative;
 
 }
 
@@ -75,7 +76,7 @@
 
 .emploi {
     color: #60A4FF;
-    font-size: 25px;
+    font-size: 30px;
     margin-bottom:20px;
 }
 
@@ -93,12 +94,12 @@
 }
 
 .btn-social {
-    display: flex;
-    height: 28%;
-    /* background-color: rgb(146, 140, 140); */
-    justify-content: flex-end;
-    align-items: flex-end;
     padding-right:40px;
+    position: absolute;
+    bottom:0px;
+    right:0px;
+    margin-bottom: 2%;
+
  
 }
 
@@ -119,9 +120,9 @@
 }
 
 .btn-white-top {
-    font-size:10px;
+    // font-size:10px;
     background-color: white;
-    padding:0 20px 0 20px;
+    padding:10px 30px 10px 30px;
     
 }
     
