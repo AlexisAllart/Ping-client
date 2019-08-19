@@ -36,9 +36,33 @@
         </div>
         <div class="right-part">
             <div class="dark-title">Mes informations</div>
-            <!-- ANGULAR MATERIAL FORM ? -->
-            <div class="edit-form">[temp]EDIT FORM HERE</div>
-            <!-- SAVE BUTTON (COMPONENT ?) -->
+            <form class="form-blue" action="">
+                    <!-- <input class="input-blue" type="text"placeholder="Nom">
+                    <input class="input-blue" type="text" placeholder="Prenom">
+                    <input class="input-blue" type="text" placeholder="Mail">
+                    <input class="input-blue" type="text" placeholder="Mot de passe"> -->
+                    <mat-form-field >
+                        <mat-label>Nom</mat-label>
+                        <input matInput placeholder="Dupont">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Prenom</mat-label>
+                        <input matInput placeholder="Hugues">
+                    </mat-form-field>
+                    <mat-form-field >
+                        <mat-label>Mail</mat-label>
+                        <input matInput placeholder="exemple@gmail.com">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Téléphone</mat-label>
+                        <input matInput placeholder="07.20.30.55.60">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Mot de passe</mat-label>
+                        <input matInput placeholder="*******">
+                    </mat-form-field>
+                </form>
+            <div class="edit-form"></div>
             <div class="edit-submit">
                 <button class="submit">
                     <p> Modifier</p>
