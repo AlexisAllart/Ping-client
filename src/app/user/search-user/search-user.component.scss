@@ -33,9 +33,9 @@
 }
 
 .search {
-    // background-color: rgb(10, 51, 105);
-    width:40%;
-    margin-top:30px;
+    background-color: rgb(10, 51, 105);
+    width:50%;
+    height:100vh;
     
 }
 
@@ -53,15 +53,21 @@
 
 /************************* MAP *******************/
 
-.map {
-  margin-top: 30px;
+.carte {
+    display: flex;
+    background-color: rgb(9, 86, 122);
 }
 
+
 .map {
-    height: 500px;
-    width: 500px;
-    margin: auto;
+background-color: rgb(187, 115, 115);
+  margin-top: 30px;
+  height: 500px;
+  width: 500px;
+  margin: auto;
+
 }
+
 
 /************************* CARD *******************/
 
@@ -83,10 +89,11 @@
     // background-color: blue;
     height:60vh;
     // background-color:paleturquoise;
-    width:110%;
+    width:100%;
     // margin:20px;
 	overflow-x: hidden;
     overflow-y: scroll;
+    background-color: rgb(231, 161, 161);
    
     
 }
@@ -157,7 +164,6 @@ box-shadow: 6px 7px 17px -4px rgba(204,204,204,1);
     right:2%;
     bottom: 2%;
 }
-
 
 .plus {
     font-size:40px;
