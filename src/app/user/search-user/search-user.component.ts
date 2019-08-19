@@ -7,6 +7,8 @@ import { KeyWord } from '../../models/KeyWord.model';
 import { HttpClient } from '@angular/common/http';
 import { interval } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import { ServerService } from 'src/app/services/server.service';
+import { User } from '../../models/User.model';
 
 // Permet de manipuler leaflet
 declare let L;
@@ -17,6 +19,7 @@ declare let L;
   styleUrls: ['./search-user.component.scss']
 })
 export class SearchUserComponent implements OnInit {
+  user: User;
 
   // Icons 
   private defaultIcon = L.icon({
@@ -42,7 +45,7 @@ export class SearchUserComponent implements OnInit {
   private markers=[];
   private markerLayer;
 
-  constructor(private http:HttpClient, private authService: AuthService) { }
+  constructor(private http:HttpClient, private authService: AuthService, private server: ServerService) { }
 
   ngOnInit() {
     this.initMap();
@@ -51,6 +54,17 @@ export class SearchUserComponent implements OnInit {
     .subscribe(
       () => this.getAll()
     );
+    this.getUserInfo();
+  }
+
+  getUserInfo() {
+    this.server.request('GET', '/user/details/1').subscribe((user: User) => {
+      if (user) {
+        this.user = user;
+        console.log("test retrieved user#1 data = ");
+        console.log(this.user);
+      }
+    });
   }
   
   initMap() {
