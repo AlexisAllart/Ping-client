@@ -18,6 +18,51 @@
 }
 
 
+/************************* Input search *******************/
+
+.search-nav{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    // margin-top:40px;
+    margin-bottom:5%;
+    // background-color: rgb(129, 125, 125);
+
+  }  
+  .input-wrapper {
+    border: 1px solid #60A4FF;
+    max-width: 26rem;
+    margin: 1rem; 
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+    min-width: 10rem;
+   
+  }
+  ::placeholder{
+    color: #60A4FF ;
+    text-align: center;
+    padding:0.5rem;
+  }
+  input {
+    border:white;
+    border-radius: 30px;
+    min-width: 0;
+    outline: none;
+    padding: 0.5rem;
+  }
+
+  /************************* font awesome search and map *******************/
+  .input-icon {
+    background-color: white;
+    padding: 0.6rem 0.8rem 0.5rem;
+    color: #60A4FF;
+  }
+  
+
+
 /************************* CONTRACT TYPE *******************/
 
 .contract {
@@ -27,13 +72,17 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    margin: 20px;
     width:100%;
+    margin-bottom:5%;
 
 }
 
 .search {
-    background-color: rgb(10, 51, 105);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // background-color: rgb(10, 51, 105);
     width:50%;
     height:100vh;
     
@@ -55,16 +104,20 @@
 
 .carte {
     display: flex;
-    background-color: rgb(9, 86, 122);
+    width: 48%;
+    // background-color: rgb(9, 86, 122);
 }
 
 
 .map {
-background-color: rgb(187, 115, 115);
-  margin-top: 30px;
-  height: 500px;
-  width: 500px;
-  margin: auto;
+
+//   margin-top: 30px;
+//   height: 500px;
+//   width: 500px;
+//   margin: auto;
+
+height:100vh;
+width:100%;
 
 }
 
@@ -87,13 +140,13 @@ background-color: rgb(187, 115, 115);
     align-items: center;
     color: blue;
     // background-color: blue;
-    height:60vh;
+    height:70%;
     // background-color:paleturquoise;
     width:100%;
     // margin:20px;
 	overflow-x: hidden;
     overflow-y: scroll;
-    background-color: rgb(231, 161, 161);
+    // background-color: rgb(231, 161, 161);
    
     
 }
@@ -203,3 +256,5 @@ box-shadow: 6px 7px 17px -4px rgba(204,204,204,1);
 	border-radius: 5px;
 	background: #60A4FF;
 }
+
+
