@@ -1,59 +1,68 @@
 <div class="general">
-        
 
+        
     <!------------Inscription-------------->
     <div class="inscription">
-        <div class="img">
-            <img src="assets/logo-ping/blue_logo.png" alt="">
-        </div>
+            <div class="img">
+                    <img src="assets/logo-ping/blue_logo.png" alt="">
+            </div>
         
-        <h2 class="title-blue">Inscription</h2>
-        <form class="form-blue" action="">
-            <!-- <input class="input-blue" type="text"placeholder="Nom">
+        <div class="container-inscription">
+            <h2 class="title-blue">Inscription</h2>
+            <form class="form-blue" action="">
+                <!-- <input class="input-blue" type="text"placeholder="Nom">
             <input class="input-blue" type="text" placeholder="Prenom">
             <input class="input-blue" type="text" placeholder="Mail">
             <input class="input-blue" type="text" placeholder="Mot de passe"> -->
-            <mat-form-field >
-                <mat-label>Nom</mat-label>
-                <input matInput placeholder="Dupont">
-            </mat-form-field>
-            <mat-form-field>
-                <mat-label>Prenom</mat-label>
-                <input matInput placeholder="Hugues">
-            </mat-form-field>
-            <mat-form-field >
-                <mat-label>Mail</mat-label>
-                <input matInput placeholder="exemple@gmail.com">
-            </mat-form-field>
-            <mat-form-field>
-                <mat-label>Mot de passe</mat-label>
-                <input matInput placeholder="*******">
-            </mat-form-field>
-        </form>
-        <a class="btn-blue" href="">Enregistrer</a>
+                <mat-form-field>
+                    <mat-label>Nom</mat-label>
+                    <input matInput placeholder="Dupont">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Prenom</mat-label>
+                    <input matInput placeholder="Hugues">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Mail</mat-label>
+                    <input matInput placeholder="exemple@gmail.com">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Mot de passe</mat-label>
+                    <input matInput placeholder="*******">
+                </mat-form-field>
+            </form>
+            <div class="button">
+                <button class="btn-blue">Enregistrer</button>
+            </div>
+
+        </div>
     </div>
-    
+
     <!------------Connexion-------------->
-    
+
     <div class="connexion">
-        <h2 class="title-white">Connexion</h2>
-        <!-- <form class="form" action="">
+        <div class="img">
+            <div class="logo-decoy"></div>
+        </div>
+        <div class="container-connexion">
+            <h2 class="title-white">Connexion</h2>
+            <!-- <form class="form" action="">
             <input class="input" type="text"placeholder="Mail">
             <input class="input" type="text" placeholder="Mot de passe">
         </form> -->
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
-            <mat-form-field>
-                <mat-label>Email</mat-label>
-                <input matInput placeholder="exemple@gmail.com" formControlName="email" required>
-            </mat-form-field>
-            <mat-form-field>
-                <mat-label>Mot de passe</mat-label>
-                <input matInput placeholder="*******" formControlName="password" required>
-            </mat-form-field>
-            <button class="btn-white">Connexion</button>
-        </form>
-           
-        
-       
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="exemple@gmail.com" formControlName="email" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Mot de passe</mat-label>
+                    <input matInput placeholder="*******" formControlName="password" required>
+                </mat-form-field>
+            </form>
+            <div class="button">
+                <button class="btn-white">Connexion</button>
+            </div>
+        </div>
     </div>
 </div>
