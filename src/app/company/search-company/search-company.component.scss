@@ -17,8 +17,53 @@
     justify-content: center;
     align-items: center;
     // background-color: rgb(60, 66, 85);
-    height:90vh;
+    height:100vh;
 }
+
+
+
+///// SEARCH ////////////
+
+ /************************* Input *******************/
+
+ .search-input{
+    display: flex;
+    flex-direction: row;
+    // margin-top:40px;
+    margin-left:30px;
+    // background-color: rgb(129, 125, 125);
+
+  }  
+  .input-wrapper {
+    border: 1px solid #60A4FF;
+    max-width: 26rem;
+    margin: 1rem; 
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+    min-width: 10rem;
+   
+  }
+  ::placeholder{
+    color: #60A4FF ;
+    text-align: center;
+    padding:0.5rem;
+  }
+  input {
+    border:white;
+    border-radius: 30px;
+    min-width: 0;
+    outline: none;
+    padding: 0.5rem;
+  }
+
+  /************************* font awesome search and map *******************/
+  .input-icon {
+    background-color: white;
+    padding: 0.6rem 0.8rem 0.5rem;
+    color: #60A4FF;
+  }
+  
 
 ////////////// Contract /////////////////
 
@@ -83,7 +128,7 @@
     width:90%;
     align-items: center;
     justify-content: flex-start;
-    height:450px;
+    height:60%;
     overflow-x: hidden;
     overflow-y: scroll;
     // padding:40px;
@@ -238,4 +283,60 @@
 }
 
 
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 1002px) { 
+
+    .card-candidat {
+        // background-color: rgb(192, 75, 75);
+    }
+    
+    .container {
+    
+        width:90%;
+        display: flex;
+        flex-direction: row;
+        // margin-left: 22%;
+        margin:5px;
+        background-color: none;
+       
+    }
+
+    .blue {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding:7%;
+    }
+
+    .top {
+        display: flex;
+        flex-direction:column;
+    }
+
+    .description {
+        display: flex;
+        text-align:center;
+    }
+
+    .key-words {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+    }
+
+    .sous-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .right-side {
+        display: none;
+    }
+    
+ }
 
