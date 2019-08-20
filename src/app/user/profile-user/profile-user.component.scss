@@ -9,6 +9,7 @@
 .general {
     display: flex;
     font-family: "Nunito", sans-serif;
+    height: 100vh;
 }
 
 .btn-social {
@@ -44,8 +45,8 @@
     font-size: 2em;
     color: white;
     padding-top: 8px;
-    width: 48px;
-    height: 48px;
+    width: 45px;
+    height: 45px;
     border-radius: 100%;
     text-align: center;
     background-color:#0077B5;
@@ -73,7 +74,7 @@
     display: flex;
     flex-direction: column;
     height: 50%;
-    margin-bottom: 48px;
+    margin-bottom: 28px;
     min-height: 400px;
 }
 
@@ -87,11 +88,11 @@
     width: auto;
     align-self: center;
     text-align: center;
-    margin: 48px 0;
+    margin: 28px 0;
     padding:15px;
     background-color:  #60a4ff;;
     color:#FFFFFF;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     min-width: 280px;
 }
@@ -99,6 +100,8 @@
 .on-off{
     background-color: pink;
     margin: 48px 0;
+    height: auto;
+    width: auto;
 }
 /***********************card user *******************/
 
@@ -127,7 +130,7 @@
 .cv-import{
     display: flex;
     flex-direction: row;
-    margin: 16px;
+    margin: 10px;
     justify-content: space-between;
     border: 1px solid #60A4FF;
     color: #60A4FF;
@@ -159,7 +162,7 @@
 .cv-download{
     display: flex;
     flex-direction: row;
-    margin: 16px;
+    margin: 10px;
     justify-content: space-between;
     border: 1px solid #60A4FF;
     color: #60A4FF;
@@ -219,13 +222,14 @@
 .right-part{
     display: flex;
     flex-direction: column;
+    align-content: center;
     width: 30%;
-    margin: 48px;
+    margin-top:48px;
 }
 
-.edit-form{
-    background-color: pink;
-}
+// .edit-form{
+//     background-color: pink;
+// }
 
 .edit-submit{
   
@@ -236,10 +240,12 @@
 }
 .submit{
     outline: none;
-    background-color:#60A4FF;
-    color:#ffff;
-    border-radius:30px;
-    width: 100px;
-    height:30px;
-    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    background-color: #60A4FF;
+    padding:10px 20px;
+    border-radius: 20px;
+    position:absolute;
+    bottom:25%;
+    right:100px;
 }
