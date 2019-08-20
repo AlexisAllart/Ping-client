@@ -11,6 +11,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./ping.component.scss']
 })
 
+
+
 export class PingComponent implements OnInit {
 
   //Lists
