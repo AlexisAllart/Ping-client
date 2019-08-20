@@ -19,8 +19,7 @@ declare let L;
   styleUrls: ['./search-user.component.scss']
 })
 export class SearchUserComponent implements OnInit {
-  user: User;
-
+  
   // Icons 
   private defaultIcon = L.icon({
     iconUrl: '../../../assets/leaflet/images/marker-icon.png',
@@ -28,14 +27,14 @@ export class SearchUserComponent implements OnInit {
     popupAnchor: [13,-2],
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
   });
-
+  
   // Lists
   // Tableau d'offer (typage) - déclaration des listes !
   offerList: Array<Offer> = {} as Array<Offer>;
   companyList: Array<Company> = {} as Array<Company>;
   contractTypeList: Array<ContractType> = {} as Array<ContractType>;
   keyWordList: Array<KeyWord> = {} as Array<KeyWord>;
-
+  
   // Variables
   private offerListLoaded=false;
   private companyListLoaded=false;
@@ -44,24 +43,28 @@ export class SearchUserComponent implements OnInit {
   private map;
   private markers=[];
   private markerLayer;
+  private user: User;
+  // Variables récupérées au moment du login
+  private userId = JSON.parse(localStorage.getItem('id')).id;
+  private userToken = JSON.parse(localStorage.getItem('user')).token;
 
   constructor(private http:HttpClient, private authService: AuthService, private server: ServerService) { }
 
   ngOnInit() {
     this.initMap();
+    this.getUserInfo();
     this.getAll()
     interval(300000)
     .subscribe(
       () => this.getAll()
     );
-    this.getUserInfo();
   }
 
   getUserInfo() {
-    this.server.request('GET', '/user/details/1').subscribe((user: User) => {
+    this.server.request('GET', '/user/details/'+this.userId).subscribe((user: User) => {
       if (user) {
         this.user = user;
-        console.log("test retrieved user#1 data = ");
+        console.log("User Info from server :");
         console.log(this.user);
       }
     });

@@ -7,6 +7,7 @@ import { ServerService } from './server.service';
 export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false);
   private token: string;
+  private id: number;
 
   get isLoggedIn() {
     return this.loggedIn.asObservable();
@@ -26,7 +27,7 @@ export class AuthService {
       this.server.setLoggedIn(true, this.token);
       this.loggedIn.next(true);
       // Redirection vers le dashboard-user
-      this.router.navigateByUrl('/dashboard-user');
+      // this.router.navigateByUrl('/dashboard-user');
     }
    }
 
@@ -38,13 +39,18 @@ export class AuthService {
         })
         .subscribe((response: any) => {
           if (response !== undefined) {
-            this.token = response;
+            this.id = response.id;
+            this.token = response.token;
             this.server.setLoggedIn(true, this.token);
             this.loggedIn.next(true);
             const userData = {
               token: this.token
             };
+            const userId = {
+              id: this.id
+            }
             localStorage.setItem('user', JSON.stringify(userData));
+            localStorage.setItem('id', JSON.stringify(userId));
             this.router.navigateByUrl('/dashboard-user');
           }
         });
