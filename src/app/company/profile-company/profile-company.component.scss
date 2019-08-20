@@ -23,9 +23,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // background-color: rgb(141, 140, 140);
+    // background-color: rgb(78, 17, 17);
     width:45%;
-    margin-top: 40px;
+    height:100vh
+    // margin-top: 40px;
 }
 
 .info-bloc {
@@ -33,11 +34,11 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    // background-color:#60A4FF;
+    // background-color:rgb(97, 125, 161);
     width:70%;
     height:80vh;
+    padding-top:10%;
 }
-
 
 .form {
     display: flex;
@@ -69,9 +70,8 @@
     align-items: flex-end;
     justify-content: flex-end;
     // background-color: rgb(83, 63, 63);
-    width: 85%;
-    padding:20px;
-    margin:5px;
+    width: 100%;
+    // padding:20px;
    
 }
 
@@ -80,10 +80,19 @@
     background-color: #60A4FF;
     padding:10px 15px;
     border-radius: 20px;
+    margin-top:5%;
 }
 
 
 ///////////// ABOUT /////////////
+
+.bottom-info {
+    display: flex;
+    flex-direction: column;
+    // background-color: yellow;
+    width:100%;
+    height: 100%;
+}
 
 .about {
     display:flex;
@@ -99,13 +108,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding:10%;
+    // padding:10%;
     // background-color: rgb(47, 45, 68);
     width:80%;
-    height:80vh;
+    height:85vh;
 }
 
 .info-title {
+    display: flex;
     background-color: #60A4FF;
     padding: 5px 40px;
     margin:7%;
@@ -116,17 +126,88 @@
     color: white;
     font-size:14px;
 }
-
-.reseaux {
-    margin: 15px;
+.info-title-reseaux  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: rgb(83, 63, 63);
+    width: 100%;
+    margin-bottom:30px;
+    margin-top:5%;
+    // padding:20px;
+   
 }
 
-.network {
+.title-reseaux {
     color: white;
     background-color: #60A4FF;
-    padding:10px;
-    margin-left: 10px;
+    font-size:14px;
+    padding:10px 20px;
+    margin-top:5%;
 }
+
+
+
+.btn-social {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    width:100%;
+    height:50%;
+    // background-color: red;    
+}
+
+.logo-social {
+    display: flex;
+    flex-direction: column;
+}
+
+.link-social {
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left:10px;
+    // background-color:rgb(187, 187, 187);
+    height:100%;
+    padding-top:7px;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    margin-bottom:15px;
+    text-decoration:none;
+    color: #60A4FF;
+    text-align: center;
+}
+
+
+
+.social {
+    background-color:#60A4FF;
+    color: white;
+    padding:10px;
+    margin-bottom:5%;
+}
+
+.site {
+    background-color:white;
+    color: #60A4FF;
+    border: 1px solid #60A4FF;
+    padding:10px;
+    margin-bottom:5%;
+}
+
+
+
+// .network {
+//     color: white;
+//     background-color: #60A4FF;
+//     padding:10px;
+//     margin-left: 10px;
+// }
 
 .website {
     color: #60A4FF;
@@ -134,4 +215,74 @@
 }
 
 
-//// INPUT ///
+/***** COMPANY CARD*****/
+
+
+/************************* CARD *******************/
+
+.container {
+    background-color: #E9F6FF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:0px 15px 0px 15px;
+    -webkit-box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
+    -moz-box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
+    box-shadow: 0px 0px 22px -1px rgba(143,141,143,1);
+    position: relative;
+    // background-color: blue;
+    
+}
+
+.image {
+    margin:3%;
+}
+
+
+.logo {
+    border-radius:50%;
+    height:90px;
+    width:90px;
+    margin:6%;
+}
+
+.container-text {
+    padding:6%;
+}
+.title-about {
+    color: #666666;
+    margin-bottom:4px;
+    font-size:20px;
+}
+
+.line {
+    width:100%;
+}
+
+.company {
+    color:#60A4FF;
+    margin-top:15px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #60A4FF;
+    margin-bottom:30px;
+    font-size:12px;
+    margin-top: 20px;
+    
+
+}
+.right-side{
+    display: flex;
+    justify-content: flex-start;
+    
+}
+.modif {
+    background-color: white;
+    padding:10px;
+    border-radius:50%;
+    border: 1px solid #707070;
+    color:#707070;
+}
