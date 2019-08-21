@@ -3,16 +3,19 @@
 .general {
     display: flex;
     height:100vh;
+    
     // background-color: rgb(175, 106, 106);
 }
 
-.img {
+.logo {
     display: flex;
     // background-color: rgb(80, 52, 52);
     width:90%;
     margin:20px;
     padding:10px;
-
+}
+:focus{
+    outline: 0;
 }
 
 
