@@ -6,9 +6,19 @@
             <div class="profile-top">
                 <div class="profile-top-header">
                     <div class="dark-title">Mon Profil</div>
-                    <div class="on-off">emplacement ON/Off
-                            <!-- <mat-slide-toggle>On/Off</mat-slide-toggle> -->
+                    <!-- button on/off -->
+                    <div class="on-off">
+                        <div class="container">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                                <label class="onoffswitch-label" for="myonoffswitch">
+                                    <div class="onoffswitch-inner"></div>
+                                    <div class="onoffswitch-switch"></div>
+                                </label>
+                            </div>
+                          </div>
                     </div>
+                    <!-- button on/off end -->
                 </div>
                 <div class="temp-profile-user-card">
                     <app-blue-card-user></app-blue-card-user>
@@ -63,13 +73,13 @@
                         <mat-label>Mot de passe</mat-label>
                         <input matInput placeholder="*******">
                     </mat-form-field>
+                    <!-- <div class="edit-form"></div> -->
+                    <div class="edit-submit">
+                        <button class="submit">
+                            <p> Modifier</p>
+                        </button> ​
+                    </div>
                 </form>
-            <!-- <div class="edit-form"></div> -->
-            <div class="edit-submit">
-                <button class="submit">
-                    <p> Modifier</p>
-                </button> ​
-            </div>
         </div>
     </div>
 
