@@ -9,6 +9,7 @@ import { interval } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { ServerService } from 'src/app/services/server.service';
 import { User } from '../../models/User.model';
+import { CommonService } from 'src/app/services/common.service';
 
 // Permet de manipuler leaflet
 declare let L;
@@ -48,16 +49,16 @@ export class SearchUserComponent implements OnInit {
   private userId = JSON.parse(localStorage.getItem('id'));
   private userToken = JSON.parse(localStorage.getItem('user'));
 
-  constructor(private http:HttpClient, private authService: AuthService, private server: ServerService) { }
+  constructor(private http:HttpClient, private authService: AuthService, private server: ServerService, private commonService: CommonService) { }
 
   ngOnInit() {
     this.initMap();
     this.getUserInfo();
-    this.getAll()
-    interval(300000)
-    .subscribe(
-      () => this.getAll()
-    );
+    // this.getAll()
+    // interval(300000)
+    // .subscribe(
+    //   () => this.getAll()
+    // );
   }
 
   getUserInfo() {
@@ -82,13 +83,6 @@ export class SearchUserComponent implements OnInit {
     }).addTo(this.map);
   }
   
-  getAll() {
-    this.getOfferList();
-    this.getCompanyList();
-    this.getContractTypeList();
-    this.getKeyWordList();
-  }
-
   //Poser les markers sur la map
   populateMarkers(): void {
     this.markerLayer?this.markerLayer.clearLayers():'';
@@ -97,62 +91,5 @@ export class SearchUserComponent implements OnInit {
     }
     this.markerLayer=L.layerGroup(this.markers);
     this.map.addLayer(this.markerLayer);
-  }
-
-  getOfferList(): void {
-    this.http.get<Array<Offer>>('http://pingjob.herokuapp.com/offer/list')
-      .pipe(map(data => data))
-      .subscribe(
-        (offerList:Array<Offer>) => {
-          this.offerList=offerList;
-          this.offerListLoaded = true;
-          this.populateMarkers();
-        },
-        err => {
-          console.log(err);
-        }
-      );
-  }
-
-  getCompanyList(): void {
-    this.http.get<Array<Company>>('http://pingjob.herokuapp.com/company/list')
-      .pipe(map(data => data))
-      .subscribe(
-        (companyList:Array<Company>) => {
-          this.companyList=companyList;
-          this.companyListLoaded = true;
-        },
-        err => {
-          console.log(err);
-        }
-      );
-  }
-
-  getContractTypeList(): void {
-    this.http.get<Array<ContractType>>('http://pingjob.herokuapp.com/contractType/list')
-      .pipe(map(data => data))
-      .subscribe(
-        (contractTypeList:Array<ContractType>) => {
-          this.contractTypeList=contractTypeList;
-          this.contractTypeListLoaded = true;
-        },
-        err => {
-          console.log(err);
-        }
-      );
-  }
-
-  getKeyWordList(): void {
-    this.http.get<Array<KeyWord>>('http://pingjob.herokuapp.com/keyWord/list')
-      .pipe(map(data => data))
-      .subscribe(
-        (keyWordList:Array<KeyWord>) => {
-          this.keyWordList=keyWordList;
-          this.keyWordListLoaded = true;
-        },
-        err => {
-          console.log(err);
-        }
-      );
   }
 }

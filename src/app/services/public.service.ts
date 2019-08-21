@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Company } from '../models/Company.model';
-import { map } from 'rxjs/operators';
+import { KeyWord } from '../models/KeyWord.model';
 import { Offer } from '../models/Offer.model';
 import { interval } from 'rxjs';
 
@@ -9,56 +9,73 @@ import { interval } from 'rxjs';
   providedIn: 'root'
 })
 export class PublicService {
-  companyList: Array<Company> = {} as Array<Company>;
-  offerList: Array<Offer> = {} as Array<Offer>;
-  private companyListLoaded=false;
-  private offerListLoaded=false;
+  private companyList: Array<Company> = {} as Array<Company>;
+  private keyWordList: Array<KeyWord> = {} as Array<KeyWord>;
+  private offerList: Array<Offer> = {} as Array<Offer>;
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient) {}
 
+  // QOL METHOD
+  loadAll(): void {
+    this.loadCompanyList();
+    this.loadKeyWordList();
+    this.loadOfferList();
+    interval(60000).subscribe(() => this.loadCompanyList());
+    interval(60000).subscribe(() => this.loadKeyWordList());
+    interval(60000).subscribe(() => this.loadOfferList());
   }
 
-  getAll(): void {
-    this.getCompanyList()
-    interval(300000)
-    .subscribe(
-      () => this.getCompanyList()
-    );
-    this.getOfferList();
-    interval(300000)
-    .subscribe(
-      () => this.getOfferList()
-    );
+  // GETTERS
+  getCompanyList(): Array<Company> {
+    return this.companyList;
   }
 
-  getCompanyList(): void {
-    this.http.get<Array<Company>>('http://pingjob.herokuapp.com/company/list')
-      .pipe(map(data => data))
-      .subscribe(
-        (companyList: Array<Company>) => {
-          this.companyListLoaded = false;
-          this.companyList = companyList;
-          this.companyListLoaded = true;
-        },
-        err => {
-          console.log(err);
-        }
-      );
+  getKeyWordList(): Array<KeyWord> {
+    return this.keyWordList;
   }
 
-  getOfferList(): void {
-    this.http.get<Array<Offer>>('http://pingjob.herokuapp.com/offer/list')
-      .pipe(map(data => data))
-      .subscribe(
-        (offerList:Array<Offer>) => {
-          this.offerListLoaded = false;
-          this.offerList=offerList;
-          this.offerListLoaded = true;
-          // this.populateMarkers();
-        },
-        err => {
-          console.log(err);
-        }
-      );
+  getOfferList(): Array<Offer> {
+    return this.offerList;
+  }
+
+  // SETTERS
+  setCompanyList(array: Array<Company>) {
+    this.companyList = array;
+    return this;
+  }
+
+  setKeyWordList(array: Array<KeyWord>) {
+    this.keyWordList = array;
+    return this;
+  }
+
+  setOfferList(array: Array<Offer>) {
+    this.offerList = array;
+    return this;
+  }
+  
+  // LOAD LISTS WITH DATA FROM DB (ALL PUBLIC DATA)
+  loadKeyWordList(): void {
+    this.http.get<Array<KeyWord>>('http://pingjob.herokuapp.com/keyWord/list').subscribe(data => {
+      this.setKeyWordList(data);
+      console.log("publicService.keyWordList successfully loaded :");
+      console.log(this.getKeyWordList());
+    });
+  }
+
+  loadCompanyList(): void {
+    this.http.get<Array<Company>>('http://pingjob.herokuapp.com/company/list').subscribe(data => {
+      this.setCompanyList(data);
+      console.log("publicService.companyList successfully loaded :");
+      console.log(this.getCompanyList());
+    });
+  }
+
+  loadOfferList(): void {
+    this.http.get<Array<Offer>>('http://pingjob.herokuapp.com/offer/list').subscribe(data => {
+      this.setOfferList(data);
+      console.log("publicService.offerList successfully loaded :");
+      console.log(this.getOfferList());
+    });
   }
 }
