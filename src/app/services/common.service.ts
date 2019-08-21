@@ -26,7 +26,6 @@ export class CommonService {
   getAll() {
     // this.contractTypeList=this.getContractTypeList().then(console.log('getContractType attempt:'));
     // this.contractTypeListLoaded = true;
-    console.log("return result");
     console.log(this.getContractTypeList());
     console.log(this.contractTypeList);
     // this.getKeyWordList();
