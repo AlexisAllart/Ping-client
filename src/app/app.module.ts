@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
+import { CommonService } from './services/common.service';
+import { PublicService } from './services/public.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {
@@ -121,7 +123,11 @@ import { NavbarNologinComponent } from './general/navbar-nologin/navbar-nologin.
     ReactiveFormsModule
 
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    CommonService,
+    PublicService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -45,8 +45,8 @@ export class SearchUserComponent implements OnInit {
   private markerLayer;
   private user: User;
   // Variables récupérées au moment du login
-  private userId = JSON.parse(localStorage.getItem('id')).id;
-  private userToken = JSON.parse(localStorage.getItem('user')).token;
+  private userId = JSON.parse(localStorage.getItem('id'));
+  private userToken = JSON.parse(localStorage.getItem('user'));
 
   constructor(private http:HttpClient, private authService: AuthService, private server: ServerService) { }
 
@@ -61,13 +61,18 @@ export class SearchUserComponent implements OnInit {
   }
 
   getUserInfo() {
-    this.server.request('GET', '/user/details/'+this.userId).subscribe((user: User) => {
-      if (user) {
-        this.user = user;
-        console.log("User Info from server :");
-        console.log(this.user);
-      }
-    });
+    if (this.userId !== null) {
+      this.server.request('GET', '/user/details/'+this.userId.id).subscribe((user: User) => {
+        if (user) {
+          this.user = user;
+          console.log("User Info from server :");
+          console.log(this.user);
+        }
+      });
+    }
+    else {
+      console.log("No login information");
+    }
   }
   
   initMap() {

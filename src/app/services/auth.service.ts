@@ -16,7 +16,7 @@ export class AuthService {
   constructor(private router: Router, private server: ServerService) {
     // On place le contenu de localStorage.getItem('user') (= un token déjà existant) dans "userData"
     const userData = localStorage.getItem('user');
-
+    
     // Si un token est déjà présent...
     if (userData) {
       // On place dans "user" un objet JSON avec le contenu de userData
