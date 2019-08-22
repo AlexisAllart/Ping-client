@@ -9,33 +9,31 @@
         <section class="search">
             <div class="search-nav">
                 <div class="input-wrapper">
-                        <input type="search" placeholder=" QUOI ?" [(ngModel)]="search">
-                        <span class="input-icon fa fa-search"></span>
-                        
+                    <input type="search" placeholder=" QUOI ?" [(ngModel)]="search">
+                    <span class="input-icon fa fa-search"></span>
+
                 </div>
                 <div *ngFor="let f of (folderObjs | filter:search)as folder">
-                    {{f.name}}
-                    {{f.size}}
-                  
-                  </div>
-                  
-                  <div *ngIf="(folderObjs | filter:search).length <1">
+                    {{f.name}} {{f.size}}
+
+                </div>
+
+                <div *ngIf="(folderObjs | filter:search).length <1">
                     Not Found
-                    </div>
+                </div>
                 <div class="input-wrapper">
-                        <input type="map" placeholder="OU ?" />
-                        <span class="input-icon fas fa-map-marker-alt"></span>
+                    <input type="map" placeholder="OU ?" />
+                    <span class="input-icon fas fa-map-marker-alt"></span>
                 </div>
             </div>
             <div class="contract">
-                    <p class="type">CDD</p>
-                    <p class="type">CDI</p>
-                    <p class="type">STAGE</p>
-                    <p class="type">ALTERNANCE</p>
-                    <p class="type">FREELANCE</p>
+                <p class="type">CDD</p>
+                <p class="type">CDI</p>
+                <p class="type">STAGE</p>
+                <p class="type">ALTERNANCE</p>
+                <p class="type">FREELANCE</p>
             </div>
-            <!--Pour vérifier que tous les éléments soient chargés-->
-            <div *ngIf="offerListLoaded && companyListLoaded && contractTypeListLoaded && keyWordListLoaded" class="container">
+            <div class="container">
                 <div *ngFor="let offer of offerList" class="box">
                     <div class="sous-container">
                         <div class="container-text">
@@ -56,14 +54,14 @@
                     <div class="btn-plus">
                         <i class="fas fa-plus-circle plus" routerLink="/offer-user"></i>
                     </div>
-                   
+
                 </div>
             </div>
         </section>
         <div class="carte">
             <div class="map" id="map"></div>
         </div>
-      
+
         <!-- <section class="map">
                 <iframe class="carte" width="500" height="560" margin="3px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=3.0698096752166752%2C50.61767404307959%2C3.0730175971984863%2C50.61957666224991&amp;layer=mapnik" style="border: 1px solid black"></iframe>
         </section> -->

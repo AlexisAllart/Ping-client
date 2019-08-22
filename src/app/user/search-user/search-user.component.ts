@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Offer } from '../../models/Offer.model';
-import { Company } from '../../models/Company.model';
-import { ContractType } from '../../models/ContractType.model';
-import { KeyWord } from '../../models/KeyWord.model';
-import { HttpClient } from '@angular/common/http';
-import { interval } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
-import { ServerService } from 'src/app/services/server.service';
-import { User } from '../../models/User.model';
 import { CommonService } from 'src/app/services/common.service';
+import { UserService } from 'src/app/services/user.service';
+import { PublicService } from 'src/app/services/public.service';
+import { Company } from 'src/app/models/Company.model';
+import { ContractType } from 'src/app/models/ContractType.model';
+import { KeyWord } from 'src/app/models/KeyWord.model';
+import { Offer } from 'src/app/models/Offer.model';
 
 // Permet de manipuler leaflet
 declare let L;
@@ -28,37 +25,34 @@ export class SearchUserComponent implements OnInit {
     popupAnchor: [13,-2],
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
   });
-  
   // Lists
-  // Tableau d'offer (typage) - déclaration des listes !
-  offerList: Array<Offer> = {} as Array<Offer>;
-  companyList: Array<Company> = {} as Array<Company>;
-  contractTypeList: Array<ContractType> = {} as Array<ContractType>;
-  keyWordList: Array<KeyWord> = {} as Array<KeyWord>;
-  
-  // Variables
-  private offerListLoaded=false;
-  private companyListLoaded=false;
-  private contractTypeListLoaded=false;
-  private keyWordListLoaded=false;
+  private companyList: Array<Company>;
+  private contractTypeList: Array<ContractType>;
+  private keyWordList: Array<KeyWord>;
+  private offerList: Array<Offer>;  
+
+
+  // Map Variables
   private map;
   private markers=[];
   private markerLayer;
-  private user: User;
-  // Variables récupérées au moment du login
-  private userId = JSON.parse(localStorage.getItem('id'));
-  private userToken = JSON.parse(localStorage.getItem('user'));
 
-  constructor(private http:HttpClient, private authService: AuthService, private server: ServerService, private commonService: CommonService) { }
+  constructor(
+    private authService: AuthService,
+    private commonService: CommonService,
+    private publicService: PublicService,
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
+    this.commonService.checkAll();
+    this.publicService.checkAll();
+    JSON.parse(localStorage.getItem('id')) !== null?this.userService.checkAll():'';
+    this.contractTypeList = this.commonService.getContractTypeList();
+    this.companyList = this.publicService.getCompanyList();
+    this.keyWordList = this.publicService.getKeyWordList();
+    this.offerList = this.publicService.getOfferList();
     this.initMap();
-    this.getUserInfo();
-    // this.getAll()
-    // interval(300000)
-    // .subscribe(
-    //   () => this.getAll()
-    // );
   }
 
   ///////////////////////////////////////////////
@@ -81,34 +75,20 @@ export class SearchUserComponent implements OnInit {
   }]
 
   ////////////////////////////////////////////////
-
-  getUserInfo() {
-    if (this.userId !== null) {
-      this.server.request('GET', '/user/details/'+this.userId.id).subscribe((user: User) => {
-        if (user) {
-          this.user = user;
-          console.log("User Info from server :");
-          console.log(this.user);
-        }
-      });
-    }
-    else {
-      console.log("No login information");
-    }
-  }
   
-  initMap() {
+  async initMap() {
     this.map = L.map('map').setView([50.6342, 3.02046], 15);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    await L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(this.map);
+    }).addTo(this.map)
+    this.populateMarkers();
   }
   
   //Poser les markers sur la map
   populateMarkers(): void {
     this.markerLayer?this.markerLayer.clearLayers():'';
-    for(let i=0;i<this.offerList.length;i++){
-      this.markers[i]=L.marker([this.offerList[i].latitude,this.offerList[i].longitude],{icon:this.defaultIcon}).bindPopup(this.offerList[i].title+" : "+this.offerList[i].description);
+    for(let i=0;i<this.publicService.getOfferList().length;i++){
+      this.markers[i]=L.marker([this.publicService.getOfferList()[i].latitude,this.publicService.getOfferList()[i].longitude],{icon:this.defaultIcon}).bindPopup(this.publicService.getOfferList()[i].title+" : "+this.publicService.getOfferList()[i].description);
     }
     this.markerLayer=L.layerGroup(this.markers);
     this.map.addLayer(this.markerLayer);

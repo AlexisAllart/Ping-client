@@ -12,7 +12,12 @@ export class HomeComponent implements OnInit {
   constructor(private commonService: CommonService, private publicService: PublicService) { }
 
   ngOnInit() {
-    this.commonService.loadAll();
-    this.publicService.loadAll();
+    this.commonService.checkAll();
+    this.publicService.checkAll();
+    // DEBUG MESSAGE
+    console.log("Rappel : on récupère l'id et le token de l'utilisateur de la manière suivante :");
+    console.log("JSON.parse(localStorage.getItem('id')).id");
+    console.log("JSON.parse(localStorage.getItem('token')).token");
+    // END DEBUG MESSAGE
   }
 }

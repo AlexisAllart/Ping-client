@@ -14,8 +14,8 @@ export class AuthService {
   }
 
   constructor(private router: Router, private server: ServerService) {
-    // On place le contenu de localStorage.getItem('user') (= un token déjà existant) dans "userData"
-    const userData = localStorage.getItem('user');
+    // On place le contenu de localStorage.getItem('token') (= un token déjà existant) dans "userData"
+    const userData = localStorage.getItem('token');
     
     // Si un token est déjà présent...
     if (userData) {
@@ -49,7 +49,7 @@ export class AuthService {
             const userId = {
               id: this.id
             }
-            localStorage.setItem('user', JSON.stringify(userData));
+            localStorage.setItem('token', JSON.stringify(userData));
             localStorage.setItem('id', JSON.stringify(userId));
             this.router.navigateByUrl('/dashboard-user');
           }
