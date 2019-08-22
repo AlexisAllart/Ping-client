@@ -54,6 +54,20 @@
     text-decoration:none; 
 }
 
+.buttons-top {
+    display:flex;
+    flex-grow: 1;
+    display:flex;
+    justify-content: flex-end;
+}
+
+.btn-white-top {
+    // font-size:10px;
+    background-color: white;
+    padding:10px 30px 10px 30px;
+    
+}
+
 .container {
     /* background-color: blue; */
     width:40%;
@@ -110,101 +124,71 @@
     padding:10px;
 }
 
-@media only screen and (min-width : 768px) {
-   
-.buttons-top {
-    display:flex;
-    flex-grow: 1;
-    display:flex;
-    justify-content: flex-end;
-}
 
-.btn-white-top {
-    // font-size:10px;
-    background-color: white;
-    padding:10px 30px 10px 30px;
-    
-}
-    
-}
-
-@media only screen and (max-width : 425px) {
-   
-    body {
-    background-image:none;
-    }
-
-    header {
-        height:100%;
-        background-color: #60A4FF;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .logo {
-        display: none;
-       
+@media (max-width: 933px){
+    .body {
+      background-image:none;
+      background-color: #60A4FF;
+      height:100vh;
     }
 
     .logo-white {
         display: block;
-        margin-left:20px;
-
     }
 
-    .menu-burger {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        /* background-color: rgb(35, 79, 136); */
-        width:100px;
-        height:100px;
+    .logo {
+        display: none;
     }
 
-    .bar {
-        width: 30px;
-        height: 4px;
-        padding:2px;
-        margin:4px;
+    .emploi {
+        color:white;
+    }
+    .info {
+        padding-left:0;
+    }
+
+    .btn-white {
         background-color: white;
-        border-radius: 10px;
+        color: #60A4FF;
+    }
+
+    .buttons-top {
+        display:flex;
+        flex-grow: 1;
+        display:flex;
+        justify-content: flex-end;
     }
 
     .btn-white-top {
-        display:none;
+        // font-size:10px;
+        background-color: white;
+        // padding:10px 30px 10px 30px;
         
     }
 
-    .container {    
-        width:90%;
-        margin-top:8%;
-        margin-left:10%;
-        /* background-color:blue; */
-        text-align: center;
-    }
+    @media (max-width: 635px) {
+        .btn-white {
+            padding: 10px;
+        }
 
+        .emploi {
+            font-size:30px;
+        }
+        
+        .container {
+            // margin-left: 40%;
+            width:100%;
+        }
 
-    .btn-social {
-       
-        justify-content: center;
-        margin-top:30px;
-        margin-left:25px;
-    }
+        .buttons-top {
+            display: flex;
+            flex-direction: column;
+        }
 
-}
-
-@media only screen and (max-width : 320px) {
-    .container {    
-        width:100%;   
+        .btn-top-white {
+            padding:0px;
+            margin:0px;
+        }
     }
-    .info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin:20px;
-    padding-left: 10px;
-    }
+   
 }
