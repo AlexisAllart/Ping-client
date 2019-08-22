@@ -111,11 +111,12 @@
                     </div>
                     <div class="right-side">
                         <div class="statut"></div>
-                        <i class="fas fa-plus-circle plus"></i>
+                        <!-- <i class="fas fa-plus-circle plus"></i> -->
                     </div>
                 </div>
-                <div class="btn-check">
-                    <i class="fas fa-check-circle check"></i>
+                <div class="btn-check-send">
+                    <i (click)='animateMe()' class="fas fa-check-circle check"></i>
+                    <p [@envoi]='state'>Envoyé</p>
                 </div>
             </div>
             <!--CARTE CANDIDAT DEUX -->
@@ -143,7 +144,7 @@
                     </div>
                     <div class="right-side">
                         <div class="statut"></div>
-                        <i class="fas fa-plus-circle plus"></i>
+                        <!-- <i class="fas fa-plus-circle plus"></i> -->
                     </div>
                 </div>
                 <div class="btn-check">
@@ -174,7 +175,7 @@
                     </div>
                     <div class="right-side">
                         <div class="statut"></div>
-                        <i class="fas fa-plus-circle plus"></i>
+                        <!-- <i class="fas fa-plus-circle plus"></i> -->
                     </div>
                 </div>
                 <div class="btn-check">

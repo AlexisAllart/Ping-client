@@ -266,6 +266,10 @@
     background-color: none;
 }
 
+.check:hover {
+    color:#60A4FF;
+}
+
 .btn-check {
     display: flex;
     justify-content: center;
@@ -273,6 +277,12 @@
     padding:20px;
     background-color: none;
     
+}
+.btn-check-send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 ////////////////  AUTRE ////////////
