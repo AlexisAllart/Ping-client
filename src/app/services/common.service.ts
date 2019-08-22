@@ -8,9 +8,9 @@ import { Tag } from '../models/Tag.model';
   providedIn: 'root'
 })
 export class CommonService {
-  private contractTypeList: Array<ContractType> = {} as Array<ContractType>;
-  private statusList: Array<Status> = {} as Array<Status>;
-  private tagList: Array<Tag> = {} as Array<Tag>;
+  private contractTypeList: Array<ContractType>;
+  private statusList: Array<Status>;
+  private tagList: Array<Tag>;
 
   constructor(private http:HttpClient) {}
 
@@ -19,6 +19,13 @@ export class CommonService {
     this.loadContractTypeList();
     this.loadStatusList();
     this.loadTagList();
+  }
+
+  checkAll(): void {
+    if (this.getContractTypeList() && this.getStatusList() && this.getTagList()) {}
+    else {
+      this.loadAll();
+    }
   }
 
   // GETTERS

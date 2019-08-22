@@ -9,9 +9,9 @@ import { interval } from 'rxjs';
   providedIn: 'root'
 })
 export class PublicService {
-  private companyList: Array<Company> = {} as Array<Company>;
-  private keyWordList: Array<KeyWord> = {} as Array<KeyWord>;
-  private offerList: Array<Offer> = {} as Array<Offer>;
+  private companyList: Array<Company>;
+  private keyWordList: Array<KeyWord>;
+  private offerList: Array<Offer>;
 
   constructor(private http:HttpClient) {}
 
@@ -23,6 +23,13 @@ export class PublicService {
     interval(60000).subscribe(() => this.loadCompanyList());
     interval(60000).subscribe(() => this.loadKeyWordList());
     interval(60000).subscribe(() => this.loadOfferList());
+  }
+
+  checkAll(): void {
+    if (this.getCompanyList() && this.getKeyWordList() && this.getOfferList()) {}
+    else {
+      this.loadAll();
+    }
   }
 
   // GETTERS
