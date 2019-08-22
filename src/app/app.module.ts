@@ -6,6 +6,7 @@ import { AuthService } from './services/auth.service';
 import { CommonService } from './services/common.service';
 import { PublicService } from './services/public.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FilterPipe } from '../app/pipe/filter.pipe';
 
 import {
   MatToolbarModule,
@@ -101,7 +102,8 @@ import { NavbarNologinComponent } from './general/navbar-nologin/navbar-nologin.
     HomeComponent,
     SelectionCompanyComponent,
     BlueCardUserComponent,
-    NavbarNologinComponent
+    NavbarNologinComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
