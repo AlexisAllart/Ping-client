@@ -343,6 +343,9 @@
 
 @media(max-width:664px){
 
+    .general {
+        display: block;
+    }
     .main {
         display:flex;
         flex-direction: column;

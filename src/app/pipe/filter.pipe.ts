@@ -11,5 +11,4 @@ export class FilterPipe implements PipeTransform {
     return value.filter((v) => v.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1 || v.size.toLowerCase().indexOf(searchValue.toLowerCase()) > -1)
 
   }
-
 }

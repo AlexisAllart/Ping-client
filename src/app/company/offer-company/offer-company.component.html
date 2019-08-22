@@ -1,42 +1,48 @@
 <div class="general">
-    <app-navbar-company></app-navbar-company>
-    <div class="new-offre">
-        <h2 class="title-un">Nouvelle Offre</h2>
-        <div class="formulaires">
-            <form class="un" action="">
-                <label class="label" for="">Emploi proposé*</label>
-                <input class="input" type="text">
-                <label class="label" for="">Nom de votre entreprise*</label>
-                <input class="input" type="text">
-                <label class="label" for="">Description de l'offre*</label>
-                <input class="input-description" type="text">
+    <div class="navbar">
+        <app-navbar-company></app-navbar-company>
+    </div>
+    <main class="main">
+        <div class="new-offre">
+            <h2 class="title-un">Nouvelle Offre</h2>
+            <div class="formulaires">
+                <form class="un" action="">
+                    <label class="label" for="">Emploi proposé*</label>
+                    <input class="input" type="text">
+                    <label class="label" for="">Nom de votre entreprise*</label>
+                    <input class="input" type="text">
+                    <label class="label" for="">Description de l'offre*</label>
+                    <input class="input-description" type="text">
 
-            </form>
-            <form class="deux" action="">
-                <label class="label" for="">Type de contract*</label>
-                <input class="input" type="text">
-                <label class="label" for="">Salaire proposé</label>
-                <input class="input" type="text">
-                <label class="label" for="">Mots clés de l'annonce</label>
-                <input class="input" type="text">
-                <!-- <div class="keywords">
-                    <div class="key"></div>
-                    <div class="key"></div>
-                    <div class="key"></div>
-                </div> -->
-                <div class="btn-add">
-                    <div class="button">Ajouter</div>
-                </div>
-            </form>
+                </form>
+                <form class="deux" action="">
+                    <label class="label" for="">Type de contract*</label>
+                    <input class="input" type="text">
+                    <label class="label" for="">Salaire proposé</label>
+                    <input class="input" type="text">
+                    <label class="label" for="">Mots clés de l'annonce</label>
+                    <input class="input" type="text">
+                    <!-- <div class="keywords">
+                            <div class="key"></div>
+                            <div class="key"></div>
+                            <div class="key"></div>
+                        </div> -->
+                    <div class="btn-add">
+                        <div class="button">Ajouter</div>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-    <div class="offres">
-        <div class="title-container">
-            <h2 class="title-deux">Vos offres</h2>
+        <div class="offres">
+            <div class="title-container">
+                <h2 class="title-deux">Vos offres</h2>
+            </div>
+
+            <div class="offre">
+                <app-offer-card></app-offer-card>
+            </div>
         </div>
-      
-        <div class="offre">
-            <app-offer-card></app-offer-card>
-        </div>
-    </div>
+
+    </main>
+
 </div>
