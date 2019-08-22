@@ -7,6 +7,7 @@ import { CommonService } from './services/common.service';
 import { PublicService } from './services/public.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipe } from '../app/pipe/filter.pipe';
+import { HnService } from './services/hn.service';
 
 import {
   MatToolbarModule,
@@ -128,7 +129,8 @@ import { NavbarNologinComponent } from './general/navbar-nologin/navbar-nologin.
   providers: [
     AuthService,
     CommonService,
-    PublicService
+    PublicService,
+    HnService
   ],
   bootstrap: [AppComponent]
 })

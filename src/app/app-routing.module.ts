@@ -16,6 +16,7 @@ import { SearchUserComponent } from './user/search-user/search-user.component';
 import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 import { OfferUserComponent } from './user/offer-user/offer-user.component';
+import { Resolver } from './services/resolver';
 
 
 
@@ -36,7 +37,7 @@ const routes: Routes = [
   {path: 'sign-up-company', component: SignUpComponent},
   
   //component user
-  {path: 'dashboard-user', component: DashboardUserComponent},
+  {path: 'dashboard-user', component: DashboardUserComponent, resolve: {resolvedData: Resolver}},
   {path: 'identification-user', component: IdentificationUserComponent},
   {path: 'offer-user', component: OfferUserComponent},
   {path: 'profile-user', component: ProfileUserComponent},
@@ -44,6 +45,7 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [Resolver]
 })
 export class AppRoutingModule { }
