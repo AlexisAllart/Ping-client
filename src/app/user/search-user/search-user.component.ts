@@ -76,9 +76,9 @@ export class SearchUserComponent implements OnInit {
 
   ////////////////////////////////////////////////
   
-  async initMap() {
+  initMap() {
     this.map = L.map('map').setView([50.6342, 3.02046], 15);
-    await L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map)
     this.populateMarkers();
