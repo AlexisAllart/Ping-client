@@ -17,6 +17,7 @@ import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 import { OfferUserComponent } from './user/offer-user/offer-user.component';
 import { Resolver } from './services/resolver';
+import { CguComponent } from './general/cgu/cgu.component';
 
 
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   //component general
   {path: '', component: HomeComponent},
   {path: 'error-404', component: WrongWayComponent},
+  {path: 'legal', component:CguComponent},
   
   //component company
   {path: 'offer-company', component: OfferCompanyComponent},
