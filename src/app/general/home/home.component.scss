@@ -165,26 +165,8 @@
     bottom:0px;
     right:0px;
     margin-bottom: 2%;
-
+    
  
-}
-
-// .btn-social {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-around;
-//     margin: 0 30%;
-// }
-
-.socialfb {
-    font-size: 2em;
-    color: white;
-    padding-top: 8px;
-    width: 48px;
-    height: 48px;
-    border-radius: 100%;
-    text-align: center;
-    background-color:#3b5998;
 }
 
 .social {
@@ -192,6 +174,11 @@
     background-color:#60A4FF;
     margin:4px;
     padding:10px;
+    transition:all .2s ease-in-out;
+}
+
+.social:hover {
+    transform: scale(1.2);
 }
 
 @media (max-width: 933px){
