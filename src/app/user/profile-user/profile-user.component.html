@@ -22,35 +22,43 @@
                 </div>
                 <!-- <div class="temp-profile-user-card"> -->
                     <!-- <app-blue-card-user></app-blue-card-user> -->
-                    <div class="container-user">
-                        <div class="blue">
-                            <div class="sous-container">
-                                <img class="profile" src="assets/avatar/portrait.jpg">
-                            </div>
-                            <div class="container-text">
-                                <div class="top">
-                                    <h4 class="title">Mathieu Degong </h4>
+                <!-- </div> -->
+
+                <div class="card-candidat">
+                        <!--CARTE CANDIDAT UN -->
+                        <div class="container">
+                            <div class="blue">
+                                <div class="sous-container">
+                                    <img class="profile" src="assets/avatar/portrait.jpg">
                                 </div>
-                                <p class="description">
-                                    Développeur back-end spécialisé en Python, je possède 3 ans d’expérience chez
-                                    IBM. Je
-                                    suis
-                                    capable
-                                    de travailler en équipe et je suis très flexible.
-                                </p>
-                                <div class="key-words">
-                                    <p class="words">3 ans +</p>
-                                    <p class="words">Créatif</p>
-                                    <p class="words">Organisé</p>
+                                <div class="container-text">
+                                    <div class="top">
+                                        <h4 class="title">Mathieu Degong </h4>
+                                        <p class="contract-type">CDI</p>
+                                    </div>
+                                    <p class="description">
+                                        Développeur back-end spécialisé en Python, je possède 3 ans d’expérience chez IBM. Je
+                                        suis
+                                        capable
+                                        de travailler en équipe et je suis très flexible.
+                                    </p>
+                                    <div class="key-words">
+                                        <p class="words">3 ans +</p>
+                                        <p class="words">Créatif</p>
+                                        <p class="words">Organisé</p>
+                                    </div>
+                                </div>
+                                <div class="right-side">
+                                    <div class="statut"></div>
+                                    <!-- <i class="fas fa-plus-circle plus"></i> -->
                                 </div>
                             </div>
-                            <div class="right-side">
-                                <div class="statut"></div>
-                                <!-- <i class="fas fa-plus-circle plus"></i> -->
+                            <div class="btn-check-send">
+                                <i (click)='animateMe()' class="fas fa-check-circle check"></i>
+                                <p [@envoi]='state'>Envoyé</p>
                             </div>
                         </div>
-                    </div>
-                <!-- </div> -->
+                </div>
             </div>
             <div class="profile-bottom">
                 <div class="profile-bleft">
