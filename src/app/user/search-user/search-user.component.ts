@@ -58,7 +58,7 @@ export class SearchUserComponent implements OnInit {
   ///////////////////////////////////////////////
 
   search='';
-
+  
 
   folderObjs=[{
     name:'flo mdr',
