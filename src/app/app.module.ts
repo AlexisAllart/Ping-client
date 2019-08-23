@@ -67,6 +67,7 @@ import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 import { BlueCardUserComponent } from './layouts/blue-card-user/blue-card-user.component';
 import { NavbarNologinComponent } from './general/navbar-nologin/navbar-nologin.component';
+import { CguComponent } from './general/cgu/cgu.component';
 
 @NgModule({
   declarations: [
@@ -104,7 +105,8 @@ import { NavbarNologinComponent } from './general/navbar-nologin/navbar-nologin.
     SelectionCompanyComponent,
     BlueCardUserComponent,
     NavbarNologinComponent,
-    FilterPipe
+    FilterPipe,
+    CguComponent
   ],
   imports: [
     BrowserModule,
