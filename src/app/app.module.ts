@@ -138,7 +138,8 @@ import { CguComponent } from './general/cgu/cgu.component';
     MatNativeDateModule,
     MatDatepickerModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
 
   ],
   providers: [
