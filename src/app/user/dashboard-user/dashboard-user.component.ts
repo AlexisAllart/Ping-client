@@ -7,13 +7,24 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./dashboard-user.component.scss']
 })
 export class DashboardUserComponent implements OnInit {
-  data: any;
+  private companyList;
+  private contractTypeList;
+  private keyWordList;
+  private offerList;
+  private statusList;
+  private tagList;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit() {
-    this.data = this.route.snapshot.data;
-    console.log("test fetch:",this.data.resolvedData[12].title);
+    console.log(this.route.snapshot.data);
+    console.log(this.route.snapshot.data.companyList);
+    console.log(this.route.snapshot.data.contractTypeList);
+    console.log(this.route.snapshot.data.keyWordList);
+    console.log(this.route.snapshot.data.offerList);
+    console.log(this.route.snapshot.data.statusList);
+    console.log(this.route.snapshot.data.tagList);
   }
-
 }

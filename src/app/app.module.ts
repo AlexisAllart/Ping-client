@@ -2,12 +2,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from './services/auth.service';
-import { CommonService } from './services/common.service';
-import { PublicService } from './services/public.service';
+// import { CommonService } from './services/common.service';
+// import { PublicService } from './services/public.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipe } from '../app/pipe/filter.pipe';
-import { HnService } from './services/hn.service';
+
+// Services
+import { AuthService } from './services/auth.service';
+import { DataService } from './services/data.service';
+import { ServerService } from './services/server.service';
+import { CompanyService } from './services/company.service';
+import { CompanyUserService } from './services/companyUser.service';
+import { ContractTypeService } from './services/contractType.service';
+import { KeyWordService } from './services/keyWord.service';
+import { OfferService } from './services/offer.service';
+import { PingService } from './services/ping.service';
+import { RoleService } from './services/role.service';
+import { SelectionService } from './services/selection.service';
+import { StatusService } from './services/status.service';
+import { TagService } from './services/tag.service';
+import { UserService } from './services/user.service';
 
 import {
   MatToolbarModule,
@@ -130,9 +144,19 @@ import { CguComponent } from './general/cgu/cgu.component';
   ],
   providers: [
     AuthService,
-    CommonService,
-    PublicService,
-    HnService
+    ServerService,
+    DataService,
+    CompanyService,
+    CompanyUserService,
+    ContractTypeService,
+    KeyWordService,
+    OfferService,
+    PingService,
+    RoleService,
+    SelectionService,
+    StatusService,
+    TagService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

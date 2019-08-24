@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { CommonService } from 'src/app/services/common.service';
-import { UserService } from 'src/app/services/user.service';
-import { PublicService } from 'src/app/services/public.service';
-import { Company } from 'src/app/models/Company.model';
-import { ContractType } from 'src/app/models/ContractType.model';
-import { KeyWord } from 'src/app/models/KeyWord.model';
-import { Offer } from 'src/app/models/Offer.model';
+// import { UserService } from 'src/app/services/user.service';
+// import { Company } from 'src/app/models/Company.model';
+// import { ContractType } from 'src/app/models/ContractType.model';
+// import { KeyWord } from 'src/app/models/KeyWord.model';
+// import { Offer } from 'src/app/models/Offer.model';
 
 // Permet de manipuler leaflet
 declare let L;
@@ -26,10 +25,10 @@ export class SearchUserComponent implements OnInit {
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
   });
   // Lists
-  private companyList: Array<Company>;
-  private contractTypeList: Array<ContractType>;
-  private keyWordList: Array<KeyWord>;
-  private offerList: Array<Offer>;  
+  // private companyList: Array<Company>;
+  // private contractTypeList: Array<ContractType>;
+  // private keyWordList: Array<KeyWord>;
+  // private offerList: Array<Offer>;  
 
 
   // Map Variables
@@ -38,20 +37,13 @@ export class SearchUserComponent implements OnInit {
   private markerLayer;
 
   constructor(
-    private authService: AuthService,
-    private commonService: CommonService,
-    private publicService: PublicService,
-    private userService: UserService
-  ) { }
+    private route: ActivatedRoute,
+    private authService: AuthService
+    ) { }
 
   ngOnInit() {
-    this.commonService.checkAll();
-    this.publicService.checkAll();
-    JSON.parse(localStorage.getItem('id')) !== null?this.userService.checkAll():'';
-    this.contractTypeList = this.commonService.getContractTypeList();
-    this.companyList = this.publicService.getCompanyList();
-    this.keyWordList = this.publicService.getKeyWordList();
-    this.offerList = this.publicService.getOfferList();
+    // JSON.parse(localStorage.getItem('id')) !== null?this.userService.preloadUser():'';
+
     this.initMap();
   }
 
@@ -87,8 +79,8 @@ export class SearchUserComponent implements OnInit {
   //Poser les markers sur la map
   populateMarkers(): void {
     this.markerLayer?this.markerLayer.clearLayers():'';
-    for(let i=0;i<this.publicService.getOfferList().length;i++){
-      this.markers[i]=L.marker([this.publicService.getOfferList()[i].latitude,this.publicService.getOfferList()[i].longitude],{icon:this.defaultIcon}).bindPopup(this.publicService.getOfferList()[i].title+" : "+this.publicService.getOfferList()[i].description);
+    for(let i=0;i<this.route.snapshot.data.offerList.length;i++){
+      this.markers[i]=L.marker([this.route.snapshot.data.offerList[i].latitude,this.route.snapshot.data.offerList[i].longitude],{icon:this.defaultIcon}).bindPopup(this.route.snapshot.data.offerList[i].title+" : "+this.route.snapshot.data.offerList[i].description);
     }
     this.markerLayer=L.layerGroup(this.markers);
     this.map.addLayer(this.markerLayer);

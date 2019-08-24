@@ -1,68 +1,44 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/User.model';
-import { Ping } from '../models/Ping.model';
+import { User } from '../models/user.model';
 import { ServerService } from './server.service';
-import { AuthService } from './auth.service';
-import { interval } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private user: User;
-  private pingList: Array<Ping>;
+  private userList: Array<User>;
+  private server: ServerService;
 
-  constructor(private http:HttpClient, private server:ServerService, private auth:AuthService) {}
+  constructor(private http:HttpClient) { }
 
-  // QOL METHOD
-  loadAll(): void {
-    this.loadUser();
-    this.loadPingList();
-    interval(60000).subscribe(() => this.loadUser());
-    interval(60000).subscribe(() => this.loadPingList());
+  sendUserList() {
+    this.loadUserList();
+    return this.getUserList();
   }
 
-  checkAll(): void {
-    if (this.getUser() && this.getPingList()) {}
-    else {
-      this.loadAll();
-    }
+  getUserList(): Array<User> {
+    return this.userList;
   }
 
-  // GETTERS
-  getUser(): User {
-    return this.user;
-  }
-
-  getPingList(): Array<Ping> {
-    return this.pingList;
-  }
-
-  // SETTERS
-  setUser(user: User) {
-    this.user = user;
+  setUserList(array: Array<User>) {
+    this.userList = array;
     return this;
   }
 
-  setPingList(array: Array<Ping>) {
-    this.pingList = array;
+  preloadUser() {
+    if (JSON.parse(localStorage.getItem('id')) !== null)
+    {
+      return this.server
+      .request('GET', '/user/details/'+JSON.parse(localStorage.getItem('id')).id);
+    }
   }
 
-  // LOAD LISTS WITH DATA FROM DB (ALL USER DATA)
-  loadUser(): void {
-    this.server.request('GET', '/user/details/'+JSON.parse(localStorage.getItem('id')).id).subscribe((data: User) => {
-      this.setUser(data);
-      console.log("userService.user successfully loaded :");
-      console.log(this.getUser());
-    });
+  loadUserList() {
+    return this.server.request('GET', '/user/list/');
   }
 
-  loadPingList(): void {
-    this.server.request('GET', '/ping/list').subscribe((data: Array<Ping>) => {
-      this.setPingList(data);
-      console.log("userService.pingList successfully loaded :");
-      console.log(this.getPingList());
-    });
+  preloadUserList() {
+    return this.http.get('http://pingjob.herokuapp.com/user/list');
   }
 }

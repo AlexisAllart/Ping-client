@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from 'src/app/services/common.service';
-import { PublicService } from 'src/app/services/public.service';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +7,9 @@ import { PublicService } from 'src/app/services/public.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private commonService: CommonService, private publicService: PublicService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.commonService.checkAll();
-    this.publicService.checkAll();
     // DEBUG MESSAGE
     console.log("Rappel : on récupère l'id et le token de l'utilisateur de la manière suivante :");
     console.log("JSON.parse(localStorage.getItem('id')).id");

@@ -16,7 +16,19 @@ import { SearchUserComponent } from './user/search-user/search-user.component';
 import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 import { OfferUserComponent } from './user/offer-user/offer-user.component';
-import { Resolver } from './services/resolver';
+
+// Resolvers
+import { CompanyResolver } from './resolvers/company.resolver';
+import { CompanyUserResolver } from './resolvers/companyUser.resolver';
+import { ContractTypeResolver } from './resolvers/contractType.resolver';
+import { KeyWordResolver } from './resolvers/keyWord.resolver';
+import { OfferResolver } from './resolvers/offer.resolver';
+import { PingResolver } from './resolvers/ping.resolver';
+import { RoleResolver } from './resolvers/role.resolver';
+import { SelectionResolver } from './resolvers/selection.resolver';
+import { StatusResolver } from './resolvers/status.resolver';
+import { TagResolver } from './resolvers/tag.resolver';
+import { UserResolver } from './resolvers/user.resolver';
 
 
 
@@ -37,15 +49,59 @@ const routes: Routes = [
   {path: 'sign-up-company', component: SignUpComponent},
   
   //component user
-  {path: 'dashboard-user', component: DashboardUserComponent, resolve: {resolvedData: Resolver}},
+  {path: 'dashboard-user', component: DashboardUserComponent, resolve: {
+    companyList: CompanyResolver,
+    contractTypeList: ContractTypeResolver,
+    keyWordList: KeyWordResolver,
+    offerList: OfferResolver,
+    // pingList: PingResolver,
+    statusList: StatusResolver,
+    tagList: TagResolver
+  }},
   {path: 'identification-user', component: IdentificationUserComponent},
-  {path: 'offer-user', component: OfferUserComponent},
-  {path: 'profile-user', component: ProfileUserComponent},
-  {path: 'search-user', component: SearchUserComponent},
+  {path: 'offer-user', component: OfferUserComponent, resolve: {
+    companyList: CompanyResolver,
+    contractTypeList: ContractTypeResolver,
+    keyWordList: KeyWordResolver,
+    offerList: OfferResolver,
+    // pingList: PingResolver,
+    statusList: StatusResolver,
+    tagList: TagResolver
+  }},
+  {path: 'profile-user', component: ProfileUserComponent, resolve: {
+    companyList: CompanyResolver,
+    contractTypeList: ContractTypeResolver,
+    keyWordList: KeyWordResolver,
+    offerList: OfferResolver,
+    // pingList: PingResolver,
+    statusList: StatusResolver,
+    tagList: TagResolver
+  }},
+  {path: 'search-user', component: SearchUserComponent, resolve: {
+    companyList: CompanyResolver,
+    contractTypeList: ContractTypeResolver,
+    keyWordList: KeyWordResolver,
+    offerList: OfferResolver,
+    // pingList: PingResolver,
+    statusList: StatusResolver,
+    tagList: TagResolver
+  }},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [Resolver]
+  providers: [
+    CompanyResolver,
+    CompanyUserResolver,
+    ContractTypeResolver,
+    KeyWordResolver,
+    OfferResolver,
+    PingResolver,
+    RoleResolver,
+    SelectionResolver,
+    StatusResolver,
+    TagResolver,
+    UserResolver
+  ]
 })
 export class AppRoutingModule { }
