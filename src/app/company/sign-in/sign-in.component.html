@@ -11,7 +11,7 @@
             <form class="form" action="">
                 <mat-form-field >
                     <mat-label>Nom entreprise</mat-label>
-                    <input matInput placeholder="IBM">
+                    <input [formControl]="userInput.value" matInput placeholder="IBM">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Mot de passe</mat-label>
