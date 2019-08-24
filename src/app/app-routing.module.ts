@@ -16,6 +16,7 @@ import { SearchUserComponent } from './user/search-user/search-user.component';
 import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 import { OfferUserComponent } from './user/offer-user/offer-user.component';
+import { CguComponent } from './general/cgu/cgu.component';
 
 // Resolvers
 import { CompanyResolver } from './resolvers/company.resolver';
@@ -37,6 +38,7 @@ const routes: Routes = [
   //component general
   {path: '', component: HomeComponent},
   {path: 'error-404', component: WrongWayComponent},
+  {path: 'legal', component:CguComponent},
   
   //component company
   {path: 'offer-company', component: OfferCompanyComponent},

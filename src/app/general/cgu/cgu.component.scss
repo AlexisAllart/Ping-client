@@ -1,0 +1,28 @@
+/************************ General ******************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.general {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    font-family: "Nunito", sans-serif;
+    padding: 5%;
+}
+h1{
+margin:30px;
+}
+
+h2{
+margin:20px;
+}
+
+h3{
+margin: 25px;
+}
+h4{
+margin:15px;
+}
