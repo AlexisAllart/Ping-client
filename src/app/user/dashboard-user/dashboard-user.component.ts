@@ -7,12 +7,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./dashboard-user.component.scss']
 })
 export class DashboardUserComponent implements OnInit {
-  private companyList;
-  private contractTypeList;
-  private keyWordList;
-  private offerList;
-  private statusList;
-  private tagList;
 
   constructor(
     private route: ActivatedRoute
@@ -26,5 +20,6 @@ export class DashboardUserComponent implements OnInit {
     console.log(this.route.snapshot.data.offerList);
     console.log(this.route.snapshot.data.statusList);
     console.log(this.route.snapshot.data.tagList);
+    // console.log(this.route.snapshot.data.userDetails);
   }
 }

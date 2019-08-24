@@ -30,6 +30,7 @@ import { SelectionResolver } from './resolvers/selection.resolver';
 import { StatusResolver } from './resolvers/status.resolver';
 import { TagResolver } from './resolvers/tag.resolver';
 import { UserResolver } from './resolvers/user.resolver';
+import { UserDetailsResolver } from './resolvers/userDetails.resolver';
 
 
 
@@ -58,7 +59,8 @@ const routes: Routes = [
     offerList: OfferResolver,
     // pingList: PingResolver,
     statusList: StatusResolver,
-    tagList: TagResolver
+    tagList: TagResolver,
+    // userDetails: UserDetailsResolver
   }},
   {path: 'identification-user', component: IdentificationUserComponent},
   {path: 'offer-user', component: OfferUserComponent, resolve: {
@@ -103,7 +105,8 @@ const routes: Routes = [
     SelectionResolver,
     StatusResolver,
     TagResolver,
-    UserResolver
+    UserResolver,
+    // UserDetailsResolver
   ]
 })
 export class AppRoutingModule { }

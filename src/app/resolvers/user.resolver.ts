@@ -7,6 +7,6 @@ export class UserResolver implements Resolve<any> {
   constructor(private userService: UserService) {}
 
   resolve() {
-    return this.userService.preloadUser();
+    return this.userService.preloadUserList();
   }
 }

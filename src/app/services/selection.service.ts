@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Selection } from '../models/selection.model';
+import { Selection } from '../models/Selection.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,6 @@ export class SelectionService {
   private selectionList: Array<Selection>;
 
   constructor(private http:HttpClient) { }
-
-  sendSelectionList() {
-    this.loadSelectionList();
-    return this.getSelectionList();
-  }
 
   getSelectionList(): Array<Selection> {
     return this.selectionList;

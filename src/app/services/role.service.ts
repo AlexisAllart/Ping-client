@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Role } from '../models/role.model';
+import { Role } from '../models/Role.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,6 @@ export class RoleService {
   private roleList: Array<Role>;
 
   constructor(private http:HttpClient) { }
-
-  sendRoleList() {
-    this.loadRoleList();
-    return this.getRoleList();
-  }
 
   getRoleList(): Array<Role> {
     return this.roleList;

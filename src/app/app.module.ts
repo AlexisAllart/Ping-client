@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-// import { CommonService } from './services/common.service';
-// import { PublicService } from './services/public.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipe } from '../app/pipe/filter.pipe';
 
@@ -22,6 +20,7 @@ import { SelectionService } from './services/selection.service';
 import { StatusService } from './services/status.service';
 import { TagService } from './services/tag.service';
 import { UserService } from './services/user.service';
+import { UserDetailsService } from './services/userDetails.service';
 
 import {
   MatToolbarModule,
@@ -156,7 +155,8 @@ import { CguComponent } from './general/cgu/cgu.component';
     SelectionService,
     StatusService,
     TagService,
-    UserService
+    UserService,
+    UserDetailsService
   ],
   bootstrap: [AppComponent]
 })

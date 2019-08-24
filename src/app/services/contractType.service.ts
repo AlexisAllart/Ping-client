@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ContractType } from '../models/contractType.model';
+import { ContractType } from '../models/ContractType.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,6 @@ export class ContractTypeService {
   private contractTypeList: Array<ContractType>;
 
   constructor(private http:HttpClient) { }
-
-  sendContractTypeList() {
-    this.loadContractTypeList();
-    return this.getContractTypeList();
-  }
 
   getContractTypeList(): Array<ContractType> {
     return this.contractTypeList;

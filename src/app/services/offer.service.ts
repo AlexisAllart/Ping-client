@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Offer } from '../models/offer.model';
+import { Offer } from '../models/Offer.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,6 @@ export class OfferService {
   private offerList: Array<Offer>;
 
   constructor(private http:HttpClient) { }
-
-  sendOfferList() {
-    this.loadOfferList();
-    return this.getOfferList();
-  }
 
   getOfferList(): Array<Offer> {
     return this.offerList;

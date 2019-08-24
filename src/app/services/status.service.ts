@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Status } from '../models/status.model';
+import { Status } from '../models/Status.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,6 @@ export class StatusService {
   private statusList: Array<Status>;
 
   constructor(private http:HttpClient) { }
-
-  sendStatusList() {
-    this.loadStatusList();
-    return this.getStatusList();
-  }
 
   getStatusList(): Array<Status> {
     return this.statusList;

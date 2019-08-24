@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CompanyUser } from '../models/companyUser.model';
+import { CompanyUser } from '../models/CompanyUser.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,6 @@ export class CompanyUserService {
   private companyUserList: Array<CompanyUser>;
 
   constructor(private http:HttpClient) { }
-
-  sendCompanyUserList() {
-    this.loadCompanyUserList();
-    return this.getCompanyUserList();
-  }
 
   getCompanyUserList(): Array<CompanyUser> {
     return this.companyUserList;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Ping } from '../models/ping.model';
+import { Ping } from '../models/Ping.model';
 import { ServerService } from '../services/server.service';
 
 @Injectable({
@@ -8,14 +8,8 @@ import { ServerService } from '../services/server.service';
 })
 export class PingService {
   private pingList: Array<Ping>;
-  private server: ServerService;
-
-  constructor(private http:HttpClient) { }
-
-  sendPingList() {
-    this.loadPingList();
-    return this.getPingList();
-  }
+  
+  constructor(private http:HttpClient,private server: ServerService) { }
 
   getPingList(): Array<Ping> {
     return this.pingList;

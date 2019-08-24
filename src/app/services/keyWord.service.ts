@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { KeyWord } from '../models/keyWord.model';
+import { KeyWord } from '../models/KeyWord.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,6 @@ export class KeyWordService {
   private keyWordList: Array<KeyWord>;
 
   constructor(private http:HttpClient) { }
-
-  sendKeyWordList() {
-    this.loadKeyWordList();
-    return this.getKeyWordList();
-  }
 
   getKeyWordList(): Array<KeyWord> {
     return this.keyWordList;

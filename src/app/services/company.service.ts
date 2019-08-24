@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Company } from '../models/company.model';
+import { Company } from '../models/Company.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,6 @@ export class CompanyService {
   private companyList: Array<Company>;
 
   constructor(private http:HttpClient) { }
-
-  sendCompanyList() {
-    this.loadCompanyList();
-    return this.getCompanyList();
-  }
 
   getCompanyList(): Array<Company> {
     return this.companyList;
