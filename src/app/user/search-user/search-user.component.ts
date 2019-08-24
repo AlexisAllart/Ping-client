@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-// import { UserService } from 'src/app/services/user.service';
-// import { Company } from 'src/app/models/Company.model';
-// import { ContractType } from 'src/app/models/ContractType.model';
-// import { KeyWord } from 'src/app/models/KeyWord.model';
-// import { Offer } from 'src/app/models/Offer.model';
 
 // Permet de manipuler leaflet
 declare let L;
@@ -24,12 +19,6 @@ export class SearchUserComponent implements OnInit {
     popupAnchor: [13,-2],
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
   });
-  // Lists
-  // private companyList: Array<Company>;
-  // private contractTypeList: Array<ContractType>;
-  // private keyWordList: Array<KeyWord>;
-  // private offerList: Array<Offer>;  
-
 
   // Map Variables
   private map;

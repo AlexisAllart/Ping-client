@@ -30,23 +30,20 @@
                         <div class="container">
                             <div class="blue">
                                 <div class="sous-container">
-                                    <img class="profile" src="assets/avatar/portrait.jpg">
+                                    <img class="profile" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.picture}}">
                                 </div>
                                 <div class="container-text">
                                     <div class="top">
-                                        <h4 class="title">Mathieu Degong </h4>
+                                        <h4 class="title">{{ route.snapshot.data.userDetails.firstName }} {{ route.snapshot.data.userDetails.lastName }} </h4>
                                        
                                     </div>
                                     <p class="description">
-                                        Développeur back-end spécialisé en Python, je possède 3 ans d’expérience chez IBM. Je
-                                        suis
-                                        capable
-                                        de travailler en équipe et je suis très flexible.
+                                        {{ route.snapshot.data.userDetails.about }}
                                     </p>
                                     <div class="key-words">
-                                        <p class="words">3 ans +</p>
-                                        <p class="words">Créatif</p>
-                                        <p class="words">Organisé</p>
+                                        <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.userDetails.keyWordOne_id-1].name }}</p>
+                                        <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.userDetails.keyWordTwo_id-1].name }}</p>
+                                        <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.userDetails.keyWordThree_id-1].name }}</p>
                                     </div>
                                 </div>
                                 <div class="right-side">
@@ -66,7 +63,7 @@
                     </div>
                     <div class="cv-download">
                         <div class="cv-download-text">Télécharger mon CV</div>
-                        <a href="#"><i class="fas fa-arrow-circle-down btn-dl"></i></a>
+                        <a href="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.cv}}"><i class="fas fa-arrow-circle-down btn-dl"></i></a>
                     </div>
                 </div>
                 <div class="profile-bright">
@@ -76,13 +73,11 @@
                             <i class="fab fa-facebook-f social"></i>
                             <i class="fab fa-twitter social"></i>
                             <i class="fab fa-linkedin-in social"></i>
-                            <i class="fas fa-link site social"></i>
                         </div>
                         <div class="link-social">
-                            <a class="link" href="http://facebook.com">http://facebook.com/pingjob</a>
-                            <a class="link" href="http://twitter.com">http://twitter.com/pingjob</a>
-                            <a class="link" href="http://linkedin.com">http://linkedin.com/pingjob</a>
-                            <a class="link" href="http://link.com">http://ping-job.com/pingjob</a>
+                            <a class="link" href="{{route.snapshot.data.userDetails.facebook}}">{{ route.snapshot.data.userDetails.facebook }}</a>
+                            <a class="link" href="{{route.snapshot.data.userDetails.twitter}}">{{ route.snapshot.data.userDetails.twitter }}</a>
+                            <a class="link" href="{{route.snapshot.data.userDetails.linkedin}}">{{ route.snapshot.data.userDetails.linkedin }}</a>
                         </div>
                     </div>
                 </div>
@@ -93,24 +88,20 @@
             <form class="form-blue" action="">
                 <mat-form-field>
                     <mat-label>Nom</mat-label>
-                    <input matInput placeholder="Dupont">
+                    <input matInput placeholder="{{route.snapshot.data.userDetails.lastName}}" value="{{route.snapshot.data.userDetails.lastName}}">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Prenom</mat-label>
-                    <input matInput placeholder="Hugues">
+                    <input matInput placeholder="{{route.snapshot.data.userDetails.firstName}}" value="{{route.snapshot.data.userDetails.firstName}}">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Mail</mat-label>
-                    <input matInput placeholder="exemple@gmail.com">
+                    <input matInput placeholder="{{route.snapshot.data.userDetails.email}}" value="{{route.snapshot.data.userDetails.email}}">
                 </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Téléphone</mat-label>
-                    <input matInput placeholder="07.20.30.55.60">
-                </mat-form-field>
-                <mat-form-field>
+                <!-- <mat-form-field>
                     <mat-label>Mot de passe</mat-label>
-                    <input matInput placeholder="*******">
-                </mat-form-field>
+                    <input type="password" matInput placeholder="" value="">
+                </mat-form-field> -->
                 <!-- <div class="edit-form"></div> -->
                 <div class="edit-submit">
                     <button class="submit">

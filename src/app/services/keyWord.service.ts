@@ -19,13 +19,13 @@ export class KeyWordService {
     return this;
   }
 
-  loadKeyWordList(): void {
-    this.http
-    .get<Array<KeyWord>>('http://pingjob.herokuapp.com/keyWord/list')
-    .subscribe(data => {
-      this.setKeyWordList(data);
-    });
-  }
+  // loadKeyWordList(): void {
+  //   this.http
+  //   .get<Array<KeyWord>>('http://pingjob.herokuapp.com/keyWord/list')
+  //   .subscribe(data => {
+  //     this.setKeyWordList(data);
+  //   });
+  // }
 
   preloadKeyWordList() {
     return this.http.get('http://pingjob.herokuapp.com/keyWord/list');

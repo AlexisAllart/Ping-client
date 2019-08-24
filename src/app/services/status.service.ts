@@ -19,13 +19,13 @@ export class StatusService {
     return this;
   }
 
-  loadStatusList(): void {
-    this.http
-    .get<Array<Status>>('http://pingjob.herokuapp.com/status/list')
-    .subscribe(data => {
-      this.setStatusList(data);
-    });
-  }
+  // loadStatusList(): void {
+  //   this.http
+  //   .get<Array<Status>>('http://pingjob.herokuapp.com/status/list')
+  //   .subscribe(data => {
+  //     this.setStatusList(data);
+  //   });
+  // }
 
   preloadStatusList() {
     return this.http.get('http://pingjob.herokuapp.com/status/list');

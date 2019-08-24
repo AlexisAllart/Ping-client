@@ -12,23 +12,22 @@ export class UserDetailsService {
   constructor(
     private http:HttpClient,
     private server:ServerService
-  ) { }
+    ) { }
 
-  // getUserDetails(): User {
-  //   return this.userDetails;
-  // }
+  getUserDetails(): User {
+    return this.userDetails;
+  }
 
-  // setUserDetails(userDetails) {
-  //   this.userDetails = userDetails;
-  //   return this;
-  // }
+  setUserDetails(userDetails) {
+    this.userDetails = userDetails;
+    return this;
+  }
 
   preloadUserDetails() {
-    // if (JSON.parse(localStorage.getItem('id')) !== null)
-    // {
-    //   return this.server
-    //   .request('GET', '/user/details/'+JSON.parse(localStorage.getItem('id')).id);
-    // }
-    return this.http.get('http://pingjob.herokuapp.com/tag/list');
+    if (JSON.parse(localStorage.getItem('id')) !== null)
+    {
+      return this.server
+      .request('GET', '/user/details/'+JSON.parse(localStorage.getItem('id')).id);
+    }
   }
 }

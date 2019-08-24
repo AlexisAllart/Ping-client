@@ -12,14 +12,5 @@ export class DashboardUserComponent implements OnInit {
     private route: ActivatedRoute
     ) { }
 
-  ngOnInit() {
-    console.log(this.route.snapshot.data);
-    console.log(this.route.snapshot.data.companyList);
-    console.log(this.route.snapshot.data.contractTypeList);
-    console.log(this.route.snapshot.data.keyWordList);
-    console.log(this.route.snapshot.data.offerList);
-    console.log(this.route.snapshot.data.statusList);
-    console.log(this.route.snapshot.data.tagList);
-    // console.log(this.route.snapshot.data.userDetails);
-  }
+  ngOnInit() { }
 }

@@ -19,13 +19,13 @@ export class SelectionService {
     return this;
   }
 
-  loadSelectionList(): void {
-    this.http
-    .get<Array<Selection>>('http://pingjob.herokuapp.com/selection/list')
-    .subscribe(data => {
-      this.setSelectionList(data);
-    });
-  }
+  // loadSelectionList(): void {
+  //   this.http
+  //   .get<Array<Selection>>('http://pingjob.herokuapp.com/selection/list')
+  //   .subscribe(data => {
+  //     this.setSelectionList(data);
+  //   });
+  // }
 
   preloadSelectionList() {
     return this.http.get('http://pingjob.herokuapp.com/selection/list');

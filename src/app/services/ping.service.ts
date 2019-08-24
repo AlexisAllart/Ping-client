@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Ping } from '../models/Ping.model';
 import { ServerService } from '../services/server.service';
 
@@ -9,7 +8,7 @@ import { ServerService } from '../services/server.service';
 export class PingService {
   private pingList: Array<Ping>;
   
-  constructor(private http:HttpClient,private server: ServerService) { }
+  constructor(private server: ServerService) { }
 
   getPingList(): Array<Ping> {
     return this.pingList;
@@ -20,13 +19,17 @@ export class PingService {
     return this;
   }
 
-  loadPingList(): void {
-    this.server.request('GET', '/ping/list').subscribe((data: Array<Ping>) => {
-      this.setPingList(data);
-    });
-  }
+  // loadPingList(): void {
+  //   this.server.request('GET', '/ping/list').subscribe((data: Array<Ping>) => {
+  //     this.setPingList(data);
+  //   });
+  // }
 
   preloadPingList() {
-    return this.http.get('http://pingjob.herokuapp.com/ping/list');
+    if (JSON.parse(localStorage.getItem('id')) !== null || JSON.parse(localStorage.getItem('companyUserId')) !== null)
+    {
+      return this.server
+      .request('GET', '/ping/list/');
+    }
   }
 }

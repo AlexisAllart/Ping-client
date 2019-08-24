@@ -19,13 +19,13 @@ export class ContractTypeService {
     return this;
   }
 
-  loadContractTypeList(): void {
-    this.http
-    .get<Array<ContractType>>('http://pingjob.herokuapp.com/contractType/list')
-    .subscribe(data => {
-      this.setContractTypeList(data);
-    });
-  }
+  // loadContractTypeList(): void {
+  //   this.http
+  //   .get<Array<ContractType>>('http://pingjob.herokuapp.com/contractType/list')
+  //   .subscribe(data => {
+  //     this.setContractTypeList(data);
+  //   });
+  // }
 
   preloadContractTypeList() {
     return this.http.get('http://pingjob.herokuapp.com/contractType/list');

@@ -57,10 +57,9 @@ const routes: Routes = [
     contractTypeList: ContractTypeResolver,
     keyWordList: KeyWordResolver,
     offerList: OfferResolver,
-    // pingList: PingResolver,
+    pingList: PingResolver,
     statusList: StatusResolver,
-    tagList: TagResolver,
-    // userDetails: UserDetailsResolver
+    userDetails: UserDetailsResolver
   }},
   {path: 'identification-user', component: IdentificationUserComponent},
   {path: 'offer-user', component: OfferUserComponent, resolve: {
@@ -68,27 +67,23 @@ const routes: Routes = [
     contractTypeList: ContractTypeResolver,
     keyWordList: KeyWordResolver,
     offerList: OfferResolver,
-    // pingList: PingResolver,
+    pingList: PingResolver,
     statusList: StatusResolver,
-    tagList: TagResolver
+    userDetails: UserDetailsResolver
   }},
   {path: 'profile-user', component: ProfileUserComponent, resolve: {
-    companyList: CompanyResolver,
-    contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
-    offerList: OfferResolver,
-    // pingList: PingResolver,
-    statusList: StatusResolver,
-    tagList: TagResolver
+    keyWordList: KeyWordResolver,    
+    userDetails: UserDetailsResolver
   }},
   {path: 'search-user', component: SearchUserComponent, resolve: {
     companyList: CompanyResolver,
     contractTypeList: ContractTypeResolver,
     keyWordList: KeyWordResolver,
     offerList: OfferResolver,
-    // pingList: PingResolver,
+    pingList: PingResolver,
     statusList: StatusResolver,
-    tagList: TagResolver
+    tagList: TagResolver,
+    userDetails: UserDetailsResolver
   }},
 ];
 @NgModule({
@@ -106,7 +101,7 @@ const routes: Routes = [
     StatusResolver,
     TagResolver,
     UserResolver,
-    // UserDetailsResolver
+    UserDetailsResolver
   ]
 })
 export class AppRoutingModule { }

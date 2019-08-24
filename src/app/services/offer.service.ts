@@ -19,13 +19,13 @@ export class OfferService {
     return this;
   }
 
-  loadOfferList(): void {
-    this.http
-    .get<Array<Offer>>('http://pingjob.herokuapp.com/offer/list')
-    .subscribe(data => {
-      this.setOfferList(data);
-    });
-  }
+  // loadOfferList(): void {
+  //   this.http
+  //   .get<Array<Offer>>('http://pingjob.herokuapp.com/offer/list')
+  //   .subscribe(data => {
+  //     this.setOfferList(data);
+  //   });
+  // }
 
   preloadOfferList() {
     return this.http.get('http://pingjob.herokuapp.com/offer/list');

@@ -19,13 +19,13 @@ export class CompanyService {
     return this;
   }
 
-  loadCompanyList(): void {
-    this.http
-    .get<Array<Company>>('http://pingjob.herokuapp.com/company/list')
-    .subscribe(data => {
-      this.setCompanyList(data);
-    });
-  }
+  // loadCompanyList(): void {
+  //   this.http
+  //   .get<Array<Company>>('http://pingjob.herokuapp.com/company/list')
+  //   .subscribe(data => {
+  //     this.setCompanyList(data);
+  //   });
+  // }
 
   preloadCompanyList() {
     return this.http.get('http://pingjob.herokuapp.com/company/list');

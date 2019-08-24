@@ -23,10 +23,6 @@ export class UserService {
     return this;
   }
 
-  loadUserList() {
-    return this.server.request('GET', '/user/list/');
-  }
-
   preloadUserList() {
     if (JSON.parse(localStorage.getItem('companyUserId')) !== null)
     {

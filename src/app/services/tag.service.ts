@@ -19,13 +19,13 @@ export class TagService {
     return this;
   }
 
-  loadTagList(): void {
-    this.http
-    .get<Array<Tag>>('http://pingjob.herokuapp.com/tag/list')
-    .subscribe(data => {
-      this.setTagList(data);
-    });
-  }
+  // loadTagList(): void {
+  //   this.http
+  //   .get<Array<Tag>>('http://pingjob.herokuapp.com/tag/list')
+  //   .subscribe(data => {
+  //     this.setTagList(data);
+  //   });
+  // }
 
   preloadTagList() {
     return this.http.get('http://pingjob.herokuapp.com/tag/list');

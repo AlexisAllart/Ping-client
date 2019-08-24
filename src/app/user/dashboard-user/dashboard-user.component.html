@@ -6,32 +6,51 @@
         <div class="container-title-clear-blue">
             <app-title-clear-blue></app-title-clear-blue>
         </div>
-        
 
         <div class="container-blue">
-                <div class="container-label">
-                    <div class="label-logo-decoy"></div>
-                    <div class="label-company">Entreprise</div>
-                    <div class="label-job-title">Poste</div>
-                    <div class="label-date">Date</div>
-                    <div class="label-statut">Statut</div>
-                </div>
-                <div class="label-logo-decoy2"></div>
+            <div class="container-label">
+                <div class="label-logo-decoy"></div>
+                <div class="label-company">Entreprise</div>
+                <div class="label-job-title">Poste</div>
+                <div class="label-date">Date</div>
+                <div class="label-statut">Statut</div>
+            </div>
+            <div class="label-logo-decoy2"></div>
         </div>
 
-            
         <div class="container-card-ping">
-            <div class="card-ping">
-                <app-card-ping></app-card-ping>
-                <app-card-ping></app-card-ping>
-                <app-card-ping></app-card-ping>
-                <app-card-ping></app-card-ping>
-                <app-card-ping></app-card-ping>
-                <app-card-ping></app-card-ping>
-                <app-card-ping></app-card-ping>
+            <div *ngFor="let ping of route.snapshot.data.pingList" class="card-ping">
+                <div class="card-body">
+                    <div class="card-container-company">
+                        <div class="card-container-blue">
+                            <div class="card-container-logo">
+                                <img class="card-logo" src="http://pingjob.herokuapp.com/{{route.snapshot.data.companyList[ping.company_id-1].logo}}" />
+                            </div>
+                            <div class="card-text">
+                                <div class="card-container-text">
+                                    <p class="card-company">
+                                        {{ route.snapshot.data.companyList[ping.company_id-1].name }}</p>
+                                </div>
+                                <div class="card-container-text">
+                                    <p class="card-job-title">{{ route.snapshot.data.offerList[ping.offer_id-1].title }}
+                                    </p>
+                                </div>
+                                <div class="card-container-text">
+                                    <p class="card-date">{{ ping.createdAt }}</p>
+                                </div>
+                                <div class="card-statut">
+                                    <div class="card-lepoint"
+                                        [ngStyle]="{'background': route.snapshot.data.statusList[ping.status_id-1].color}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-btn-detail-medium">
+                            <i class="fas fa-plus-circle card-plus" routerLink="/offer-user"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-    
     </div>
 </div>

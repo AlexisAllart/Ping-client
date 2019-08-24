@@ -19,13 +19,13 @@ export class RoleService {
     return this;
   }
 
-  loadRoleList(): void {
-    this.http
-    .get<Array<Role>>('http://pingjob.herokuapp.com/role/list')
-    .subscribe(data => {
-      this.setRoleList(data);
-    });
-  }
+  // loadRoleList(): void {
+  //   this.http
+  //   .get<Array<Role>>('http://pingjob.herokuapp.com/role/list')
+  //   .subscribe(data => {
+  //     this.setRoleList(data);
+  //   });
+  // }
 
   preloadRoleList() {
     return this.http.get('http://pingjob.herokuapp.com/role/list');
