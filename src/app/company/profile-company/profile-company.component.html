@@ -3,22 +3,32 @@
         <app-navbar-company></app-navbar-company>
     </div>
     <div class="burger">
-            <div class="menu-toggle">
-              <input type="checkbox"/>
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-              
-              <ul class="burger-menu-elem">
-                <a class="text-menu" href="#"><li>Search</li></a>
-                <a class="text-menu" href="#"><li>Ping</li></a>
-                <a class="text-menu" href="#"><li>Dashboard</li></a>
-                <a class="text-menu" href="#"><li>Profil</li></a>
-                <a class="text-menu" href="#"><li>Annonces</li></a>
-              </ul>
-            </div>
+        <div class="menu-toggle">
+            <input type="checkbox" />
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+
+            <ul class="burger-menu-elem">
+                <a class="text-menu" href="#">
+                    <li>Search</li>
+                </a>
+                <a class="text-menu" href="#">
+                    <li>Ping</li>
+                </a>
+                <a class="text-menu" href="#">
+                    <li>Dashboard</li>
+                </a>
+                <a class="text-menu" href="#">
+                    <li>Profil</li>
+                </a>
+                <a class="text-menu" href="#">
+                    <li>Annonces</li>
+                </a>
+            </ul>
+        </div>
     </div>
-   
+
     <div class="main">
         <div class="info">
             <div class="info-bloc">
@@ -26,7 +36,7 @@
                     <h2 class="title">Informations</h2>
                 </div>
 
-                <form   class="form" action="">
+                <!-- <form   class="form" action="">
                     <label class="label" for="">Nom</label>
                     <input [(ngModel)]="votreNom"  class="input" type="text" placeholder="Silicon Salad">
                     <label class="label" for="">Mail</label>
@@ -35,6 +45,24 @@
                     <input class="input" type="text" placeholder="03 20 45 31 90">
                     <label class="label" for="">Mot de passe</label>
                     <input class="input" type="text" placeholder="************">
+                </form> -->
+                <form class="form" action="">
+                    <mat-form-field>
+                        <mat-label>Nom</mat-label>
+                        <input matInput placeholder="IBM">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Mail</mat-label>
+                        <input matInput placeholder="*******">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Téléphone</mat-label>
+                        <input matInput placeholder="*******">
+                    </mat-form-field>
+                    <mat-form-field>
+                            <mat-label>Mot de passe</mat-label>
+                            <input matInput placeholder="*******">
+                        </mat-form-field>
                 </form>
             </div>
         </div>
