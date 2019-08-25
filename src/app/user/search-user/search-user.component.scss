@@ -280,16 +280,13 @@ box-shadow: 6px 7px 17px -4px rgba(204,204,204,1);
         flex-direction: column;
     }
 
-    .carte {
-        z-index: -1;
-    }
-
     .navbar {
         display: none;
     }
     .burger {
         display:flex;
         flex-direction:column;
+        z-index: 9999;
 
     }
     
