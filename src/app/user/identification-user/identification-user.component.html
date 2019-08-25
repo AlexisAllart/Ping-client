@@ -31,7 +31,7 @@
                     <input matInput placeholder="*******">
                 </mat-form-field>
                 <div class="button">
-                    <button class="btn-blue">Enregistrer</button>
+                    <a class="btn-blue">Enregistrer</a>
                 </div>
             </form>
 
@@ -53,13 +53,15 @@
             <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
                 <mat-form-field>
                     <mat-label>Email</mat-label>
-                    <input matInput placeholder="exemple@gmail.com" formControlName="email" required>
+                    <input matInput placeholder="exemple@gmail.com" formControlName="email" value="charlene.smith@gmail.com" required>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Mot de passe</mat-label>
-                    <input matInput placeholder="*******" formControlName="password" required>
+                    <input matInput placeholder="*******" formControlName="password" value="1234" required>
                 </mat-form-field>
+                <!-- ATTENTION à bien garder le bouton DANS le formulaire ! -->
                 <div class="button">
+                    <!-- Le bouton doit apparemment obligatoirement être de type <button>, il faut donc modifier le CSS pour adapter -->
                     <button class="btn-white">Connexion</button>
                 </div>
             </form>

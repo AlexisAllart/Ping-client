@@ -35,23 +35,15 @@
                 <div class="info-title">
                     <h2 class="title">Informations</h2>
                 </div>
-                <form class="form" action="">
-                    <mat-form-field>
-                        <mat-label>Nom</mat-label>
-                        <input matInput placeholder="{{route.snapshot.data.company.name}}" value="{{route.snapshot.data.company.name}}">
-                    </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Mail</mat-label>
-                        <input matInput placeholder="{{route.snapshot.data.company.email}}" value="{{route.snapshot.data.company.email}}">
-                    </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Téléphone</mat-label>
-                        <input matInput placeholder="{{route.snapshot.data.company.phone}}" value="{{route.snapshot.data.company.phone}}">
-                    </mat-form-field>
-                    <mat-form-field>
-                            <mat-label>Mot de passe</mat-label>
-                            <input matInput placeholder="{{route.snapshot.data.company.password}}" value="{{route.snapshot.data.company.password}}">
-                        </mat-form-field>
+                <form   class="form" action="">
+                    <label class="label" for="">Nom</label>
+                    <input [(ngModel)]="votreNom" name="name" class="input" type="text" placeholder="Silicon Salad">
+                    <label class="label" for="">Mail</label>
+                    <input [(ngModel)]="votreMail" name="email" class="input" type="text" placeholder="contact@siliconsalad.com">
+                    <label class="label" for="">Téléphone</label>
+                    <input class="input" type="text" placeholder="03 20 45 31 90">
+                    <label class="label" for="">Mot de passe</label>
+                    <input class="input" type="text" placeholder="************">
                 </form>
             </div>
         </div>
@@ -62,10 +54,10 @@
                         <img class="logo" src="assets/img/logo.png" alt="logo">
                     </div>
                     <div class="container-text">
-                        <h2 class="title-about">{{ route.snapshot.data.company.name }}</h2>
+                        <h2 class="title-about">COMPANY_NAME</h2>
                         <hr class="line">
                         <p class="description">
-                        {{ route.snapshot.data.company.about }}
+                        COMPANY_ABOUT
                         </p>
 
                     </div>
@@ -85,10 +77,10 @@
                             <i class="fas fa-link site"></i>
                         </div>
                         <div class="link-social">
-                            <a class="link" href="http://facebook.com">{{ route.snapshot.data.company.facebook }}</a>
-                            <a class="link" href="http://twitter.com">{{ route.snapshot.data.company.twitter }}</a>
-                            <a class="link" href="http://linkedin.com">{{ route.snapshot.data.company.linkedin }}</a>
-                            <a class="link" href="http://link.com">{{ route.snapshot.data.company.link}}</a>
+                            <a class="link" href="http://facebook.com">COMPANY_FACEBOOK</a>
+                            <a class="link" href="http://twitter.com">COMPANY_TWITTER</a>
+                            <a class="link" href="http://linkedin.com">COMPANY_LINKEDIN</a>
+                            <a class="link" href="http://link.com">COMPANY_WEBSITE</a>
                         </div>
 
                     </div>

@@ -42,12 +42,73 @@ const routes: Routes = [
   {path: 'legal', component:CguComponent},
   
   //component company
-  {path: 'offer-company', component: OfferCompanyComponent},
-  {path: 'ping', component: PingComponent},
-  {path: 'price', component: PriceComponent},
-  {path: 'profil-company', component: ProfileCompanyComponent},
-  {path: 'search-company', component: SearchCompanyComponent},
-  {path: 'selection-company', component: SelectionCompanyComponent},
+  {path: 'offer-company', component: OfferCompanyComponent, resolve: {
+    companyList: CompanyResolver,
+    companyUserList: CompanyUserResolver,
+    contractTypeList: ContractTypeResolver,
+    keyWordList: KeyWordResolver,
+    offerList: OfferResolver,
+    pingList: PingResolver,
+    roleList: RoleResolver,
+    // selectionList: SelectionResolver,
+    // statusList: StatusResolver,
+    // tagList: TagResolver,
+    // userList: UserResolver
+  }},
+  {path: 'ping', component: PingComponent, resolve: {
+    companyList: CompanyResolver,
+    companyUserList: CompanyUserResolver,
+    contractTypeList: ContractTypeResolver,
+    keyWordList: KeyWordResolver,
+    offerList: OfferResolver,
+    pingList: PingResolver,
+    roleList: RoleResolver,
+    selectionList: SelectionResolver,
+    statusList: StatusResolver,
+    tagList: TagResolver,
+    userList: UserResolver
+  }},
+  {path: 'price', component: PriceComponent, resolve: {
+  }},
+  {path: 'profil-company', component: ProfileCompanyComponent, resolve: {
+    companyList: CompanyResolver,
+    companyUserList: CompanyUserResolver,
+    // contractTypeList: ContractTypeResolver,
+    // keyWordList: KeyWordResolver,
+    // offerList: OfferResolver,
+    // pingList: PingResolver,
+    roleList: RoleResolver,
+    // selectionList: SelectionResolver,
+    // statusList: StatusResolver,
+    // tagList: TagResolver,
+    // userList: UserResolver
+  }},
+  {path: 'search-company', component: SearchCompanyComponent, resolve: {
+    companyList: CompanyResolver,
+    companyUserList: CompanyUserResolver,
+    contractTypeList: ContractTypeResolver,
+    keyWordList: KeyWordResolver,
+    offerList: OfferResolver,
+    pingList: PingResolver,
+    roleList: RoleResolver,
+    selectionList: SelectionResolver,
+    statusList: StatusResolver,
+    tagList: TagResolver,
+    userList: UserResolver
+  }},
+  {path: 'selection-company', component: SelectionCompanyComponent, resolve: {
+    companyList: CompanyResolver,
+    companyUserList: CompanyUserResolver,
+    contractTypeList: ContractTypeResolver,
+    keyWordList: KeyWordResolver,
+    offerList: OfferResolver,
+    pingList: PingResolver,
+    roleList: RoleResolver,
+    selectionList: SelectionResolver,
+    statusList: StatusResolver,
+    tagList: TagResolver,
+    userList: UserResolver
+  }},
   {path: 'sign-in-company', component: SignInComponent},
   {path: 'sign-up-company', component: SignUpComponent},
   
@@ -80,7 +141,6 @@ const routes: Routes = [
     contractTypeList: ContractTypeResolver,
     keyWordList: KeyWordResolver,
     offerList: OfferResolver,
-    pingList: PingResolver,
     statusList: StatusResolver,
     tagList: TagResolver,
     userDetails: UserDetailsResolver

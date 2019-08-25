@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Selection } from '../models/Selection.model';
+import { ServerCompanyService } from './serverCompany.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,8 @@ import { Selection } from '../models/Selection.model';
 export class SelectionService {
   private selectionList: Array<Selection>;
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    private serverCompany:ServerCompanyService) { }
 
   getSelectionList(): Array<Selection> {
     return this.selectionList;
@@ -28,6 +29,10 @@ export class SelectionService {
   // }
 
   preloadSelectionList() {
-    return this.http.get('http://pingjob.herokuapp.com/selection/list');
+    if (JSON.parse(localStorage.getItem('companyUserId')) !== null)
+    {
+      return this.serverCompany
+      .request('GET', '/selection/list/');
+    }
   }
 }

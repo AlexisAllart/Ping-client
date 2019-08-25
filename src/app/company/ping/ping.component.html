@@ -23,24 +23,23 @@
                 </div>
             </div>
     
-            <div *ngIf="pingListLoaded && userListLoaded" class="selection-card">
-                <div *ngFor="let ping of pingList" class="container-candidate">
+            <div class="selection-card">
+                <div *ngFor="let ping of route.snapshot.data.pingList" class="container-candidate">
 
                     <div class=container-blue>
             
                         <div class="text">
                             <div class="container-img">
-                                <img class="picture" src="assets/avatar/portrait.jpg">
+                                <img class="picture" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userList[ping.user_id-1].picture}}">
                             </div>
-                            <div class="name">{{ ping.user_id }}</div>
-                            <div class="job-title"> {{ ping.offer_id }}</div>
-                            <!--a verifier-->
-                            <div class="date">{{ ping.datetime }}</div>
+                            <div class="name">{{ route.snapshot.data.userList[ping.user_id-1].firstName }} {{ route.snapshot.data.userList[ping.user_id-1].lastName }}</div>
+                            <div class="job-title"> {{ route.snapshot.data.offerList[ping.offer_id-1].title }}</div>
+                            <div class="date">{{ ping.updatedAt }}</div>
                             <div class="message">
-                                <div class="lepoint">{{ ping.status_id }}</div>
+                                <div class="lepoint" [ngStyle]="{'background': route.snapshot.data.statusList[ping.status_id-1].color}"></div>
                             </div>  
                             <div class="btn-download">
-                                <i class="fas fa-arrow-down fleche">{{ user.cv }}</i>
+                                <a href="http://pingjob.herokuapp.com/{{route.snapshot.data.userList[ping.user_id-1].cv}}"><i class="fas fa-arrow-down fleche"></i></a>
                             </div>
                         
                             <div class="btn-detail-small">

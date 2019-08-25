@@ -39,9 +39,7 @@
                                     <p class="card-date">{{ ping.createdAt }}</p>
                                 </div>
                                 <div class="card-statut">
-                                    <div class="card-lepoint"
-                                        [ngStyle]="{'background': route.snapshot.data.statusList[ping.status_id-1].color}">
-                                    </div>
+                                    <div class="card-lepoint" [ngStyle]="{'background': route.snapshot.data.statusList[ping.status_id-1].color}"></div>
                                 </div>
                             </div>
                         </div>

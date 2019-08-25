@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-identification-user',
@@ -13,7 +12,10 @@ export class IdentificationUserComponent implements OnInit {
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private userService: UserService) { }
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
     this.form = this.fb.group({

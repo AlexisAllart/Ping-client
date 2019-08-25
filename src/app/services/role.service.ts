@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Role } from '../models/Role.model';
+import { ServerCompanyService } from './serverCompany.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,9 @@ import { Role } from '../models/Role.model';
 export class RoleService {
   private roleList: Array<Role>;
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    private serverCompany:ServerCompanyService
+    ) { }
 
   getRoleList(): Array<Role> {
     return this.roleList;
@@ -28,6 +30,10 @@ export class RoleService {
   // }
 
   preloadRoleList() {
-    return this.http.get('http://pingjob.herokuapp.com/role/list');
+    if (JSON.parse(localStorage.getItem('companyUserId')) !== null)
+    {
+      return this.serverCompany
+      .request('GET', '/role/list/');
+    }
   }
 }

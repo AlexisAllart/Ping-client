@@ -13,20 +13,14 @@ export class AuthService {
     return this.loggedIn.asObservable();
   }
 
-  constructor(private router: Router, private server: ServerService) {
-    // On place le contenu de localStorage.getItem('token') (= un token déjà existant) dans "userData"
+  constructor(private router: Router, private server: ServerService) {    
     const userData = localStorage.getItem('token');
     
-    // Si un token est déjà présent...
     if (userData) {
-      // On place dans "user" un objet JSON avec le contenu de userData
       const user = JSON.parse(userData);
-      // On sauvegarde le token lui-même dans la variable locale "this.token"
       this.token = user.token;
-      // On exécute la method de server.service avec les paramètres suivants :
       this.server.setLoggedIn(true, this.token);
       this.loggedIn.next(true);
-      // Redirection vers le dashboard-user
       // this.router.navigateByUrl('/dashboard-user');
     }
    }

@@ -58,6 +58,7 @@
     margin:20px;
     text-decoration:none; 
     transition: all 0.5s ease-in-out;
+    border: 1px solid rgba(255,255,255,0);
 }
 
 .btn-white-top:hover {
@@ -155,7 +156,7 @@
     padding:15px 40px 15px 40px;
     border-radius:40px; 
     transition: all 0.5s ease-in-out;
-
+    border: 1px solid rgba(255,255,255,0);
 }
 
 .btn-white:hover {

@@ -87,29 +87,28 @@
         <!----- CARTES CANDIDATS  ---------->
         <div class="card-candidat">
             <!--CARTE CANDIDAT UN -->
-            <div class="container">
+            <div *ngFor="let user of route.snapshot.data.userList" class="container">
                 <div class="blue">
                     <div class="sous-container">
-                        <img class="profile" src="assets/avatar/portrait.jpg">
+                        <img class="profile" src="http://pingjob.herokuapp.com/{{user.picture}}">
                     </div>
                     <div class="container-text">
                         <div class="top">
-                            <h4 class="title">Mathieu Degong </h4>
-                            <p class="contract-type">CDI</p>
+                            <h4 class="title">{{ user.firstName }} {{ user.lastName }}</h4>
+                            <!-- ?ContractType ici? -->
+                            <!-- <p class="contract-type">CDI</p> -->
                         </div>
                         <p class="description">
-                            Développeur back-end spécialisé en Python, je possède 3 ans d’expérience chez IBM. Je
-                            suis
-                            capable
-                            de travailler en équipe et je suis très flexible.
+                            {{ user.about }}
                         </p>
                         <div class="key-words">
-                            <p class="words">3 ans +</p>
-                            <p class="words">Créatif</p>
-                            <p class="words">Organisé</p>
+                            <p class="words">{{ route.snapshot.data.keyWordList[user.keyWordOne_id-1].name }}</p>
+                            <p class="words">{{ route.snapshot.data.keyWordList[user.keyWordTwo_id-1].name }}</p>
+                            <p class="words">{{ route.snapshot.data.keyWordList[user.keyWordThree_id-1].name }}</p>
                         </div>
                     </div>
                     <div class="right-side">
+                        <!-- un utilisateur peut postuler sur plusieurs annonces, de quel statut parle-t-on ici donc ? -->
                         <div class="statut"></div>
                         <!-- <i class="fas fa-plus-circle plus"></i> -->
                     </div>
@@ -117,69 +116,6 @@
                 <div class="btn-check-send">
                     <i (click)='animateMe()' class="fas fa-check-circle check"></i>
                     <p [@envoi]='state'>Envoyé</p>
-                </div>
-            </div>
-            <!--CARTE CANDIDAT DEUX -->
-            <div class="container">
-                <div class="blue">
-                    <div class="sous-container">
-                        <img class="profile" src="assets/avatar/portrait.jpg">
-                    </div>
-                    <div class="container-text">
-                        <div class="top">
-                            <h4 class="title">Mathieu Degong </h4>
-                            <p class="contract-type">CDI</p>
-                        </div>
-                        <p class="description">
-                            Développeur back-end spécialisé en Python, je possède 3 ans d’expérience chez IBM. Je
-                            suis
-                            capable
-                            de travailler en équipe et je suis très flexible.
-                        </p>
-                        <div class="key-words">
-                            <p class="words">3 ans +</p>
-                            <p class="words">Créatif</p>
-                            <p class="words">Organisé</p>
-                        </div>
-                    </div>
-                    <div class="right-side">
-                        <div class="statut"></div>
-                        <!-- <i class="fas fa-plus-circle plus"></i> -->
-                    </div>
-                </div>
-                <div class="btn-check">
-                    <i class="fas fa-check-circle check"></i>
-                </div>
-            </div>
-            <div class="container">
-                <div class="blue">
-                    <div class="sous-container">
-                        <img class="profile" src="assets/avatar/portrait.jpg">
-                    </div>
-                    <div class="container-text">
-                        <div class="top">
-                            <h4 class="title">Mathieu Degong </h4>
-                            <p class="contract-type">CDI</p>
-                        </div>
-                        <p class="description">
-                            Développeur back-end spécialisé en Python, je possède 3 ans d’expérience chez IBM. Je
-                            suis
-                            capable
-                            de travailler en équipe et je suis très flexible.
-                        </p>
-                        <div class="key-words">
-                            <p class="words">3 ans +</p>
-                            <p class="words">Créatif</p>
-                            <p class="words">Organisé</p>
-                        </div>
-                    </div>
-                    <div class="right-side">
-                        <div class="statut"></div>
-                        <!-- <i class="fas fa-plus-circle plus"></i> -->
-                    </div>
-                </div>
-                <div class="btn-check">
-                    <i class="fas fa-check-circle check"></i>
                 </div>
             </div>
         </div>
