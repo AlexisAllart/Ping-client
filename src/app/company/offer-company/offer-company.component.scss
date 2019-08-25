@@ -295,6 +295,20 @@
 ////// box //////// 
 
 
+.offre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: blue;
+    // background-color: blue;
+    height:60vh;
+    // background-color:paleturquoise;
+    width:110%;
+    // margin:20px;
+	overflow-x: hidden;
+    overflow-y: scroll;
+} 
+
 .box {
     background-color: #E9F6FF;
     display: flex;

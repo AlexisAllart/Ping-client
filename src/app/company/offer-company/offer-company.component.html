@@ -33,32 +33,32 @@
             <h2 class="title-un">Nouvelle Offre</h2>
             <div class="formulaires">
                 <form (ngSubmit)="onSubmit(contactForm.form.value)" #contactForm="ngForm" action="">
+
                         <label for="job_name" class="label">Emploi proposé*</label>
-                        <input #jobName="ngModel" id="job_name" class="input" type="text"
-                            [(ngModel)]="model.job_name" name="name"
+                        <input #jobName="ngModel" id="job_name" class="input" type="text" [(ngModel)]="model.job_name" name="job_name"
                             required>
                         <label for="company_name" class="label">Nom de votre entreprise*</label>
                         <input #companyName="ngModel" id="company_name" class="input" type="text"
-                            [(ngModel)]="model.company_name" name="companyName" required>
+                            [(ngModel)]="model.company_name" name="company_name" required>
                         <label for="description" class="label">Description de l'offre*</label>
                         <input #description="ngModel" class="input-description" type="text"
                             [(ngModel)]="model.description" name="description" required>
                 
                         <label for="contract_type" class="label">Type de contract</label>
                         <input #contractType="ngModel" id="contract_type" class="input" type="text"
-                            [(ngModel)]="model.contract_type" name="contractType" required>
+                            [(ngModel)]="model.contract_type" name="contract_type" required>
                         <label for="salary" class="label">Salaire proposé</label>
-                        <input #salary="ngModel" id="salary" class="input" type="text"
-                            [(ngModel)]="model.salary" name="salary" required>
-                        <select #keyWord="ngModel" class="form-control" id="keyword" materialize="material_select"
-                            [(ngModel)]="model.keyword" name="keyWord">
+                        <input #salary="ngModel" id="salary" class="input" type="text" [(ngModel)]="model.salary"
+                            required>
+                        <select #keyword="ngModel" class="form-control" id="keyword" materialize="material_select"
+                            [(ngModel)]="model.keyword" name="keyword">
                             <option value="" disabled selected>Choisir un mot clé</option>
-                            <option value="" *ngFor="let keyword of keywords" [value]="company">{{keyword}}</option>
+                            <option value="" *ngFor="let keyword of keywords" [value]="keyword">{{keyword}}</option>
                             <label for="keyword">Mot clé</label>
                         </select>
-                        <div class="btn-add">
+                        <!-- <div class="btn-add"></div> -->
                             <button id="btn" type="submit" class="button">Ajouter</button>
-                        </div>
+                        <!-- </div> -->
                 </form>
 
                 <!-- <form class="un" class="form" action="">
@@ -103,22 +103,20 @@
             </div>
 
             <div class="offre">
-
-                <div *ngFor="let contact of model" class="box" [@contactsAnimation]="state">
+                <div *ngFor="let offre of model" class="box" [@contactsAnimation]="state">
                     <div class="sous-container">
                         <div class="container-text">
                             <h2 class="title">{{offre.job_name}}</h2>
                             <hr class="line">
                             <h4 class="company">{{offre.company_name}}</h4>
-                            <p class="description">{{ offre.description }}</p>
+                            <p class="description">{{offre.description}}</p>
                         </div>
                         <div class="right-side">
-                            <p class="contract-type">{{ offre.contract_type }}</p>
+                            <p class="contract-type">{{offre.contract_type}}</p>
                         </div>
                     </div>
                     <div class="key-words">
-                        {{ offre.keyword }}
-
+                            {{offre.keyword}}
                     </div>
                     <i class="fas fa-plus-circle plus"></i>
                 </div>
