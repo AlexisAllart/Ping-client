@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Offre } from 'src/app/offre';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Offre } from 'src/app/offre';
 
 
 @Component({
