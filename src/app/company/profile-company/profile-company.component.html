@@ -3,22 +3,32 @@
         <app-navbar-company></app-navbar-company>
     </div>
     <div class="burger">
-            <div class="menu-toggle">
-              <input type="checkbox"/>
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-              
-              <ul class="burger-menu-elem">
-                <a class="text-menu" href="#"><li>Search</li></a>
-                <a class="text-menu" href="#"><li>Ping</li></a>
-                <a class="text-menu" href="#"><li>Dashboard</li></a>
-                <a class="text-menu" href="#"><li>Profil</li></a>
-                <a class="text-menu" href="#"><li>Annonces</li></a>
-              </ul>
-            </div>
+        <div class="menu-toggle">
+            <input type="checkbox" />
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+
+            <ul class="burger-menu-elem">
+                <a class="text-menu" href="#">
+                    <li>Search</li>
+                </a>
+                <a class="text-menu" href="#">
+                    <li>Ping</li>
+                </a>
+                <a class="text-menu" href="#">
+                    <li>Dashboard</li>
+                </a>
+                <a class="text-menu" href="#">
+                    <li>Profil</li>
+                </a>
+                <a class="text-menu" href="#">
+                    <li>Annonces</li>
+                </a>
+            </ul>
+        </div>
     </div>
-   
+
     <div class="main">
         <div class="info">
             <div class="info-bloc">
@@ -26,7 +36,7 @@
                     <h2 class="title">Informations</h2>
                 </div>
 
-                <form   class="form" action="">
+                <!-- <form   class="form" action="">
                     <label class="label" for="">Nom</label>
                     <input [(ngModel)]="votreNom" name="name" class="input" type="text" placeholder="Silicon Salad">
                     <label class="label" for="">Mail</label>
@@ -35,6 +45,24 @@
                     <input class="input" type="text" placeholder="03 20 45 31 90"> -->
                     <label class="label" for="">Mot de passe</label>
                     <input class="input" type="text" placeholder="************">
+                </form> -->
+                <form class="form" action="">
+                    <mat-form-field>
+                        <mat-label>Nom</mat-label>
+                        <input matInput placeholder="{{route.snapshot.data.company.name}}" value="{{route.snapshot.data.company.name}}">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Mail</mat-label>
+                        <input matInput placeholder="{{route.snapshot.data.company.email}}" value="{{route.snapshot.data.company.email}}">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Téléphone</mat-label>
+                        <input matInput placeholder="{{route.snapshot.data.company.phone}}" value="{{route.snapshot.data.company.phone}}">
+                    </mat-form-field>
+                    <mat-form-field>
+                            <mat-label>Mot de passe</mat-label>
+                            <input matInput placeholder="{{route.snapshot.data.company.password}}" value="{{route.snapshot.data.company.password}}">
+                        </mat-form-field>
                 </form>
             </div>
         </div>
@@ -45,14 +73,10 @@
                         <img class="logo" src="assets/img/logo.png" alt="logo">
                     </div>
                     <div class="container-text">
-                        <h2 class="title-about">A propos de l'entreprise</h2>
+                        <h2 class="title-about">{{ route.snapshot.data.company.name }}</h2>
                         <hr class="line">
                         <p class="description">
-                            Silicon Salad, c’est avant tout une équipe de 25 passionnés prêts à décrocher la lune pour
-                            vous faire briller sur le web. Depuis plus de 10 ans, nos expertises complémentaires nous
-                            permettent de vous apporter une approche digitale complète.
-                            Nous travaillons de manière collaborative : en faisant appel à nous, vous faites partie de
-                            l’équipe.
+                        {{ route.snapshot.data.company.about }}
                         </p>
 
                     </div>
@@ -72,10 +96,10 @@
                             <i class="fas fa-link site"></i>
                         </div>
                         <div class="link-social">
-                            <a class="link" href="http://facebook.com">http://facebook.com/pingjob</a>
-                            <a class="link" href="http://twitter.com">http://twitter.com/pingjob</a>
-                            <a class="link" href="http://linkedin.com">http://linkedin.com/pingjob</a>
-                            <a class="link" href="http://link.com">http://ping-job.com/pingjob</a>
+                            <a class="link" href="http://facebook.com">{{ route.snapshot.data.company.facebook }}</a>
+                            <a class="link" href="http://twitter.com">{{ route.snapshot.data.company.twitter }}</a>
+                            <a class="link" href="http://linkedin.com">{{ route.snapshot.data.company.linkedin }}</a>
+                            <a class="link" href="http://link.com">{{ route.snapshot.data.company.link}}</a>
                         </div>
 
                     </div>
