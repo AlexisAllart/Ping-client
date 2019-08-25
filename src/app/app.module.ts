@@ -7,8 +7,9 @@ import { FilterPipe } from '../app/pipe/filter.pipe';
 
 // Services
 import { AuthService } from './services/auth.service';
-import { DataService } from './services/data.service';
+import { AuthCompanyService } from './services/authCompany.service';
 import { ServerService } from './services/server.service';
+import { ServerCompanyService } from './services/serverCompany.service';
 import { CompanyService } from './services/company.service';
 import { CompanyUserService } from './services/companyUser.service';
 import { ContractTypeService } from './services/contractType.service';
@@ -139,13 +140,12 @@ import { CguComponent } from './general/cgu/cgu.component';
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
-
-
   ],
   providers: [
     AuthService,
+    AuthCompanyService,
     ServerService,
-    DataService,
+    ServerCompanyService,
     CompanyService,
     CompanyUserService,
     ContractTypeService,

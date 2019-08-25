@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { User } from '../models/User.model';
 import { ServerService } from './server.service';
 
@@ -10,7 +9,6 @@ export class UserDetailsService {
   private userDetails: User;
 
   constructor(
-    private http:HttpClient,
     private server:ServerService
     ) { }
 

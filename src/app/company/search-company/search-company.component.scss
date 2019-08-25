@@ -158,7 +158,7 @@
     background-color: #E9F6FF;
     display: flex;
     flex-direction: row;
-    width:64;
+    width: 100%;
     // -webkit-box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
     // -moz-box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
     // box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
@@ -306,9 +306,9 @@
 // Medium devices (tablets, 768px and up)
 @media (max-width: 1002px) { 
 
-    .card-candidat {
-        // background-color: rgb(192, 75, 75);
-    }
+    // .card-candidat {
+    //     background-color: rgb(192, 75, 75);
+    // }
     
     .container {
     

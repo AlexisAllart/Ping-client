@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CompanyUser } from '../models/CompanyUser.model';
+import { ServerCompanyService } from './serverCompany.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,9 @@ import { CompanyUser } from '../models/CompanyUser.model';
 export class CompanyUserService {
   private companyUserList: Array<CompanyUser>;
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    private serverCompany:ServerCompanyService
+    ) { }
 
   getCompanyUserList(): Array<CompanyUser> {
     return this.companyUserList;
@@ -28,6 +31,10 @@ export class CompanyUserService {
   // }
 
   preloadCompanyUserList() {
-    return this.http.get('http://pingjob.herokuapp.com/companyUser/list');
+  if (JSON.parse(localStorage.getItem('companyUserId')) !== null)
+    {
+      return this.serverCompany
+      .request('GET', '/companyUser/list/');
+    }
   }
 }
