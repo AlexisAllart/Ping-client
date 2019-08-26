@@ -9,29 +9,30 @@
         
         <div class="container-inscription">
             <h2 class="title-blue">Inscription</h2>
-            <form class="form-blue" action="">
-                <!-- <input class="input-blue" type="text"placeholder="Nom">
-            <input class="input-blue" type="text" placeholder="Prenom">
-            <input class="input-blue" type="text" placeholder="Mail">
-            <input class="input-blue" type="text" placeholder="Mot de passe"> -->
+            <form [formGroup]="form" (ngSubmit)= "onSubmit"class="form-blue">
+            
                 <mat-form-field>
                     <mat-label>Nom</mat-label>
-                    <input matInput placeholder="Dupont">
+                    <input type="text" matInput formControleName = "name" placeholder="Dupont" required>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Prenom</mat-label>
-                    <input matInput placeholder="Hugues">
+                    <input type="text" matInput formControleName= "firstName" placeholder="Hugues" required>
                 </mat-form-field>
+
                 <mat-form-field>
                     <mat-label>Mail</mat-label>
-                    <input matInput placeholder="exemple@gmail.com">
+                    <input matInput type="email" class="form-control"#email="ngModel"[(ngModel)]="user.email" placeholder="exemple@gmail.com" required>
+                    <span *ngIf="!email.valid && email.touched">Not valid password</span>
                 </mat-form-field>
+
                 <mat-form-field>
                     <mat-label>Mot de passe</mat-label>
-                    <input matInput placeholder="*******">
+                    <input matInput type="password" name="password" class="form-control" #passeword="ngModel" [(ngModel)]="user.password" placeholder="*******" required>
+                    <span *ngIf="!password.valid && password.touched">Not valid password</span>
                 </mat-form-field>
                 <div class="button">
-                    <a class="btn-blue">Enregistrer</a>
+                    <a type="submit" value="Enregistrer" class="btn-blue" [disabled]= "!loginForm.form.valid">Enregistrer</a>
                 </div>
             </form>
 
@@ -46,18 +47,15 @@
         </div>
         <div class="container-connexion">
             <h2 class="title-white">Connexion</h2>
-            <!-- <form class="form" action="">
-            <input class="input" type="text"placeholder="Mail">
-            <input class="input" type="text" placeholder="Mot de passe">
-        </form> -->
+           
             <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
                 <mat-form-field>
                     <mat-label>Email</mat-label>
-                    <input matInput placeholder="exemple@gmail.com" formControlName="email" value="charlene.smith@gmail.com" required>
+                    <input matInput type = "email" class = "form-control"#email ="ngModel"[(ngModel)]="user.email" placeholder="exemple@gmail.com"required>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Mot de passe</mat-label>
-                    <input matInput placeholder="*******" formControlName="password" value="1234" required>
+                    <input matInput type = "password" class="form-control"#password="ngModel"[(ngModel)]="user.password" placeholder="*******" required>
                 </mat-form-field>
                 <!-- ATTENTION à bien garder le bouton DANS le formulaire ! -->
                 <div class="button">
