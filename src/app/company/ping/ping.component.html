@@ -34,7 +34,7 @@
                             </div>
                             <div class="name">{{ route.snapshot.data.userList[ping.user_id-1].firstName }} {{ route.snapshot.data.userList[ping.user_id-1].lastName }}</div>
                             <div class="job-title"> {{ route.snapshot.data.offerList[ping.offer_id-1].title }}</div>
-                            <div class="date">{{ ping.updatedAt }}</div>
+                            <div class="date">{{ ping.updatedAt | date : "dd.MM.y" }}</div>
                             <div class="message">
                                 <div class="lepoint" [ngStyle]="{'background': route.snapshot.data.statusList[ping.status_id-1].color}"></div>
                             </div>  

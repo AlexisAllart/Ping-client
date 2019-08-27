@@ -34,7 +34,7 @@
                         </div>
                         <div class="name">{{ route.snapshot.data.userList[selection.user_id-1].firstName }} {{ route.snapshot.data.userList[selection.user_id-1].lastName }}</div>
                         <!-- <div class="job-title"> {{selection.</div> -->
-                        <div class="date">{{ selection.updatedAt }}</div>
+                        <div class="date">{{ selection.updatedAt | date : "dd.MM.y" }}</div>
                         <div class="message">
                             <div class="lepoint" [ngStyle]="{'background': route.snapshot.data.tagList[selection.tag_id-1].color}"></div>
                         </div>

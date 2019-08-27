@@ -31,9 +31,9 @@
                     <input matInput type="password" name="password" class="form-control" #passeword="ngModel" [(ngModel)]="user.password" placeholder="*******" required>
                     <span *ngIf="!password.valid && password.touched">Not valid password</span>
                 </mat-form-field>
-                <div class="button">
+                <!-- <div class="button">
                     <a type="submit" value="Enregistrer" class="btn-blue" [disabled]= "!loginForm.form.valid">Enregistrer</a>
-                </div>
+                </div> -->
             </form>
 
         </div>
