@@ -9,7 +9,7 @@
         
         <div class="container-inscription">
             <h2 class="title-blue">Inscription</h2>
-            <form [formGroup]="form" (ngSubmit)= "onSubmit"class="form-blue">
+            <form [formGroup]="formInscription" (ngSubmit)= "onSubmitInscription()"class="form-blue">
             
                 <mat-form-field>
                     <mat-label>Nom</mat-label>
@@ -32,7 +32,7 @@
                     <span *ngIf="!password.valid && password.touched">Not valid password</span>
                 </mat-form-field>
                 <div class="button">
-                    <a type="submit" value="Enregistrer" class="btn-blue" [disabled]= "!loginForm.form.valid">Enregistrer</a>
+                    <button class="btn-blue" [disabled]= "!loginForm.form.valid">Enregistrer</button>
                 </div>
             </form>
 
@@ -51,11 +51,13 @@
             <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
                 <mat-form-field>
                     <mat-label>Email</mat-label>
-                    <input matInput type = "email" class = "form-control"#email ="ngModel"[(ngModel)]="user.email" placeholder="exemple@gmail.com"required>
+                    <!-- <input matInput placeholder="exemple@gmail.com" formControlName="email" required> -->
+                    <input matInput placeholder="exemple@gmail.com" formControlName="email" value="charlene.smith@gmail.com" required>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Mot de passe</mat-label>
-                    <input matInput type = "password" class="form-control"#password="ngModel"[(ngModel)]="user.password" placeholder="*******" required>
+                    <!-- <input matInput placeholder="*******" formControlName="password" required> -->
+                    <input matInput placeholder="*******" formControlName="password" value="1234" required>
                 </mat-form-field>
                 <!-- ATTENTION à bien garder le bouton DANS le formulaire ! -->
                 <div class="button">
