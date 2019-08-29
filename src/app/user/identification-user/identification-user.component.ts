@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class IdentificationUserComponent implements OnInit {
   form: FormGroup;
+  formInscription: FormGroup;
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
 
@@ -22,6 +23,10 @@ export class IdentificationUserComponent implements OnInit {
       email: ['', Validators.email],
       password: ['', Validators.required]
     });
+    // this.formInscription = this.fb.group({
+    //   email: ['', Validators.email],
+    //   password: ['', Validators.required]
+    // });
   }
 
   onSubmit() {

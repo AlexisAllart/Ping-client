@@ -30,19 +30,15 @@
                     </div>
                 </div>
         <section class="search">
+            
+            <div *ngIf="(folderObjs | filter:search).length <1">
+                Not Found
+            </div>
             <div class="search-nav">
                 <div class="input-wrapper">
                     <input type="search" placeholder=" QUOI ?" [(ngModel)]="search">
                     <span class="input-icon fa fa-search"></span>
-
-                </div>
-                <div *ngFor="let f of (folderObjs | filter:search)as folder">
-                    {{f.name}} {{f.size}}
-
-                </div>
-
-                <div *ngIf="(folderObjs | filter:search).length <1">
-                    Not Found
+                    
                 </div>
                 <div class="input-wrapper">
                     <input type="map" placeholder="OU ?" />
@@ -57,7 +53,11 @@
                 <p class="type">FREELANCE</p>
             </div>
             <div class="container">
-                <div *ngFor="let offer of route.snapshot.data.offerList" class="box">
+                <div *ngFor="let f of (folderObjs | filter:search)">
+                    {{f.name}}
+                </div>
+                <!-- <div *ngFor="let offer of route.snapshot.data.offerList" class="box"> -->
+                <div *ngFor="let offer of (folderObjs | filter:search)" class="box">
                     <div class="sous-container">
                         <div class="container-text">
                             <h2 class="title">{{ offer.title }}</h2>

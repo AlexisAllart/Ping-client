@@ -30,30 +30,40 @@ export class SearchUserComponent implements OnInit {
     private authService: AuthService
     ) { }
 
+  folderObjs=this.route.snapshot.data.offerList;
+  search='';
+  
   ngOnInit() {
     // JSON.parse(localStorage.getItem('id')) !== null?this.userService.preloadUser():'';
 
     this.initMap();
+    for (let i=0;i<this.route.snapshot.data.offerList.length;i++) {
+      this.folderObjs[i].keyWords =
+      this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordOne_id-1].name+
+      this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordTwo_id-1].name+
+      this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordThree_id-1].name
+    }
+    console.log(this.folderObjs);
   }
 
   ///////////////////////////////////////////////
 
-  search='';
   
 
-  folderObjs=[{
-    name:'flo mdr',
-    size:'24 ans'
-  },{
-    name:'wahiba <3',
-    size:'36 ans'
-  },{
-    name:'alex^^',
-    size:'33 ans'
-  },{
-    name:'natacha <3',
-    size:'25 ans'
-  }]
+  
+  // [{
+  //   name:'flo mdr',
+  //   size:'24 ans'
+  // },{
+  //   name:'wahiba <3',
+  //   size:'36 ans'
+  // },{
+  //   name:'alex^^',
+  //   size:'33 ans'
+  // },{
+  //   name:'natacha <3',
+  //   size:'25 ans'
+  // }]
 
   ////////////////////////////////////////////////
   
