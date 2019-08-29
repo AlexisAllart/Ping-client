@@ -34,6 +34,7 @@ export class SearchUserComponent implements OnInit {
   private filteredArray = [];
 
   private geolocationPosition;
+  private geoFound=false;
 
   constructor(
     private route: ActivatedRoute,
@@ -55,19 +56,22 @@ export class SearchUserComponent implements OnInit {
       window.navigator.geolocation.getCurrentPosition(
         position => {
           this.geolocationPosition = position;
+          this.geoFound=true;
           this.initMap();
         },
         error => {
-          this.initMap();
           switch (error.code) {
             case 1:
               alert('ERREUR Localisation : Permission refusée');
+              this.initMap();
               break;
             case 2:
               alert('ERREUR Localisation : Impossible de trouver votre position');
+              this.initMap();
               break;
             case 3:
               alert('ERREUR Localisation : Aucune réponse du navigateur');
+              this.initMap();
               break;
           }
         }
@@ -82,13 +86,13 @@ export class SearchUserComponent implements OnInit {
 
   initMap() {
     let lat,lon;
-    this.geolocationPosition.coords.latitude ? lat = this.geolocationPosition.coords.latitude : lat = 50.6342;
-    this.geolocationPosition.coords.longitude ? lon = this.geolocationPosition.coords.longitude : lon = 3.02046;
+    this.geoFound ? lat = this.geolocationPosition.coords.latitude : lat = 50.6342;
+    this.geoFound ? lon = this.geolocationPosition.coords.longitude : lon = 3.02046;
     this.map = L.map('map').setView([lat, lon], 15);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
-    this.geolocationPosition.coords.latitude ? L.marker([this.geolocationPosition.coords.latitude, this.geolocationPosition.coords.longitude], { icon: this.redIcon }).bindPopup("Vous êtes ici !").addTo(this.map):'';
+    this.geoFound ? L.marker([this.geolocationPosition.coords.latitude, this.geolocationPosition.coords.longitude], { icon: this.redIcon }).bindPopup("Vous êtes ici !").addTo(this.map):'';
     this.populateMarkers();
   }
 
