@@ -30,13 +30,9 @@
                     </div>
                 </div>
         <section class="search">
-            
-            <div *ngIf="(folderObjs | filter:search).length <1">
-                Not Found
-            </div>
             <div class="search-nav">
                 <div class="input-wrapper">
-                    <input type="search" placeholder=" QUOI ?" [(ngModel)]="search">
+                    <input type="search" placeholder=" QUOI ?" [(ngModel)]="search" (ngModelChange)="change()">
                     <span class="input-icon fa fa-search"></span>
                     
                 </div>
@@ -53,11 +49,8 @@
                 <p class="type">FREELANCE</p>
             </div>
             <div class="container">
-                <div *ngFor="let f of (folderObjs | filter:search)">
-                    {{f.name}}
-                </div>
                 <!-- <div *ngFor="let offer of route.snapshot.data.offerList" class="box"> -->
-                <div *ngFor="let offer of (folderObjs | filter:search)" class="box">
+                <div *ngFor="let offer of filteredArray" class="box">
                     <div class="sous-container">
                         <div class="container-text">
                             <h2 class="title">{{ offer.title }}</h2>
