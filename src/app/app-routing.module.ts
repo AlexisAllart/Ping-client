@@ -123,14 +123,14 @@ const routes: Routes = [
     userDetails: UserDetailsResolver
   }},
   {path: 'identification-user', component: IdentificationUserComponent},
-  {path: 'offer-user', component: OfferUserComponent, resolve: {
+  {path: 'offer-user/:id', component: OfferUserComponent, resolve: {
     companyList: CompanyResolver,
     contractTypeList: ContractTypeResolver,
     keyWordList: KeyWordResolver,
     offerList: OfferResolver,
     pingList: PingResolver,
     statusList: StatusResolver,
-    userDetails: UserDetailsResolver
+    userDetails: UserDetailsResolver,
   }},
   {path: 'profile-user', component: ProfileUserComponent, resolve: {
     keyWordList: KeyWordResolver,    

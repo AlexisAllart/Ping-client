@@ -68,7 +68,7 @@
                         <p class="words">{{ route.snapshot.data.keyWordList[offer.keyWordThree_id-1].name }}</p>
                     </div>
                     <div class="btn-plus">
-                        <i class="fas fa-plus-circle plus" routerLink="/offer-user"></i>
+                        <i class="fas fa-plus-circle plus" [routerLink]="['/offer-user', offer.id]"></i>
                     </div>
 
                 </div>
