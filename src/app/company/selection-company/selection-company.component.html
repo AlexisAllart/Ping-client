@@ -39,7 +39,7 @@
                             <div class="lepoint" [ngStyle]="{'background': route.snapshot.data.tagList[selection.tag_id-1].color}"></div>
                         </div>
                         <div class="btn-download">
-                            <a href="http://pingjob.herokuapp.com/route.snapshot.data.userList[selection.user_id-1].cv"><i class="fas fa-arrow-down fleche"></i></a>
+                            <a href="http://pingjob.herokuapp.com/{{route.snapshot.data.userList[selection.user_id-1].cv}}"><i class="fas fa-arrow-down fleche"></i></a>
                         </div>
 
                         <div class="btn-detail-small">
