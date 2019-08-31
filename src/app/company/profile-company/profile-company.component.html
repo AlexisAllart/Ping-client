@@ -37,13 +37,13 @@
                 </div>
                 <form   class="form" action="">
                     <label class="label" for="">Nom</label>
-                    <input [(ngModel)]="votreNom" name="name" class="input" type="text" placeholder="Silicon Salad">
+                    <input [(ngModel)]="votreNom" name="name" class="input" type="text" placeholder="Nom de votre compagnie">
                     <label class="label" for="">Mail</label>
-                    <input [(ngModel)]="votreMail" name="email" class="input" type="text" placeholder="contact@siliconsalad.com">
+                    <input [(ngModel)]="votreMail" name="email" class="input" type="email" placeholder="Email@address.com">
                     <label class="label" for="">Téléphone</label>
-                    <input class="input" type="text" placeholder="03 20 45 31 90">
+                    <input [(ngModel)]="votrePhone" name="phone" class="input" type="text" placeholder="00 00 00 00 00">
                     <label class="label" for="">Mot de passe</label>
-                    <input class="input" type="text" placeholder="************">
+                    <input [(ngModel)]="votrePassword" name="password" class="input" type="password" placeholder="************">
                 </form>
             </div>
         </div>
@@ -51,13 +51,15 @@
             <div class="about-bloc">
                 <div class="container">
                     <div class="image">
-                        <img class="logo" src="assets/img/logo.png" alt="logo">
+                        <img class="logo" src="http://pingjob.herokuapp.com/{{ route.snapshot.data.companyList[companyUser.company_id-1].logo }}" alt="logo">
                     </div>
                     <div class="container-text">
-                        <h2 class="title-about">COMPANY_NAME</h2>
+                        <h2 class="title-about">
+                            {{ route.snapshot.data.companyList[companyUser.company_id-1].name }}
+                        </h2>
                         <hr class="line">
                         <p class="description">
-                        COMPANY_ABOUT
+                            {{ route.snapshot.data.companyList[companyUser.company_id-1].about }}
                         </p>
 
                     </div>
@@ -77,10 +79,18 @@
                             <i class="fas fa-link site"></i>
                         </div>
                         <div class="link-social">
-                            <a class="link" href="http://facebook.com">COMPANY_FACEBOOK</a>
-                            <a class="link" href="http://twitter.com">COMPANY_TWITTER</a>
-                            <a class="link" href="http://linkedin.com">COMPANY_LINKEDIN</a>
-                            <a class="link" href="http://link.com">COMPANY_WEBSITE</a>
+                            <a class="link" href="http://facebook.com">
+                                {{ route.snapshot.data.companyList[companyUser.company_id-1].facebook }}
+                            </a>
+                            <a class="link" href="http://twitter.com">
+                                {{ route.snapshot.data.companyList[companyUser.company_id-1].twitter }}
+                            </a>
+                            <a class="link" href="http://linkedin.com">
+                                {{ route.snapshot.data.companyList[companyUser.company_id-1].linkedin }}
+                            </a>
+                            <a class="link" href="http://link.com">
+                                {{ route.snapshot.data.companyList[companyUser.company_id-1].link }}
+                            </a>
                         </div>
 
                     </div>
