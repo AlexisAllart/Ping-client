@@ -42,7 +42,7 @@
                                 <a href="http://pingjob.herokuapp.com/{{route.snapshot.data.userList[ping.user_id-1].cv}}"><i class="fas fa-arrow-down fleche"></i></a>
                             </div>
                         
-                            <div class="btn-detail-small">
+                            <div class="btn-detail-small" (click)="onCreate()">
                                 <!-- INSERER POPUP USER CARD SUR CLICK DE CET ICONE -->
                                 <i class="fas fa-plus-circle plus"></i>
                             </div>

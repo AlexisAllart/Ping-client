@@ -17,7 +17,6 @@ import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 import { OfferUserComponent } from './user/offer-user/offer-user.component';
 import { CguComponent } from './general/cgu/cgu.component';
-
 // Resolvers
 import { CompanyResolver } from './resolvers/company.resolver';
 import { CompanyUserResolver } from './resolvers/companyUser.resolver';
