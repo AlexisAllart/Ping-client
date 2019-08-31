@@ -26,6 +26,8 @@ export class SearchUserComponent implements OnInit {
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
   });
 
+
+
   // Map Variables
   private map;
   private markers = [];
