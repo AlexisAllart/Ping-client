@@ -13,8 +13,6 @@ export class PingComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private dialog: MatDialog) { 
-
-
      }
 
   ngOnInit() { }

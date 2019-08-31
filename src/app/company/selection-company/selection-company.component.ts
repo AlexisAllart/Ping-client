@@ -11,22 +11,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SelectionCompanyComponent implements OnInit {
 
-    // click(event: Event): void {
-    //   console.log("hello");
-
-    //   const button = event.target as HTMLButtonElement;
-
-    //   button.style.backgroundColor= 'yellow';
-    // }
-
-    show = false;
-  
-    // onClick(){
-    //   console.log('hello');
-    // }
-
-
-
     //Lists
     selectionList: Array<Selection> ={} as Array<Selection>;
     userList : Array<User> = {} as Array<User>;
