@@ -22,6 +22,19 @@
 
 }
 
+button {
+    border:none;
+    transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+    color:#60A4FF;
+    border:1px solid #60A4FF;
+    background-color: white;
+}
+
+
+
 // *{
 //     border: black solid 1px;
 // }
