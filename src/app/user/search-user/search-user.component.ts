@@ -116,8 +116,8 @@ export class SearchUserComponent implements OnInit {
 
   addDistanceCircle() {
     this.distanceCircle = L.circle([this.geolocationPosition.coords.latitude, this.geolocationPosition.coords.longitude], {
-      color: '#6f6',
-      fillColor: '#0fa',
+      color: '#60A4FF',
+      fillColor: '#60A4FF',
       fillOpacity: 0.1,
       radius: this.distanceSlider*100
     }).addTo(this.map);

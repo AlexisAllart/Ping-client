@@ -36,13 +36,13 @@
                     <span class="input-icon fa fa-search"></span>
                     
                 </div>
-                <div *ngIf="geoFound" class="input-wrapper">
+                <div *ngIf="geoFound" class="range">
                     <!-- <input type="map" placeholder="OU ?" />
                     <span class="input-icon fas fa-map-marker-alt"></span> -->
                     <input type="range" #slider min="1" max="200" value="200" [(ngModel)]="distanceSlider" (ngModelChange)="onDistanceChange(slider.value)">
                 </div>
             </div>
-            <span *ngIf="geoFound" style="font-size: 18px;">Distance max : {{distanceSlider/10}} km</span>
+            <span class="distance" *ngIf="geoFound" style="font-size: 18px;">Distance max : {{distanceSlider/10}} km</span>
             <div class="contract">
                 <p class="type">CDD</p>
                 <p class="type">CDI</p>
