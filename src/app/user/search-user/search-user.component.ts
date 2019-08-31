@@ -16,13 +16,22 @@ export class SearchUserComponent implements OnInit {
   private defaultIcon = L.icon({
     iconUrl: '../../../assets/leaflet/images/marker-icon.png',
     //pop up quand on clique, le met juste au dessus
-    popupAnchor: [13, -2],
+    popupAnchor: [1, -40],
+    iconAnchor: [12, 36],
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
   });
   private redIcon = L.icon({
     iconUrl: '../../../assets/leaflet/images/marker-icon-red.png',
     //pop up quand on clique, le met juste au dessus
-    popupAnchor: [13, -2],
+    popupAnchor: [1, -40],
+    iconAnchor: [12, 36],
+    shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
+  });
+  private greenIcon = L.icon({
+    iconUrl: '../../../assets/leaflet/images/marker-icon-green.png',
+    //pop up quand on clique, le met juste au dessus
+    popupAnchor: [1, -40],
+    iconAnchor: [12, 36],
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
   });
 
@@ -45,15 +54,19 @@ export class SearchUserComponent implements OnInit {
 
   private offersWithKeyWords = this.route.snapshot.data.offerList;
   private search = '';
+  private distanceSlider = 200;
+  private distanceCircle;
 
+    
   ngOnInit() {
     for (let i = 0; i < this.route.snapshot.data.offerList.length; i++) {
       this.offersWithKeyWords[i].keyWords =
-        this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordOne_id - 1].name +
-        this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordTwo_id - 1].name +
-        this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordThree_id - 1].name
+      this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordOne_id - 1].name +
+      this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordTwo_id - 1].name +
+      this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordThree_id - 1].name;
     }
     this.filteredArray = this.offersWithKeyWords.filter((v) => v.keyWords.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
+    this.filteredArray.forEach(x => (x.show=true));
     if (window.navigator && window.navigator.geolocation) {
       window.navigator.geolocation.getCurrentPosition(
         position => {
@@ -81,9 +94,33 @@ export class SearchUserComponent implements OnInit {
     };
   }
 
+  onDistanceChange(value) {
+    this.distanceSlider = value;
+    this.change();
+  }
+
+
   change() {
     this.filteredArray = this.offersWithKeyWords.filter((v) => v.keyWords.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
+    if (this.geoFound) {
+      this.map.removeLayer(this.distanceCircle);
+      this.addDistanceCircle();
+      for (let i=0;i<this.filteredArray.length;i++) {
+        this.filteredArray[i].distance = L.latLng(this.geolocationPosition.coords.latitude,this.geolocationPosition.coords.longitude).distanceTo(L.latLng(this.filteredArray[i].latitude,this.filteredArray[i].longitude));
+        this.filteredArray[i].distance > this.distanceSlider*100 ? this.filteredArray[i].show=false : this.filteredArray[i].show=true;
+      }
+    }
+    
     this.populateMarkers();
+  }
+
+  addDistanceCircle() {
+    this.distanceCircle = L.circle([this.geolocationPosition.coords.latitude, this.geolocationPosition.coords.longitude], {
+      color: '#6f6',
+      fillColor: '#0fa',
+      fillOpacity: 0.1,
+      radius: this.distanceSlider*100
+    }).addTo(this.map);
   }
 
   initMap() {
@@ -94,7 +131,17 @@ export class SearchUserComponent implements OnInit {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
-    this.geoFound ? L.marker([this.geolocationPosition.coords.latitude, this.geolocationPosition.coords.longitude], { icon: this.redIcon }).bindPopup("Vous êtes ici !").addTo(this.map):'';
+    if (this.geoFound) {
+      L.marker([this.geolocationPosition.coords.latitude, this.geolocationPosition.coords.longitude], { icon: this.greenIcon }).bindPopup("Vous êtes ici !").addTo(this.map);
+      this.addDistanceCircle();
+      for (let i=0;i<this.filteredArray.length;i++) {
+        this.filteredArray[i].distance = L.latLng(this.geolocationPosition.coords.latitude,this.geolocationPosition.coords.longitude).distanceTo(L.latLng(this.filteredArray[i].latitude,this.filteredArray[i].longitude));
+        this.filteredArray[i].distance > this.distanceSlider*100 ? this.filteredArray[i].show=false : this.filteredArray[i].show=true;
+      }
+    }
+    else {
+      this.distanceSlider = 9999999999999;
+    }
     this.populateMarkers();
   }
 
@@ -103,7 +150,12 @@ export class SearchUserComponent implements OnInit {
     this.markers = [];
     this.markerLayer ? this.markerLayer.clearLayers() : '';
     for (let i = 0; i < this.filteredArray.length; i++) {
-      this.markers[i] = L.marker([this.filteredArray[i].latitude, this.filteredArray[i].longitude], { icon: this.defaultIcon }).bindPopup(this.filteredArray[i].title + " : " + this.filteredArray[i].description);
+      if (this.filteredArray[i].show) {
+        this.markers[i] = L.marker([this.filteredArray[i].latitude, this.filteredArray[i].longitude], { icon: this.defaultIcon }).bindPopup(this.filteredArray[i].title + " : " + this.filteredArray[i].description);
+      }
+      else {
+        this.markers[i] = L.marker([this.filteredArray[i].latitude, this.filteredArray[i].longitude], { icon: this.redIcon }).bindPopup(this.filteredArray[i].title + " : " + this.filteredArray[i].description);
+      }
     }
     this.markerLayer = L.layerGroup(this.markers);
     this.map.addLayer(this.markerLayer);
