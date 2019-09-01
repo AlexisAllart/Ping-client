@@ -9,35 +9,51 @@
         
         <div class="container-inscription">
             <h2 class="title-blue">Inscription</h2>
-            <form [formGroup]="formInscription" (ngSubmit)= "onSubmitInscription()"class="form-blue">
-            
+            <!-- <form [formGroup]="formInscription" (ngSubmit)= "onSubmitInscription(contactForm.value)" #contactForm="ngForm" class="form-blue">
+                
                 <mat-form-field>
-                    <mat-label>Nom</mat-label>
-                    <input type="text" matInput formControleName = "name" placeholder="Dupont" required>
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Prenom</mat-label>
-                    <input type="text" matInput formControleName= "firstName" placeholder="Hugues" required>
-                </mat-form-field>
-
-                <mat-form-field>
-                    <mat-label>Mail</mat-label>
-                    <input matInput type="email" class="form-control"#email="ngModel"[(ngModel)]="user.email" placeholder="exemple@gmail.com" required>
-                    <span *ngIf="!email.valid && email.touched">Not valid password</span>
+                    <mat-label for="name">Nom</mat-label>
+                    <input #lastName="ngModel" id= "lastName" type="text" placeholder="Dupont" required class="validate"
+                    [(ngModel)="model.lastName" name="lastName"]>
+                    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+                        <div *ngIf="lastName.errors.required">SVP entrez un nom</div>
+                    </div>
                 </mat-form-field>
 
                 <mat-form-field>
-                    <mat-label>Mot de passe</mat-label>
-                    <input matInput type="password" name="password" class="form-control" #passeword="ngModel" [(ngModel)]="user.password" placeholder="*******" required>
-                    <span *ngIf="!password.valid && password.touched">Not valid password</span>
+                    <mat-label for="first_name">Prénom</mat-label>
+                    <input #firstName="ngModel" id= "first_Name" type="text" placeholder="Marc" required class="validate"
+                    [(ngModel)="model.first_name" name="first_name"]>
+                    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+                        <div *ngIf="firstName.errors.required">SVP entrez un prénom</div>
+                    </div>
                 </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label for="email">Mail</mat-label>
+                    <input #email="ngModel" id="email" type="email"  placeholder="exemple@gmail.com" required class="validate"
+                     [(ngModel)]="model.email" name="email">
+                     <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                        <div *ngIf="email.errors.required">Not valid email</div>
+                    </div>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label for="password">Mot de passe</mat-label>
+                    <input #passeword="ngModel" id="password" type="password" placeholder="************" required class="validate"
+                    [(ngModel)]="user.password" name="password">
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                        <div *ngIf="password.errors.required">Not valid password</div>
+                    </div>
+                </mat-form-field>
+
                 <div class="button">
                     <button class="btn-blue" [disabled]= "!loginForm.form.valid">Enregistrer</button>
                 </div>
-            </form>
+            </form> -->
 
         </div>
-    </div>
+    </div> 
 
     <!------------Connexion-------------->
 

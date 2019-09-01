@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { UserDetailsService } from '../../services/userDetails.service';
+import{User} from '../../models/User.model';
 
 @Component({
   selector: 'app-identification-user',
@@ -39,4 +41,29 @@ export class IdentificationUserComponent implements OnInit {
       this.formSubmitAttempt = true;
     }
   }
+/**************************** Registration ****************************/
+formInscription: FormGroup;
+  
+  
+  // ngOnInitInscription() {
+  //   this.formInscription = this.fb.group({
+  //     firstName:[''],
+  //     lastName:[''],
+  //     email: ['', Validators.email],
+  //     password: ['', Validators.required]
+  //   });
+  // }
+
+//   model = [new User()];
+  
+//   onSubmitInscription(value: any){
+//     this.model.unshift(
+//       new User(
+//         value.firstName,
+//         value.lastName,
+//         value.email,
+//         value.password,
+//     )
+//     ) 
+// }
 }
