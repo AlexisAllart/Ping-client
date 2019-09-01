@@ -62,7 +62,9 @@ export class SearchUserComponent implements OnInit {
     for (let i = 0; i < this.route.snapshot.data.offerList.length; i++) {
       this.offersWithKeyWords[i].keyWords =
       this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordOne_id - 1].name +
+      "&"+
       this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordTwo_id - 1].name +
+      "&"+
       this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordThree_id - 1].name;
     }
     this.filteredArray = this.offersWithKeyWords.filter((v) => v.keyWords.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
