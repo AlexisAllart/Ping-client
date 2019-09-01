@@ -53,12 +53,12 @@
                         <select #keyword="ngModel" class="form-control" id="keyword" materialize="material_select"
                             [(ngModel)]="model.keyword" name="keyword">
                             <option value="" disabled selected>Choisir un mot clé</option>
-                            <option value="" *ngFor="let keyword of keywords" [value]="keyword">{{keyword}}</option>
+                            <option value="" *ngFor="let keyword of route.snapshot.data.keyWordList" [value]="keyword.name">{{keyword.name}}</option>
                             <label for="keyword">Mot clé</label>
                         </select>
-                        <!-- <div class="btn-add"></div> -->
+                        <div class="btn-add">
                             <button id="btn" type="submit" class="button">Ajouter</button>
-                        <!-- </div> -->
+                        </div>
                 </form>
 
                 <!-- <form class="un" class="form" action="">
@@ -103,22 +103,26 @@
             </div>
 
             <div class="offre">
-                <div *ngFor="let offre of model" class="box" [@contactsAnimation]="state">
-                    <div class="sous-container">
-                        <div class="container-text">
-                            <h2 class="title">{{offre.job_name}}</h2>
-                            <hr class="line">
-                            <h4 class="company">{{offre.company_name}}</h4>
-                            <p class="description">{{offre.description}}</p>
+                <div *ngFor="let offer of this.route.snapshot.data.offerList" [@contactsAnimation]="state">
+                    <div *ngIf="offer.company_id == companyUser.company_id" class="box">
+                        <div class="sous-container">
+                            <div class="container-text">
+                                <h2 class="title">{{ offer.title }}</h2>
+                                <hr class="line">
+                                <h4 class="company">{{ route.snapshot.data.companyList[offer.company_id-1].name }}</h4>
+                                <p class="description">{{ offer.description }}</p>
+                            </div>
+                            <div class="right-side">
+                                <p class="contract-type">{{ route.snapshot.data.contractTypeList[offer.contractType_id-1].name }}</p>
+                            </div>
                         </div>
-                        <div class="right-side">
-                            <p class="contract-type">{{offre.contract_type}}</p>
+                        <div class="key-words">
+                            <div class="words">{{ route.snapshot.data.keyWordList[offer.keyWordOne_id-1].name }}</div>
+                            <div class="words">{{ route.snapshot.data.keyWordList[offer.keyWordTwo_id-1].name }}</div>
+                            <div class="words">{{ route.snapshot.data.keyWordList[offer.keyWordThree_id-1].name }}</div>
                         </div>
+                        <i class="fas fa-plus-circle plus"></i>
                     </div>
-                    <div class="key-words">
-                            {{offre.keyword}}
-                    </div>
-                    <i class="fas fa-plus-circle plus"></i>
                 </div>
 
                 <!-- <div class="box">

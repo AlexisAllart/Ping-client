@@ -39,19 +39,16 @@
                             <div class="lepoint" [ngStyle]="{'background': route.snapshot.data.tagList[selection.tag_id-1].color}"></div>
                         </div>
                         <div class="btn-download">
-                            <a href="http://pingjob.herokuapp.com/route.snapshot.data.userList[selection.user_id-1].cv"><i class="fas fa-arrow-down fleche"></i></a>
+                            <a href="http://pingjob.herokuapp.com/{{route.snapshot.data.userList[selection.user_id-1].cv}}"><i class="fas fa-arrow-down fleche"></i></a>
                         </div>
 
-                        <div class="btn-detail-small">
+                        <div class="btn-detail-small" (click)="onCreate(route.snapshot.data.userList[selection.user_id-1].id-1)">
+                            <!-- INSERER POPUP USER CARD SUR CLICK DE CET ICONE -->
                             <i class="fas fa-plus-circle plus"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="content" [hidden]="show">
-            <p class="content-text">Ceci est un pop-up !!!!</p>
-        </div>
-
     </div>
 </div>

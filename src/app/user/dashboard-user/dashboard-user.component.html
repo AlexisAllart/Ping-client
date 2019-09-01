@@ -36,7 +36,7 @@
                                     </p>
                                 </div>
                                 <div class="card-container-text">
-                                    <p class="card-date">{{ ping.createdAt }}</p>
+                                    <p class="card-date">{{ ping.createdAt | date : "dd.MM.y" }}</p>
                                 </div>
                                 <div class="card-statut">
                                     <div class="card-lepoint" [ngStyle]="{'background': route.snapshot.data.statusList[ping.status_id-1].color}"></div>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="card-btn-detail-medium">
-                            <i class="fas fa-plus-circle card-plus" routerLink="/offer-user"></i>
+                            <i class="fas fa-plus-circle card-plus" [routerLink]="['/offer-user', route.snapshot.data.offerList[ping.offer_id-1].id]"></i>
                         </div>
                     </div>
                 </div>

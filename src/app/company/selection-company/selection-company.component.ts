@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
 import { User } from 'src/app/models/User.model';
 import { Selection } from 'src/app/models/Selection.model';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
+import { ModalComponent } from 'src/app/modal/modal.component';
 
 @Component({
   selector: 'app-selection-company',
@@ -10,22 +11,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./selection-company.component.scss']
 })
 export class SelectionCompanyComponent implements OnInit {
-
-    // click(event: Event): void {
-    //   console.log("hello");
-
-    //   const button = event.target as HTMLButtonElement;
-
-    //   button.style.backgroundColor= 'yellow';
-    // }
-
-    show = false;
-  
-    // onClick(){
-    //   console.log('hello');
-    // }
-
-
 
     //Lists
     selectionList: Array<Selection> ={} as Array<Selection>;
@@ -35,8 +20,18 @@ export class SelectionCompanyComponent implements OnInit {
     private selectionListLoaded = false;
     private userListLoaded = false; 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() { }
+
+  onCreate(id){
+    this.dialog.open(ModalComponent, {
+      data: {
+        user: this.route.snapshot.data.userList[id],
+        keyWordList: this.route.snapshot.data.keyWordList
+      }
+    });
+  }
 }

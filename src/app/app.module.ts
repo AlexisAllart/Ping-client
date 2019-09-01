@@ -34,7 +34,8 @@ import {
   MatSelectModule,
   MatFormFieldModule,
   MatNativeDateModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatDialogModule
 } from '@angular/material';
 
 import {
@@ -82,6 +83,7 @@ import { SelectionCompanyComponent } from './company/selection-company/selection
 import { BlueCardUserComponent } from './layouts/blue-card-user/blue-card-user.component';
 import { NavbarNologinComponent } from './general/navbar-nologin/navbar-nologin.component';
 import { CguComponent } from './general/cgu/cgu.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -120,7 +122,8 @@ import { CguComponent } from './general/cgu/cgu.component';
     BlueCardUserComponent,
     NavbarNologinComponent,
     FilterPipe,
-    CguComponent
+    CguComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -140,6 +143,7 @@ import { CguComponent } from './general/cgu/cgu.component';
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,
   ],
   providers: [
     AuthService,
@@ -159,6 +163,7 @@ import { CguComponent } from './general/cgu/cgu.component';
     UserService,
     UserDetailsService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalComponent]
 })
 export class AppModule { }

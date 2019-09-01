@@ -11,6 +11,7 @@ import{User} from '../../models/User.model';
 })
 export class IdentificationUserComponent implements OnInit {
   form: FormGroup;
+  formInscription: FormGroup;
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
 
@@ -24,6 +25,10 @@ export class IdentificationUserComponent implements OnInit {
       email: ['', Validators.email],
       password: ['', Validators.required]
     });
+    // this.formInscription = this.fb.group({
+    //   email: ['', Validators.email],
+    //   password: ['', Validators.required]
+    // });
   }
 
   onSubmit() {
@@ -45,14 +50,14 @@ export class IdentificationUserComponent implements OnInit {
 formInscription: FormGroup;
   
   
-  // ngOnInitInscription() {
-  //   this.formInscription = this.fb.group({
-  //     firstName:[''],
-  //     lastName:[''],
-  //     email: ['', Validators.email],
-  //     password: ['', Validators.required]
-  //   });
-  // }
+  ngOnInitInscription() {
+    this.formInscription = this.fb.group({
+      firstName:[''],
+      lastName:[''],
+      email: ['', Validators.email],
+      password: ['', Validators.required]
+    });
+  }
 
 //   model = [new User()];
   

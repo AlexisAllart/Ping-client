@@ -52,26 +52,23 @@
 
             <div class="search-input">
                 <div class="input-wrapper">
-                    <input type="search" placeholder=" QUOI ?" [(ngModel)]="search">
+                    <input type="search" placeholder=" QUOI ?" [(ngModel)]="search" (ngModelChange)="change()">
                     <span class="input-icon fa fa-search"></span>
                     
                 </div>
-                <div *ngFor="let f of (folderObjs | filter:search)as folder">
+                <!-- <div *ngFor="let f of (folderObjs | filter:search)as folder">
                     {{f.name}}
                     {{f.size}}
                   
-                  </div>
+                  </div> -->
                   
-                  <div *ngIf="(folderObjs | filter:search).length <1">
-                    Not Found
-                </div>
-                <div class="input-wrapper">
-                    <input type="map" placeholder="OU ?" />
-                    <span class="input-icon fas fa-map-marker-alt"></span>
-                </div>
+                  <!-- <div class="input-wrapper">
+                      <input type="map" placeholder="OU ?" />
+                      <span class="input-icon fas fa-map-marker-alt"></span>
+                </div> -->
             </div>
             <!----- CONTRACT TYPE ---------->
-            <div class="search">
+            <!-- <div class="search">
                 <div class="contract">
                     <p class="type">CDD</p>
                     <p class="type">CDI</p>
@@ -79,15 +76,18 @@
                     <p class="type">ALTERNANCE</p>
                     <p class="type">FREELANCE</p>
                 </div>
-            </div>
+            </div> -->
         </div>
-
-
-
+        
+        
+        
         <!----- CARTES CANDIDATS  ---------->
         <div class="card-candidat">
             <!--CARTE CANDIDAT UN -->
-            <div *ngFor="let user of route.snapshot.data.userList" class="container">
+            <div *ngIf="filteredArray.length < 1">
+                Aucun profil ne correspond à vos critères.
+            </div>
+            <div *ngFor="let user of filteredArray" class="container">
                 <div class="blue">
                     <div class="sous-container">
                         <img class="profile" src="http://pingjob.herokuapp.com/{{user.picture}}">

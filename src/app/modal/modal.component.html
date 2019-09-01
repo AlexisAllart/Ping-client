@@ -1,0 +1,25 @@
+<div class="blue">
+    <div class="sous-container">
+        <img class="profile" src="http://pingjob.herokuapp.com/{{user.picture}}">
+    </div>
+    <div class="container-text">
+        <div class="top">
+            <h4 class="title">{{ user.firstName }} {{ user.lastName }}</h4>
+            <!-- ?ContractType ici? -->
+            <!-- <p class="contract-type">CDI</p> -->
+        </div>
+        <p class="description">
+            {{ user.about }}
+        </p>
+        <div class="key-words">
+            <p class="words">{{ keyWordList[user.keyWordOne_id-1].name }}</p>
+            <p class="words">{{ keyWordList[user.keyWordTwo_id-1].name }}</p>
+            <p class="words">{{ keyWordList[user.keyWordThree_id-1].name }}</p>
+        </div>
+    </div>
+    <div class="right-side">
+       
+        <button mat-button mat-dialog-close>Fermer</button>
+    </div>
+   
+</div>

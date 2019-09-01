@@ -17,7 +17,6 @@ import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 import { OfferUserComponent } from './user/offer-user/offer-user.component';
 import { CguComponent } from './general/cgu/cgu.component';
-
 // Resolvers
 import { CompanyResolver } from './resolvers/company.resolver';
 import { CompanyUserResolver } from './resolvers/companyUser.resolver';
@@ -123,14 +122,14 @@ const routes: Routes = [
     userDetails: UserDetailsResolver
   }},
   {path: 'identification-user', component: IdentificationUserComponent},
-  {path: 'offer-user', component: OfferUserComponent, resolve: {
+  {path: 'offer-user/:id', component: OfferUserComponent, resolve: {
     companyList: CompanyResolver,
     contractTypeList: ContractTypeResolver,
     keyWordList: KeyWordResolver,
     offerList: OfferResolver,
     pingList: PingResolver,
     statusList: StatusResolver,
-    userDetails: UserDetailsResolver
+    userDetails: UserDetailsResolver,
   }},
   {path: 'profile-user', component: ProfileUserComponent, resolve: {
     keyWordList: KeyWordResolver,    

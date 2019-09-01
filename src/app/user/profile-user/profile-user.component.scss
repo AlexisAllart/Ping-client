@@ -7,6 +7,18 @@
     // border: 1px solid black;
 }
 
+button {
+    border:none;
+    transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+    color:#60A4FF;
+    border:1px solid #60A4FF;
+    background-color: white;
+}
+
+
 .general {
     display: flex;
     font-family: "Nunito", sans-serif;
