@@ -17,7 +17,5 @@ export class ModalComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log(this.user);
-    console.log(this.keyWordList);
   }
 }
