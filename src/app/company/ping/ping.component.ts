@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ModalComponent } from 'src/app/modal/modal.component';
 
@@ -17,8 +17,12 @@ export class PingComponent implements OnInit {
 
   ngOnInit() { }
 
-  onCreate(){
-    this.dialog.open(ModalComponent);
-
+  onCreate(id){
+    this.dialog.open(ModalComponent, {
+      data: {
+        user: this.route.snapshot.data.userList[id],
+        keyWordList: this.route.snapshot.data.keyWordList
+      }
+    });
   }
 }
