@@ -47,6 +47,8 @@ export class SearchUserComponent implements OnInit {
   private geolocationPosition;
   private geoFound=false;
 
+  private distanceSliderDefaultValue = parseFloat(localStorage.getItem('distanceSlider'));
+
   constructor(
     private route: ActivatedRoute,
     private authService: AuthService
@@ -54,11 +56,12 @@ export class SearchUserComponent implements OnInit {
 
   private offersWithKeyWords = this.route.snapshot.data.offerList;
   private search = '';
-  private distanceSlider = 200;
+  private distanceSlider = this.distanceSliderDefaultValue;
   private distanceCircle;
 
     
   ngOnInit() {
+    this.distanceSlider ? '' : this.distanceSlider = 200;
     for (let i = 0; i < this.route.snapshot.data.offerList.length; i++) {
       this.offersWithKeyWords[i].keyWords =
       this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordOne_id - 1].name +
@@ -98,6 +101,7 @@ export class SearchUserComponent implements OnInit {
 
   onDistanceChange(value) {
     this.distanceSlider = value;
+    localStorage.setItem('distanceSlider',this.distanceSlider.toString());
     this.change();
   }
 
