@@ -34,20 +34,16 @@
                 <div class="input-wrapper">
                     <input type="search" placeholder=" QUOI ?" [(ngModel)]="search" (ngModelChange)="change()">
                     <span class="input-icon fa fa-search"></span>
-
                 </div>
                 <div *ngIf="geoFound" class="range">
-                    <!-- <input type="map" placeholder="OU ?" />
-                    <span class="input-icon fas fa-map-marker-alt"></span> -->
-                    <input type="range" #slider min="1" max="200" value="200" [(ngModel)]="distanceSlider" (ngModelChange)="onDistanceChange(slider.value)">
+                    <span class="distance" *ngIf="geoFound" style="font-size: 18px;">Distance max : {{distanceSlider/10}} km</span>
                 </div>
+                <input class="distance-slider" type="range" #slider min="1" max="200" value="200" [(ngModel)]="distanceSlider" (ngModelChange)="onDistanceChange(slider.value)">
             </div>
-            <span class="distance" *ngIf="geoFound" style="font-size: 18px;">Distance max : {{distanceSlider/10}} km</span>
             <div class="contract">
                 <p *ngFor="let contractType of route.snapshot.data.contractTypeList" [ngClass]="[contractBtn[contractType.id-1]]" (click)=addContractTypeFilter(contractType.name,contractType.id)>{{ contractType.name }}</p>
             </div>
             <div class="container">
-                <!-- <div *ngFor="let offer of route.snapshot.data.offerList" class="box"> -->
                 <div *ngFor="let offer of filteredArray">
                     <div *ngIf="offer.show" class="box">
                         <div class="sous-container">
@@ -58,7 +54,8 @@
                                 <p class="description">{{ offer.description }}</p>
                             </div>
                             <div class="right-side">
-                                <p class="contract-type">{{ route.snapshot.data.contractTypeList[offer.contractType_id-1].name }}</p>
+                                <p class="contract-type">
+                                    {{ route.snapshot.data.contractTypeList[offer.contractType_id-1].name }}</p>
                             </div>
                         </div>
                         <div class="key-words">
@@ -77,11 +74,13 @@
                             <div class="container-text">
                                 <h2 class="title">{{ offer.title }}</h2>
                                 <hr class="line">
-                                <h4 class="company-red">{{ route.snapshot.data.companyList[offer.company_id-1].name }}</h4>
+                                <h4 class="company-red">{{ route.snapshot.data.companyList[offer.company_id-1].name }}
+                                </h4>
                                 <p class="description">{{ offer.description }}</p>
                             </div>
                             <div class="right-side">
-                                <p class="contract-type">{{ route.snapshot.data.contractTypeList[offer.contractType_id-1].name }}</p>
+                                <p class="contract-type">
+                                    {{ route.snapshot.data.contractTypeList[offer.contractType_id-1].name }}</p>
                             </div>
                         </div>
                         <div class="key-words">
