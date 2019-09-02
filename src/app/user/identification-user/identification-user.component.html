@@ -9,48 +9,45 @@
         
         <div class="container-inscription">
             <h2 class="title-blue">Inscription</h2>
-            <!-- <form [formGroup]="formInscription" (ngSubmit)= "onSubmitInscription(contactForm.value)" #contactForm="ngForm" class="form-blue">
+            <form [formGroup]="formInscription" (ngSubmit)= "onSubmitInscription()" #contactForm="ngForm" class="form-blue">
                 
                 <mat-form-field>
                     <mat-label for="name">Nom</mat-label>
-                    <input #lastName="ngModel" id= "lastName" type="text" placeholder="Dupont" required class="validate"
-                    [(ngModel)="model.lastName" name="lastName"]>
-                    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
-                        <div *ngIf="lastName.errors.required">SVP entrez un nom</div>
-                    </div>
+                    <!-- <input #lastName="ngModel" id= "lastName" type="text" placeholder="Dupont" required class="validate"
+                    [(ngModel)="model.lastName" name="lastName"]> -->
+                    <input matInput placeholder="Dupont" formControlName="lastName" required>
                 </mat-form-field>
 
                 <mat-form-field>
-                    <mat-label for="first_name">Prénom</mat-label>
-                    <input #firstName="ngModel" id= "first_Name" type="text" placeholder="Marc" required class="validate"
-                    [(ngModel)="model.first_name" name="first_name"]>
-                    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
-                        <div *ngIf="firstName.errors.required">SVP entrez un prénom</div>
-                    </div>
+                    <mat-label for="firstName">Prénom</mat-label>
+                    <!-- <input #firstName="ngModel" id= "firstName" type="text" placeholder="Marc" required class="validate"
+                    [(ngModel)="model.firstName" name="firstName"]> -->
+                    <input matInput placeholder="Marc" formControlName="firstName" required>
                 </mat-form-field>
 
                 <mat-form-field>
                     <mat-label for="email">Mail</mat-label>
-                    <input #email="ngModel" id="email" type="email"  placeholder="exemple@gmail.com" required class="validate"
-                     [(ngModel)]="model.email" name="email">
-                     <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-                        <div *ngIf="email.errors.required">Not valid email</div>
-                    </div>
+                    <!-- <input #email="ngModel" id="email" type="email"  placeholder="exemple@gmail.com" required class="validate"
+                     [(ngModel)]="model.email" name="email"> -->
+                        <input matInput placeholder="exemple@gmail.com" formControlName="email" required>
+                     
                 </mat-form-field>
 
                 <mat-form-field>
                     <mat-label for="password">Mot de passe</mat-label>
-                    <input #passeword="ngModel" id="password" type="password" placeholder="************" required class="validate"
-                    [(ngModel)]="user.password" name="password">
-                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
-                        <div *ngIf="password.errors.required">Not valid password</div>
-                    </div>
+                    <!-- <input #passeword="ngModel" id="password" type="password" placeholder="************" required class="validate"
+                    [(ngModel)]="user.password" name="password"> -->
+                     <input matInput placeholder="*******" formControlName="password" required>
+                    
                 </mat-form-field>
 
-                <div class="button">
+                <!-- <div class="button">
                     <button class="btn-blue" [disabled]= "!loginForm.form.valid">Enregistrer</button>
+                </div> -->
+                <div class="button">
+                    <button class="btn-blue" >Enregistrer</button>
                 </div>
-            </form> -->
+            </form>
 
         </div>
     </div> 

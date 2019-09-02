@@ -47,7 +47,7 @@ export class IdentificationUserComponent implements OnInit {
     }
   }
 /**************************** Registration ****************************/
-formInscription: FormGroup;
+
   
   
   ngOnInitInscription() {
