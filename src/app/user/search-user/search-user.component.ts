@@ -47,7 +47,7 @@ export class SearchUserComponent implements OnInit {
   private geolocationPosition;
   private geoFound=false;
 
-  private distanceSliderDefaultValue = parseFloat(localStorage.getItem('distanceSlider'));
+  private distanceSliderDefaultValue = parseFloat(localStorage.getItem('distanceSlider')) ? parseFloat(localStorage.getItem('distanceSlider')) : 200 ;
 
   constructor(
     private route: ActivatedRoute,
@@ -157,10 +157,36 @@ export class SearchUserComponent implements OnInit {
     this.markerLayer ? this.markerLayer.clearLayers() : '';
     for (let i = 0; i < this.filteredArray.length; i++) {
       if (this.filteredArray[i].show) {
-        this.markers[i] = L.marker([this.filteredArray[i].latitude, this.filteredArray[i].longitude], { icon: this.defaultIcon }).bindPopup(this.filteredArray[i].title + " : " + this.filteredArray[i].description);
+        this.markers[i] = L.marker([this.filteredArray[i].latitude, this.filteredArray[i].longitude], { icon: this.defaultIcon }).bindPopup(
+          '<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;">'+
+            '<h2>'+this.filteredArray[i].title+'</h2>'+
+            '<img style="width:64px;height:64px;border-radius:100%;" src="http://pingjob.herokuapp.com/'+this.route.snapshot.data.companyList[this.filteredArray[i].company_id-1].logo+'" alt="logo">'+
+          '</div>'+
+          // '<hr style="width:100%";/>'+
+          '<div style="margin-top:20px;margin-bottom:20px;">'+this.filteredArray[i].description+'</div>'+
+          // '<hr style="width:100%";/>'+
+          '<div style="display:flex;flex-direction:row;justify-content:space-around;align-items:center;">'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordOne_id-1].name+'</p>'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordTwo_id-1].name+'</p>'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordThree_id-1].name+'</p>'+
+          '</div>'
+        );
       }
       else {
-        this.markers[i] = L.marker([this.filteredArray[i].latitude, this.filteredArray[i].longitude], { icon: this.redIcon }).bindPopup(this.filteredArray[i].title + " : " + this.filteredArray[i].description);
+        this.markers[i] = L.marker([this.filteredArray[i].latitude, this.filteredArray[i].longitude], { icon: this.redIcon }).bindPopup(
+          '<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;">'+
+            '<h2>'+this.filteredArray[i].title+'</h2>'+
+            '<img style="width:64px;height:64px;border-radius:100%;" src="http://pingjob.herokuapp.com/'+this.route.snapshot.data.companyList[this.filteredArray[i].company_id-1].logo+'" alt="logo">'+
+          '</div>'+
+          // '<hr style="width:100%";/>'+
+          '<div style="margin-top:20px;margin-bottom:20px;">'+this.filteredArray[i].description+'</div>'+
+          // '<hr style="width:100%";/>'+
+          '<div style="display:flex;flex-direction:row;justify-content:space-around;align-items:center;">'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordOne_id-1].name+'</p>'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordTwo_id-1].name+'</p>'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordThree_id-1].name+'</p>'+
+          '</div>'
+        );
       }
     }
     this.markerLayer = L.layerGroup(this.markers);
