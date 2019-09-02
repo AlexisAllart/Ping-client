@@ -15,21 +15,18 @@ export class SearchUserComponent implements OnInit {
   // Icons 
   private defaultIcon = L.icon({
     iconUrl: '../../../assets/leaflet/images/marker-icon.png',
-    //pop up quand on clique, le met juste au dessus
     popupAnchor: [1, -40],
     iconAnchor: [12, 36],
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
   });
   private redIcon = L.icon({
     iconUrl: '../../../assets/leaflet/images/marker-icon-red.png',
-    //pop up quand on clique, le met juste au dessus
     popupAnchor: [1, -40],
     iconAnchor: [12, 36],
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
   });
   private greenIcon = L.icon({
     iconUrl: '../../../assets/leaflet/images/marker-icon-green.png',
-    //pop up quand on clique, le met juste au dessus
     popupAnchor: [1, -40],
     iconAnchor: [12, 36],
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
@@ -47,6 +44,9 @@ export class SearchUserComponent implements OnInit {
   private geolocationPosition;
   private geoFound=false;
 
+  private contractFilter = [];
+  private contractBtn = [];
+
   private distanceSliderDefaultValue = parseFloat(localStorage.getItem('distanceSlider')) ? parseFloat(localStorage.getItem('distanceSlider')) : 200 ;
 
   constructor(
@@ -55,12 +55,16 @@ export class SearchUserComponent implements OnInit {
   ) { }
 
   private offersWithKeyWords = this.route.snapshot.data.offerList;
+  private finalOfferList = [] ;
   private search = '';
   private distanceSlider = this.distanceSliderDefaultValue;
   private distanceCircle;
 
     
   ngOnInit() {
+    for (let i = 0; i < this.route.snapshot.data.contractTypeList.length; i++) {
+      this.contractBtn[i]="type";
+    }
     this.distanceSlider ? '' : this.distanceSlider = 200;
     for (let i = 0; i < this.route.snapshot.data.offerList.length; i++) {
       this.offersWithKeyWords[i].keyWords =
@@ -70,7 +74,20 @@ export class SearchUserComponent implements OnInit {
       "&"+
       this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordThree_id - 1].name;
     }
-    this.filteredArray = this.offersWithKeyWords.filter((v) => v.keyWords.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
+    this.finalOfferList = this.offersWithKeyWords;
+    for (let i = 0; i < this.offersWithKeyWords.length; i++) {
+      this.finalOfferList[i].contractType = this.route.snapshot.data.contractTypeList[this.offersWithKeyWords[i].contractType_id-1].name;
+    }
+    if (this.contractFilter === undefined || this.contractFilter.length == 0) {
+      this.filteredArray = this.finalOfferList;
+    }
+    else {
+      this.contractFilter.forEach(contract => (
+        this.finalOfferList.forEach( offer =>
+          offer.contractType == contract ? this.filteredArray.push(offer):'')
+      ));
+    }
+    this.filteredArray = this.filteredArray.filter((v) => v.keyWords.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
     this.filteredArray.forEach(x => (x.show=true));
     if (window.navigator && window.navigator.geolocation) {
       window.navigator.geolocation.getCurrentPosition(
@@ -105,9 +122,35 @@ export class SearchUserComponent implements OnInit {
     this.change();
   }
 
+  addContractTypeFilter(str,i) {
+    let found=false;
+    for (let j=0;j<this.contractFilter.length;j++) {
+      if (str==this.contractFilter[j]) {
+        this.contractFilter.splice(j,1);
+        found=true;
+        this.contractBtn[i-1] = "type";
+        break;
+      }
+    }
+    if (!found) {
+      this.contractFilter.push(str);
+      this.contractBtn[i-1] = "type-activated";
+    }
+    this.change();
+  }
 
   change() {
-    this.filteredArray = this.offersWithKeyWords.filter((v) => v.keyWords.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
+    this.filteredArray = [];
+    if (this.contractFilter === undefined || this.contractFilter.length == 0) {
+      this.filteredArray = this.finalOfferList;
+    }
+    else {
+    this.contractFilter.forEach(contract => (
+      this.finalOfferList.forEach( offer => (
+        offer.contractType == contract ? this.filteredArray.push(offer):'')
+    )));
+    }
+    this.filteredArray = this.filteredArray.filter((v) => v.keyWords.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
     if (this.geoFound) {
       this.map.removeLayer(this.distanceCircle);
       this.addDistanceCircle();
@@ -116,7 +159,6 @@ export class SearchUserComponent implements OnInit {
         this.filteredArray[i].distance > this.distanceSlider*100 ? this.filteredArray[i].show=false : this.filteredArray[i].show=true;
       }
     }
-    
     this.populateMarkers();
   }
 

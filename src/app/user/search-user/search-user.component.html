@@ -3,38 +3,38 @@
         <div class="navbar">
             <app-navbar-user></app-navbar-user>
         </div>
-      
+
     </div>
     <ng-template #noLogin>
         <app-navbar-nologin></app-navbar-nologin>
     </ng-template>
     <div class="sous-general">
-            <div class="burger">
-                    <div class="menu-toggle">
-                        <input type="checkbox" />
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-            
-                        <ul class="burger-menu-elem">
-                            <a class="text-menu" href="#">
-                                <li>Recherche</li>
-                            </a>
-                            <a class="text-menu" href="#">
-                                <li>Dashboard</li>
-                            </a>
-                            <a class="text-menu" href="#">
-                                <li>Mon profil</li>
-                            </a>
-                        </ul>
-                    </div>
-                </div>
+        <div class="burger">
+            <div class="menu-toggle">
+                <input type="checkbox" />
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+
+                <ul class="burger-menu-elem">
+                    <a class="text-menu" href="#">
+                        <li>Recherche</li>
+                    </a>
+                    <a class="text-menu" href="#">
+                        <li>Dashboard</li>
+                    </a>
+                    <a class="text-menu" href="#">
+                        <li>Mon profil</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
         <section class="search">
             <div class="search-nav">
                 <div class="input-wrapper">
                     <input type="search" placeholder=" QUOI ?" [(ngModel)]="search" (ngModelChange)="change()">
                     <span class="input-icon fa fa-search"></span>
-                    
+
                 </div>
                 <div *ngIf="geoFound" class="range">
                     <!-- <input type="map" placeholder="OU ?" />
@@ -44,7 +44,7 @@
             </div>
             <span class="distance" *ngIf="geoFound" style="font-size: 18px;">Distance max : {{distanceSlider/10}} km</span>
             <div class="contract">
-                <p *ngFor="let contractType of route.snapshot.data.contractTypeList" class="type">{{ contractType.name }}</p>
+                <p *ngFor="let contractType of route.snapshot.data.contractTypeList" [ngClass]="[contractBtn[contractType.id-1]]" (click)=addContractTypeFilter(contractType.name,contractType.id)>{{ contractType.name }}</p>
             </div>
             <div class="container">
                 <!-- <div *ngFor="let offer of route.snapshot.data.offerList" class="box"> -->
