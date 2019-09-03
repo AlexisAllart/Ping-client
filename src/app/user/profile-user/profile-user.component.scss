@@ -1,23 +1,23 @@
 /************************* GÉNÉRAL *******************/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
     // border: 1px solid black;
 }
 
 button {
-    border:none;
+    border: none;
     transition: all 0.5s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0);
 }
 
 button:hover {
-    color:#60A4FF;
-    border:1px solid #60A4FF;
+    color: #60A4FF;
+    border: 1px solid #60A4FF;
     background-color: white;
 }
-
 
 .general {
     display: flex;
@@ -29,12 +29,11 @@ button:hover {
 .btn-social {
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    width:100%;
-    height:45%;
-    margin-bottom:10%;
-    
+    width: 100%;
+    height: 45%;
+    margin-bottom: 10%;
 }
 
 .logo-social {
@@ -44,12 +43,12 @@ button:hover {
 
 .link-social {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin-left:10px;
+    margin-left: 10px;
     // background-color:rgb(187, 187, 187);
-    height:100%;
+    height: 100%;
     // padding-top:7px;
 }
 
@@ -57,73 +56,69 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-items: center;
-    margin-bottom:15px;
-    text-decoration:none;
+    margin-bottom: 15px;
+    text-decoration: none;
     color: #60A4FF;
     text-align: center;
     vertical-align: middle;
 }
 
 .social {
-    background-color:#60A4FF;
+    background-color: #60A4FF;
     color: white;
-    padding:10px;
-    margin-bottom:5%;
+    padding: 10px;
+    margin-bottom: 5%;
 }
 
 
 /********************* Sous-general*****************/
-.sous-general{
+
+.sous-general {
     display: flex;
     flex-direction: row;
     height: 100vh;
     width: 100%;
 }
+
+
 /********************* Card candidat *****************/
 
 .card-candidat {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    width:90%;
+    width: 90%;
     align-items: center;
     justify-content: flex-start;
-    height:100%;
+    height: 100%;
     // padding:40px;
     // background-color: rgb(170, 170, 170);
     margin-top: 10px;
 }
 
-
 .container-user {
-
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     // margin-left: 22%;
-   
-    margin:5px;
-    
+    margin: 5px;
     background-color: none;
-   
 }
 
 .blue {
     background-color: #E9F6FF;
     display: flex;
     flex-direction: row;
-    width:100%;
+    width: 100%;
     // -webkit-box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
     // -moz-box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
     // box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
     // margin:20px;
-    
 }
 
 .sous-container {
-    
     margin: 10px;
     display: flex;
-    width:50%;
+    width: 50%;
     height: 100%;
     flex-direction: row;
     justify-content: center;
@@ -134,27 +129,25 @@ button:hover {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding:5px;
-    margin:0px;
-    
+    padding: 5px;
+    margin: 0px;
 }
 
-.profile{
-
+.profile {
     border-radius: 50%;
     margin: 10px;
     height: 140px;
     width: 140px;
     object-fit: cover;
     object-position: top;
-  }
+}
 
 .title {
     display: flex;
     flex-direction: column;
     color: #60A4FF;
-    margin-bottom:10px;
-    font-size:20px;
+    margin-bottom: 10px;
+    font-size: 20px;
     // padding:20px;
 }
 
@@ -162,59 +155,54 @@ button:hover {
     display: flex;
     flex-direction: column;
     color: #60A4FF;
-    margin-bottom:30px;
-    font-size:13px;
+    margin-bottom: 30px;
+    font-size: 13px;
     // padding: 20px;
-
 }
 
 .right-side {
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding:10px;
+    padding: 10px;
     margin: 10px;
 }
 
 .statut {
-    width:10px;
-    height:10px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: #3FEF4C;
 }
 
 .plus {
-    color:#60A4FF;
+    color: #60A4FF;
     font-size: 27px;
 }
-
-
 
 .key-words {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    width:60%;
+    width: 60%;
     /* padding:10px 60px 10px 30px; */
-    
 }
 
 .words {
-    margin:2%;
+    margin: 2%;
     background-color: white;
-    color:#60A4FF;
-    padding:2%;
-    width:80%;
+    color: #60A4FF;
+    padding: 2%;
+    width: 80%;
     text-align: center;
-    border-radius:20px;
+    border-radius: 20px;
 }
 
 
-
 /***************** left-part ********************/
-.left-part{
+
+.left-part {
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -223,28 +211,29 @@ button:hover {
     // overflow-y: scroll;
 }
 
-.profile-top{
+.profile-top {
     display: flex;
     flex-direction: column;
     height: 40%;
-    width:100%;
+    width: 100%;
     min-height: 350px;
 }
 
-.profile-top-header{
+.profile-top-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.dark-title{
+.dark-title {
     width: auto;
     align-self: center;
     text-align: center;
     margin: 28px 0;
-    padding:15px;
-    background-color:  #60a4ff;;
-    color:#FFFFFF;
+    padding: 15px;
+    background-color: #60a4ff;
+    ;
+    color: #FFFFFF;
     font-size: 20px;
     font-weight: bold;
     min-width: 280px;
@@ -259,24 +248,24 @@ button:hover {
 //     background-color: pink;
 //     height: 100%; 
 // }
-
-
-.profile-bottom{
+.profile-bottom {
     display: flex;
     flex-direction: row;
     height: 50%;
     width: 100%;
     min-height: 400px;
 }
+
+
 /********************** under the card user ****************/
 
-.profile-bleft{
+.profile-bleft {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
 
-.cv-import{
+.cv-import {
     display: flex;
     flex-direction: row;
     margin: 10px;
@@ -308,7 +297,7 @@ button:hover {
     color: #FFF;
 }
 
-.cv-download{
+.cv-download {
     display: flex;
     flex-direction: row;
     margin: 10px;
@@ -335,11 +324,12 @@ button:hover {
     border-color: #FFF;
 }
 
-.profile-bright{
+.profile-bright {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
+
 
 /******************** right-part *********************/
 
@@ -347,7 +337,6 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 .form-blue {
@@ -357,50 +346,51 @@ button:hover {
 }
 
 .input {
-
-    width:140%;
-    padding:19px 30px 19px 9px;
-    border:1px solid white;
-    background-color:#60A4FF;
-    outline:none;
+    width: 140%;
+    padding: 19px 30px 19px 9px;
+    border: 1px solid white;
+    background-color: #60A4FF;
+    outline: none;
     color: white;
-    margin:10px;
-    font-size:10px;
+    margin: 10px;
+    font-size: 10px;
 }
 
-.right-part{
+.right-part {
     display: flex;
     flex-direction: column;
     align-content: center;
     width: 30%;
-    margin-top:48px;
+    margin-top: 48px;
 }
 
 // .edit-form{
 //     background-color: pink;
 // }
-
-.edit-submit{
+.edit-submit {
     width: 100%;
     height: 30%;
     margin-top: 60%;
-    position:relative;
+    position: relative;
     align-items: center;
 }
-.submit{
+
+.submit {
     outline: none;
     font-size: 16px;
     color: white;
     background-color: #60A4FF;
-    padding:10px 20px;
+    padding: 10px 20px;
     border-radius: 20px;
     position: absolute;
-    bottom:25%;
-    right:100px;
-
+    bottom: 25%;
+    right: 100px;
 }
+
+
 /***************************** Button on/off*****************************/
-.on-off{
+
+.on-off {
     // background-color: pink;
     // margin: 48px 0;
     height: auto;
@@ -408,14 +398,16 @@ button:hover {
 }
 
 .container {
-  padding: 25px;
+    padding: 25px;
 }
 
 // Modified CSS for on/off switch
 .onoffswitch {
-    position: relative; 
+    position: relative;
     width: 78px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .onoffswitch-checkbox {
@@ -423,51 +415,73 @@ button:hover {
 }
 
 .onoffswitch-label {
-    display: block; 
-    overflow: hidden; 
+    display: block;
+    overflow: hidden;
     cursor: pointer;
-    border: 1px solid #999999; 
+    border: 1px solid #999999;
     border-radius: 20px;
 }
 
 .onoffswitch-inner {
-    width: 200%; margin-left: -100%;
-    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
-    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+    width: 200%;
+    margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s;
+    -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s;
+    transition: margin 0.3s ease-in 0s;
 }
 
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-    float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 15px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 15px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .onoffswitch-inner:before {
     content: "ON";
     padding-left: 11px;
-    background-color: #60A4FF; color: #FFFFFF;
+    background-color: #60A4FF;
+    color: #FFFFFF;
 }
 
 .onoffswitch-inner:after {
     content: "OFF";
     padding-right: 11px;
-    background-color: #EEEEEE; color: #999999;
+    background-color: #EEEEEE;
+    color: #999999;
     text-align: right;
 }
 
 .onoffswitch-switch {
-    width: 26px; margin: 2px;
+    width: 26px;
+    margin: 2px;
     background: #FFFFFF;
-    border: 2px solid #999999; border-radius: 20px;
-    position: absolute; top: 0; bottom: 0; right: 44px;
-    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
-    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+    border: 2px solid #999999;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 44px;
+    -moz-transition: all 0.3s ease-in 0s;
+    -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s;
+    transition: all 0.3s ease-in 0s;
 }
 
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
     margin-left: 0;
 }
 
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px; 
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+    right: 0px;
 }

@@ -76,20 +76,20 @@
                                 <hr class="line">
                                 <h4 class="company-red">{{ route.snapshot.data.companyList[offer.company_id-1].name }}
                                 </h4>
-                                <p class="description">{{ offer.description }}</p>
+                                <p class="description-red">{{ offer.description }}</p>
                             </div>
                             <div class="right-side">
-                                <p class="contract-type">
+                                <p class="contract-type-red">
                                     {{ route.snapshot.data.contractTypeList[offer.contractType_id-1].name }}</p>
                             </div>
                         </div>
                         <div class="key-words">
-                            <p class="words">{{ route.snapshot.data.keyWordList[offer.keyWordOne_id-1].name }}</p>
-                            <p class="words">{{ route.snapshot.data.keyWordList[offer.keyWordTwo_id-1].name }}</p>
-                            <p class="words">{{ route.snapshot.data.keyWordList[offer.keyWordThree_id-1].name }}</p>
+                            <p class="words-red">{{ route.snapshot.data.keyWordList[offer.keyWordOne_id-1].name }}</p>
+                            <p class="words-red">{{ route.snapshot.data.keyWordList[offer.keyWordTwo_id-1].name }}</p>
+                            <p class="words-red">{{ route.snapshot.data.keyWordList[offer.keyWordThree_id-1].name }}</p>
                         </div>
                         <div class="btn-plus">
-                            <i class="fas fa-plus-circle plus" [routerLink]="['/offer-user', offer.id]"></i>
+                            <i class="fas fa-plus-circle plus-red" [routerLink]="['/offer-user', offer.id]"></i>
                         </div>
                     </div>
                 </div>

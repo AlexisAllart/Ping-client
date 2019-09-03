@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthCompanyService } from '../../services/authCompany.service';
+import { ServerService } from 'src/app/services/server.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,13 +9,18 @@ import { AuthCompanyService } from '../../services/authCompany.service';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  form: FormGroup;
+  private form: FormGroup;
+  private formSignUp: FormGroup;
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
+  public signUpInvalid: boolean;
+  private formSubmitSignUpAttempt: boolean;
+  
 
   constructor(
     private fb: FormBuilder,
-    private authCompanyService: AuthCompanyService
+    private authCompanyService: AuthCompanyService,
+    private serverService: ServerService
   ) { }
 
   ngOnInit() {
@@ -22,7 +28,15 @@ export class SignInComponent implements OnInit {
       email: ['', Validators.email],
       password: ['', Validators.required]
     });
+    this.formSignUp = this.fb.group({
+      email: ['', Validators.email],
+      name: ['', Validators.required],
+      password: ['', Validators.required],
+      companyEmail: ['', Validators.required],
+      companyPassword: ['', Validators.required]
+    });
   }
+  
 
   onSubmit() {
     this.loginInvalid = false;
@@ -37,6 +51,20 @@ export class SignInComponent implements OnInit {
     }
     else {
       this.formSubmitAttempt = true;
+    }
+  }
+
+  onSubmitSignUp() {
+    if (this.formSignUp.valid) {
+      try {
+        this.serverService.request("POST", "/companyUser/create", this.formSignUp.value).subscribe();
+      }
+      catch (err) {
+        this.signUpInvalid = true;
+      }
+    }
+    else {
+      this.formSubmitSignUpAttempt = true;
     }
   }
 }

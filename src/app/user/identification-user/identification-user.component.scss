@@ -1,72 +1,67 @@
-
 ///////// GÉNÉRAL ////////
 .general {
     display: flex;
-    height:100vh;
+    height: 100vh;
     font-family: 'Nunito', sans-serif;
-
     // background-color: rgb(175, 106, 106);
 }
 
 .img {
     display: flex;
     // background-color: rgb(80, 52, 52);
-    width:90%;
+    width: 90%;
     height: auto;
-    margin:20px;
-    padding:10px;
-
+    margin: 20px;
+    padding: 10px;
 }
-.logo-decoy{
-    height:50px;
 
+.logo-decoy {
+    height: 50px;
 }
 
 button {
-    border:none;
+    border: none;
     transition: all 0.5s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0);
 }
 
 button:hover {
-    color:#60A4FF;
-    border:1px solid #60A4FF;
+    color: #60A4FF;
+    border: 1px solid #60A4FF;
     background-color: white;
 }
-
-
 
 // *{
 //     border: black solid 1px;
 // }
-
 ///////// INSCRIPTION ////////
-
-
 .inscription {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width:60%;
+    width: 60%;
     background-color: white;
-    height:100vh;
+    height: 100vh;
     position: relative;
 }
 
-.container-inscription{
-    height:100%;
-    width:auto;
+.container-inscription {
+    height: 100%;
+    width: auto;
     align-content: center;
 }
-.container-connexion{
-    height:100%;
-    width:auto;
+
+.container-connexion {
+    height: 100%;
+    width: auto;
     align-content: center;
 }
+
 .title-white {
-    background-color:#60A4FF;
-    padding:15px 50px 15px 50px;
-    margin-bottom:50%;
+    background-color: #60A4FF;
+    padding: 15px 50px 15px 50px;
+    margin-bottom: 50%;
     color: white;
     border-radius: 10px;
     font-weight: 100;
@@ -76,9 +71,9 @@ button:hover {
 }
 
 .title-blue {
-    background-color:#60A4FF;
-    padding:15px 50px 15px 50px;
-    margin-bottom:30px;
+    background-color: #60A4FF;
+    padding: 15px 50px 15px 50px;
+    margin-bottom: 30px;
     color: white;
     border-radius: 10px;
     font-weight: 100;
@@ -88,15 +83,14 @@ button:hover {
 }
 
 ///////// CONNEXION ////////
-
 .connexion {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-color:#E9F6FF;
-    height:100vh;
-    width:50%;
+    background-color: #E9F6FF;
+    height: 100vh;
+    width: 50%;
     position: relative;
     border-radius: 30% 0% 0% 0%;
 }
@@ -106,51 +100,46 @@ button:hover {
     flex-direction: column;
     align-items: center;
     height: 15%;
-    justify-content:space-between;
+    justify-content: space-between;
     // background-color:purple;
- 
 }
 
 .form-blue {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     height: 25%;
     // background-color:pink; 
 }
 
 .input {
-    width:140%;
-    padding:19px 30px 19px 9px;
-    border:1px solid white;
-    background-color:#60A4FF;
-    outline:none;
+    width: 140%;
+    padding: 19px 30px 19px 9px;
+    border: 1px solid white;
+    background-color: #60A4FF;
+    outline: none;
     color: white;
-    margin:10px;
-    font-size:10px;
+    margin: 10px;
+    font-size: 10px;
 }
 
 // ::placeholder {
 //     color: white;
 //     font-size: 1.5em;
 //   }
-
 // ::placeholder:hover {
 //     display: none;
 // }
-
-
 .input-blue {
-
-    width:140%;
-    padding:19px 30px 19px 9px;
-    border:1px solid #60A4FF;
-    background-color:white;
-    outline:none;
+    width: 140%;
+    padding: 19px 30px 19px 9px;
+    border: 1px solid #60A4FF;
+    background-color: white;
+    outline: none;
     color: #60A4FF;
-    margin:10px;
-    font-size:15px;
+    margin: 10px;
+    font-size: 15px;
 }
 
 .input-blue::placeholder {
@@ -159,28 +148,27 @@ button:hover {
 
 .register {
     color: #B0DBFF;
-    font-size:10px;
+    font-size: 10px;
 }
 
 .register span {
     color: #60A4FF;
     font-weight: bolder;
     background-color: #fff;
-    padding:1px 3px;
+    padding: 1px 3px;
     border-radius: 5px;
 }
-
 
 .btn-white {
     outline: none;
     font-size: 16px;
     color: white;
     background-color: #60A4FF;
-    padding:10px 20px;
+    padding: 10px 20px;
     border-radius: 20px;
-    position:absolute;
-    bottom:80px;
-    right:220px;
+    position: absolute;
+    bottom: 80px;
+    right: 220px;
 }
 
 .btn-blue {
@@ -188,9 +176,9 @@ button:hover {
     font-size: 16px;
     color: white;
     background-color: #60A4FF;
-    padding:10px 20px;
+    padding: 10px 20px;
     border-radius: 20px;
-    position:absolute;
-    bottom:80px;
-    left:390px;
+    position: absolute;
+    bottom: 80px;
+    left: 390px;
 }

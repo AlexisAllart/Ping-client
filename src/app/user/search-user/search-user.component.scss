@@ -252,6 +252,12 @@ input {
     font-size: 13px;
 }
 
+.description-red {
+    color: #FF7777;
+    margin-bottom: 30px;
+    font-size: 13px;
+}
+
 .right-side {
     padding: 5%;
     display: flex;
@@ -267,6 +273,11 @@ input {
     padding: 10px;
 }
 
+.contract-type-red {
+    background-color: #FF7777;
+    padding: 10px;
+}
+
 .btn-plus {
     position: absolute;
     right: 2%;
@@ -276,6 +287,13 @@ input {
 .plus {
     font-size: 40px;
     color: #60A4FF;
+    cursor: pointer;
+    outline: none;
+}
+
+.plus-red {
+    font-size: 40px;
+    color: #FF7777;
     cursor: pointer;
     outline: none;
 }
@@ -294,6 +312,16 @@ input {
 .words {
     margin: 2%;
     background-color: #60A4FF;
+    color: white;
+    padding: 4px;
+    width: 30%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.words-red {
+    margin: 2%;
+    background-color: #FF7777;
     color: white;
     padding: 4px;
     width: 30%;

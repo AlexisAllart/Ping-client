@@ -10,8 +10,7 @@
                     <div class="on-off">
                         <div class="container">
                             <div class="onoffswitch">
-                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
-                                    id="myonoffswitch" checked>
+                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
                                 <label class="onoffswitch-label" for="myonoffswitch">
                                     <div class="onoffswitch-inner"></div>
                                     <div class="onoffswitch-switch"></div>
@@ -22,36 +21,36 @@
                     <!-- button on/off end -->
                 </div>
                 <!-- <div class="temp-profile-user-card"> -->
-                    <!-- <app-blue-card-user></app-blue-card-user> -->
+                <!-- <app-blue-card-user></app-blue-card-user> -->
                 <!-- </div> -->
 
                 <div class="card-candidat">
-                        <!--CARTE CANDIDAT UN -->
-                        <div class="container">
-                            <div class="blue">
-                                <div class="sous-container">
-                                    <img class="profile" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.picture}}">
+                    <!--CARTE CANDIDAT UN -->
+                    <div class="container">
+                        <div class="blue">
+                            <div class="sous-container">
+                                <img class="profile" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.picture}}">
+                            </div>
+                            <div class="container-text">
+                                <div class="top">
+                                    <h4 class="title">{{ route.snapshot.data.userDetails.firstName }} {{ route.snapshot.data.userDetails.lastName }} </h4>
+
                                 </div>
-                                <div class="container-text">
-                                    <div class="top">
-                                        <h4 class="title">{{ route.snapshot.data.userDetails.firstName }} {{ route.snapshot.data.userDetails.lastName }} </h4>
-                                       
-                                    </div>
-                                    <p class="description">
-                                        {{ route.snapshot.data.userDetails.about }}
-                                    </p>
-                                    <div class="key-words">
-                                        <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.userDetails.keyWordOne_id-1].name }}</p>
-                                        <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.userDetails.keyWordTwo_id-1].name }}</p>
-                                        <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.userDetails.keyWordThree_id-1].name }}</p>
-                                    </div>
-                                </div>
-                                <div class="right-side">
-                                    <div class="statut"></div>
-                                    <!-- <i class="fas fa-plus-circle plus"></i> -->
+                                <p class="description">
+                                    {{ route.snapshot.data.userDetails.about }}
+                                </p>
+                                <div class="key-words">
+                                    <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.userDetails.keyWordOne_id-1].name }}</p>
+                                    <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.userDetails.keyWordTwo_id-1].name }}</p>
+                                    <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.userDetails.keyWordThree_id-1].name }}</p>
                                 </div>
                             </div>
+                            <div class="right-side">
+                                <div class="statut"></div>
+                                <!-- <i class="fas fa-plus-circle plus"></i> -->
+                            </div>
                         </div>
+                    </div>
                 </div>
             </div>
             <div class="profile-bottom">
@@ -105,7 +104,7 @@
                 <!-- <div class="edit-form"></div> -->
                 <div class="edit-submit">
                     <button class="submit">
-                        <p> Modifier</p>
+                        <p>Modifier</p>
                     </button> ​
                 </div>
             </form>

@@ -1,53 +1,53 @@
 <div class="general">
-        
 
-        <!------------Inscription-------------->
-        <div class="inscription">
-            <div class="logo">
-                <img src="assets/logo-ping/blue_logo.png" alt="" routerLink="/">
-            </div>
-            
-            <h2 class="title-white">Inscription</h2>
-            <form class="form" action="">
-                <mat-form-field >
-                    <mat-label>Nom entreprise</mat-label>
-                    <!-- TEMPORARY COMMENT (errors) -->
-                    <!-- <input [formControl]="userInput.value" matInput placeholder="IBM"> -->
-                    <input matInput placeholder="IBM">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Mot de passe</mat-label>
-                    <input matInput placeholder="*******">
-                </mat-form-field>
-                <mat-form-field >
-                    <mat-label>User nom</mat-label>
-                    <input matInput placeholder="Hugues Dupont">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>User mot de passe</mat-label>
-                    <input matInput placeholder="*******">
-                </mat-form-field>
-            </form>
-            <p class="register">Votre entreprise n'est pas enregistrée ? Cliquez <span routerLink="/sign-up-company">ici</span></p>
-            <a class="btn-white" href="">Enregistrer</a>
+
+    <!------------Inscription-------------->
+    <div class="inscription">
+        <div class="logo">
+            <img src="assets/logo-ping/blue_logo.png" alt="" routerLink="/">
         </div>
-        
-        <!------------Connexion-------------->
-        
-        <div class="connexion">
-            <h2 class="title-blue">Connexion</h2>
-            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-blue">
-                <mat-form-field >
-                    <mat-label>User Email</mat-label>
-                    <input matInput placeholder="catherine.dupont@ibm.com" formControlName="email" value="geraldine.kouma@gmail.com" required>
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>User Mot de passe</mat-label>
-                    <input matInput placeholder="*******" formControlName="password" value="1234" required>
-                </mat-form-field>
-                <!-- ATTENTION à bien garder le bouton DANS le formulaire ! -->
-                <!-- Le bouton doit apparemment obligatoirement être de type <button>, il faut donc modifier le CSS pour adapter -->
-                <button class="btn-blue" href="">Connexion</button>
-            </form>
-        </div>
+
+        <h2 class="title-white">Inscription</h2>
+        <form [formGroup]="formSignUp" (ngSubmit)="onSubmitSignUp()" class="form">
+            <mat-form-field>
+                <mat-label>Email de l'entreprise</mat-label>
+                <input matInput placeholder="IBM" formControlName="companyEmail" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Mot de passe entreprise</mat-label>
+                <input matInput placeholder="*******" formControlName="companyPassword" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Email de l'utilisateur</mat-label>
+                <input matInput placeholder="catherine.dupont@ibm.com" formControlName="email" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Nom de l'utilisateur</mat-label>
+                <input matInput placeholder="Hugues Dupont" formControlName="name" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Mot de passe utilisateur</mat-label>
+                <input matInput placeholder="*******" formControlName="password" required>
+            </mat-form-field>
+            <button class="btn-white">Enregistrer</button>
+        </form>
+        <p class="register">Votre entreprise n'est pas enregistrée ? Cliquez <span class="pointer" routerLink="/sign-up-company">ici</span></p>
+    </div>
+
+    <!------------Connexion-------------->
+
+    <div class="connexion">
+        <h2 class="title-blue">Connexion</h2>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-blue">
+            <mat-form-field>
+                <mat-label>User Email</mat-label>
+                <input matInput placeholder="catherine.dupont@ibm.com" formControlName="email" value="geraldine.kouma@gmail.com" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>User Mot de passe</mat-label>
+                <input matInput placeholder="*******" formControlName="password" value="1234" required>
+            </mat-form-field>
+            <button class="btn-blue">Connexion</button>
+        </form>
+    </div>
 </div>

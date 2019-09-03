@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { UserDetailsService } from '../../services/userDetails.service';
-import{User} from '../../models/User.model';
+import { ServerService } from 'src/app/services/server.service';
 
 @Component({
   selector: 'app-identification-user',
@@ -10,14 +9,17 @@ import{User} from '../../models/User.model';
   styleUrls: ['./identification-user.component.scss']
 })
 export class IdentificationUserComponent implements OnInit {
-  form: FormGroup;
-  formInscription: FormGroup;
+  private form: FormGroup;
+  private formSignUp: FormGroup;
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
+  public signUpInvalid: boolean;
+  private formSubmitSignUpAttempt: boolean;
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private serverService: ServerService
   ) { }
 
   ngOnInit() {
@@ -25,10 +27,12 @@ export class IdentificationUserComponent implements OnInit {
       email: ['', Validators.email],
       password: ['', Validators.required]
     });
-    // this.formInscription = this.fb.group({
-    //   email: ['', Validators.email],
-    //   password: ['', Validators.required]
-    // });
+    this.formSignUp = this.fb.group({
+      email: ['', Validators.email],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      password: ['', Validators.required]
+    })
   }
 
   onSubmit() {
@@ -46,29 +50,18 @@ export class IdentificationUserComponent implements OnInit {
       this.formSubmitAttempt = true;
     }
   }
-/**************************** Registration ****************************/
 
-  
-  
-  ngOnInitInscription() {
-    this.formInscription = this.fb.group({
-      firstName:[''],
-      lastName:[''],
-      email: ['', Validators.email],
-      password: ['', Validators.required]
-    });
+  onSubmitSignUp() {
+    if (this.formSignUp.valid) {
+      try {
+        this.serverService.request("POST", "/user/create", this.formSignUp.value).subscribe();
+      }
+      catch (err) {
+        this.signUpInvalid = true;
+      }
+    }
+    else {
+      this.formSubmitSignUpAttempt = true;
+    }
   }
-
-//   model = [new User()];
-  
-//   onSubmitInscription(value: any){
-//     this.model.unshift(
-//       new User(
-//         value.firstName,
-//         value.lastName,
-//         value.email,
-//         value.password,
-//     )
-//     ) 
-// }
 }

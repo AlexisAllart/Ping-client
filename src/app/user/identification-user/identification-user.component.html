@@ -1,56 +1,37 @@
 <div class="general">
 
-        
+
     <!------------Inscription-------------->
     <div class="inscription">
-            <div class="img">
-                    <img src="assets/logo-ping/blue_logo.png" alt="">
-            </div>
-        
+        <div class="img">
+            <img src="assets/logo-ping/blue_logo.png" alt="" routerLink="/">
+        </div>
+
         <div class="container-inscription">
             <h2 class="title-blue">Inscription</h2>
-            <form [formGroup]="formInscription" (ngSubmit)= "onSubmitInscription()" #contactForm="ngForm" class="form-blue">
-                
+            <form [formGroup]="formSignUp" (ngSubmit)="onSubmitSignUp()" class="form">
                 <mat-form-field>
-                    <mat-label for="name">Nom</mat-label>
-                    <!-- <input #lastName="ngModel" id= "lastName" type="text" placeholder="Dupont" required class="validate"
-                    [(ngModel)="model.lastName" name="lastName"]> -->
-                    <input matInput placeholder="Dupont" formControlName="lastName" required>
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="exemple@gmail.com" formControlName="email" required>
                 </mat-form-field>
-
                 <mat-form-field>
-                    <mat-label for="firstName">Prénom</mat-label>
-                    <!-- <input #firstName="ngModel" id= "firstName" type="text" placeholder="Marc" required class="validate"
-                    [(ngModel)="model.firstName" name="firstName"]> -->
-                    <input matInput placeholder="Marc" formControlName="firstName" required>
+                    <mat-label>Prénom</mat-label>
+                    <input matInput placeholder="Dupont" formControlName="firstName" required>
                 </mat-form-field>
-
                 <mat-form-field>
-                    <mat-label for="email">Mail</mat-label>
-                    <!-- <input #email="ngModel" id="email" type="email"  placeholder="exemple@gmail.com" required class="validate"
-                     [(ngModel)]="model.email" name="email"> -->
-                        <input matInput placeholder="exemple@gmail.com" formControlName="email" required>
-                     
+                    <mat-label>Nom</mat-label>
+                    <input matInput placeholder="Marcel" formControlName="lastName" required>
                 </mat-form-field>
-
                 <mat-form-field>
-                    <mat-label for="password">Mot de passe</mat-label>
-                    <!-- <input #passeword="ngModel" id="password" type="password" placeholder="************" required class="validate"
-                    [(ngModel)]="user.password" name="password"> -->
-                     <input matInput placeholder="*******" formControlName="password" required>
-                    
+                    <mat-label>Mot de passe</mat-label>
+                    <input matInput placeholder="*******" formControlName="password" required>
                 </mat-form-field>
-
-                <!-- <div class="button">
-                    <button class="btn-blue" [disabled]= "!loginForm.form.valid">Enregistrer</button>
-                </div> -->
                 <div class="button">
-                    <button class="btn-blue" >Enregistrer</button>
+                    <button class="btn-white">Inscription</button>
                 </div>
             </form>
-
         </div>
-    </div> 
+    </div>
 
     <!------------Connexion-------------->
 
@@ -60,23 +41,22 @@
         </div>
         <div class="container-connexion">
             <h2 class="title-white">Connexion</h2>
-           
             <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
                 <mat-form-field>
                     <mat-label>Email</mat-label>
-                    <!-- <input matInput placeholder="exemple@gmail.com" formControlName="email" required> -->
                     <input matInput placeholder="exemple@gmail.com" formControlName="email" value="charlene.smith@gmail.com" required>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Mot de passe</mat-label>
-                    <!-- <input matInput placeholder="*******" formControlName="password" required> -->
                     <input matInput placeholder="*******" formControlName="password" value="1234" required>
                 </mat-form-field>
-                <!-- ATTENTION à bien garder le bouton DANS le formulaire ! -->
                 <div class="button">
-                    <!-- Le bouton doit apparemment obligatoirement être de type <button>, il faut donc modifier le CSS pour adapter -->
                     <button class="btn-white">Connexion</button>
                 </div>
+                <!-- TEST -->
+                <!-- <p *ngIf="formSubmitAttempt">Authentification en cours...</p>
+                <p *ngIf="signUpInvalid">ERREUR</p>
+                <p>{{form.valid}}</p> -->
             </form>
         </div>
     </div>

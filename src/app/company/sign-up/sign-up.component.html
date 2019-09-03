@@ -1,40 +1,43 @@
 <div class="general">
     <!------------Inscription-------------->
-    
+
     <div class="inscription">
         <div class="logo-container">
-        <i class="fas fa-arrow-circle-left back" routerLink="/sign-in-company"></i>
-        <div class="img">
-            <img src="assets/logo-ping/blue_logo.png" alt="">
+            <i class="fas fa-arrow-circle-left back" routerLink="/sign-in-company"></i>
+            <div class="img">
+                <img src="assets/logo-ping/blue_logo.png" alt="">
+            </div>
         </div>
-    </div>
 
         <h2 class="title-white">Inscription Entreprise</h2>
-        <form class="form" action="">
-            <mat-form-field >
-                <mat-label>Nom entreprise</mat-label>
-                <input matInput placeholder="IBM">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+            <mat-form-field>
+                <mat-label>Email de l'entreprise</mat-label>
+                <input matInput placeholder="IBM@IBM.com" formControlName="email" required>
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Mot de passe Entreprise</mat-label>
-                <input matInput placeholder="*******">
+                <mat-label>Nom de l'entreprise</mat-label>
+                <input matInput placeholder="IBM" formControlName="name" required>
             </mat-form-field>
+            <mat-form-field>
+                <mat-label>Mot de passe entreprise</mat-label>
+                <input matInput placeholder="*******" formControlName="password" required>
+            </mat-form-field>
+            <button class="btn-white">Enregistrer</button>
         </form>
-        <a class="btn-white" href="">Enregistrer</a>
     </div>
 
     <!------------Connexion-------------->
 
     <div class="connexion">
         <div class="price">
-                <h2 class="title">VOIR <br> NOS <br> TARIFS</h2>
-                <h4 class="subscribe">
-                    Gratuit<br>
-                    Premium<br>
-                    PremiumPlus
-                </h4>
-                <i class="fas fa-arrow-right fleche" routerLink="/price"></i>
+            <h2 class="title">VOIR <br> NOS <br> TARIFS</h2>
+            <h4 class="subscribe">
+                Gratuit<br> Premium
+                <br> PremiumPlus
+            </h4>
+            <i class="fas fa-arrow-right fleche" routerLink="/price"></i>
         </div>
-        
+
     </div>
 </div>
