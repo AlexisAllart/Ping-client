@@ -66,6 +66,10 @@ export class OfferCompanyComponent implements OnInit {
     })
   }
 
+  onSubmitOffer() {
+    
+  }
+
   onSubmitKeyWord() {
     if (this.formKeyWord.valid) {
       try {
