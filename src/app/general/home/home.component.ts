@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    // DEBUG MESSAGE
-    // console.log("Rappel : on récupère l'id et le token de l'utilisateur de la manière suivante :");
-    // console.log("JSON.parse(localStorage.getItem('id')).id");
-    // console.log("JSON.parse(localStorage.getItem('token')).token");
-    // console.log("On récupère l'id et le token du companyUser de la manière suivante :");
-    // console.log("JSON.parse(localStorage.getItem('companyUserId')).id");
-    // console.log("JSON.parse(localStorage.getItem('companyUserToken')).token");
-    // END DEBUG MESSAGE
+  }
+
+  onClick() {
+    this.authService.logoutNoRedirect();
+    this.router.navigate(['/search-user']);
   }
 }

@@ -25,37 +25,41 @@ export class AuthService {
     }
    }
 
-   login(user) {
-      if (user.email !== '' && user.password !== '') {
-        return this.server.request('POST', '/user/login', {
-          email: user.email,
-          password: user.password
-        })
-        .subscribe((response: any) => {
-          if (response !== undefined) {
-            this.id = response.id;
-            this.token = response.token;
-            this.server.setLoggedIn(true, this.token);
-            this.loggedIn.next(true);
-            const userData = {
-              token: this.token
-            };
-            const userId = {
-              id: this.id
-            }
-            localStorage.setItem('token', JSON.stringify(userData));
-            localStorage.setItem('id', JSON.stringify(userId));
-            this.router.navigateByUrl('/dashboard-user');
+  login(user) {
+    if (user.email !== '' && user.password !== '') {
+      return this.server.request('POST', '/user/login', {
+        email: user.email,
+        password: user.password
+      })
+      .subscribe((response: any) => {
+        if (response !== undefined) {
+          this.id = response.id;
+          this.token = response.token;
+          this.server.setLoggedIn(true, this.token);
+          this.loggedIn.next(true);
+          const userData = {
+            token: this.token
+          };
+          const userId = {
+            id: this.id
           }
-        });
-      }
-   }
+          localStorage.setItem('token', JSON.stringify(userData));
+          localStorage.setItem('id', JSON.stringify(userId));
+          this.router.navigateByUrl('/dashboard-user');
+        }
+      });
+    }
+  }
 
-   logout() {
-     this.server.setLoggedIn(false);
-     delete this.token;
-     this.loggedIn.next(false);
-     localStorage.clear();
-     this.router.navigate(['/']);
-   }
+  logout() {
+    this.logoutNoRedirect();
+    this.router.navigate(['/']);
+  }
+
+  logoutNoRedirect() {
+    this.server.setLoggedIn(false);
+    delete this.token;
+    this.loggedIn.next(false);
+    localStorage.clear();
+  }
 }
