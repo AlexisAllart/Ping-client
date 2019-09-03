@@ -42,4 +42,8 @@ export class OfferUserComponent implements OnInit {
     }).addTo(this.map);
     L.marker([lat, lon], { icon: this.defaultIcon }).addTo(this.map);
   }
+
+  // onSubmit() {
+  //   let companyUser_id =
+  // }
 }
