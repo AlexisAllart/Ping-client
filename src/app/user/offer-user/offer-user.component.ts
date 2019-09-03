@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ServerService } from 'src/app/services/server.service';
 
 // Permet de manipuler leaflet
 declare let L;
@@ -18,18 +19,14 @@ export class OfferUserComponent implements OnInit {
     popupAnchor: [13, -2],
     shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
   });
-  private redIcon = L.icon({
-    iconUrl: '../../../assets/leaflet/images/marker-icon-red.png',
-    //pop up quand on clique, le met juste au dessus
-    popupAnchor: [13, -2],
-    shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
-  });
 
   // Map Variables
   private map;
 
   constructor(
     private route: ActivatedRoute,
+    private serverService: ServerService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -43,7 +40,16 @@ export class OfferUserComponent implements OnInit {
     L.marker([lat, lon], { icon: this.defaultIcon }).addTo(this.map);
   }
 
-  // onSubmit() {
-  //   let companyUser_id =
-  // }
+  onSubmit() {
+    let company_id = this.route.snapshot.data.offerList[+this.route.snapshot.paramMap.get('id')-1].company_id;
+    let offer_id = this.route.snapshot.data.offerList[+this.route.snapshot.paramMap.get('id')-1].id;
+    let user_id = JSON.parse(localStorage.getItem('id'));
+    let data = {
+      company_id: company_id,
+      offer_id: offer_id,
+      user_id: user_id
+    };
+    this.serverService.request("POST", "/ping/create", data).subscribe();
+    this.router.navigate(['/search-user']);
+  }
 }

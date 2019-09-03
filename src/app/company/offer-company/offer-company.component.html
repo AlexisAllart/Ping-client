@@ -32,33 +32,112 @@
         <div class="new-offre">
             <h2 class="title-un">Nouvelle Offre</h2>
             <div class="formulaires">
-                <form (ngSubmit)="onSubmit(contactForm.form.value)" #contactForm="ngForm" action="">
+                <!-- <form (ngSubmit)="onSubmit(contactForm.form.value)" #contactForm="ngForm" action="">
 
-                        <label for="job_name" class="label">Emploi proposé*</label>
-                        <input #jobName="ngModel" id="job_name" class="input" type="text" [(ngModel)]="model.job_name" name="job_name"
-                            required>
-                        <label for="company_name" class="label">Nom de votre entreprise*</label>
-                        <input #companyName="ngModel" id="company_name" class="input" type="text"
-                            [(ngModel)]="model.company_name" name="company_name" required>
-                        <label for="description" class="label">Description de l'offre*</label>
-                        <input #description="ngModel" class="input-description" type="text"
-                            [(ngModel)]="model.description" name="description" required>
-                
-                        <label for="contract_type" class="label">Type de contract</label>
-                        <input #contractType="ngModel" id="contract_type" class="input" type="text"
-                            [(ngModel)]="model.contract_type" name="contract_type" required>
-                        <label for="salary" class="label">Salaire proposé</label>
-                        <input #salary="ngModel" id="salary" class="input" type="text" [(ngModel)]="model.salary"
-                            required>
-                        <select #keyword="ngModel" class="form-control" id="keyword" materialize="material_select"
-                            [(ngModel)]="model.keyword" name="keyword">
+                    <label for="job_name" class="label">Emploi proposé*</label>
+                    <input #jobName="ngModel" id="job_name" class="input" type="text" [(ngModel)]="model.job_name" name="job_name" required>
+                    <label for="company_name" class="label">Nom de votre entreprise*</label>
+                    <input #companyName="ngModel" id="company_name" class="input" type="text" [(ngModel)]="model.company_name" name="company_name" required>
+                    <label for="description" class="label">Description de l'offre*</label>
+                    <input #description="ngModel" class="input-description" type="text" [(ngModel)]="model.description" name="description" required>
+
+                    <label for="contract_type" class="label">Type de contract</label>
+                    <input #contractType="ngModel" id="contract_type" class="input" type="text" [(ngModel)]="model.contract_type" name="contract_type" required>
+                    <label for="salary" class="label">Salaire proposé</label>
+                    <input #salary="ngModel" id="salary" class="input" type="text" [(ngModel)]="model.salary" required>
+                    <select #keyword="ngModel" class="form-control" id="keyword" materialize="material_select" [(ngModel)]="model.keyword" name="keyword">
                             <option value="" disabled selected>Choisir un mot clé</option>
                             <option value="" *ngFor="let keyword of route.snapshot.data.keyWordList" [value]="keyword.name">{{keyword.name}}</option>
                             <label for="keyword">Mot clé</label>
                         </select>
-                        <div class="btn-add">
-                            <button id="btn" type="submit" class="button">Ajouter</button>
-                        </div>
+                    <div class="btn-add">
+                        <button class="button">Ajouter offre</button>
+                    </div>
+                </form> -->
+
+                <form [formGroup]="form" (ngSubmit)="onSubmitOffer()">
+                    <div class="column">
+                        <mat-form-field class="offer-input">
+                            <mat-label>Emploi proposé</mat-label>
+                            <input matInput placeholder="Intitulé" formControlName="title" required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Description de l'offre</mat-label>
+                            <input matInput placeholder="Description" formControlName="description" required>
+                        </mat-form-field>
+                        <mat-form-field class="offer-input">
+                            <mat-label>Type de contrat</mat-label>
+                            <mat-select formControlName="contractType_id" required>
+                                <mat-option *ngFor="let contractType of route.snapshot.data.contractTypeList" [value]="contractType.id">
+                                    {{ contractType.name }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="offer-input">
+                            <mat-label>Salaire proposé</mat-label>
+                            <input matInput placeholder="Salaire" formControlName="salary" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field class="offer-input">
+                            <mat-label>N°</mat-label>
+                            <input matInput placeholder="Numéro du lieu de travail" formControlName="addressNumber" required>
+                        </mat-form-field>
+                        <mat-form-field class="offer-input">
+                            <mat-label>Rue</mat-label>
+                            <input matInput placeholder="Rue du lieu de travail" formControlName="addressStreet" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field class="offer-input">
+                            <mat-label>Code postal</mat-label>
+                            <input matInput placeholder="Code postal du lieu de travail" formControlName="addressZIPCode" required>
+                        </mat-form-field>
+                        <mat-form-field class="offer-input">
+                            <mat-label>Ville</mat-label>
+                            <input matInput placeholder="Ville du lieu de travail" formControlName="addressCity" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field class="offer-input-keyword">
+                            <mat-label>Mot clé 1</mat-label>
+                            <mat-select formControlName="keyWordOne_id" required>
+                                <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+                                    {{ keyWord.name }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="offer-input-keyword">
+                            <mat-label>Mot clé 2</mat-label>
+                            <mat-select formControlName="keyWordTwo_id" required>
+                                <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+                                    {{ keyWord.name }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="offer-input-keyword">
+                            <mat-label>Mot clé 3</mat-label>
+                            <mat-select formControlName="keyWordThree_id" required>
+                                <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+                                    {{ keyWord.name }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="btn-add">
+                        <button class="button">Ajouter offre</button>
+                    </div>
+                </form>
+
+                <form [formGroup]="formKeyWord" (ngSubmit)="onSubmitKeyWord()">
+                    <mat-form-field>
+                        <mat-label>Ajouter un mot clé</mat-label>
+                        <input matInput placeholder="Mot clé" formControlName="name" required>
+                    </mat-form-field>
+                    <div class="btn-add">
+                        <button class="button">Ajouter mot clé</button>
+                    </div>
                 </form>
 
                 <!-- <form class="un" class="form" action="">
