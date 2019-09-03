@@ -13,6 +13,9 @@
 .sous-general{
     // background-color: rgb(97, 97, 97);
     width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
     
     
 }
@@ -25,6 +28,7 @@
     // margin-left: 150px;
   
 }
+
 
 /********************* les labels ***************************/
 .container-blue {
