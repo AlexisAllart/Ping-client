@@ -81,48 +81,50 @@
                     <div class="row">
                         <mat-form-field class="offer-input">
                             <mat-label>N°</mat-label>
-                            <input matInput placeholder="Numéro du lieu de travail" formControlName="addressNumber" required>
+                            <input matInput placeholder="Numéro du lieu de travail" formControlName="addressNumber" required (ngModelChange)="onInput()">
                         </mat-form-field>
                         <mat-form-field class="offer-input">
                             <mat-label>Rue</mat-label>
-                            <input matInput placeholder="Rue du lieu de travail" formControlName="addressStreet" required>
+                            <input matInput placeholder="Rue du lieu de travail" formControlName="addressStreet" required (ngModelChange)="onInput()">
                         </mat-form-field>
                     </div>
                     <div class="row">
                         <mat-form-field class="offer-input">
                             <mat-label>Code postal</mat-label>
-                            <input matInput placeholder="Code postal du lieu de travail" formControlName="addressZIPCode" required>
+                            <input matInput placeholder="Code postal du lieu de travail" formControlName="addressZIPCode" required (ngModelChange)="onInput()">
                         </mat-form-field>
                         <mat-form-field class="offer-input">
                             <mat-label>Ville</mat-label>
-                            <input matInput placeholder="Ville du lieu de travail" formControlName="addressCity" required>
+                            <input matInput placeholder="Ville du lieu de travail" formControlName="addressCity" required (ngModelChange)="onInput()">
                         </mat-form-field>
                     </div>
+                    <mat-form-field class="offer-input-keyword">
+                        <mat-label>Mot clé 1</mat-label>
+                        <mat-select formControlName="keyWordOne_id" required>
+                            <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+                                {{ keyWord.name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="offer-input-keyword">
+                        <mat-label>Mot clé 2</mat-label>
+                        <mat-select formControlName="keyWordTwo_id" required>
+                            <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+                                {{ keyWord.name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="offer-input-keyword">
+                        <mat-label>Mot clé 3</mat-label>
+                        <mat-select formControlName="keyWordThree_id" required>
+                            <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+                                {{ keyWord.name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <p>Localisation : </p>
+                    <p *ngIf="form.value.addressCity && form.value.addressNumber && form.value.addressStreet && form.value.addressZIPCode">{{ data[0].display_name }}</p>
                     <div class="row">
-                        <mat-form-field class="offer-input-keyword">
-                            <mat-label>Mot clé 1</mat-label>
-                            <mat-select formControlName="keyWordOne_id" required>
-                                <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
-                                    {{ keyWord.name }}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                        <mat-form-field class="offer-input-keyword">
-                            <mat-label>Mot clé 2</mat-label>
-                            <mat-select formControlName="keyWordTwo_id" required>
-                                <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
-                                    {{ keyWord.name }}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                        <mat-form-field class="offer-input-keyword">
-                            <mat-label>Mot clé 3</mat-label>
-                            <mat-select formControlName="keyWordThree_id" required>
-                                <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
-                                    {{ keyWord.name }}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
                     </div>
 
                     <div class="btn-add">

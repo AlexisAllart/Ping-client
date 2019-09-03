@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CompanyUser } from 'src/app/models/CompanyUser.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ServerCompanyService } from 'src/app/services/serverCompany.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -39,7 +40,8 @@ export class OfferCompanyComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private fb: FormBuilder,
-    private serverCompanyService: ServerCompanyService
+    private serverCompanyService: ServerCompanyService,
+    private http: HttpClient
   ) {
     let id = this.companyUserId;
     this.companyUser = this.route.snapshot.data.companyUserList.find(function (x) {
@@ -82,5 +84,17 @@ export class OfferCompanyComponent implements OnInit {
     else {
       this.formSubmitKeyWordAttempt = true;
     }
+  }
+
+  private address="";
+  private data;
+  onInput() {
+    this.address = this.form.value.addressNumber+" "+this.form.value.addressStreet+" "+this.form.value.addressZIPCode+" "+this.form.value.addressCity;
+    if (this.form.value.addressNumber !== null && this.form.value.addressStreet !== null && this.form.value.addressZIPCode !== null && this.form.value.addressCity !== null) {
+      this.http.get("https://nominatim.openstreetmap.org/search?format=json&q="+this.address).subscribe(data =>
+      this.data = data
+      );
+    }
+    console.log(this.data[0]);
   }
 }
