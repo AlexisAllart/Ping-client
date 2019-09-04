@@ -63,7 +63,8 @@
                         </mat-form-field>
                         <mat-form-field>
                             <mat-label>Description de l'offre</mat-label>
-                            <input matInput placeholder="Description" formControlName="description" required>
+                            <!-- <input matInput placeholder="Description" formControlName="description" required> -->
+                            <textarea matInput placeholder="Description" formControlName="description" required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
                         </mat-form-field>
                         <mat-form-field class="offer-input">
                             <mat-label>Type de contrat</mat-label>
@@ -74,7 +75,7 @@
                             </mat-select>
                         </mat-form-field>
                         <mat-form-field class="offer-input">
-                            <mat-label>Salaire proposé</mat-label>
+                            <mat-label>Salaire proposé (par an)</mat-label>
                             <input matInput placeholder="Salaire" formControlName="salary" required>
                         </mat-form-field>
                     </div>
@@ -122,8 +123,7 @@
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-                    <p>Localisation : </p>
-                    <p *ngIf="form.value.addressCity && form.value.addressNumber && form.value.addressStreet && form.value.addressZIPCode">{{ data[0].display_name }}</p>
+
                     <div class="row">
                     </div>
 
@@ -179,6 +179,9 @@
             </div>
         </div>
         <div class="offres">
+            <div class="map">
+                <div id="map" class="carte"></div>
+            </div>
             <div class="title-container">
                 <h2 class="title-deux">Vos offres</h2>
             </div>

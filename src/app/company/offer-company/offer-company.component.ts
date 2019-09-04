@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ServerCompanyService } from 'src/app/services/serverCompany.service';
 import { HttpClient } from '@angular/common/http';
 
+declare let L;
 
 @Component({
   selector: 'app-offer-company',
@@ -25,12 +26,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OfferCompanyComponent implements OnInit {
 
+  // Icons 
+  private defaultIcon = L.icon({
+    iconUrl: '../../../assets/leaflet/images/marker-icon.png',
+    popupAnchor: [1, -40],
+    iconAnchor: [12, 36],
+    shadowUrl: '../../../assets/leaflet/images/marker-shadow.png',
+  });
+  private map;
+  private markers = [];
+  private markerLayer;
+
+  private latitude;
+  private longitude;
+
+
   private companyUser: CompanyUser;
   private companyUserId = JSON.parse(localStorage.getItem('companyUserId')).id;
 
   private form: FormGroup;
   public offerInvalid: boolean;
   private formSubmitAttempt: boolean;
+  private newOffer;
 
   private formKeyWord: FormGroup;
   public keyWordInvalid: boolean;
@@ -61,14 +78,32 @@ export class OfferCompanyComponent implements OnInit {
       title: ['', Validators.required],
       keyWordOne_id: ['', Validators.required],
       keyWordTwo_id: ['', Validators.required],
-      keyWordThree_id: ['', Validators.required]
-    })
+      keyWordThree_id: ['', Validators.required],
+    });
     this.formKeyWord = this.fb.group({
       name: ['', Validators.required]
-    })
+    });
+    this.map = L.map('map').setView([0,0], 0);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(this.map);
   }
 
   onSubmitOffer() {
+    if (this.form.valid) {
+      try {
+        this.newOffer = this.form.value;
+        this.newOffer.latitude = this.latitude;
+        this.newOffer.longitude = this.longitude;
+        this.serverCompanyService.request("POST", "/offer/create", this.newOffer).subscribe();
+      }
+      catch (err) {
+        this.offerInvalid = true;
+      }
+    }
+    else {
+      this.formSubmitAttempt = true;
+    }
     
   }
 
@@ -89,12 +124,19 @@ export class OfferCompanyComponent implements OnInit {
   private address="";
   private data;
   onInput() {
+    this.markers = [];
+    this.markerLayer ? this.markerLayer.clearLayers() : '';
     this.address = this.form.value.addressNumber+" "+this.form.value.addressStreet+" "+this.form.value.addressZIPCode+" "+this.form.value.addressCity;
-    if (this.form.value.addressNumber !== null && this.form.value.addressStreet !== null && this.form.value.addressZIPCode !== null && this.form.value.addressCity !== null) {
-      this.http.get("https://nominatim.openstreetmap.org/search?format=json&q="+this.address).subscribe(data =>
-      this.data = data
-      );
+    if (this.form.value.addressNumber !== '' && this.form.value.addressStreet !== '' && this.form.value.addressZIPCode !== '' && this.form.value.addressCity !== '') {
+      this.http.get("https://nominatim.openstreetmap.org/search?format=json&q="+this.address).subscribe(data => {
+        this.data=data;
+        this.latitude=data[0].lat;
+        this.longitude=data[0].lon;
+        this.markers[0] = L.marker([data[0].lat, data[0].lon], { icon: this.defaultIcon });
+        this.markerLayer = L.layerGroup(this.markers);
+        this.map.addLayer(this.markerLayer);
+        this.map.setView(new L.LatLng(this.data[0].lat,this.data[0].lon), 15);
+      });
     }
-    console.log(this.data[0]);
   }
 }
