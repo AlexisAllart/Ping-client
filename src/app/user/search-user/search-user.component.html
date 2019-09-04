@@ -44,7 +44,7 @@
                 <p *ngFor="let contractType of route.snapshot.data.contractTypeList" [ngClass]="[contractBtn[contractType.id-1]]" (click)=addContractTypeFilter(contractType.name,contractType.id)>{{ contractType.name }}</p>
             </div>
             <div class="container">
-                <div *ngFor="let offer of filteredArray">
+                <div [@contactsAnimation]="state" *ngFor="let offer of filteredArray">
                     <div *ngIf="offer.show" class="box">
                         <div class="sous-container">
                             <div class="container-text">

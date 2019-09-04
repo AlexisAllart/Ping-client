@@ -26,7 +26,24 @@
     align-items: center;
     width: inherit;
     // margin-left: 150px;
+    animation: moveInRight 1s ease-out;
   
+}
+
+@keyframes moveInRight {
+  0% {
+      opacity: 0;
+      transform: translateY(100px);
+  }
+
+  80% {
+      transform: translateY(-10px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
 }
 
 

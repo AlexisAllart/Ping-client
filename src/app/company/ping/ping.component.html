@@ -35,7 +35,7 @@
                             <div class="name">{{ ping.User.firstName }} {{ ping.User.lastName }}</div>
                             <div class="job-title"> {{ ping.Offer.title }}</div>
                             <div class="date">{{ ping.updatedAt | date : "dd.MM.y" }}</div>
-                            <div class="message">
+                            <div (click)="openDialog(route.snapshot.data.statusList[ping.status_id-1].color)" class="message">
                                 <div class="lepoint" [ngStyle]="{'background': ping.Status.color}"></div>
                             </div>  
                             <div class="btn-download">

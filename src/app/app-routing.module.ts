@@ -58,16 +58,6 @@ const routes: Routes = [
     companyUserList: CompanyUserResolver,
   }},
   {path: 'search-company', component: SearchCompanyComponent, resolve: {
-    companyList: CompanyResolver,
-    companyUserList: CompanyUserResolver,
-    contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
-    offerList: OfferResolver,
-    pingList: PingResolver,
-    roleList: RoleResolver,
-    selectionList: SelectionResolver,
-    statusList: StatusResolver,
-    tagList: TagResolver,
     userList: UserResolver
   }},
   {path: 'selection-company', component: SelectionCompanyComponent, resolve: {

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ModalComponent } from 'src/app/modal/modal.component';
 import { UserDetailsService } from 'src/app/services/userDetails.service';
+import { StatusmodalComponent } from 'src/app/statusmodal/statusmodal.component';
 
 @Component({
   selector: 'app-ping',
@@ -28,6 +29,14 @@ private user;
           user: res
         }
       })
+    });
+  }
+
+  openDialog(id) {
+    this.dialog.open(StatusmodalComponent, {
+      data: {
+        statut: this.route.snapshot.data.statusList[id]
+      }
     });
   }
 }
