@@ -1,14 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { trigger, state, style, transition, animate } from '@angular/animations';
 // Permet de manipuler leaflet
 declare let L;
 
 @Component({
   selector: 'app-search-user',
   templateUrl: './search-user.component.html',
-  styleUrls: ['./search-user.component.scss']
+  styleUrls: ['./search-user.component.scss'],
+  animations: [
+    trigger('contactsAnimation', [
+      state('active', style({
+        opacity: '1'
+      })),
+      transition('void => *', [
+        style({ transform: 'translateY(-100px)', opacity: '0' }),
+        animate('1000ms ease-in-out')
+      ])
+    ])
+  ]
 })
 export class SearchUserComponent implements OnInit {
 
