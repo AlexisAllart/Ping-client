@@ -9,12 +9,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ModalComponent implements OnInit {
   private user;
-  private keyWordList;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
     this.user = this.data.user;
-    this.keyWordList = this.data.keyWordList;
-   }
+  }
 
   ngOnInit() {
   }

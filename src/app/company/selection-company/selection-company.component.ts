@@ -4,6 +4,7 @@ import { Selection } from 'src/app/models/Selection.model';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { ModalComponent } from 'src/app/modal/modal.component';
+import { UserDetailsService } from 'src/app/services/userDetails.service';
 
 @Component({
   selector: 'app-selection-company',
@@ -18,20 +19,23 @@ export class SelectionCompanyComponent implements OnInit {
 
     //Variables
     private selectionListLoaded = false;
-    private userListLoaded = false; 
+    private userListLoaded = false;
+    
   constructor(
     private route: ActivatedRoute,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private userDetailsService: UserDetailsService
   ) { }
 
   ngOnInit() { }
 
   onCreate(id){
-    this.dialog.open(ModalComponent, {
-      data: {
-        user: this.route.snapshot.data.userList[id],
-        keyWordList: this.route.snapshot.data.keyWordList
-      }
+    this.userDetailsService.preloadUserDetailsForCompany(id).subscribe(res => {
+      this.dialog.open(ModalComponent, {
+        data: {
+          user: res
+        }
+      })
     });
   }
 }

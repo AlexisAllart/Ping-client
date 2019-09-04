@@ -30,19 +30,19 @@
 
                     <div class="text">
                         <div class="container-img">
-                            <img class="picture" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userList[selection.user_id-1].picture}}">
+                            <img class="picture" src="http://pingjob.herokuapp.com/{{selection.User.picture}}">
                         </div>
-                        <div class="name">{{ route.snapshot.data.userList[selection.user_id-1].firstName }} {{ route.snapshot.data.userList[selection.user_id-1].lastName }}</div>
+                        <div class="name">{{ selection.User.firstName }} {{ selection.User.lastName }}</div>
                         <!-- <div class="job-title"> {{selection.</div> -->
                         <div class="date">{{ selection.updatedAt | date : "dd.MM.y" }}</div>
                         <div class="message">
-                            <div class="lepoint" [ngStyle]="{'background': route.snapshot.data.tagList[selection.tag_id-1].color}"></div>
+                            <div class="lepoint" [ngStyle]="{'background': selection.Tag.color}"></div>
                         </div>
                         <div class="btn-download">
-                            <a href="http://pingjob.herokuapp.com/{{route.snapshot.data.userList[selection.user_id-1].cv}}"><i class="fas fa-arrow-down fleche"></i></a>
+                            <a href="http://pingjob.herokuapp.com/{{selection.User.cv}}"><i class="fas fa-arrow-down fleche"></i></a>
                         </div>
 
-                        <div class="btn-detail-small" (click)="onCreate(route.snapshot.data.userList[selection.user_id-1].id-1)">
+                        <div class="btn-detail-small" (click)="onCreate(selection.User.id)">
                             <!-- INSERER POPUP USER CARD SUR CLICK DE CET ICONE -->
                             <i class="fas fa-plus-circle plus"></i>
                         </div>

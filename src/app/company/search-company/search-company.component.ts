@@ -35,11 +35,11 @@ export class SearchCompanyComponent implements OnInit {
   ngOnInit() {
     for (let i = 0; i < this.route.snapshot.data.userList.length; i++) {
       this.usersWithKeyWords[i].keyWords =
-      this.route.snapshot.data.keyWordList[this.route.snapshot.data.userList[i].keyWordOne_id - 1].name +
+      this.route.snapshot.data.userList[i].KeyWordOne.name +
       "&"+
-      this.route.snapshot.data.keyWordList[this.route.snapshot.data.userList[i].keyWordTwo_id - 1].name +
+      this.route.snapshot.data.userList[i].KeyWordTwo.name +
       "&"+
-      this.route.snapshot.data.keyWordList[this.route.snapshot.data.userList[i].keyWordThree_id - 1].name;
+      this.route.snapshot.data.userList[i].KeyWordThree.name;
     }
     this.filteredArray = this.usersWithKeyWords.filter((v) => v.keyWords.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
   }

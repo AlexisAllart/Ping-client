@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CompanyUser } from 'src/app/models/CompanyUser.model';
 
 @Component({
   selector: 'app-profile-company',
@@ -10,7 +9,7 @@ import { CompanyUser } from 'src/app/models/CompanyUser.model';
 export class ProfileCompanyComponent implements OnInit {
 
   private companyUserId=JSON.parse(localStorage.getItem('companyUserId')).id;
-  private companyUser: CompanyUser;
+  private companyUser;
   
   votreNom= "COMPANY_NAME";
   votreMail = "COMPANY_EMAIL";
@@ -24,13 +23,13 @@ export class ProfileCompanyComponent implements OnInit {
       this.companyUser = this.route.snapshot.data.companyUserList.find(function(x) {
         return x.id = id;
       });
-    }
+  }
     
-    ngOnInit() {
-    this.votreNom = this.route.snapshot.data.companyList[this.companyUser.company_id-1].name;
-    this.votreMail = this.route.snapshot.data.companyList[this.companyUser.company_id-1].email;
-    this.votrePhone = this.route.snapshot.data.companyList[this.companyUser.company_id-1].phone;
-    this.votrePassword = this.route.snapshot.data.companyList[this.companyUser.company_id-1].password;
+  ngOnInit() {
+    this.votreNom = this.companyUser.Company.name;
+    this.votreMail = this.companyUser.Company.email;
+    this.votrePhone = this.companyUser.Company.phone;
+    this.votrePassword = this.companyUser.Company.password;
   }
 
 }

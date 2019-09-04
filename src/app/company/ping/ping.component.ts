@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ModalComponent } from 'src/app/modal/modal.component';
+import { UserDetailsService } from 'src/app/services/userDetails.service';
 
 @Component({
   selector: 'app-ping',
@@ -9,20 +10,24 @@ import { ModalComponent } from 'src/app/modal/modal.component';
   styleUrls: ['./ping.component.scss']
 })
 export class PingComponent implements OnInit {
+private user;
 
   constructor(
     private route: ActivatedRoute,
-    private dialog: MatDialog) { 
-     }
+    private dialog: MatDialog,
+    private userDetailsService: UserDetailsService
+    ) { 
+  }
 
   ngOnInit() { }
 
   onCreate(id){
-    this.dialog.open(ModalComponent, {
-      data: {
-        user: this.route.snapshot.data.userList[id],
-        keyWordList: this.route.snapshot.data.keyWordList
-      }
+    this.userDetailsService.preloadUserDetailsForCompany(id).subscribe(res => {
+      this.dialog.open(ModalComponent, {
+        data: {
+          user: res
+        }
+      })
     });
   }
 }

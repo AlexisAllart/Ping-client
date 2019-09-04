@@ -30,20 +30,19 @@
             
                         <div class="text">
                             <div class="container-img">
-                                <img class="picture" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userList[ping.user_id-1].picture}}">
+                                <img class="picture" src="http://pingjob.herokuapp.com/{{ping.User.picture}}">
                             </div>
-                            <div class="name">{{ route.snapshot.data.userList[ping.user_id-1].firstName }} {{ route.snapshot.data.userList[ping.user_id-1].lastName }}</div>
-                            <div class="job-title"> {{ route.snapshot.data.offerList[ping.offer_id-1].title }}</div>
+                            <div class="name">{{ ping.User.firstName }} {{ ping.User.lastName }}</div>
+                            <div class="job-title"> {{ ping.Offer.title }}</div>
                             <div class="date">{{ ping.updatedAt | date : "dd.MM.y" }}</div>
                             <div class="message">
-                                <div class="lepoint" [ngStyle]="{'background': route.snapshot.data.statusList[ping.status_id-1].color}"></div>
+                                <div class="lepoint" [ngStyle]="{'background': ping.Status.color}"></div>
                             </div>  
                             <div class="btn-download">
-                                <a href="http://pingjob.herokuapp.com/{{route.snapshot.data.userList[ping.user_id-1].cv}}"><i class="fas fa-arrow-down fleche"></i></a>
+                                <a href="http://pingjob.herokuapp.com/{{ping.User.cv}}"><i class="fas fa-arrow-down fleche"></i></a>
                             </div>
                         
-                            <div class="btn-detail-small" (click)="onCreate(route.snapshot.data.userList[ping.user_id-1].id-1)">
-                                <!-- INSERER POPUP USER CARD SUR CLICK DE CET ICONE -->
+                            <div class="btn-detail-small" (click)="onCreate(ping.User.id)">
                                 <i class="fas fa-plus-circle plus"></i>
                             </div>
                         </div>

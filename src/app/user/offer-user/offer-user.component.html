@@ -7,7 +7,7 @@
             </div>
         </header>
 
-        <div class="menu-keywords">
+        <div *ngIf="ready" class="menu-keywords">
             <p class="skills">{{ offer.KeyWordOne.name }}</p>
             <p class="skills">{{ offer.KeyWordTwo.name }}</p>
             <p class="skills">{{ offer.KeyWordThree.name }}</p>
@@ -18,7 +18,7 @@
     </div>
     <div class="container">
         <div class="container-center">
-            <div class="container-text-offer">
+            <div *ngIf="ready" class="container-text-offer">
                 <h2 class="title">{{ offer.title }}</h2>
                 <hr class="line-offer">
                 <h4 class="company">{{ offer.CompanyUser.Company.name }}</h4>
@@ -33,7 +33,7 @@
 
         <div class="right-side">
             <div class="card-and-mapp">
-                <div class="company-card">
+                <div *ngIf="ready" class="company-card">
                     <div class="logo-company">
                         <img class="logo-picture" src="http://pingjob.herokuapp.com/{{offer.CompanyUser.Company.logo}}" alt="logo">
                     </div>

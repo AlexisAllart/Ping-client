@@ -25,6 +25,7 @@ export class OfferUserComponent implements OnInit {
   // Map Variables
   private map;
   private offer: OfferDetails;
+  private ready: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -39,6 +40,7 @@ export class OfferUserComponent implements OnInit {
     this.http.get<OfferDetails>('http://pingjob.herokuapp.com/offer/details/'+this.route.snapshot.paramMap.get('id')).subscribe(res => {
       this.offer=res;
       this.initMap();
+      this.ready=true;
     });
   }
 

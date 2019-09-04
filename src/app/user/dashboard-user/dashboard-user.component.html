@@ -24,27 +24,27 @@
                     <div class="card-container-company">
                         <div class="card-container-blue">
                             <div class="card-container-logo">
-                                <img class="card-logo" src="http://pingjob.herokuapp.com/{{route.snapshot.data.companyList[ping.company_id-1].logo}}" />
+                                <img class="card-logo" src="http://pingjob.herokuapp.com/{{ping.Company.logo}}" />
                             </div>
                             <div class="card-text">
                                 <div class="card-container-text">
                                     <p class="card-company">
-                                        {{ route.snapshot.data.companyList[ping.company_id-1].name }}</p>
+                                        {{ ping.Company.name }}</p>
                                 </div>
                                 <div class="card-container-text">
-                                    <p class="card-job-title">{{ route.snapshot.data.offerList[ping.offer_id-1].title }}
+                                    <p class="card-job-title">{{ ping.Offer.title }}
                                     </p>
                                 </div>
                                 <div class="card-container-text">
                                     <p class="card-date">{{ ping.createdAt | date : "dd.MM.y" }}</p>
                                 </div>
                                 <div class="card-statut">
-                                    <div class="card-lepoint" [ngStyle]="{'background': route.snapshot.data.statusList[ping.status_id-1].color}"></div>
+                                    <div class="card-lepoint" [ngStyle]="{'background': ping.Status.color}"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-btn-detail-medium">
-                            <i class="fas fa-plus-circle card-plus" [routerLink]="['/offer-user', route.snapshot.data.offerList[ping.offer_id-1].id]"></i>
+                            <i class="fas fa-plus-circle card-plus" [routerLink]="['/offer-user', ping.Offer.id]"></i>
                         </div>
                     </div>
                 </div>

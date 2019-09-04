@@ -42,45 +42,20 @@ const routes: Routes = [
   
   //component company
   {path: 'offer-company', component: OfferCompanyComponent, resolve: {
-    companyList: CompanyResolver,
     companyUserList: CompanyUserResolver,
     contractTypeList: ContractTypeResolver,
     keyWordList: KeyWordResolver,
     offerList: OfferResolver,
-    pingList: PingResolver,
-    roleList: RoleResolver,
-    // selectionList: SelectionResolver,
-    // statusList: StatusResolver,
-    // tagList: TagResolver,
-    // userList: UserResolver
   }},
   {path: 'ping', component: PingComponent, resolve: {
-    companyList: CompanyResolver,
-    companyUserList: CompanyUserResolver,
-    contractTypeList: ContractTypeResolver,
     keyWordList: KeyWordResolver,
-    offerList: OfferResolver,
     pingList: PingResolver,
-    roleList: RoleResolver,
-    selectionList: SelectionResolver,
-    statusList: StatusResolver,
-    tagList: TagResolver,
     userList: UserResolver
   }},
   {path: 'price', component: PriceComponent, resolve: {
   }},
   {path: 'profil-company', component: ProfileCompanyComponent, resolve: {
-    companyList: CompanyResolver,
     companyUserList: CompanyUserResolver,
-    // contractTypeList: ContractTypeResolver,
-    // keyWordList: KeyWordResolver,
-    // offerList: OfferResolver,
-    // pingList: PingResolver,
-    roleList: RoleResolver,
-    // selectionList: SelectionResolver,
-    // statusList: StatusResolver,
-    // tagList: TagResolver,
-    // userList: UserResolver
   }},
   {path: 'search-company', component: SearchCompanyComponent, resolve: {
     companyList: CompanyResolver,
@@ -96,52 +71,27 @@ const routes: Routes = [
     userList: UserResolver
   }},
   {path: 'selection-company', component: SelectionCompanyComponent, resolve: {
-    companyList: CompanyResolver,
-    companyUserList: CompanyUserResolver,
-    contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
-    offerList: OfferResolver,
-    pingList: PingResolver,
-    roleList: RoleResolver,
     selectionList: SelectionResolver,
-    statusList: StatusResolver,
-    tagList: TagResolver,
-    userList: UserResolver
   }},
   {path: 'sign-in-company', component: SignInComponent},
   {path: 'sign-up-company', component: SignUpComponent},
   
   //component user
   {path: 'dashboard-user', component: DashboardUserComponent, resolve: {
-    companyList: CompanyResolver,
-    contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
-    offerList: OfferResolver,
     pingList: PingResolver,
-    statusList: StatusResolver,
     userDetails: UserDetailsResolver
   }},
   {path: 'identification-user', component: IdentificationUserComponent},
   {path: 'offer-user/:id', component: OfferUserComponent, resolve: {
-    companyList: CompanyResolver,
-    contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
     offerList: OfferResolver,
-    pingList: PingResolver,
-    statusList: StatusResolver,
     userDetails: UserDetailsResolver,
   }},
   {path: 'profile-user', component: ProfileUserComponent, resolve: {
-    // keyWordList: KeyWordResolver,    
     userDetails: UserDetailsResolver
   }},
   {path: 'search-user', component: SearchUserComponent, resolve: {
-    // companyList: CompanyResolver,
     contractTypeList: ContractTypeResolver,
-    // keyWordList: KeyWordResolver,
     offerList: OfferResolver,
-    // statusList: StatusResolver,
-    // tagList: TagResolver,
     userDetails: UserDetailsResolver
   }},
 ];

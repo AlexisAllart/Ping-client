@@ -2,38 +2,12 @@
     <div class="navbar">
         <app-navbar-company></app-navbar-company>
     </div>
-    <!-- <div class="menu-responsive">
-        <div class="menu-burger">
-                <div class="menu-burger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                </div>
-        </div>
-    </div> -->
-<!-- 
-    <div class="menu">
-        <span class="title">Ping Job</span>
-        <i class="material-icons">
-            menu
-        </i>
-        <input class="burger" type="checkbox">
-
-        <nav>
-            <a href="#"><i class="material-icons">home</i></a>
-            <a href="#"><i class="material-icons">directions_car</i></a>
-            <a href="#"><i class="material-icons">drafts</i></a>
-            <a href="#"><i class="material-icons">face</i></a>
-        </nav>
-    </div> -->
-
     <div class="burger">
             <div class="menu-toggle">
               <input type="checkbox"/>
               <span class="bar"></span>
               <span class="bar"></span>
               <span class="bar"></span>
-              
               <ul class="burger-menu-elem">
                 <a class="text-menu" href="#"><li>Search</li></a>
                 <a class="text-menu" href="#"><li>Ping</li></a>
@@ -56,27 +30,7 @@
                     <span class="input-icon fa fa-search"></span>
                     
                 </div>
-                <!-- <div *ngFor="let f of (folderObjs | filter:search)as folder">
-                    {{f.name}}
-                    {{f.size}}
-                  
-                  </div> -->
-                  
-                  <!-- <div class="input-wrapper">
-                      <input type="map" placeholder="OU ?" />
-                      <span class="input-icon fas fa-map-marker-alt"></span>
-                </div> -->
             </div>
-            <!----- CONTRACT TYPE ---------->
-            <!-- <div class="search">
-                <div class="contract">
-                    <p class="type">CDD</p>
-                    <p class="type">CDI</p>
-                    <p class="type">STAGE</p>
-                    <p class="type">ALTERNANCE</p>
-                    <p class="type">FREELANCE</p>
-                </div>
-            </div> -->
         </div>
         
         
@@ -102,14 +56,14 @@
                             {{ user.about }}
                         </p>
                         <div class="key-words">
-                            <p class="words">{{ route.snapshot.data.keyWordList[user.keyWordOne_id-1].name }}</p>
-                            <p class="words">{{ route.snapshot.data.keyWordList[user.keyWordTwo_id-1].name }}</p>
-                            <p class="words">{{ route.snapshot.data.keyWordList[user.keyWordThree_id-1].name }}</p>
+                            <p class="words">{{ user.KeyWordOne.name }}</p>
+                            <p class="words">{{ user.KeyWordTwo.name }}</p>
+                            <p class="words">{{ user.KeyWordThree.name }}</p>
                         </div>
                     </div>
                     <div class="right-side">
                         <!-- un utilisateur peut postuler sur plusieurs annonces, de quel statut parle-t-on ici donc ? -->
-                        <div class="statut"></div>
+                        <!-- <div class="statut"></div> -->
                         <!-- <i class="fas fa-plus-circle plus"></i> -->
                     </div>
                 </div>
