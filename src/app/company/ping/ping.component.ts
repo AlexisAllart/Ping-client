@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ModalComponent } from 'src/app/modal/modal.component';
+import { StatusmodalComponent } from 'src/app/statusmodal/statusmodal.component';
 
 @Component({
   selector: 'app-ping',
@@ -22,6 +23,14 @@ export class PingComponent implements OnInit {
       data: {
         user: this.route.snapshot.data.userList[id],
         keyWordList: this.route.snapshot.data.keyWordList
+      }
+    });
+  }
+
+  openDialog(id) {
+    this.dialog.open(StatusmodalComponent, {
+      data: {
+        statut: this.route.snapshot.data.statusList[id]
       }
     });
   }

@@ -84,6 +84,7 @@ import { BlueCardUserComponent } from './layouts/blue-card-user/blue-card-user.c
 import { NavbarNologinComponent } from './general/navbar-nologin/navbar-nologin.component';
 import { CguComponent } from './general/cgu/cgu.component';
 import { ModalComponent } from './modal/modal.component';
+import { StatusmodalComponent } from './statusmodal/statusmodal.component';
 
 @NgModule({
   declarations: [
@@ -123,7 +124,8 @@ import { ModalComponent } from './modal/modal.component';
     NavbarNologinComponent,
     FilterPipe,
     CguComponent,
-    ModalComponent
+    ModalComponent,
+    StatusmodalComponent
   ],
   imports: [
     BrowserModule,
