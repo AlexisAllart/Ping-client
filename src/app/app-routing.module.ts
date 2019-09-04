@@ -132,16 +132,16 @@ const routes: Routes = [
     userDetails: UserDetailsResolver,
   }},
   {path: 'profile-user', component: ProfileUserComponent, resolve: {
-    keyWordList: KeyWordResolver,    
+    // keyWordList: KeyWordResolver,    
     userDetails: UserDetailsResolver
   }},
   {path: 'search-user', component: SearchUserComponent, resolve: {
-    companyList: CompanyResolver,
+    // companyList: CompanyResolver,
     contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
+    // keyWordList: KeyWordResolver,
     offerList: OfferResolver,
-    statusList: StatusResolver,
-    tagList: TagResolver,
+    // statusList: StatusResolver,
+    // tagList: TagResolver,
     userDetails: UserDetailsResolver
   }},
 ];

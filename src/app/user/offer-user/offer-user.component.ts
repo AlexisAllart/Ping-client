@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ServerService } from 'src/app/services/server.service';
+import { HttpClient } from '@angular/common/http';
+import { OfferDetails } from 'src/app/models/OfferDetails.model';
 
 // Permet de manipuler leaflet
 declare let L;
@@ -22,27 +24,35 @@ export class OfferUserComponent implements OnInit {
 
   // Map Variables
   private map;
+  private offer: OfferDetails;
 
   constructor(
     private route: ActivatedRoute,
     private serverService: ServerService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private http: HttpClient
+  ) {
+      
+   }
 
   ngOnInit() {
-    let lat,lon;
-    lat = this.route.snapshot.data.offerList[+this.route.snapshot.paramMap.get('id')-1].latitude;
-    lon = this.route.snapshot.data.offerList[+this.route.snapshot.paramMap.get('id')-1].longitude;
-    this.map = L.map('map').setView([lat, lon], 15);
+    this.http.get<OfferDetails>('http://pingjob.herokuapp.com/offer/details/'+this.route.snapshot.paramMap.get('id')).subscribe(res => {
+      this.offer=res;
+      this.initMap();
+    });
+  }
+
+  initMap() {
+    this.map = L.map('map').setView([this.offer.latitude, this.offer.longitude], 15);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
-    L.marker([lat, lon], { icon: this.defaultIcon }).addTo(this.map);
+    L.marker([this.offer.latitude, this.offer.longitude], { icon: this.defaultIcon }).addTo(this.map);
   }
 
   onSubmit() {
-    let company_id = this.route.snapshot.data.offerList[+this.route.snapshot.paramMap.get('id')-1].company_id;
-    let offer_id = this.route.snapshot.data.offerList[+this.route.snapshot.paramMap.get('id')-1].id;
+    let company_id = this.offer.company_id;
+    let offer_id = this.offer.id;
     let user_id = JSON.parse(localStorage.getItem('id'));
     let data = {
       company_id: company_id,
