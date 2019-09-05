@@ -1,10 +1,28 @@
-<div class="body">
-    <div class="choice">
-        <input type="checkbox">
-        <label for="">En attente</label>
-        <input type="checkbox">
-        <label for="">Refusé</label>
-        <input type="checkbox">
-        <label for="">Accepté</label>
+<div class="general">
+    <div class="col">
+        <p>Choisissez le statut du ping :</p>
+        <div class="choice">
+            <div class="col">
+                <div class="button">
+                    <div (click)=blueClick() class="status blue"></div>
+                </div>
+                <p>En attente</p>
+            </div>
+            <div class="col">
+                <div class="button">
+                    <div (click)=redClick() class="status red"></div>
+                </div>
+                <p>Refusé</p>
+            </div>
+            <div class="col">
+                <div class="button">
+                    <div (click)=greenClick() class="status green"></div>
+                </div>
+                <p>Accepté</p>
+            </div>
+        </div>
+    </div>
+    <div class="close">
+        <button mat-button mat-dialog-close>Fermer</button>
     </div>
 </div>

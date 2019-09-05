@@ -17,6 +17,7 @@ import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 import { OfferUserComponent } from './user/offer-user/offer-user.component';
 import { CguComponent } from './general/cgu/cgu.component';
+import { RedirectComponent } from './general/redirect/redirect.component';
 // Resolvers
 import { CompanyResolver } from './resolvers/company.resolver';
 import { CompanyUserResolver } from './resolvers/companyUser.resolver';
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'error-404', component: WrongWayComponent},
   {path: 'legal', component:CguComponent},
+  {path: 'redirect', component:RedirectComponent},
   
   //component company
   {path: 'offer-company', component: OfferCompanyComponent, resolve: {
@@ -48,6 +50,7 @@ const routes: Routes = [
     offerList: OfferResolver,
   }},
   {path: 'ping', component: PingComponent, resolve: {
+    companyUserList: CompanyUserResolver,
     keyWordList: KeyWordResolver,
     pingList: PingResolver,
     userList: UserResolver
@@ -86,7 +89,7 @@ const routes: Routes = [
   }},
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule],
   providers: [
     CompanyResolver,

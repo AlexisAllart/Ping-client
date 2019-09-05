@@ -12,15 +12,24 @@ import { StatusmodalComponent } from 'src/app/statusmodal/statusmodal.component'
 })
 export class PingComponent implements OnInit {
 private user;
+private companyUser;
+private companyUserId = JSON.parse(localStorage.getItem('companyUserId')).id;
+private company_id;
 
   constructor(
     private route: ActivatedRoute,
     private dialog: MatDialog,
     private userDetailsService: UserDetailsService
-    ) { 
+  ) {
+    let id = this.companyUserId;
+    this.companyUser = this.route.snapshot.data.companyUserList.find(function(x) {
+      return x.id = id;
+    });
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.dialog.closeAll();
+   }
 
   onCreate(id){
     this.userDetailsService.preloadUserDetailsForCompany(id).subscribe(res => {
@@ -32,10 +41,11 @@ private user;
     });
   }
 
-  openDialog(id) {
+  onStatusPopup(ping_id) {
     this.dialog.open(StatusmodalComponent, {
       data: {
-        statut: this.route.snapshot.data.statusList[id]
+        ping_id: ping_id,
+        company_id: this.companyUser.company_id
       }
     });
   }
