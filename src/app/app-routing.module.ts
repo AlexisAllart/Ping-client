@@ -51,9 +51,8 @@ const routes: Routes = [
   }},
   {path: 'ping', component: PingComponent, resolve: {
     companyUserList: CompanyUserResolver,
-    keyWordList: KeyWordResolver,
     pingList: PingResolver,
-    userList: UserResolver
+    statusList: StatusResolver
   }},
   {path: 'price', component: PriceComponent, resolve: {
   }},
@@ -64,7 +63,9 @@ const routes: Routes = [
     userList: UserResolver
   }},
   {path: 'selection-company', component: SelectionCompanyComponent, resolve: {
+    companyUserList: CompanyUserResolver,
     selectionList: SelectionResolver,
+    tagList: TagResolver
   }},
   {path: 'sign-in-company', component: SignInComponent},
   {path: 'sign-up-company', component: SignUpComponent},

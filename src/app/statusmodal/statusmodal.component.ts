@@ -12,31 +12,23 @@ export class StatusmodalComponent implements OnInit {
 
   private ping_id;
   private company_id;
+  private statusList;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
     private serverCompanyService: ServerCompanyService,
     private router: Router
-  ){
+  ) {
     this.ping_id = this.data.ping_id;
     this.company_id = this.data.company_id;
-   }
+    this.statusList = this.data.statusList;
+  }
 
   ngOnInit() {
 
   }
 
-  blueClick() {
-    this.serverCompanyService.request("PUT", "/ping/edit/"+this.ping_id, {status_id: 1, company_id: this.company_id}).subscribe(()=>this.redirect());
-    this.redirect();
-  }
-
-  redClick() {
-    this.serverCompanyService.request("PUT", "/ping/edit/"+this.ping_id, {status_id: 2, company_id: this.company_id}).subscribe(()=>this.redirect());
-    this.redirect();
-  }
-
-  greenClick() {
-    this.serverCompanyService.request("PUT", "/ping/edit/"+this.ping_id, {status_id: 3, company_id: this.company_id}).subscribe(()=>this.redirect());
+  click(id) {
+    this.serverCompanyService.request("PUT", "/ping/edit/"+this.ping_id, {status_id: id, company_id: this.company_id}).subscribe(()=>this.redirect());
   }
 
   redirect() {

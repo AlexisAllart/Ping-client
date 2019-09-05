@@ -2,23 +2,11 @@
     <div class="col">
         <p>Choisissez le statut du ping :</p>
         <div class="choice">
-            <div class="col">
+            <div *ngFor="let status of statusList" class="col">
                 <div class="button">
-                    <div (click)=blueClick() class="status blue"></div>
+                    <div (click)=click(status.id) class="status" [ngStyle]="{'background-color': status.color}"></div>
                 </div>
-                <p>En attente</p>
-            </div>
-            <div class="col">
-                <div class="button">
-                    <div (click)=redClick() class="status red"></div>
-                </div>
-                <p>Refusé</p>
-            </div>
-            <div class="col">
-                <div class="button">
-                    <div (click)=greenClick() class="status green"></div>
-                </div>
-                <p>Accepté</p>
+                <p>{{ status.name }}</p>
             </div>
         </div>
     </div>

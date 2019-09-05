@@ -11,7 +11,6 @@ import { StatusmodalComponent } from 'src/app/statusmodal/statusmodal.component'
   styleUrls: ['./ping.component.scss']
 })
 export class PingComponent implements OnInit {
-private user;
 private companyUser;
 private companyUserId = JSON.parse(localStorage.getItem('companyUserId')).id;
 private company_id;
@@ -29,7 +28,7 @@ private company_id;
 
   ngOnInit() {
     this.dialog.closeAll();
-   }
+  }
 
   onCreate(id){
     this.userDetailsService.preloadUserDetailsForCompany(id).subscribe(res => {
@@ -45,7 +44,8 @@ private company_id;
     this.dialog.open(StatusmodalComponent, {
       data: {
         ping_id: ping_id,
-        company_id: this.companyUser.company_id
+        company_id: this.companyUser.company_id,
+        statusList: this.route.snapshot.data.statusList
       }
     });
   }

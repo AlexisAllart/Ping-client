@@ -86,6 +86,7 @@ import { CguComponent } from './general/cgu/cgu.component';
 import { ModalComponent } from './modal/modal.component';
 import { StatusmodalComponent } from './statusmodal/statusmodal.component';
 import { RedirectComponent } from './general/redirect/redirect.component';
+import { TagmodalComponent } from './tagmodal/tagmodal.component';
 
 @NgModule({
   declarations: [
@@ -127,7 +128,8 @@ import { RedirectComponent } from './general/redirect/redirect.component';
     CguComponent,
     ModalComponent,
     StatusmodalComponent,
-    RedirectComponent
+    RedirectComponent,
+    TagmodalComponent
   ],
   imports: [
     BrowserModule,
@@ -170,7 +172,8 @@ import { RedirectComponent } from './general/redirect/redirect.component';
   bootstrap: [AppComponent],
   entryComponents: [
     ModalComponent,
-    StatusmodalComponent
+    StatusmodalComponent,
+    TagmodalComponent
   ]
 })
 export class AppModule { }
