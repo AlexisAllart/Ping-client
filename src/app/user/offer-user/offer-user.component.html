@@ -5,6 +5,9 @@
                 <img class="logo-white" src="assets/logo-ping/logo-blanc.png" alt="">
                 <img class="logo" src="assets/logo-ping/blue_logo.png" alt="">
             </div>
+            <div class="return">
+                <i class="fas fa-arrow-circle-left back return-bis" routerLink="/search-user"></i>
+            </div>
         </header>
 
         <div *ngIf="ready" class="menu-keywords">
@@ -12,9 +15,9 @@
             <p class="skills">{{ offer.KeyWordTwo.name }}</p>
             <p class="skills">{{ offer.KeyWordThree.name }}</p>
         </div>
-        <div class="return">
+        <!-- <div class="return">
             <i class="fas fa-arrow-circle-left back return-bis" routerLink="/search-user"></i>
-        </div>
+        </div> -->
     </div>
     <div class="container">
         <div class="container-center">
