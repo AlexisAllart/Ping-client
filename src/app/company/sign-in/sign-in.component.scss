@@ -131,12 +131,12 @@
     bottom: 50px;
     right: 240px;
     transition: all 0.5s ease-in-out;
-    border: 1px solid rgba(255,255,255,0);
+    border: 1px solid rgba(255, 255, 255, 0);
 }
 
 .btn-white:hover {
-    color:#60A4FF;
-    border:1px solid #60A4FF;
+    color: #60A4FF;
+    border: 1px solid #60A4FF;
     background-color: white;
 }
 
@@ -150,16 +150,16 @@
     bottom: 50px;
     left: 280px;
     transition: all 0.5s ease-in-out;
-    border: 1px solid rgba(255,255,255,0);
+    border: 1px solid rgba(255, 255, 255, 0);
 }
 
 .btn-blue:hover {
-    color:#60A4FF;
-    border:1px solid #60A4FF;
+    color: #60A4FF;
+    border: 1px solid #60A4FF;
     background-color: white;
 }
 
 button {
     border: none;
+    cursor: pointer;
 }
-
