@@ -122,16 +122,15 @@
 }
 
 .btn-white {
-    text-decoration: none;
+    outline: none;
+    font-size: 16px;
     color: white;
     background-color: #60A4FF;
     padding: 10px 20px;
     border-radius: 20px;
     position: absolute;
-    bottom: 50px;
-    right: 240px;
-    transition: all 0.5s ease-in-out;
-    border: 1px solid rgba(255,255,255,0);
+    bottom: 80px;
+    right: 380px;
 }
 
 .btn-white:hover {
@@ -140,17 +139,17 @@
     background-color: white;
 }
 
+
 .btn-blue {
-    text-decoration: none;
+    outline: none;
+    font-size: 16px;
     color: white;
     background-color: #60A4FF;
     padding: 10px 20px;
     border-radius: 20px;
     position: absolute;
-    bottom: 50px;
-    left: 280px;
-    transition: all 0.5s ease-in-out;
-    border: 1px solid rgba(255,255,255,0);
+    bottom: 80px;
+    left: 220px;
 }
 
 .btn-blue:hover {
