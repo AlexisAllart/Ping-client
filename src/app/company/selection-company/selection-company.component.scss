@@ -7,7 +7,6 @@
 .general {
     display: flex;
     
-    
 }
 /******************** Alignement centrale*****************/
 .sous-genral{
@@ -66,8 +65,10 @@
   padding-top: 40px;
   height: 40px;
   width:800px;
+  background-color: pink;
   
 }
+
 .container-label {
   display: flex;
   flex-direction: row;
@@ -88,7 +89,7 @@
   height: 20px;
   width: 100px;
   align-content: center;
-  margin-left:30px;
+  // margin-left:30px;
   
   
 }
@@ -97,7 +98,7 @@
   width: 100px;
   display: flex;
   align-content: center;
-  margin-left:30px;
+  // margin-left:30px;
   
 }
 
@@ -105,33 +106,33 @@
   height: 20px;
   width: 100px;
   text-align: center;
-  margin-left:70px;
+  // margin-left:70px;
 }
 
-.label-job-title {
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:30px;
-}
+// .label-job-title {
+//   height: 20px;
+//   width: 100px;
+//   text-align: center;
+//   // margin-left:30px;
+// }
 
 .label-date{
   height: 20px;
   width: 100px;
   text-align: center;
-  margin-left:30px;
+  // margin-left:30px;
 }
 .label-message{
   height: 20px;
   width: 100px;
   text-align: center;
-  margin-left:50px;
+  // margin-left:50px;
 }
 .label-cv{
   height: 20px;
   width: 100px;
   text-align: center;
-  margin-left:50px;
+  // margin-left:50px;
 }
 
 
@@ -234,7 +235,7 @@
 }
 
 /************************* Message*******************/
-.message {
+.statut {
   display: flex;
   justify-content: center;
   align-items: center;

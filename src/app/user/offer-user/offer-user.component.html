@@ -5,6 +5,9 @@
                 <img class="logo-white" src="assets/logo-ping/logo-blanc.png" alt="">
                 <img class="logo" src="assets/logo-ping/blue_logo.png" alt="">
             </div>
+            <div class="return">
+                <i class="fas fa-arrow-circle-left back return-bis" routerLink="/search-user"></i>
+            </div>
         </header>
 
         <div class="menu-keywords">
@@ -12,9 +15,9 @@
             <p class="skills">{{ route.snapshot.data.keyWordList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].keyWordTwo_id-1].name }}</p>
             <p class="skills">{{ route.snapshot.data.keyWordList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].keyWordThree_id-1].name }}</p>
         </div>
-        <div class="return">
+        <!-- <div class="return">
             <i class="fas fa-arrow-circle-left back return-bis" routerLink="/search-user"></i>
-        </div>
+        </div> -->
     </div>
     <div class="container">
         <div class="container-center">
@@ -23,11 +26,11 @@
                 <hr class="line-offer">
                 <h4 class="company">{{ route.snapshot.data.companyList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].company_id-1].name }}</h4>
                 <p class="description-offer">{{ route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].description }}</p>
-                <div class="key-words">
+                <!-- <div class="key-words">
                     <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].keyWordOne_id-1].name }}</p>
                     <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].keyWordTwo_id-1].name }}</p>
                     <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].keyWordThree_id-1].name }}</p>
-                </div>
+                </div> -->
             </div>
         </div>
 
