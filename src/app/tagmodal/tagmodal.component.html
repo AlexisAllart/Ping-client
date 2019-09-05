@@ -1,0 +1,16 @@
+<div class="general">
+    <div class="col">
+        <p>Choisissez le statut du candidat dans votre sélection :</p>
+        <div class="choice">
+            <div *ngFor="let tag of tagList" class="col">
+                <div class="button">
+                    <div (click)=click(tag.id) class="status" [ngStyle]="{'background-color': tag.color}"></div>
+                </div>
+                <p>{{ tag.name }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="close">
+        <button mat-button mat-dialog-close>Fermer</button>
+    </div>
+</div>

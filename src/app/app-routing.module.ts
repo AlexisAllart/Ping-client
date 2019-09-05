@@ -17,6 +17,7 @@ import { HomeComponent } from './general/home/home.component';
 import { SelectionCompanyComponent } from './company/selection-company/selection-company.component';
 import { OfferUserComponent } from './user/offer-user/offer-user.component';
 import { CguComponent } from './general/cgu/cgu.component';
+import { RedirectComponent } from './general/redirect/redirect.component';
 // Resolvers
 import { CompanyResolver } from './resolvers/company.resolver';
 import { CompanyUserResolver } from './resolvers/companyUser.resolver';
@@ -39,114 +40,57 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'error-404', component: WrongWayComponent},
   {path: 'legal', component:CguComponent},
+  {path: 'redirect', component:RedirectComponent},
   
   //component company
   {path: 'offer-company', component: OfferCompanyComponent, resolve: {
-    companyList: CompanyResolver,
     companyUserList: CompanyUserResolver,
     contractTypeList: ContractTypeResolver,
     keyWordList: KeyWordResolver,
     offerList: OfferResolver,
-    pingList: PingResolver,
-    roleList: RoleResolver,
-    // selectionList: SelectionResolver,
-    // statusList: StatusResolver,
-    // tagList: TagResolver,
-    // userList: UserResolver
   }},
   {path: 'ping', component: PingComponent, resolve: {
-    companyList: CompanyResolver,
     companyUserList: CompanyUserResolver,
-    contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
-    offerList: OfferResolver,
     pingList: PingResolver,
-    roleList: RoleResolver,
-    selectionList: SelectionResolver,
-    statusList: StatusResolver,
-    tagList: TagResolver,
-    userList: UserResolver
+    statusList: StatusResolver
   }},
   {path: 'price', component: PriceComponent, resolve: {
   }},
   {path: 'profil-company', component: ProfileCompanyComponent, resolve: {
-    companyList: CompanyResolver,
     companyUserList: CompanyUserResolver,
-    // contractTypeList: ContractTypeResolver,
-    // keyWordList: KeyWordResolver,
-    // offerList: OfferResolver,
-    // pingList: PingResolver,
-    roleList: RoleResolver,
-    // selectionList: SelectionResolver,
-    // statusList: StatusResolver,
-    // tagList: TagResolver,
-    // userList: UserResolver
   }},
   {path: 'search-company', component: SearchCompanyComponent, resolve: {
-    companyList: CompanyResolver,
-    companyUserList: CompanyUserResolver,
-    contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
-    offerList: OfferResolver,
-    pingList: PingResolver,
-    roleList: RoleResolver,
-    selectionList: SelectionResolver,
-    statusList: StatusResolver,
-    tagList: TagResolver,
     userList: UserResolver
   }},
   {path: 'selection-company', component: SelectionCompanyComponent, resolve: {
-    companyList: CompanyResolver,
     companyUserList: CompanyUserResolver,
-    contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
-    offerList: OfferResolver,
-    pingList: PingResolver,
-    roleList: RoleResolver,
     selectionList: SelectionResolver,
-    statusList: StatusResolver,
-    tagList: TagResolver,
-    userList: UserResolver
+    tagList: TagResolver
   }},
   {path: 'sign-in-company', component: SignInComponent},
   {path: 'sign-up-company', component: SignUpComponent},
   
   //component user
   {path: 'dashboard-user', component: DashboardUserComponent, resolve: {
-    companyList: CompanyResolver,
-    contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
-    offerList: OfferResolver,
     pingList: PingResolver,
-    statusList: StatusResolver,
     userDetails: UserDetailsResolver
   }},
   {path: 'identification-user', component: IdentificationUserComponent},
   {path: 'offer-user/:id', component: OfferUserComponent, resolve: {
-    companyList: CompanyResolver,
-    contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
     offerList: OfferResolver,
-    pingList: PingResolver,
-    statusList: StatusResolver,
     userDetails: UserDetailsResolver,
   }},
   {path: 'profile-user', component: ProfileUserComponent, resolve: {
-    keyWordList: KeyWordResolver,    
     userDetails: UserDetailsResolver
   }},
   {path: 'search-user', component: SearchUserComponent, resolve: {
-    companyList: CompanyResolver,
     contractTypeList: ContractTypeResolver,
-    keyWordList: KeyWordResolver,
     offerList: OfferResolver,
-    statusList: StatusResolver,
-    tagList: TagResolver,
     userDetails: UserDetailsResolver
   }},
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule],
   providers: [
     CompanyResolver,

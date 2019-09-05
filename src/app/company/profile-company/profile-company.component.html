@@ -51,15 +51,15 @@
             <div class="about-bloc">
                 <div class="container">
                     <div class="image">
-                        <img class="logo" src="http://pingjob.herokuapp.com/{{ route.snapshot.data.companyList[companyUser.company_id-1].logo }}" alt="logo">
+                        <img class="logo" src="http://pingjob.herokuapp.com/{{ companyUser.Company.logo }}" alt="logo">
                     </div>
                     <div class="container-text">
                         <h2 class="title-about">
-                            {{ route.snapshot.data.companyList[companyUser.company_id-1].name }}
+                            {{ companyUser.Company.name }}
                         </h2>
                         <hr class="line">
                         <p class="description">
-                            {{ route.snapshot.data.companyList[companyUser.company_id-1].about }}
+                            {{ companyUser.Company.about }}
                         </p>
 
                     </div>
@@ -79,17 +79,17 @@
                             <i class="fas fa-link site"></i>
                         </div>
                         <div class="link-social">
-                            <a class="link" href="http://facebook.com">
-                                {{ route.snapshot.data.companyList[companyUser.company_id-1].facebook }}
+                            <a class="link" href="{{companyUser.Company.facebook}}">
+                                {{ companyUser.Company.facebook }}
                             </a>
-                            <a class="link" href="http://twitter.com">
-                                {{ route.snapshot.data.companyList[companyUser.company_id-1].twitter }}
+                            <a class="link" href="{{companyUser.Company.twitter}}">
+                                {{ companyUser.Company.twitter }}
                             </a>
-                            <a class="link" href="http://linkedin.com">
-                                {{ route.snapshot.data.companyList[companyUser.company_id-1].linkedin }}
+                            <a class="link" href="{{companyUser.Company.linkedin}}">
+                                {{ companyUser.Company.linkedin }}
                             </a>
-                            <a class="link" href="http://link.com">
-                                {{ route.snapshot.data.companyList[companyUser.company_id-1].link }}
+                            <a class="link" href="{{companyUser.Company.link}}">
+                                {{ companyUser.Company.link }}
                             </a>
                         </div>
 

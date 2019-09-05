@@ -84,6 +84,9 @@ import { BlueCardUserComponent } from './layouts/blue-card-user/blue-card-user.c
 import { NavbarNologinComponent } from './general/navbar-nologin/navbar-nologin.component';
 import { CguComponent } from './general/cgu/cgu.component';
 import { ModalComponent } from './modal/modal.component';
+import { StatusmodalComponent } from './statusmodal/statusmodal.component';
+import { RedirectComponent } from './general/redirect/redirect.component';
+import { TagmodalComponent } from './tagmodal/tagmodal.component';
 
 @NgModule({
   declarations: [
@@ -123,7 +126,10 @@ import { ModalComponent } from './modal/modal.component';
     NavbarNologinComponent,
     FilterPipe,
     CguComponent,
-    ModalComponent
+    ModalComponent,
+    StatusmodalComponent,
+    RedirectComponent,
+    TagmodalComponent
   ],
   imports: [
     BrowserModule,
@@ -164,6 +170,10 @@ import { ModalComponent } from './modal/modal.component';
     UserDetailsService
   ],
   bootstrap: [AppComponent],
-  entryComponents: [ModalComponent]
+  entryComponents: [
+    ModalComponent,
+    StatusmodalComponent,
+    TagmodalComponent
+  ]
 })
 export class AppModule { }

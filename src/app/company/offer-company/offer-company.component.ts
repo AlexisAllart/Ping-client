@@ -53,6 +53,7 @@ export class OfferCompanyComponent implements OnInit {
   public keyWordInvalid: boolean;
   private formSubmitKeyWordAttempt: boolean;
 
+  private sortedOffers = this.route.snapshot.data.offerList.sort(((a,b) => (a.id < b.id) ? 1 : -1));
 
   constructor(
     private route: ActivatedRoute,

@@ -8,7 +8,6 @@
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
-
             <ul class="burger-menu-elem">
                 <a class="text-menu" href="#">
                     <li>Search</li>
@@ -32,29 +31,6 @@
         <div class="new-offre">
             <h2 class="title-un">Nouvelle Offre</h2>
             <div class="formulaires">
-                <!-- <form (ngSubmit)="onSubmit(contactForm.form.value)" #contactForm="ngForm" action="">
-
-                    <label for="job_name" class="label">Emploi proposé*</label>
-                    <input #jobName="ngModel" id="job_name" class="input" type="text" [(ngModel)]="model.job_name" name="job_name" required>
-                    <label for="company_name" class="label">Nom de votre entreprise*</label>
-                    <input #companyName="ngModel" id="company_name" class="input" type="text" [(ngModel)]="model.company_name" name="company_name" required>
-                    <label for="description" class="label">Description de l'offre*</label>
-                    <input #description="ngModel" class="input-description" type="text" [(ngModel)]="model.description" name="description" required>
-
-                    <label for="contract_type" class="label">Type de contract</label>
-                    <input #contractType="ngModel" id="contract_type" class="input" type="text" [(ngModel)]="model.contract_type" name="contract_type" required>
-                    <label for="salary" class="label">Salaire proposé</label>
-                    <input #salary="ngModel" id="salary" class="input" type="text" [(ngModel)]="model.salary" required>
-                    <select #keyword="ngModel" class="form-control" id="keyword" materialize="material_select" [(ngModel)]="model.keyword" name="keyword">
-                            <option value="" disabled selected>Choisir un mot clé</option>
-                            <option value="" *ngFor="let keyword of route.snapshot.data.keyWordList" [value]="keyword.name">{{keyword.name}}</option>
-                            <label for="keyword">Mot clé</label>
-                        </select>
-                    <div class="btn-add">
-                        <button class="button">Ajouter offre</button>
-                    </div>
-                </form> -->
-
                 <form [formGroup]="form" (ngSubmit)="onSubmitOffer()">
                     <div class="column">
                         <mat-form-field class="offer-input">
@@ -63,7 +39,6 @@
                         </mat-form-field>
                         <mat-form-field>
                             <mat-label>Description de l'offre</mat-label>
-                            <!-- <input matInput placeholder="Description" formControlName="description" required> -->
                             <textarea matInput placeholder="Description" formControlName="description" required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
                         </mat-form-field>
                         <mat-form-field class="offer-input">
@@ -131,7 +106,6 @@
                         <button class="button">Ajouter offre</button>
                     </div>
                 </form>
-
                 <form [formGroup]="formKeyWord" (ngSubmit)="onSubmitKeyWord()">
                     <mat-form-field>
                         <mat-label>Ajouter un mot clé</mat-label>
@@ -141,41 +115,6 @@
                         <button class="button">Ajouter mot clé</button>
                     </div>
                 </form>
-
-                <!-- <form class="un" class="form" action="">
-                    <mat-form-field >
-                        <mat-label for="job_name">Emploi proposé*</mat-label>
-                        <input #jobName="ngModel" id="job_name" type="text" required matInput placeholder="Développeur front" [(ngModel)]="model.job_name" name="job_name">
-                    </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Nom entreprise*</mat-label>
-                        <input matInput placeholder="IBM">
-                    </mat-form-field>
-                    <mat-form-field >
-                        <mat-label>Description Offre*</mat-label>
-                        <input matInput placeholder="Ceci est une description">
-                    </mat-form-field>
-                </form>
-                <form class="deux" class="form" action="">
-                    <mat-form-field >
-                        <mat-label>Type de contract</mat-label>
-                        <input matInput placeholder="CDI">
-                    </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Salaire proposé</mat-label>
-                        <input matInput placeholder="15000">
-                    </mat-form-field>
-                    <mat-select>
-                        <mat-label>Mots clés</mat-label>
-                        <mat-option disabled>Choisir mot clé</mat-option>
-                        <mat-option *ngFor="let keyword of keywords" [value]="keyword">
-                          {{keyword}}
-                        </mat-option>
-                    </mat-select>
-                    <button id="btn" type="submit" class="button">Ajouter</button>
-                </form> -->
-
-
             </div>
         </div>
         <div class="offres">
@@ -185,133 +124,29 @@
             <div class="title-container">
                 <h2 class="title-deux">Vos offres</h2>
             </div>
-
             <div class="offre">
-                <div *ngFor="let offer of this.route.snapshot.data.offerList" [@contactsAnimation]="state">
+                <div *ngFor="let offer of sortedOffers" [@contactsAnimation]="state">
                     <div *ngIf="offer.company_id == companyUser.company_id" class="box">
                         <div class="sous-container">
                             <div class="container-text">
                                 <h2 class="title">{{ offer.title }}</h2>
                                 <hr class="line">
-                                <h4 class="company">{{ route.snapshot.data.companyList[offer.company_id-1].name }}</h4>
+                                <h4 class="company">{{ offer.CompanyUser.Company.name }}</h4>
                                 <p class="description">{{ offer.description }}</p>
                             </div>
                             <div class="right-side">
-                                <p class="contract-type">{{ route.snapshot.data.contractTypeList[offer.contractType_id-1].name }}</p>
+                                <p class="contract-type">{{ offer.ContractType.name }}</p>
                             </div>
                         </div>
                         <div class="key-words">
-                            <div class="words">{{ route.snapshot.data.keyWordList[offer.keyWordOne_id-1].name }}</div>
-                            <div class="words">{{ route.snapshot.data.keyWordList[offer.keyWordTwo_id-1].name }}</div>
-                            <div class="words">{{ route.snapshot.data.keyWordList[offer.keyWordThree_id-1].name }}</div>
+                            <div class="words">{{ offer.KeyWordOne.name }}</div>
+                            <div class="words">{{ offer.KeyWordTwo.name }}</div>
+                            <div class="words">{{ offer.KeyWordThree.name }}</div>
                         </div>
-                        <i class="fas fa-plus-circle plus"></i>
+                        <!-- <i class="fas fa-plus-circle plus"></i> -->
                     </div>
                 </div>
-
-                <!-- <div class="box">
-                    <div class="sous-container">
-                        <div class="container-text">
-                            <h2 class="title">Front End Developer</h2>
-                            <hr class="line">
-                            <h4 class="company">Silicon Salad</h4>
-                            <p class="description">
-                                Un poste de Développeur Front-end en CDI. Travailler dans une
-                                ambiance bienveillante et stimulante et l’opportunité de vous
-                                investir dans des projets variés et passionnants
-                            </p>
-
-                        </div>
-                        <div class="right-side">
-                            <p class="contract-type">CDI</p>
-                        </div>
-                    </div>
-                    <div class="key-words">
-                        <p class="words">3 ans +</p>
-                        <p class="words">Créatif</p>
-                        <p class="words">Organisé</p>
-
-                    </div>
-                    <i class="fas fa-plus-circle plus search" routerLink="/offer-user"></i>
-                </div>
-                <div class="box">
-                    <div class="sous-container">
-                        <div class="container-text">
-                            <h2 class="title">Front End Developer</h2>
-                            <hr class="line">
-                            <h4 class="company">Silicon Salad</h4>
-                            <p class="description">
-                                Un poste de Développeur Front-end en CDI. Travailler dans une
-                                ambiance bienveillante et stimulante et l’opportunité de vous
-                                investir dans des projets variés et passionnants
-                            </p>
-
-                        </div>
-                        <div class="right-side">
-                            <p class="contract-type">CDI</p>
-                        </div>
-                    </div>
-                    <div class="key-words">
-                        <p class="words">3 ans +</p>
-                        <p class="words">Créatif</p>
-                        <p class="words">Organisé</p>
-
-                    </div>
-                    <i class="fas fa-plus-circle plus"></i>
-                </div>
-                <div class="box">
-                    <div class="sous-container">
-                        <div class="container-text">
-                            <h2 class="title">Front End Developer</h2>
-                            <hr class="line">
-                            <h4 class="company">Silicon Salad</h4>
-                            <p class="description">
-                                Un poste de Développeur Front-end en CDI. Travailler dans une
-                                ambiance bienveillante et stimulante et l’opportunité de vous
-                                investir dans des projets variés et passionnants
-                            </p>
-
-                        </div>
-                        <div class="right-side">
-                            <p class="contract-type">CDI</p>
-                        </div>
-                    </div>
-                    <div class="key-words">
-                        <p class="words">3 ans +</p>
-                        <p class="words">Créatif</p>
-                        <p class="words">Organisé</p>
-
-                    </div>
-                    <i class="fas fa-plus-circle plus"></i>
-                </div>
-                <div class="box">
-                    <div class="sous-container">
-                        <div class="container-text">
-                            <h2 class="title">Front End Developer</h2>
-                            <hr class="line">
-                            <h4 class="company">Silicon Salad</h4>
-                            <p class="description">
-                                Un poste de Développeur Front-end en CDI. Travailler dans une
-                                ambiance bienveillante et stimulante et l’opportunité de vous
-                                investir dans des projets variés et passionnants
-                            </p>
-
-                        </div>
-                        <div class="right-side">
-                            <p class="contract-type">CDI</p>
-                        </div>
-                    </div>
-                    <div class="key-words">
-                        <p class="words">3 ans +</p>
-                        <p class="words">Créatif</p>
-                        <p class="words">Organisé</p>
-
-                    </div>
-                    <i class="fas fa-plus-circle plus"></i>
-                </div> -->
             </div>
         </div>
-
     </main>
-
 </div>

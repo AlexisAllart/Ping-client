@@ -10,10 +10,10 @@
             </div>
         </header>
 
-        <div class="menu-keywords">
-            <p class="skills">{{ route.snapshot.data.keyWordList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].keyWordOne_id-1].name }}</p>
-            <p class="skills">{{ route.snapshot.data.keyWordList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].keyWordTwo_id-1].name }}</p>
-            <p class="skills">{{ route.snapshot.data.keyWordList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].keyWordThree_id-1].name }}</p>
+        <div *ngIf="ready" class="menu-keywords">
+            <p class="skills">{{ offer.KeyWordOne.name }}</p>
+            <p class="skills">{{ offer.KeyWordTwo.name }}</p>
+            <p class="skills">{{ offer.KeyWordThree.name }}</p>
         </div>
         <!-- <div class="return">
             <i class="fas fa-arrow-circle-left back return-bis" routerLink="/search-user"></i>
@@ -21,30 +21,30 @@
     </div>
     <div class="container">
         <div class="container-center">
-            <div class="container-text-offer">
-                <h2 class="title">{{ route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].title }}</h2>
+            <div *ngIf="ready" class="container-text-offer">
+                <h2 class="title">{{ offer.title }}</h2>
                 <hr class="line-offer">
-                <h4 class="company">{{ route.snapshot.data.companyList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].company_id-1].name }}</h4>
-                <p class="description-offer">{{ route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].description }}</p>
-                <!-- <div class="key-words">
-                    <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].keyWordOne_id-1].name }}</p>
-                    <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].keyWordTwo_id-1].name }}</p>
-                    <p class="words">{{ route.snapshot.data.keyWordList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].keyWordThree_id-1].name }}</p>
-                </div> -->
+                <h4 class="company">{{ offer.CompanyUser.Company.name }}</h4>
+                <p class="description-offer">{{ offer.description }}</p>
+                <div class="key-words">
+                    <p class="words">{{ offer.KeyWordOne.name }}</p>
+                    <p class="words">{{ offer.KeyWordTwo.name }}</p>
+                    <p class="words">{{ offer.KeyWordThree.name }}</p>
+                </div>
             </div>
         </div>
 
         <div class="right-side">
             <div class="card-and-mapp">
-                <div class="company-card">
+                <div *ngIf="ready" class="company-card">
                     <div class="logo-company">
-                        <img class="logo-picture" src="http://pingjob.herokuapp.com/{{route.snapshot.data.companyList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].company_id-1].logo}}" alt="logo">
+                        <img class="logo-picture" src="http://pingjob.herokuapp.com/{{offer.CompanyUser.Company.logo}}" alt="logo">
                     </div>
                     <div class="container-text-company">
                         <h2 class="title-company">A propos de l'entreprise</h2>
                         <hr class="line-company">
                         <div class="description-company">
-                            {{ route.snapshot.data.companyList[route.snapshot.data.offerList[route.snapshot.paramMap.get('id')-1].company_id-1].about }}
+                            {{ offer.CompanyUser.Company.about }}
                         </div>
                     </div>
                 </div>

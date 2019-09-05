@@ -1,4 +1,3 @@
-
 /************************* GÉNÉRAL *******************/
 
 .body {
@@ -11,7 +10,6 @@
     position: relative;
     box-sizing: border-box;
     // background-color: blue;
-
 }
 
 .logo {
@@ -25,6 +23,7 @@
     outline: none;
 }
 
+
 /************************* NAVBAR *******************/
 
 .navbar-user {
@@ -36,65 +35,61 @@
     align-items: center;
     border-radius: 0px 60px 0 0px;
     margin-top: 10px;
-    height:100vh;
-    width:68%;
-    
+    height: 100vh;
+    width: 68%;
 }
 
 .container {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    margin-top:20%;
-    width:100%;
-    
+    margin-top: 20%;
+    width: 100%;
 }
 
 .container-element {
-    margin-bottom:5px;
+    margin-bottom: 5px;
     // padding:9px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding:5px;
+    padding: 5px;
     // width:100%;
-    outline:none;
+    outline: none;
 }
 
-.container-element:hover{
+.container-element:hover {
     background-color: white;
-    color:#60A4FF;
+    color: #60A4FF;
+    cursor: pointer;
 }
 
-.container-element:active{
+.container-element:active {
     background-color: white;
-    color:#60A4FF;
+    color: #60A4FF;
 }
 
 .router-active {
     background-color: white;
-    color:#60A4FF;
+    color: #60A4FF;
 }
-
 
 .icon {
     font-size: 32px;
     padding: 17px;
-    
 }
 
 .container-text {
     text-align: center;
-    font-size:px;
-    margin:0;
-    padding:0;
-
+    font-size: px;
+    margin: 0;
+    padding: 0;
 }
 
 .log-out {
-    font-size:10px;
-    padding:3%;
+    font-size: 10px;
+    padding: 3%;
     background-color: white;
     color: #60A4FF;
     transition: all;
@@ -102,14 +97,14 @@
 }
 
 .log-out {
-    border:1px solid white;
+    border: 1px solid white;
     background-color: #60A4FF;
-     color: white;
+    color: white;
 }
 
 .deconnexion {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom:10%;
+    margin-bottom: 10%;
 }

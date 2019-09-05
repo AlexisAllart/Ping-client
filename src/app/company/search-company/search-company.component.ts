@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition,keyframes } from '@angular/animations';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ServerCompanyService } from 'src/app/services/serverCompany.service';
 
 @Component({
   selector: 'app-search-company',
@@ -23,7 +24,9 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchCompanyComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private serverCompanyService: ServerCompanyService,
+    private router: Router
   ) { }
 
   
@@ -35,11 +38,11 @@ export class SearchCompanyComponent implements OnInit {
   ngOnInit() {
     for (let i = 0; i < this.route.snapshot.data.userList.length; i++) {
       this.usersWithKeyWords[i].keyWords =
-      this.route.snapshot.data.keyWordList[this.route.snapshot.data.userList[i].keyWordOne_id - 1].name +
+      this.route.snapshot.data.userList[i].KeyWordOne.name +
       "&"+
-      this.route.snapshot.data.keyWordList[this.route.snapshot.data.userList[i].keyWordTwo_id - 1].name +
+      this.route.snapshot.data.userList[i].KeyWordTwo.name +
       "&"+
-      this.route.snapshot.data.keyWordList[this.route.snapshot.data.userList[i].keyWordThree_id - 1].name;
+      this.route.snapshot.data.userList[i].KeyWordThree.name;
     }
     this.filteredArray = this.usersWithKeyWords.filter((v) => v.keyWords.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
   }
@@ -50,5 +53,15 @@ export class SearchCompanyComponent implements OnInit {
 
   animateMe(){
     this.state = (this.state === 'small' ? 'large' : 'small');
+  }
+
+  addSelection(id) {
+    let data = {
+      user_id: id
+    }
+    this.serverCompanyService.request("POST", "/selection/create", data).subscribe(()=>this.router.navigateByUrl(
+      '/redirect', {skipLocationChange: true}).then(() =>
+      this.router.navigate(['/search-company']))
+    );
   }
 }

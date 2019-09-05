@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/User.model';
-import { Selection } from 'src/app/models/Selection.model';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { ModalComponent } from 'src/app/modal/modal.component';
+import { UserDetailsService } from 'src/app/services/userDetails.service';
+import { TagmodalComponent } from 'src/app/tagmodal/tagmodal.component';
 
 @Component({
   selector: 'app-selection-company',
@@ -11,26 +11,41 @@ import { ModalComponent } from 'src/app/modal/modal.component';
   styleUrls: ['./selection-company.component.scss']
 })
 export class SelectionCompanyComponent implements OnInit {
-
-    //Lists
-    selectionList: Array<Selection> ={} as Array<Selection>;
-    userList : Array<User> = {} as Array<User>;
-
-    //Variables
-    private selectionListLoaded = false;
-    private userListLoaded = false; 
+  private companyUser;
+  private companyUserId = JSON.parse(localStorage.getItem('companyUserId')).id;
+  private company_id;
+    
   constructor(
     private route: ActivatedRoute,
-    private dialog: MatDialog
-  ) { }
+    private dialog: MatDialog,
+    private userDetailsService: UserDetailsService
+  ) {
+    let id = this.companyUserId;
+    this.companyUser = this.route.snapshot.data.companyUserList.find(function(x) {
+      return x.id = id;
+    });
+  }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.dialog.closeAll();
+  }
 
   onCreate(id){
-    this.dialog.open(ModalComponent, {
+    this.userDetailsService.preloadUserDetailsForCompany(id).subscribe(res => {
+      this.dialog.open(ModalComponent, {
+        data: {
+          user: res
+        }
+      })
+    });
+  }
+
+  onTagPopup(selection_id) {
+    this.dialog.open(TagmodalComponent, {
       data: {
-        user: this.route.snapshot.data.userList[id],
-        keyWordList: this.route.snapshot.data.keyWordList
+        selection_id: selection_id,
+        company_id: this.companyUser.company_id,
+        tagList: this.route.snapshot.data.tagList
       }
     });
   }

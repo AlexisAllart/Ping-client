@@ -1,14 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { trigger, state, style, transition, animate } from '@angular/animations';
 // Permet de manipuler leaflet
 declare let L;
 
 @Component({
   selector: 'app-search-user',
   templateUrl: './search-user.component.html',
-  styleUrls: ['./search-user.component.scss']
+  styleUrls: ['./search-user.component.scss'],
+  animations: [
+    trigger('contactsAnimation', [
+      state('active', style({
+        opacity: '1'
+      })),
+      transition('void => *', [
+        style({ transform: 'translateY(-100px)', opacity: '0' }),
+        animate('1000ms ease-in-out')
+      ])
+    ])
+  ]
 })
 export class SearchUserComponent implements OnInit {
 
@@ -54,7 +65,7 @@ export class SearchUserComponent implements OnInit {
     private authService: AuthService
   ) { }
 
-  private offersWithKeyWords = this.route.snapshot.data.offerList;
+  private offersWithKeyWords = this.route.snapshot.data.offerList.sort(((a,b) => (a.id < b.id) ? 1 : -1));
   private finalOfferList = [] ;
   private search = '';
   private distanceSlider = this.distanceSliderDefaultValue;
@@ -68,15 +79,15 @@ export class SearchUserComponent implements OnInit {
     this.distanceSlider ? '' : this.distanceSlider = 200;
     for (let i = 0; i < this.route.snapshot.data.offerList.length; i++) {
       this.offersWithKeyWords[i].keyWords =
-      this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordOne_id - 1].name +
+      this.route.snapshot.data.offerList[i].KeyWordOne.name +
       "&"+
-      this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordTwo_id - 1].name +
+      this.route.snapshot.data.offerList[i].KeyWordTwo.name +
       "&"+
-      this.route.snapshot.data.keyWordList[this.route.snapshot.data.offerList[i].keyWordThree_id - 1].name;
+      this.route.snapshot.data.offerList[i].KeyWordThree.name;
     }
     this.finalOfferList = this.offersWithKeyWords;
     for (let i = 0; i < this.offersWithKeyWords.length; i++) {
-      this.finalOfferList[i].contractType = this.route.snapshot.data.contractTypeList[this.offersWithKeyWords[i].contractType_id-1].name;
+      this.finalOfferList[i].contractType = this.offersWithKeyWords[i].ContractType.name;
     }
     if (this.contractFilter === undefined || this.contractFilter.length == 0) {
       this.filteredArray = this.finalOfferList;
@@ -202,15 +213,15 @@ export class SearchUserComponent implements OnInit {
         this.markers[i] = L.marker([this.filteredArray[i].latitude, this.filteredArray[i].longitude], { icon: this.defaultIcon }).bindPopup(
           '<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;">'+
             '<h2>'+this.filteredArray[i].title+'</h2>'+
-            '<img style="width:64px;height:64px;border-radius:100%;" src="http://pingjob.herokuapp.com/'+this.route.snapshot.data.companyList[this.filteredArray[i].company_id-1].logo+'" alt="logo">'+
+            '<img style="width:64px;height:64px;border-radius:100%;" src="http://pingjob.herokuapp.com/'+this.filteredArray[i].CompanyUser.Company.logo+'" alt="logo">'+
           '</div>'+
           // '<hr style="width:100%";/>'+
           '<div style="margin-top:20px;margin-bottom:20px;">'+this.filteredArray[i].description+'</div>'+
           // '<hr style="width:100%";/>'+
           '<div style="display:flex;flex-direction:row;justify-content:space-around;align-items:center;">'+
-            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordOne_id-1].name+'</p>'+
-            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordTwo_id-1].name+'</p>'+
-            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordThree_id-1].name+'</p>'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.filteredArray[i].KeyWordOne.name+'</p>'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.filteredArray[i].KeyWordTwo.name+'</p>'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.filteredArray[i].KeyWordThree.name+'</p>'+
           '</div>'
         );
       }
@@ -218,15 +229,15 @@ export class SearchUserComponent implements OnInit {
         this.markers[i] = L.marker([this.filteredArray[i].latitude, this.filteredArray[i].longitude], { icon: this.redIcon }).bindPopup(
           '<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;">'+
             '<h2>'+this.filteredArray[i].title+'</h2>'+
-            '<img style="width:64px;height:64px;border-radius:100%;" src="http://pingjob.herokuapp.com/'+this.route.snapshot.data.companyList[this.filteredArray[i].company_id-1].logo+'" alt="logo">'+
+            '<img style="width:64px;height:64px;border-radius:100%;" src="http://pingjob.herokuapp.com/'+this.filteredArray[i].CompanyUser.Company.logo+'" alt="logo">'+
           '</div>'+
           // '<hr style="width:100%";/>'+
           '<div style="margin-top:20px;margin-bottom:20px;">'+this.filteredArray[i].description+'</div>'+
           // '<hr style="width:100%";/>'+
           '<div style="display:flex;flex-direction:row;justify-content:space-around;align-items:center;">'+
-            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordOne_id-1].name+'</p>'+
-            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordTwo_id-1].name+'</p>'+
-            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.route.snapshot.data.keyWordList[this.filteredArray[i].keyWordThree_id-1].name+'</p>'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.filteredArray[i].KeyWordOne.name+'</p>'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.filteredArray[i].KeyWordTwo.name+'</p>'+
+            '<p style="background-color:#60A4FF;color:white;padding:4px;width:25%;text-align:center;border-radius:20px;">'+this.filteredArray[i].KeyWordThree.name+'</p>'+
           '</div>'
         );
       }
