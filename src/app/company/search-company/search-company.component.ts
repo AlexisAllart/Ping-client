@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition,keyframes } from '@angular/animations';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OfferDetails } from 'src/app/models/OfferDetails.model';
+import { ServerCompanyService } from 'src/app/services/serverCompany.service';
 
 @Component({
   selector: 'app-search-company',
@@ -23,7 +25,9 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchCompanyComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private serverCompanyService: ServerCompanyService,
+    private router: Router
   ) { }
 
   
@@ -31,6 +35,7 @@ export class SearchCompanyComponent implements OnInit {
   private usersWithKeyWords = this.route.snapshot.data.userList;
   private search = '';
   private filteredArray = [];
+  private offer: OfferDetails;
   
   ngOnInit() {
     for (let i = 0; i < this.route.snapshot.data.userList.length; i++) {
@@ -50,5 +55,9 @@ export class SearchCompanyComponent implements OnInit {
 
   animateMe(){
     this.state = (this.state === 'small' ? 'large' : 'small');
+  }
+
+  onSubmit() {
+    
   }
 }
