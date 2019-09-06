@@ -75,92 +75,90 @@
     }
 
 // /********************* les labels ***************************/
-// .container-blue-selection {
-//   display: flex;
-//   flex-direction: row;
-//   text-align: center;
-//   justify-content: space-between;
-//   align-items: center;
-//   border: 1.5px solid #60a4ff;
-//   padding: 20px;
-//   width: 800px;
-//   height: 70px;
-//   margin:0px 0px 0px 154px;
+.container-blue-selection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  height: 40px;
+  width:800px;
+  margin-left:150px;
+
+  background-color: cadetblue;
   
-// }
+}
 
-// .container-label {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   align-items: center;
-//   font-size: 10px;
-//   text-align: center;
-//   width:800px;
-//   height: 40px;
+.container-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  font-size: 10px;
+  align-content: space-between;
+  text-align: center;
+  width:800px;
+  height: 40px;
+
   
+  background-color: aquamarine;
+
+}
+
+.label-logo-decoy{
   
-//   // background-color: aquamarine;
+  height: 20px;
+  width: 120px;
+  align-content: center;
+  margin-left:30px;
 
-// }
-
-// .label-logo-decoy{
+  background-color:red;
   
-//   height: 20px;
-//   width: 100px;
-//   align-content: center;
+}
+.label-logo-decoy2{
+  height: 20px;
+  width: 120px;
+  display: flex;
+  align-content: center;
+  margin-left:30px;
 
-//   // background-color: antiquewhite;
- 
+  background-color:red;
+}
+
+.label-nom {
+  height: 20px;
+  width: 120px;
+  text-align: center;
+  margin-left:30px;
   
-// }
-// .label-logo-decoy2{
-//   height: 20px;
-//   width: 100px;
-//   display: flex;
-//   align-content: center;
-  
-//   // background-color: red;
-  
-// }
-
-// .label-nom {
-//   height: 20px;
-//   width: 100px;
-//   text-align: center;
-
-//   // background-color: antiquewhite;
- 
-// }
+ background-color:red;
+}
 
 
-// .label-date{
-//   height: 20px;
-//   width: 100px;
-//   text-align: center;
+.label-date{
+  height: 20px;
+  width: 120px;
+  text-align: center;
+  margin-left:30px;
 
-//   // background-color: red;
-  
-// }
-// .label-message{
-//   height: 20px;
-//   width: 100px;
-//   text-align: center;
+  background-color:red;
+}
+.label-statut{
+  height: 20px;
+  width: 120px;
+  text-align: center;
+  margin-left:30px;
 
-//   // background-color: antiquewhite;
-  
+background-color:red;
+}
+.label-cv{
+  height: 20px;
+  width: 120px;
+  text-align: center;
+  margin-left:30px;
 
-// }
-// .label-cv{
-//   height: 20px;
-//   width: 100px;
-//   text-align: center;
-
-//   background-color: red;
-  
-
-// }
-
+background-color:red;
+}
 
 
 /*********************** selection card *************************/
@@ -171,8 +169,6 @@
   height: 55vh;
   width: inherit;
   margin:0px 2px 0px 150px;
-
-  
 
 }
 
@@ -197,7 +193,7 @@
   margin: 16px;
   width: 800px;
 
-  // background-color: cadetblue;
+  
 }
 
 .container-blue{
@@ -228,7 +224,7 @@
 }
 .name{
   height: 20px;
-  width: 100px;
+  width: 120px;
   align-content: center;
   // background-color: antiquewhite;
 }
@@ -236,13 +232,13 @@
 
 .date{
   height: 20px;
-  width: 100px;
+  width: 120px;
   align-content: center;
   // background-color: pink;
 }
 /************************* Picture*******************/
 .container-img{
-  width:100px;
+  width:120px;
   height:100px;
   padding:20px;
   margin:10px;
@@ -256,12 +252,12 @@
   object-position: top;
 }
 
-/************************* Message*******************/
+/************************* Statut *******************/
 .statut {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 120px;
   height: 10px;
   border-radius: 20px;
   
@@ -279,7 +275,7 @@
 /************************* btn download*******************/
 
 .btn-download{
-  width: 100px;
+  width: 120px;
   height: 50px;;
   padding:10px;
   // margin:10px;
@@ -300,22 +296,22 @@
 /************************* btn small details*******************/
 
 .btn-detail-small{
-  display: flex;
-  flex-direction: row;
-  align-self: flex-end;
-  justify-self: flex-end;
-  width: 100px;
+  // display: flex;
+  // flex-direction: row;
+  // align-self: flex-end;
+  // justify-self: flex-end;
+  width: 120px;
   height: 31px;
   
   
 }
 .plus {
-  flex-direction: row;
+  display:flex;
   align-content: flex-end;
-  align-self: flex-end;
-  justify-self: flex-end;
+  // align-self: flex-end;
+  // justify-self: flex-end;
   justify-content: flex-end;
-  width: 100px;
+  width: 120px;
   height: 5px;
   padding: 10px;
   color: #60a4ff;
@@ -344,216 +340,4 @@
   padding-top:50px;
 }
 
-/********************* les labels ***************************/
-.container-blue-selection {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 40px;
-  height: 40px;
-  width:800px;
-  
-}
-.container-label {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  font-size: 10px;
-  align-content: space-between;
-  text-align: center;
-  width:800px;
-  height: 40px;
-  margin-left:200px;
 
-  
-}
-
-.label-logo-decoy{
-  
-  height: 20px;
-  width: 100px;
-  align-content: center;
-  margin-left:30px;
-  
-  
-}
-.label-logo-decoy2{
-  height: 20px;
-  width: 100px;
-  display: flex;
-  align-content: center;
-  margin-left:30px;
-  
-}
-
-.label-nom {
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:70px;
-}
-
-.label-job-title {
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:30px;
-}
-
-.label-date{
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:30px;
-}
-.label-statut{
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:30px;
-}
-.label-cv{
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:30px;
-}
-
-/************************* CARD *******************/
-.container-candidate {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 16px;
-  margin: 16px;
-  width: 800px;
-
-  // background-color: cadetblue;
-}
-
-.container-blue{
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  justify-content: space-between;
-  align-items: center;
-  border: 1.5px solid #60a4ff;
-  padding: 20px;
-  margin-right: 20px;
-  padding-left: 0px;
-  width: 800px;
-  height: 70px;
-
-}
-.text {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  align-content: space-between;
-  flex-direction: row;
-  margin-left: 50px;
-  height: 50px;
-  font-size: 15px;
-  color: #60a4ff;
-  width: inherit;
-}
-.name{
-  width: 100px;
-  height: inherit;
-  padding:10px;
-  margin:10px;
-}
-
-.job-title{
-  width: 100px;
-  height: inherit;
-  padding:10px;
-  margin:10px;
-}
-
-.date{
-  width: 100px;
-  height: inherit;
-  padding:10px;
-  margin:10px;
-}
-/************************* Picture*******************/
-.container-img{
-  width:100px;
-  height:100px;
-  padding:20px;
-  margin:20px;
-}
-
-.picture {
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  object-fit: cover;
-  object-position: top;
-}
-
-/************************* Message*******************/
-.message {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 10px;
-  border-radius: 20px;
-  
-  padding: 5px;
-  margin: 5px;
-  cursor: pointer;
-}
-.lepoint{
-  width: 10px;
-  height: 10px;
-  // background: #3fef4c;
-  border-radius: 100%;
-}
-
-/************************* btn download*******************/
-
-.btn-download{
-  width: 100px;
-  height: 50px;;
-  padding:10px;
-  margin:10px;
-}
-
-.fleche{
-
-  background-color: none;
-  font-size: light;
-  color: grey;
-  border: 1px solid grey;
-  border-radius: 30px;
-  padding: 10px;
-  cursor: pointer;
-
-}
-/************************* btn small details*******************/
-
-.btn-detail-small{
-  display: flex;
-  flex-direction: row;
-  align-self: flex-end;
-  justify-self: flex-end;
-  width: 100px;
-  height: 31px;
-}
-.plus {
-  flex-direction: row;
-  align-content: flex-end;
-  align-self: flex-end;
-  justify-content: flex-end;
-  width: 5px;
-  height: 5px;
-  padding: 10px;
-  color: #60a4ff;
-  cursor: pointer;
-}
