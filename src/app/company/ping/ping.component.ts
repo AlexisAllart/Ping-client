@@ -4,6 +4,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ModalComponent } from 'src/app/modal/modal.component';
 import { UserDetailsService } from 'src/app/services/userDetails.service';
 import { StatusmodalComponent } from 'src/app/statusmodal/statusmodal.component';
+import { AuthCompanyService } from 'src/app/services/authCompany.service';
 
 @Component({
   selector: 'app-ping',

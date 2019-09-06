@@ -9,7 +9,7 @@ export class AuthCompanyService {
   private token: string;
   private id: number;
   private loginError: boolean = false;
-  private loginAccepted: boolean= false;
+  private loginAccepted: boolean = false;
 
   get isLoggedIn() {
     return this.loggedIn.asObservable();
@@ -23,7 +23,6 @@ export class AuthCompanyService {
       this.token = user.token;
       this.serverCompany.setLoggedIn(true, this.token);
       this.loggedIn.next(true);
-      // this.router.navigateByUrl('/ping');
     }
    }
 
@@ -55,7 +54,7 @@ export class AuthCompanyService {
           this.loginAccepted = false;
           this.loginError = true;
         },
-        () => {this.router.navigateByUrl('/ping')}
+        () => {this.router.navigateByUrl('/ping');this.loginAccepted = false;}
         );
       }
    }

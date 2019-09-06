@@ -8,8 +8,8 @@ export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false);
   private token: string;
   private id: number;
-  private loginError: boolean = false;
-  private loginAccepted: boolean = false;
+  public loginError: boolean = false;
+  public loginAccepted: boolean = false;
 
   get isLoggedIn() {
     return this.loggedIn.asObservable();
@@ -23,11 +23,10 @@ export class AuthService {
       this.token = user.token;
       this.server.setLoggedIn(true, this.token);
       this.loggedIn.next(true);
-      // this.router.navigateByUrl('/dashboard-user');
     }
    }
 
-  login(user) {
+   login(user) {
     if (user.email !== '' && user.password !== '') {
       return this.server.request('POST', '/user/login', {
         email: user.email,
@@ -55,7 +54,7 @@ export class AuthService {
         this.loginAccepted = false;
         this.loginError = true;
       },
-      () => {this.router.navigateByUrl('/dashboard-user')}
+      () => {this.router.navigateByUrl('/dashboard-user');this.loginAccepted = false;}
       );
     }
   }
