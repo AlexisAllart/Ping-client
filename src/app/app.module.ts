@@ -85,6 +85,8 @@ import { NavbarNologinComponent } from './general/navbar-nologin/navbar-nologin.
 import { CguComponent } from './general/cgu/cgu.component';
 import { ModalComponent } from './modal/modal.component';
 import { StatusmodalComponent } from './statusmodal/statusmodal.component';
+import { RedirectComponent } from './general/redirect/redirect.component';
+import { TagmodalComponent } from './tagmodal/tagmodal.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +127,9 @@ import { StatusmodalComponent } from './statusmodal/statusmodal.component';
     FilterPipe,
     CguComponent,
     ModalComponent,
-    StatusmodalComponent
+    StatusmodalComponent,
+    RedirectComponent,
+    TagmodalComponent
   ],
   imports: [
     BrowserModule,
@@ -166,6 +170,10 @@ import { StatusmodalComponent } from './statusmodal/statusmodal.component';
     UserDetailsService
   ],
   bootstrap: [AppComponent],
-  entryComponents: [ModalComponent]
+  entryComponents: [
+    ModalComponent,
+    StatusmodalComponent,
+    TagmodalComponent
+  ]
 })
 export class AppModule { }

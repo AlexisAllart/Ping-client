@@ -1,10 +1,16 @@
-<div class="body">
-    <div class="choice">
-        <input type="checkbox">
-        <label for="">En attente</label>
-        <input type="checkbox">
-        <label for="">Refusé</label>
-        <input type="checkbox">
-        <label for="">Accepté</label>
+<div class="general">
+    <div class="col">
+        <p>Choisissez le statut du ping :</p>
+        <div class="choice">
+            <div *ngFor="let status of statusList" class="col">
+                <div class="button">
+                    <div (click)=click(status.id) class="status" [ngStyle]="{'background-color': status.color}"></div>
+                </div>
+                <p>{{ status.name }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="close">
+        <button mat-button mat-dialog-close>Fermer</button>
     </div>
 </div>

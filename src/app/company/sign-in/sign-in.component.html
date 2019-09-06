@@ -29,7 +29,9 @@
                 <mat-label>Mot de passe utilisateur</mat-label>
                 <input matInput placeholder="*******" formControlName="password" required>
             </mat-form-field>
-            <button class="btn-white">Enregistrer</button>
+            <div class="button">
+                <button class="btn-white">Enregistrer</button>
+            </div>
         </form>
         <p class="register">Votre entreprise n'est pas enregistrée ? Cliquez <span class="pointer" routerLink="/sign-up-company">ici</span></p>
     </div>
@@ -47,6 +49,8 @@
                 <mat-label>User Mot de passe</mat-label>
                 <input matInput placeholder="*******" formControlName="password" required>
             </mat-form-field>
+            <p *ngIf="authCompanyService.loginAccepted">Authentification...</p>
+            <p *ngIf="authCompanyService.loginError">Erreur de connexion</p>
             <button class="btn-blue">Connexion</button>
         </form>
     </div>

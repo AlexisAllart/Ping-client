@@ -4,7 +4,7 @@
     <!------------Inscription-------------->
     <div class="inscription">
         <div class="img">
-            <img src="assets/logo-ping/blue_logo.png" alt="" routerLink="/">
+            <img class="logo-img" src="assets/logo-ping/blue_logo.png" alt="" routerLink="/">
         </div>
 
         <div class="container-inscription">
@@ -50,6 +50,8 @@
                     <mat-label>Mot de passe</mat-label>
                     <input matInput placeholder="*******" formControlName="password" required>
                 </mat-form-field>
+                <p *ngIf="authService.loginAccepted">Authentification...</p>
+                <p *ngIf="authService.loginError">Erreur de connexion</p>
                 <div class="button">
                     <button class="btn-white">Connexion</button>
                 </div>

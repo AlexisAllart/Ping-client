@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition,keyframes } from '@angular/animations';
 import { ActivatedRoute, Router } from '@angular/router';
-import { OfferDetails } from 'src/app/models/OfferDetails.model';
 import { ServerCompanyService } from 'src/app/services/serverCompany.service';
 
 @Component({
@@ -35,7 +34,6 @@ export class SearchCompanyComponent implements OnInit {
   private usersWithKeyWords = this.route.snapshot.data.userList;
   private search = '';
   private filteredArray = [];
-  private offer: OfferDetails;
   
   ngOnInit() {
     for (let i = 0; i < this.route.snapshot.data.userList.length; i++) {
@@ -57,7 +55,13 @@ export class SearchCompanyComponent implements OnInit {
     this.state = (this.state === 'small' ? 'large' : 'small');
   }
 
-  onSubmit() {
-    
+  addSelection(id) {
+    let data = {
+      user_id: id
+    }
+    this.serverCompanyService.request("POST", "/selection/create", data).subscribe(()=>this.router.navigateByUrl(
+      '/redirect', {skipLocationChange: true}).then(() =>
+      this.router.navigate(['/search-company']))
+    );
   }
 }

@@ -122,7 +122,8 @@
 }
 
 .btn-white {
-    text-decoration: none;
+    outline: none;
+    font-size: 16px;
     color: white;
     background-color: #60A4FF;
     padding: 10px 20px;
@@ -140,8 +141,10 @@
     background-color: white;
 }
 
+
 .btn-blue {
-    text-decoration: none;
+    outline: none;
+    font-size: 16px;
     color: white;
     background-color: #60A4FF;
     padding: 10px 20px;

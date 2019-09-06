@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal',
-  template: 'passed in {{ data.userList }}',
+  // template: 'passed in {{ data.userList }}',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
@@ -14,6 +14,5 @@ export class ModalComponent implements OnInit {
     this.user = this.data.user;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 }

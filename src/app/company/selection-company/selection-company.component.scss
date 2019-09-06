@@ -7,7 +7,6 @@
 .general {
     display: flex;
     
-    
 }
 /******************** Alignement centrale*****************/
 .sous-genral{
@@ -75,7 +74,7 @@
     color:   #60A4FF;
     }
 
-/********************* les labels ***************************/
+// /********************* les labels ***************************/
 .container-blue-selection {
   display: flex;
   flex-direction: row;
@@ -84,8 +83,12 @@
   padding-top: 40px;
   height: 40px;
   width:800px;
+  margin-left:150px;
+
+  background-color: cadetblue;
   
 }
+
 .container-label {
   display: flex;
   flex-direction: row;
@@ -96,62 +99,66 @@
   text-align: center;
   width:800px;
   height: 40px;
-  margin-left:200px;
 
   
+  background-color: aquamarine;
+
 }
 
 .label-logo-decoy{
   
   height: 20px;
-  width: 100px;
+  width: 120px;
   align-content: center;
   margin-left:30px;
-  
+
+  background-color:red;
   
 }
 .label-logo-decoy2{
   height: 20px;
-  width: 100px;
+  width: 120px;
   display: flex;
   align-content: center;
   margin-left:30px;
-  
+
+  background-color:red;
 }
 
 .label-nom {
   height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:70px;
-}
-
-.label-job-title {
-  height: 20px;
-  width: 100px;
+  width: 120px;
   text-align: center;
   margin-left:30px;
+  
+ background-color:red;
 }
+
 
 .label-date{
   height: 20px;
-  width: 100px;
+  width: 120px;
   text-align: center;
   margin-left:30px;
+
+  background-color:red;
 }
-.label-message{
+.label-statut{
   height: 20px;
-  width: 100px;
+  width: 120px;
   text-align: center;
-  margin-left:50px;
+  margin-left:30px;
+
+background-color:red;
 }
 .label-cv{
   height: 20px;
-  width: 100px;
+  width: 120px;
   text-align: center;
-  margin-left:50px;
-}
+  margin-left:30px;
 
+background-color:red;
+}
 
 
 /*********************** selection card *************************/
@@ -186,7 +193,7 @@
   margin: 16px;
   width: 800px;
 
-  // background-color: cadetblue;
+  
 }
 
 .container-blue{
@@ -206,41 +213,35 @@
 .text {
   display: flex;
   text-align: center;
+  justify-content: space-between;
   align-items: center;
-  align-content: space-between;
   flex-direction: row;
-  margin-left: 50px;
+  // margin-left: 50px;
   height: 50px;
   font-size: 15px;
   color: #60a4ff;
   width: inherit;
 }
 .name{
-  width: 100px;
-  height: inherit;
-  padding:10px;
-  margin:10px;
+  height: 20px;
+  width: 120px;
+  align-content: center;
+  // background-color: antiquewhite;
 }
 
-.job-title{
-  width: 100px;
-  height: inherit;
-  padding:10px;
-  margin:10px;
-}
 
 .date{
-  width: 100px;
-  height: inherit;
-  padding:10px;
-  margin:10px;
+  height: 20px;
+  width: 120px;
+  align-content: center;
+  // background-color: pink;
 }
 /************************* Picture*******************/
 .container-img{
-  width:100px;
+  width:120px;
   height:100px;
   padding:20px;
-  margin:20px;
+  margin:10px;
 }
 
 .picture {
@@ -251,12 +252,12 @@
   object-position: top;
 }
 
-/************************* Message*******************/
+/************************* Statut *******************/
 .message {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 120px;
   height: 10px;
   border-radius: 20px;
   
@@ -274,10 +275,11 @@
 /************************* btn download*******************/
 
 .btn-download{
-  width: 100px;
+  width: 120px;
   height: 50px;;
   padding:10px;
-  margin:10px;
+  // margin:10px;
+  // background-color: antiquewhite;
 }
 
 .fleche{
@@ -294,23 +296,28 @@
 /************************* btn small details*******************/
 
 .btn-detail-small{
-  display: flex;
-  flex-direction: row;
-  align-self: flex-end;
-  justify-self: flex-end;
-  width: 100px;
+  // display: flex;
+  // flex-direction: row;
+  // align-self: flex-end;
+  // justify-self: flex-end;
+  width: 120px;
   height: 31px;
+  
+  
 }
 .plus {
-  flex-direction: row;
+  display:flex;
   align-content: flex-end;
-  align-self: flex-end;
+  // align-self: flex-end;
+  // justify-self: flex-end;
   justify-content: flex-end;
-  width: 5px;
+  width: 120px;
   height: 5px;
   padding: 10px;
   color: #60a4ff;
   cursor: pointer;
+
+  // background-color: aquamarine
 }
 
 
@@ -332,4 +339,5 @@
   text-align: center;
   padding-top:50px;
 }
+
 

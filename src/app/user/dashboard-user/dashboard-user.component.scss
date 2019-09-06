@@ -1,25 +1,29 @@
 /************************* GÉNÉRAL *******************/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
+
 .general {
     display: flex;
     height: 100vh;
-    
 }
+
+
 /******************** Alignement centrale*****************/
-.sous-general{
+
+.sous-general {
     // background-color: rgb(97, 97, 97);
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
-
-    
-    
 }
+
+
 /***********************tittle***************************/
+
 .container-title-clear-blue {
     display: flex;
     flex-direction: column;
@@ -27,227 +31,235 @@
     width: inherit;
     // margin-left: 150px;
     animation: moveInRight 1s ease-out;
-  
 }
 
 @keyframes moveInRight {
-  0% {
-      opacity: 0;
-      transform: translateY(100px);
-  }
-
-  80% {
-      transform: translateY(-10px);
-  }
-
-  100% {
-      opacity: 1;
-      transform: translate(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    80% {
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
 
 
 /********************* les labels ***************************/
+
 .container-blue {
-  display: flex;
-  flex-direction: row;
-  width:100%;
-  // background-color:blue;
-  justify-content: space-between;
-  text-align: center;
-  align-items: center;
-  padding-top: 40px;
-  height: auto;
-}
-.container-label {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-size: 10px;
-  align-content: space-between;
-  text-align: center;
-  margin-left: 50px;
-  width: inherit;
-  
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    // background-color:blue;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    padding-top: 40px;
+    height: auto;
 }
 
-.label-logo-decoy{
-  height: 20px;
-  width: 100px;
-  align-content: center;
-  display:flex;
-  flex-direction: center;
+.container-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 10px;
+    align-content: space-between;
+    text-align: center;
+    margin-left: 50px;
+    width: inherit;
 }
-.label-logo-decoy2{
-  
-  height: 20px;
-  width: 100px;
-  align-content: center;
+
+.label-logo-decoy {
+    height: 20px;
+    width: 100px;
+    align-content: center;
+    display: flex;
+    flex-direction: center;
+}
+
+.label-logo-decoy2 {
+    height: 20px;
+    width: 100px;
+    align-content: center;
 }
 
 .label-company {
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  
+    height: 20px;
+    width: 100px;
+    text-align: center;
 }
 
 .label-job-title {
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  
+    height: 20px;
+    width: 100px;
+    text-align: center;
 }
 
-.label-date{
-  height: 20px;
-  width: 100px;
-  text-align: center;
-}
-.label-statut{
-  height: 20px;
-  width: 100px;
-  text-align: center;
-}
-.label-date{
-  height: 20px;
-  width: 100px;
-  text-align: center;
+.label-date {
+    height: 20px;
+    width: 100px;
+    text-align: center;
 }
 
 .label-statut {
-  height: 20px;
-  width: 100px;
-  text-align: center;
+    height: 20px;
+    width: 100px;
+    text-align: center;
 }
+
+.label-date {
+    height: 20px;
+    width: 100px;
+    text-align: center;
+}
+
+.label-statut {
+    height: 20px;
+    width: 100px;
+    text-align: center;
+}
+
 
 /***********************component card ping*************************/
+
 .container-card-ping {
-  width:100%;
-  // background-color: rgb(58, 35, 35);
+    width: 100%;
+    // background-color: rgb(58, 35, 35);
 }
 
-
-.card-ping{
-  overflow-x: hidden; 
-  overflow-y: scroll;
-  width: 100%;
-  // background-color: rgb(110, 87, 87);
-  // margin:0px 0px 0px 150px;
-
+.card-ping {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    // background-color: rgb(110, 87, 87);
+    // margin:0px 0px 0px 150px;
 }
+
 
 /*************************scrollbar******************************/
-::-webkit-scrollbar{
-	width: 10px;
+
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-::-webkit-scrollbar-thumb{
-	border-radius: 5px;
-	background: #60A4FF;
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #60A4FF;
 }
-
-
-
-
 
 /////////////////////// CARD ///////////////////////
+
 /************************* GÉNÉRAL *******************/
 
 .card-body {
-
-  background-color: white;
-  font-family: "Nunito", sans-serif;
-  width: 100%;
+    background-color: white;
+    font-family: "Nunito", sans-serif;
+    width: 100%;
 }
+
 
 /************************* CARD *******************/
-.card-container-company {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 16px;
-  margin: 16px;
-  width: inherit;
-}
-.card-container-blue {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  justify-content: space-between;
-  align-items: center;
-  border: 1.5px solid #60a4ff;
-  // padding: 20px;
-  // padding-left: 0px;
-  height: 70%;
-}
-.card-text {
-  text-align: center;
-  display: flex;
-  align-content: space-between;
-  height: 50px;
-  font-size: 15px;
-  color: #60a4ff;
-}
-.card-container-text{
-  display: flex;
-  align-items: center;
-}
-.card-company{
-  width: 100px;
-  
-  
-}
-.card-job-title{
-  width: 100px;
 
+.card-container-company {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    margin: 16px;
+    width: inherit;
 }
-.card-date{
-  width: 100px;
-  
+
+.card-container-blue {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    border: 1.5px solid #60a4ff;
+    // padding: 20px;
+    // padding-left: 0px;
+    height: 70%;
 }
+
+.card-text {
+    text-align: center;
+    display: flex;
+    align-content: space-between;
+    height: 50px;
+    font-size: 15px;
+    color: #60a4ff;
+}
+
+.card-container-text {
+    display: flex;
+    align-items: center;
+}
+
+.card-company {
+    width: 100px;
+}
+
+.card-job-title {
+    width: 100px;
+}
+
+.card-date {
+    width: 100px;
+}
+
+
 /************************* logo*******************/
-.card-container-logo{
-  width:100px;
-  height:70px;
-  padding:10px;
-  margin:10px;
-  
+
+.card-container-logo {
+    width: 100px;
+    height: 70px;
+    padding: 10px;
+    margin: 10px;
 }
 
 .card-logo {
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
 }
 
+
 /************************* statut*******************/
+
 .card-statut {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 50px;
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
 }
-.card-lepoint{
-  width:10px;
-  height: 10px;
-  // background: #3fef4c;
-  border-radius: 100%;
+
+.card-lepoint {
+    width: 10px;
+    height: 10px;
+    // background: #3fef4c;
+    border-radius: 100%;
 }
+
 
 /************************* btn medium details*******************/
 
 .card-btn-detail-medium {
-  margin: 20px;
-  width: 32px;
-  height: 32px;
+    margin: 20px;
+    width: 32px;
+    height: 32px;
 }
+
 .card-plus {
-  font-size: 30px;
-  width: 10px;
-  height: 10px;
-  color: #60a4ff;
+    font-size: 30px;
+    width: 10px;
+    height: 10px;
+    color: #60a4ff;
+    outline: none;
+    cursor: pointer;
 }
