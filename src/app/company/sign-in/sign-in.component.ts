@@ -16,7 +16,6 @@ export class SignInComponent implements OnInit {
   public signUpInvalid: boolean;
   private formSubmitSignUpAttempt: boolean;
   
-
   constructor(
     private fb: FormBuilder,
     private authCompanyService: AuthCompanyService,
@@ -24,6 +23,7 @@ export class SignInComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.authCompanyService.logoutNoRedirect();
     this.form = this.fb.group({
       email: ['geraldine.kouma@gmail.com', Validators.email],
       password: ['1234', Validators.required]

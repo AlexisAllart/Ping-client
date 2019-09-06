@@ -24,9 +24,9 @@ export class AuthService {
       this.server.setLoggedIn(true, this.token);
       this.loggedIn.next(true);
     }
-   }
+  }
 
-   login(user) {
+  login(user) {
     if (user.email !== '' && user.password !== '') {
       return this.server.request('POST', '/user/login', {
         email: user.email,
@@ -54,7 +54,10 @@ export class AuthService {
         this.loginAccepted = false;
         this.loginError = true;
       },
-      () => {this.router.navigateByUrl('/dashboard-user');this.loginAccepted = false;}
+      () => {
+        this.router.navigateByUrl('/dashboard-user');
+        this.loginAccepted = false;
+      }
       );
     }
   }

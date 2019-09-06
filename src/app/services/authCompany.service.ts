@@ -24,9 +24,9 @@ export class AuthCompanyService {
       this.serverCompany.setLoggedIn(true, this.token);
       this.loggedIn.next(true);
     }
-   }
+    }
 
-   login(user) {
+    login(user) {
       if (user.email !== '' && user.password !== '') {
         return this.serverCompany.request('POST', '/companyUser/login', {
           email: user.email,
@@ -54,16 +54,23 @@ export class AuthCompanyService {
           this.loginAccepted = false;
           this.loginError = true;
         },
-        () => {this.router.navigateByUrl('/ping');this.loginAccepted = false;}
+        () => {
+          this.router.navigateByUrl('/ping');
+          this.loginAccepted = false;
+        }
         );
       }
-   }
+    }
 
-   logout() {
-     this.serverCompany.setLoggedIn(false);
-     delete this.token;
-     this.loggedIn.next(false);
-     localStorage.clear();
-     this.router.navigate(['/']);
-   }
+    logout() {
+      this.logoutNoRedirect();
+      this.router.navigate(['/']);
+    }
+
+    logoutNoRedirect() {
+      this.serverCompany.setLoggedIn(false);
+      delete this.token;
+      this.loggedIn.next(false);
+      localStorage.clear();
+    }
 }
