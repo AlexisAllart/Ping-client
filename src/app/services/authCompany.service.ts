@@ -8,6 +8,8 @@ export class AuthCompanyService {
   private loggedIn = new BehaviorSubject<boolean>(false);
   private token: string;
   private id: number;
+  private loginError: boolean = false;
+  private loginAccepted: boolean= false;
 
   get isLoggedIn() {
     return this.loggedIn.asObservable();
@@ -33,6 +35,7 @@ export class AuthCompanyService {
         })
         .subscribe((response: any) => {
           if (response !== undefined) {
+            this.loginError = false;
             this.id = response.id;
             this.token = response.token;
             this.serverCompany.setLoggedIn(true, this.token);
@@ -45,9 +48,15 @@ export class AuthCompanyService {
             }
             localStorage.setItem('companyUserToken', JSON.stringify(userData));
             localStorage.setItem('companyUserId', JSON.stringify(userId));
-            this.router.navigateByUrl('/ping');
+            this.loginAccepted = true;
           }
-        });
+        },
+        (error) => {
+          this.loginAccepted = false;
+          this.loginError = true;
+        },
+        () => {this.router.navigateByUrl('/ping')}
+        );
       }
    }
 

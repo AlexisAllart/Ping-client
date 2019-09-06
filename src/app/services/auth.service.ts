@@ -8,6 +8,8 @@ export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false);
   private token: string;
   private id: number;
+  private loginError: boolean = false;
+  private loginAccepted: boolean = false;
 
   get isLoggedIn() {
     return this.loggedIn.asObservable();
@@ -33,6 +35,7 @@ export class AuthService {
       })
       .subscribe((response: any) => {
         if (response !== undefined) {
+          this.loginError = false;
           this.id = response.id;
           this.token = response.token;
           this.server.setLoggedIn(true, this.token);
@@ -45,9 +48,15 @@ export class AuthService {
           }
           localStorage.setItem('token', JSON.stringify(userData));
           localStorage.setItem('id', JSON.stringify(userId));
-          this.router.navigateByUrl('/dashboard-user');
+          this.loginAccepted = true;
         }
-      });
+      },
+      (error) => {
+        this.loginAccepted = false;
+        this.loginError = true;
+      },
+      () => {this.router.navigateByUrl('/dashboard-user')}
+      );
     }
   }
 
