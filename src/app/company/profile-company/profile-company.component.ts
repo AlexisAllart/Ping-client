@@ -22,6 +22,8 @@ export class ProfileCompanyComponent implements OnInit {
   private formTwitter: FormGroup;
   private formLinkedin: FormGroup;
   private formLink: FormGroup;
+
+  private click: boolean;
   
   
   votreNom= "COMPANY_NAME";
@@ -76,4 +78,8 @@ export class ProfileCompanyComponent implements OnInit {
       link: [this.companyUser.Company.link, Validators.required]
     });
   }
+
+  onClick(){
+  this.click=!this.click;
+}
 }
