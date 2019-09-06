@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthCompanyService } from '../../services/authCompany.service';
-import { ServerService } from 'src/app/services/server.service';
+import { ServerCompanyService } from 'src/app/services/serverCompany.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -20,7 +20,7 @@ export class SignInComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authCompanyService: AuthCompanyService,
-    private serverService: ServerService
+    private serverCompanyService: ServerCompanyService
   ) { }
 
   ngOnInit() {
@@ -57,7 +57,7 @@ export class SignInComponent implements OnInit {
   onSubmitSignUp() {
     if (this.formSignUp.valid) {
       try {
-        this.serverService.request("POST", "/companyUser/create", this.formSignUp.value).subscribe();
+        this.serverCompanyService.request("POST", "/companyUser/create", this.formSignUp.value).subscribe();
       }
       catch (err) {
         this.signUpInvalid = true;
