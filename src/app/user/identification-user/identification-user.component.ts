@@ -24,6 +24,9 @@ export class IdentificationUserComponent implements OnInit {
 
   ngOnInit() {
     this.authService.logoutNoRedirect();
+    this.authService.loginAccepted = false;
+    this.authService.loginAttempt = false;
+    this.authService.loginError = false;
     this.form = this.fb.group({
       email: ['charlene.smith@gmail.com', Validators.email],
       password: ['1234', Validators.required]

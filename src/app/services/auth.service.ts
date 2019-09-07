@@ -10,12 +10,13 @@ export class AuthService {
   private id: number;
   public loginError: boolean = false;
   public loginAccepted: boolean = false;
+  public loginAttempt: boolean = false;
 
   get isLoggedIn() {
     return this.loggedIn.asObservable();
   }
 
-  constructor(private router: Router, private server: ServerService) {    
+  constructor(private router: Router, private server: ServerService) {
     const userData = localStorage.getItem('token');
     
     if (userData) {
@@ -27,6 +28,7 @@ export class AuthService {
   }
 
   login(user) {
+    this.loginAttempt = true;
     if (user.email !== '' && user.password !== '') {
       return this.server.request('POST', '/user/login', {
         email: user.email,
@@ -47,16 +49,18 @@ export class AuthService {
           }
           localStorage.setItem('token', JSON.stringify(userData));
           localStorage.setItem('id', JSON.stringify(userId));
+          this.loginAttempt = false;
           this.loginAccepted = true;
+          this.loginError = false;
         }
       },
       (error) => {
+        this.loginAttempt = false;
         this.loginAccepted = false;
         this.loginError = true;
       },
       () => {
         this.router.navigateByUrl('/dashboard-user');
-        this.loginAccepted = false;
       }
       );
     }

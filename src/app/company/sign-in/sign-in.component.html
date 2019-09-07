@@ -49,8 +49,9 @@
                 <mat-label>User Mot de passe</mat-label>
                 <input matInput placeholder="*******" formControlName="password" required>
             </mat-form-field>
-            <p *ngIf="authCompanyService.loginAccepted">Authentification...</p>
-            <p *ngIf="authCompanyService.loginError">Erreur de connexion</p>
+            <p *ngIf="authCompanyService.loginAttempt">Connexion au serveur...</p>
+            <p *ngIf="authCompanyService.loginAccepted">Connexion acceptée !</p>
+            <p *ngIf="authCompanyService.loginError">Erreur de connexion !</p>
             <button class="btn-blue">Connexion</button>
         </form>
     </div>

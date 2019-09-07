@@ -24,6 +24,9 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.authCompanyService.logoutNoRedirect();
+    this.authCompanyService.loginAccepted = false;
+    this.authCompanyService.loginAttempt = false;
+    this.authCompanyService.loginError = false;
     this.form = this.fb.group({
       email: ['geraldine.kouma@gmail.com', Validators.email],
       password: ['1234', Validators.required]

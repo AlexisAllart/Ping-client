@@ -8,8 +8,9 @@ export class AuthCompanyService {
   private loggedIn = new BehaviorSubject<boolean>(false);
   private token: string;
   private id: number;
-  private loginError: boolean = false;
-  private loginAccepted: boolean = false;
+  public loginError: boolean = false;
+  public loginAccepted: boolean = false;
+  public loginAttempt: boolean = false;
 
   get isLoggedIn() {
     return this.loggedIn.asObservable();
@@ -27,6 +28,7 @@ export class AuthCompanyService {
     }
 
     login(user) {
+      this.loginAttempt = true;
       if (user.email !== '' && user.password !== '') {
         return this.serverCompany.request('POST', '/companyUser/login', {
           email: user.email,
@@ -47,16 +49,18 @@ export class AuthCompanyService {
             }
             localStorage.setItem('companyUserToken', JSON.stringify(userData));
             localStorage.setItem('companyUserId', JSON.stringify(userId));
+            this.loginAttempt = false;
             this.loginAccepted = true;
+            this.loginError = false;
           }
         },
         (error) => {
+          this.loginAttempt = false;
           this.loginAccepted = false;
           this.loginError = true;
         },
         () => {
           this.router.navigateByUrl('/ping');
-          this.loginAccepted = false;
         }
         );
       }
