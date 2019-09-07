@@ -41,49 +41,60 @@
                         <mat-form-field>
                                 <input matInput formControlName="name" class="input" type="text" placeholder="Nom de votre compagnie">
                         </mat-form-field>
-                        <button class="edit" >Modifier</button>
+                        <button class="edit" >Valider</button>
                     </form>
                     <ng-template #noFormName>
                         <p>Nom : </p>
                         <p>{{companyUser.Company.name}}</p>
-
                     </ng-template>
                     <div class="right-side">
                             <button class="far fa-edit modif" (click)='onClick()'></button>
                         </div>
                 </div>
                     
-                    <form [formGroup]="formMail" (ngSubmit)="onSubmit()" class="form">
+                    <form *ngIf="click else noFormMail" [formGroup]="formMail" (ngSubmit)="onSubmit()" class="form">
                             <label class="label" for="">Mail</label>
                         <mat-form-field>
                                 <input matInput formControlName="email" class="input" type="email" placeholder="Email@address.com">
                         </mat-form-field>
-                        <button class="edit">Modifier</button>
+                        <button class="edit">Valider</button>
                     </form>
+                    <ng-template #noFormMail>
+                        <p>Email : </p>
+                        <p>{{companyUser.Company.email}}</p>
+                    </ng-template>
                     <div class="right-side">
-                            <button class="far fa-edit modif"></button>
+                            <button class="far fa-edit modif" (click)='onClick()'></button>
                         </div>
 
-                    <form [formGroup]="formPhone" (ngSubmit)="onSubmit()" class="form">
+                    <form *ngIf="click else noFormPhone" [formGroup]="formPhone" (ngSubmit)="onSubmit()" class="form">
                             <label class="label" for="">Téléphone</label>
                             <mat-form-field>
                                     <input matInput formControlName="phone" class="input" type="text" placeholder="00 00 00 00 00">
                             </mat-form-field>
-                            <button class="edit">Modifier</button>
+                            <button class="edit">Valider</button>
                         </form>
+                        <ng-template #noFormPhone>
+                            <p>Téléphone : </p>
+                            <p>{{companyUser.Company.phone}}</p>
+                        </ng-template>
                         <div class="right-side">
-                                <button class="far fa-edit modif"></button>
+                                <button class="far fa-edit modif" (click)='onClick()'></button>
                             </div>
                         
-                        <form [formGroup]="formPassword" (ngSubmit)="onSubmit()" class="form">
+                        <form *ngIf="click else noFormPassword" [formGroup]="formPassword" (ngSubmit)="onSubmit()" class="form">
                                 <label class="label" for="">Mot de passe</label>
                             <mat-form-field>
                                     <input matInput formControlName="password" class="input" type="password" placeholder="************">
                             </mat-form-field>
-                            <button class="edit">Modifier</button>
+                            <button class="edit">Valider</button>
                         </form>
+                        <ng-template #noFormPassword>
+                            <p>Mot de passe : </p>
+                            <p>{{companyUser.Company.password}}</p>
+                        </ng-template>
                         <div class="right-side">
-                                <button class="far fa-edit modif"></button>
+                                <button class="far fa-edit modif" (click)='onClick()'></button>
                             </div>
                 <!-- <form [formGroup]="formName" class="form" action="">
                     <label class="label" for="">Nom</label>
@@ -117,26 +128,34 @@
                         <h2 class="title-about">
                                 <!-- {{ companyUser.Company.name }} -->
                         </h2>
-                        <form [formGroup]="formNameCompany" (ngSubmit)="onSubmit()" class="form">
+                        <form *ngIf="click else noFormNameCompany" [formGroup]="formNameCompany" (ngSubmit)="onSubmit()" class="form">
                                 <mat-form-field>
                                     <mat-label>Nom de l'entreprise</mat-label>
                                     <input matInput placeholder="Email" formControlName="name" required>
                                 </mat-form-field>
-                                <button class="edit">Modifier</button>
+                                <button class="edit">Valider</button>
                             </form>
+                            <ng-template #noFormNameCompany>
+                                <p>Nom de l'entreprsie : </p>
+                                <p>{{companyUser.Company.name}}</p>
+                            </ng-template>
                             <div class="right-side">
-                                    <button class="far fa-edit modif"></button>
+                                    <button class="far fa-edit modif" (click)='onClick()'></button>
                                 </div>
                             
-                            <form [formGroup]="formDescriptionCompany" (ngSubmit)="onSubmit()" class="form">
+                            <form *ngIf="click else noFormDescriptionCompany" [formGroup]="formDescriptionCompany" (ngSubmit)="onSubmit()" class="form">
                                 <mat-form-field>
                                     <mat-label>Description de l'entreprise</mat-label>
                                     <textarea matInput placeholder="Description" formControlName="description" required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
                                 </mat-form-field>
-                                <button class="edit">Modifier</button>
+                                <button class="edit">Valider</button>
                             </form>
+                            <ng-template #noFormDescriptionCompany>
+                                <p>Description de l'entreprsie : </p>
+                                <p>{{companyUser.Company.description}}</p>
+                            </ng-template>
                             <div class="right-side">
-                                    <button class="far fa-edit modif"></button>
+                                    <button class="far fa-edit modif" (click)='onClick()'></button>
                                 </div>
                             
                         <hr class="line">
@@ -145,9 +164,9 @@
                         </p>
 
                     </div>
-                    <div class="right-side">
+                    <!-- <div class="right-side">
                         <i class="far fa-edit modif"></i>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="bottom-info">
                     <div class="info-title-reseaux">
@@ -161,44 +180,56 @@
                             <i class="fas fa-link site"></i>
                         </div>
                         <div class="link-social">
-                            <form [formGroup]="formFacebook" (ngSubmit)="onSubmit()" class="form">
+                            <form *ngIf="click else noFormFacebook" [formGroup]="formFacebook" (ngSubmit)="onSubmit()" class="form">
                                     <mat-form-field>
                                         <input matInput placeholder="Facebook" formControlName="facebook" required>
                                     </mat-form-field>
-                                    <button class="edit">Modifier</button>
+                                    <button class="edit">Valider</button>
                                 </form>
+                                <ng-template #noFormFacebook>
+                                    <p>{{companyUser.Company.facebook}}</p>
+                                </ng-template>
                                 <div class="right-side">
-                                        <button class="far fa-edit modif"></button>
+                                        <button class="far fa-edit modif" (click)='onClick()'></button>
                                     </div>
                                 
-                                <form [formGroup]="formTwitter" (ngSubmit)="onSubmit()" class="form">
+                                <form *ngIf="click else noFormTwitter" [formGroup]="formTwitter" (ngSubmit)="onSubmit()" class="form">
                                     <mat-form-field>
                                         <input matInput placeholder="Twitter" formControlName="twitter" required>
                                     </mat-form-field>
-                                    <button class="edit">Modifier</button>
+                                    <button class="edit">Valider</button>
                                 </form>
+                                <ng-template #noFormTwitter>
+                                    <p>{{companyUser.Company.twitter}}</p>
+                                </ng-template>
                                 <div class="right-side">
-                                        <button class="far fa-edit modif"></button>
+                                        <button class="far fa-edit modif" (click)='onClick()'></button>
                                     </div>
 
-                                <form [formGroup]="formLinkedin" (ngSubmit)="onSubmit()" class="form">
+                                <form *ngIf="click else noFormLinkedin" [formGroup]="formLinkedin" (ngSubmit)="onSubmit()" class="form">
                                         <mat-form-field>
                                             <input matInput placeholder="Linkedin" formControlName="linkedin" required>
                                         </mat-form-field>
-                                        <button class="edit">Modifier</button>
+                                        <button class="edit">Valider</button>
                                     </form>
+                                    <ng-template #noFormLinkedin>
+                                        <p>{{companyUser.Company.linkedin}}</p>
+                                    </ng-template>
                                     <div class="right-side">
-                                            <button class="far fa-edit modif"></button>
+                                            <button class="far fa-edit modif" (click)='onClick()'></button>
                                         </div>
                                     
-                                    <form [formGroup]="formLink" (ngSubmit)="onSubmit()" class="form">
+                                    <form *ngIf="click else noFormLink" [formGroup]="formLink" (ngSubmit)="onSubmit()" class="form">
                                         <mat-form-field>
                                             <input matInput placeholder="Link" formControlName="link" required>
                                         </mat-form-field>
-                                        <button class="edit">Modifier</button>
+                                        <button class="edit">Valider</button>
                                     </form>
+                                    <ng-template #noFormLink>
+                                        <p>{{companyUser.Company.link}}</p>
+                                    </ng-template>
                                     <div class="right-side">
-                                            <button class="far fa-edit modif"></button>
+                                            <button class="far fa-edit modif" (click)='onClick()'></button>
                                         </div>
                                 <!-- <form [formGroup]="formFacebook" class="form" action="">
                                         <label class="label" for="">Facebook</label>
