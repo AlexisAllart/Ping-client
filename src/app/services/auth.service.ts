@@ -29,6 +29,8 @@ export class AuthService {
 
   login(user) {
     this.loginAttempt = true;
+    this.loginAccepted = false;
+    this.loginError = false;
     if (user.email !== '' && user.password !== '') {
       return this.server.request('POST', '/user/login', {
         email: user.email,

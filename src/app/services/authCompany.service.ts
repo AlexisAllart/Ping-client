@@ -29,6 +29,8 @@ export class AuthCompanyService {
 
     login(user) {
       this.loginAttempt = true;
+      this.loginAccepted = false;
+      this.loginError = false;
       if (user.email !== '' && user.password !== '') {
         return this.serverCompany.request('POST', '/companyUser/login', {
           email: user.email,
