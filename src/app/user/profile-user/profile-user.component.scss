@@ -70,6 +70,14 @@ button:hover {
     margin-bottom: 5%;
 }
 
+.modif {
+    background-color: white;
+    padding:10px;
+    border-radius:50%;
+    border: 1px solid #707070;
+    color:#707070;
+}
+
 
 /********************* Sous-general*****************/
 
@@ -375,17 +383,17 @@ button:hover {
     align-items: center;
 }
 
-.submit {
-    outline: none;
-    font-size: 16px;
-    color: white;
-    background-color: #60A4FF;
-    padding: 10px 20px;
-    border-radius: 20px;
-    position: absolute;
-    bottom: 25%;
-    right: 100px;
-}
+// .submit {
+//     outline: none;
+//     font-size: 16px;
+//     color: white;
+//     background-color: #60A4FF;
+//     padding: 10px 20px;
+//     border-radius: 20px;
+//     position: absolute;
+//     bottom: 25%;
+//     right: 100px;
+// }
 
 
 /***************************** Button on/off*****************************/

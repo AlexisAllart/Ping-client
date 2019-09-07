@@ -41,7 +41,7 @@
                         <mat-form-field>
                                 <input matInput formControlName="name" class="input" type="text" placeholder="Nom de votre compagnie">
                         </mat-form-field>
-                        <button class="edit" >Valider</button>
+                        <button class="submit" >Valider</button>
                     </form>
                     <ng-template #noFormName>
                         <p>Nom : </p>
@@ -57,7 +57,7 @@
                         <mat-form-field>
                                 <input matInput formControlName="email" class="input" type="email" placeholder="Email@address.com">
                         </mat-form-field>
-                        <button class="edit">Valider</button>
+                        <button class="submit">Valider</button>
                     </form>
                     <ng-template #noFormMail>
                         <p>Email : </p>
@@ -72,7 +72,7 @@
                             <mat-form-field>
                                     <input matInput formControlName="phone" class="input" type="text" placeholder="00 00 00 00 00">
                             </mat-form-field>
-                            <button class="edit">Valider</button>
+                            <button class="submit">Valider</button>
                         </form>
                         <ng-template #noFormPhone>
                             <p>Téléphone : </p>
@@ -87,7 +87,7 @@
                             <mat-form-field>
                                     <input matInput formControlName="password" class="input" type="password" placeholder="************">
                             </mat-form-field>
-                            <button class="edit">Valider</button>
+                            <button class="submit">Valider</button>
                         </form>
                         <ng-template #noFormPassword>
                             <p>Mot de passe : </p>
@@ -133,7 +133,7 @@
                                     <mat-label>Nom de l'entreprise</mat-label>
                                     <input matInput placeholder="Email" formControlName="name" required>
                                 </mat-form-field>
-                                <button class="edit">Valider</button>
+                                <button class="submit">Valider</button>
                             </form>
                             <ng-template #noFormNameCompany>
                                 <p>Nom de l'entreprsie : </p>
@@ -148,7 +148,7 @@
                                     <mat-label>Description de l'entreprise</mat-label>
                                     <textarea matInput placeholder="Description" formControlName="description" required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
                                 </mat-form-field>
-                                <button class="edit">Valider</button>
+                                <button class="submit">Valider</button>
                             </form>
                             <ng-template #noFormDescriptionCompany>
                                 <p>Description de l'entreprsie : </p>
@@ -184,7 +184,7 @@
                                     <mat-form-field>
                                         <input matInput placeholder="Facebook" formControlName="facebook" required>
                                     </mat-form-field>
-                                    <button class="edit">Valider</button>
+                                    <button class="submit">Valider</button>
                                 </form>
                                 <ng-template #noFormFacebook>
                                     <p>{{companyUser.Company.facebook}}</p>
@@ -197,7 +197,7 @@
                                     <mat-form-field>
                                         <input matInput placeholder="Twitter" formControlName="twitter" required>
                                     </mat-form-field>
-                                    <button class="edit">Valider</button>
+                                    <button class="submit">Valider</button>
                                 </form>
                                 <ng-template #noFormTwitter>
                                     <p>{{companyUser.Company.twitter}}</p>
@@ -210,7 +210,7 @@
                                         <mat-form-field>
                                             <input matInput placeholder="Linkedin" formControlName="linkedin" required>
                                         </mat-form-field>
-                                        <button class="edit">Valider</button>
+                                        <button class="submit">Valider</button>
                                     </form>
                                     <ng-template #noFormLinkedin>
                                         <p>{{companyUser.Company.linkedin}}</p>
@@ -223,7 +223,7 @@
                                         <mat-form-field>
                                             <input matInput placeholder="Link" formControlName="link" required>
                                         </mat-form-field>
-                                        <button class="edit">Valider</button>
+                                        <button class="submit">Valider</button>
                                     </form>
                                     <ng-template #noFormLink>
                                         <p>{{companyUser.Company.link}}</p>
