@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ServerService } from 'src/app/services/server.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ServerCompanyService } from 'src/app/services/serverCompany.service';
 
 @Component({
   selector: 'app-profile-company',
@@ -12,10 +12,10 @@ export class ProfileCompanyComponent implements OnInit {
 
   private companyUserId=JSON.parse(localStorage.getItem('companyUserId')).id;
   private companyUser;
-  private formDescriptionCompany: FormGroup;
-  private formNameCompany: FormGroup;
+
+  private formAbout: FormGroup;
   private formName: FormGroup;
-  private formMail: FormGroup;
+  private formEmail: FormGroup;
   private formPhone: FormGroup;
   private formPassword: FormGroup;
   private formFacebook: FormGroup;
@@ -23,8 +23,15 @@ export class ProfileCompanyComponent implements OnInit {
   private formLinkedin: FormGroup;
   private formLink: FormGroup;
 
-  private click: boolean;
-  
+  private clickAbout: boolean = false;
+  private clickName: boolean = false;
+  private clickEmail: boolean = false;
+  private clickPhone: boolean = false;
+  private clickPassword: boolean = false;
+  private clickFacebook: boolean = false;
+  private clickTwitter: boolean = false;
+  private clickLinkedin: boolean = false;
+  private clickLink: boolean = false;
   
   votreNom= "COMPANY_NAME";
   votreMail = "COMPANY_EMAIL";
@@ -33,7 +40,8 @@ export class ProfileCompanyComponent implements OnInit {
   
   constructor(
     private route: ActivatedRoute,
-    private serverService: ServerService,
+    private router: Router,
+    private serverCompanyService: ServerCompanyService,
     private fb: FormBuilder,
     ) { 
       let id = this.companyUserId;
@@ -47,16 +55,14 @@ export class ProfileCompanyComponent implements OnInit {
     this.votreMail = this.companyUser.Company.email;
     this.votrePhone = this.companyUser.Company.phone;
     this.votrePassword = this.companyUser.Company.password;
-    this.formDescriptionCompany = this.fb.group({
-      description: [this.companyUser.Company.about]
-    });
-    this.formNameCompany = this.fb.group({
-      name: [this.companyUser.Company.name, Validators.email]
+
+    this.formAbout = this.fb.group({
+      about: [this.companyUser.Company.about]
     });
     this.formName = this.fb.group({
       name: [this.companyUser.Company.name, Validators.email]
     });
-    this.formMail = this.fb.group({
+    this.formEmail = this.fb.group({
       email: [this.companyUser.Company.email, Validators.required]
     });
     this.formPhone = this.fb.group({
@@ -79,7 +85,207 @@ export class ProfileCompanyComponent implements OnInit {
     });
   }
 
-  onClick(){
-  this.click=!this.click;
-}
+  onClickAbout(){
+    this.clickAbout=!this.clickAbout;
+    this.clickName=false;
+    this.clickEmail=false;
+    this.clickPhone=false;
+    this.clickPassword=false;
+    this.clickFacebook=false;
+    this.clickTwitter=false;
+    this.clickLinkedin=false;
+    this.clickLink=false;
+  }
+
+  onClickName(){
+    this.clickName=!this.clickName;
+    this.clickAbout=false;
+    this.clickEmail=false;
+    this.clickPhone=false;
+    this.clickPassword=false;
+    this.clickFacebook=false;
+    this.clickTwitter=false;
+    this.clickLinkedin=false;
+    this.clickLink=false;
+  }
+
+  onClickEmail(){
+    this.clickEmail=!this.clickEmail;
+    this.clickAbout=false;
+    this.clickName=false;
+    this.clickPhone=false;
+    this.clickPassword=false;
+    this.clickFacebook=false;
+    this.clickTwitter=false;
+    this.clickLinkedin=false;
+    this.clickLink=false;
+  }
+
+  onClickPhone(){
+    this.clickPhone=!this.clickPhone;
+    this.clickAbout=false;
+    this.clickName=false;
+    this.clickEmail=false;
+    this.clickPassword=false;
+    this.clickFacebook=false;
+    this.clickTwitter=false;
+    this.clickLinkedin=false;
+    this.clickLink=false;
+  }
+
+  onClickPassword(){
+    this.clickPassword=!this.clickPassword;
+    this.clickAbout=false;
+    this.clickName=false;
+    this.clickEmail=false;
+    this.clickPhone=false;
+    this.clickFacebook=false;
+    this.clickTwitter=false;
+    this.clickLinkedin=false;
+    this.clickLink=false;
+  }
+
+  onClickFacebook(){
+    this.clickFacebook=!this.clickFacebook;
+    this.clickAbout=false;
+    this.clickName=false;
+    this.clickEmail=false;
+    this.clickPhone=false;
+    this.clickPassword=false;
+    this.clickTwitter=false;
+    this.clickLinkedin=false;
+    this.clickLink=false;
+  }
+
+  onClickTwitter(){
+    this.clickTwitter=!this.clickTwitter;
+    this.clickAbout=false;
+    this.clickName=false;
+    this.clickEmail=false;
+    this.clickPhone=false;
+    this.clickPassword=false;
+    this.clickFacebook=false;
+    this.clickLinkedin=false;
+    this.clickLink=false;
+  }
+
+  onClickLinkedin(){
+    this.clickLinkedin=!this.clickLinkedin;
+    this.clickAbout=false;
+    this.clickName=false;
+    this.clickEmail=false;
+    this.clickPhone=false;
+    this.clickPassword=false;
+    this.clickFacebook=false;
+    this.clickTwitter=false;
+    this.clickLink=false;
+  }
+
+  onClickLink(){
+    this.clickLink=!this.clickLink;
+    this.clickAbout=false;
+    this.clickName=false;
+    this.clickEmail=false;
+    this.clickPhone=false;
+    this.clickPassword=false;
+    this.clickFacebook=false;
+    this.clickTwitter=false;
+    this.clickLinkedin=false;
+  }
+
+  onSubmitAbout(){
+    if (this.formAbout.valid) {
+      try {
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formAbout.value).subscribe(()=>this.redirect());
+      }
+      catch (err) {}
+    }
+    else {}
+  }
+
+  onSubmitName(){
+    if (this.formName.valid) {
+      try {
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formName.value).subscribe(()=>this.redirect());
+      }
+      catch (err) {}
+    }
+    else {}
+  }
+
+  onSubmitEmail(){
+    if (this.formEmail.valid) {
+      try {
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formEmail.value).subscribe(()=>this.redirect());
+      }
+      catch (err) {}
+    }
+    else {}
+  }
+
+  onSubmitPhone(){
+    if (this.formPhone.valid) {
+      try {
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formPhone.value).subscribe(()=>this.redirect());
+      }
+      catch (err) {}
+    }
+    else {}
+  }
+
+  onSubmitPassword(){
+    if (this.formPassword.valid) {
+      try {
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formPassword.value).subscribe(()=>this.redirect());
+      }
+      catch (err) {}
+    }
+    else {}
+  }
+
+  onSubmitFacebook(){
+    if (this.formFacebook.valid) {
+      try {
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formFacebook.value).subscribe(()=>this.redirect());
+      }
+      catch (err) {}
+    }
+    else {}
+  }
+
+  onSubmitTwitter(){
+    if (this.formTwitter.valid) {
+      try {
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formTwitter.value).subscribe(()=>this.redirect());
+      }
+      catch (err) {}
+    }
+    else {}
+  }
+
+  onSubmitLinkedin(){
+    if (this.formLinkedin.valid) {
+      try {
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formLinkedin.value).subscribe(()=>this.redirect());
+      }
+      catch (err) {}
+    }
+    else {}
+  }
+
+  onSubmitLink(){
+    if (this.formLink.valid) {
+      try {
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formLink.value).subscribe(()=>this.redirect());
+      }
+      catch (err) {}
+    }
+    else {}
+  }
+
+  redirect() {
+    // TEMP SOLUTION TO REFRESH PAGE
+    this.router.navigateByUrl('/redirect', {skipLocationChange: true}).then(() =>
+    this.router.navigate(['/profil-company']));
+  }
 }
