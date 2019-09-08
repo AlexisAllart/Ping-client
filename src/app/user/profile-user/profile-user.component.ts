@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ServerService } from 'src/app/services/server.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -9,73 +9,205 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./profile-user.component.scss']
 })
 export class ProfileUserComponent implements OnInit {
-  private formLastNameUser: FormGroup;
-  private formFirstNameUser: FormGroup;
-  private formLastNameUserCard: FormGroup;
-  private formFirstNameUserCard: FormGroup;
-  private formMailUser: FormGroup;
-  private formFacebookUser: FormGroup;
-  private formTwitterUser: FormGroup;
-  private formLinkedinUser: FormGroup;
-  private formDescriptionUser: FormGroup;
-  private formKeywordsUserOne: FormGroup;
-  private formKeywordsUserTwo: FormGroup;
-  private formKeywordsUserThree: FormGroup;
-  private click: boolean;
+  private formAbout: FormGroup;
+  private form: FormGroup;
+  private formFacebook: FormGroup;
+  private formTwitter: FormGroup;
+  private formLinkedin: FormGroup;
+  private formLastName: FormGroup;
+  private formFirstName: FormGroup;
+  private formEmail: FormGroup;
+
+  private clickAbout: boolean;
+  private clickFacebook: boolean;
+  private clickTwitter: boolean;
+  private clickLinkedin: boolean;
+  private clickLastName: boolean;
+  private clickFirstName: boolean;
+  private clickEmail: boolean;
+
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private serverService: ServerService,
     private fb: FormBuilder
   ) { }
 
   ngOnInit() {
-    this.formLastNameUser = this.fb.group({
+    this.formLastName = this.fb.group({
       lastname: [this.route.snapshot.data.userDetails.lastName, Validators.required]
     });
-    this.formFirstNameUser = this.fb.group({
+    this.formFirstName = this.fb.group({
       firstname: [this.route.snapshot.data.userDetails.firstName, Validators.required]
     });
-    this.formMailUser = this.fb.group({
+    this.formEmail = this.fb.group({
       email: [this.route.snapshot.data.userDetails.email, Validators.required]
     });
-    this.formFacebookUser = this.fb.group({
+    this.formFacebook = this.fb.group({
       facebook: [this.route.snapshot.data.userDetails.facebook, Validators.required]
     });
-    this.formTwitterUser = this.fb.group({
+    this.formTwitter = this.fb.group({
       twitter: [this.route.snapshot.data.userDetails.twitter, Validators.required]
     });
-    this.formLinkedinUser = this.fb.group({
+    this.formLinkedin = this.fb.group({
       linkedin: [this.route.snapshot.data.userDetails.linkedin, Validators.required]
     });
-    this.formDescriptionUser = this.fb.group({
-      description: [this.route.snapshot.data.userDetails.about, Validators.required]
+    this.formAbout = this.fb.group({
+      about: [this.route.snapshot.data.userDetails.about, Validators.required]
     });
-    this.formKeywordsUserOne = this.fb.group({
-      keywordsone: [
-        this.route.snapshot.data.userDetails.KeyWordOne.name,
-     
-        Validators.required]
+    this.form = this.fb.group({
+      keyWordOne_id: [this.route.snapshot.data.userDetails.KeyWordOne.name, Validators.required],
+      keyWordTwo_id: [this.route.snapshot.data.userDetails.KeyWordTwo.name, Validators.required],
+      keyWordThree_id: [this.route.snapshot.data.userDetails.KeyWordThree.name, Validators.required]
     });
-    this.formKeywordsUserTwo = this.fb.group({
-      keywordstwo: [
-        
-        this.route.snapshot.data.userDetails.KeyWordTwo.name,
-      
-        Validators.required]
-    });
-    this.formKeywordsUserThree = this.fb.group({
-      keywordsthree: [this.route.snapshot.data.userDetails.KeyWordThree.name, Validators.required]
-    });
-    this.formLastNameUserCard = this.fb.group({
-      lastnamecard: [this.route.snapshot.data.userDetails.lastName, Validators.required]
-    });
-    this.formFirstNameUserCard = this.fb.group({
-      firstnamecard: [this.route.snapshot.data.userDetails.firstName, Validators.required]
-    });
+  }
     
-  }
-  onClick(){
-    this.click=!this.click;
-  }
+    onClickAbout(){
+      this.clickAbout=!this.clickAbout;
+      this.clickFacebook=false;
+      this.clickEmail=false;
+      this.clickTwitter=false;
+      this.clickLinkedin=false;
+      this.clickFirstName=false;
+      this.clickLastName=false;
+    }
+
+    onClickFacebook(){
+      this.clickAbout=false;
+      this.clickFacebook=!this.clickFacebook;
+      this.clickEmail=false;
+      this.clickTwitter=false;
+      this.clickLinkedin=false;
+      this.clickFirstName=false;
+      this.clickLastName=false;
+    }
+
+    onClickTwitter(){
+      this.clickAbout=false;
+      this.clickFacebook=false;
+      this.clickEmail=false;
+      this.clickTwitter=!this.clickTwitter;
+      this.clickLinkedin=false;
+      this.clickFirstName=false;
+      this.clickLastName=false;
+    }
+
+    onClickLinkedin(){
+      this.clickAbout=false;
+      this.clickFacebook=false;
+      this.clickEmail=false;
+      this.clickTwitter=false;
+      this.clickLinkedin=!this.clickLinkedin;
+      this.clickFirstName=false;
+      this.clickLastName=false;
+    }
+
+    onClickEmail(){
+      this.clickAbout=false;
+      this.clickFacebook=false;
+      this.clickEmail=!this.clickEmail;
+      this.clickTwitter=false;
+      this.clickLinkedin=false;
+      this.clickFirstName=false;
+      this.clickLastName=false;
+    }
+
+    onClickFirstName(){
+      this.clickAbout=false;
+      this.clickFacebook=false;
+      this.clickEmail=false;
+      this.clickTwitter=false;
+      this.clickLinkedin=false;
+      this.clickFirstName=!this.clickFirstName;
+      this.clickLastName=false;
+    }
+
+    onClickLastName(){
+      this.clickAbout=false;
+      this.clickFacebook=false;
+      this.clickEmail=false;
+      this.clickTwitter=false;
+      this.clickLinkedin=false;
+      this.clickFirstName=false;
+      this.clickLastName=!this.clickLastName;
+    }
+
+    onSubmitAbout(){
+      if (this.formAbout.valid) {
+        try {
+          this.serverService.request("PUT", "/user/edit/"+'4', this.formAbout.value).subscribe(()=>this.redirect());
+        }
+        catch (err) {}
+      }
+      else {}
+    }
+
+    onSubmitFacebook(){
+      if (this.formFacebook.valid) {
+        try {
+          this.serverService.request("PUT", "/user/edit/"+'4', this.formFacebook.value).subscribe(()=>this.redirect());
+        }
+        catch (err) {}
+      }
+      else {}
+    }
+
+    onSubmitTwitter(){
+      if (this.formTwitter.valid) {
+        try {
+          this.serverService.request("PUT", "/user/edit/"+'4', this.formTwitter.value).subscribe(()=>this.redirect());
+        }
+        catch (err) {}
+      }
+      else {}
+    }
+
+    onSubmitLinkedin(){
+      if (this.formLinkedin.valid) {
+        try {
+          this.serverService.request("PUT", "/user/edit/"+'4', this.formLinkedin.value).subscribe(()=>this.redirect());
+        }
+        catch (err) {}
+      }
+      else {}
+    }
+
+    onSubmitEmail(){
+      if (this.formEmail.valid) {
+        try {
+          this.serverService.request("PUT", "/user/edit/"+'4', this.formEmail.value).subscribe(()=>this.redirect());
+        }
+        catch (err) {}
+      }
+      else {}
+    }
+
+    onSubmitFirstName(){
+      if (this.formFirstName.valid) {
+        try {
+          this.serverService.request("PUT", "/user/edit/"+'4', this.formFirstName.value).subscribe(()=>this.redirect());
+        }
+        catch (err) {}
+      }
+      else {}
+    }
+
+    onSubmitLastName(){
+      if (this.formLastName.valid) {
+        try {
+          this.serverService.request("PUT", "/user/edit/"+'4', this.formLastName.value).subscribe(()=>this.redirect());
+        }
+        catch (err) {}
+      }
+      else {}
+    }
+
+
+    redirect() {
+      // TEMP SOLUTION TO REFRESH PAGE
+      this.router.navigateByUrl('/redirect', {skipLocationChange: true}).then(() =>
+      this.router.navigate(['/profil-user']));
+    }
+
 }
