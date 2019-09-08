@@ -11,6 +11,7 @@ import { DeleteModalComponent } from 'src/app/deleteModal/deleteModal.component'
   styleUrls: ['./profile-user.component.scss']
 })
 export class ProfileUserComponent implements OnInit {
+  
   private formAbout: FormGroup;
   private form: FormGroup;
   private formFacebook: FormGroup;

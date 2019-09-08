@@ -139,6 +139,14 @@
     border-radius: 20px;
     color: #60A4FF;
     font-size: 12px;
+    transition: all 0.5s ease-in-out;
+}
+
+.button:hover {
+    border: 1px solid #E9F6FF;
+    background-color: #60A4FF;
+    color: #E9F6FF;
+    cursor: pointer;
 }
 
 .offres {
