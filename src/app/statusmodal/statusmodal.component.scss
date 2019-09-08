@@ -28,6 +28,7 @@ p {
 
 .button:hover {
     transform: scale(1.2);
+    cursor: pointer;
 }
 
 .status {
@@ -35,18 +36,6 @@ p {
     height: 100%;
     border-radius: 50%;
     border: none;
-}
-
-.blue {
-    background-color: #60A4FF;
-}
-
-.red {
-    background-color: #EF3F3F;
-}
-
-.green {
-    background-color: #3FEF4C;
 }
 
 .col {

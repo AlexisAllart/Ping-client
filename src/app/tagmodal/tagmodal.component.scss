@@ -24,6 +24,7 @@ p {
     width: 64px;
     transition: all .2s ease-in-out;
     outline: none;
+    cursor: pointer;
 }
 
 .button:hover {
@@ -35,18 +36,6 @@ p {
     height: 100%;
     border-radius: 50%;
     border: none;
-}
-
-.blue {
-    background-color: #60A4FF;
-}
-
-.red {
-    background-color: #EF3F3F;
-}
-
-.green {
-    background-color: #3FEF4C;
 }
 
 .col {
