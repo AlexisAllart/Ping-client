@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServerService } from 'src/app/services/server.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material';
+import { DeleteModalComponent } from 'src/app/deleteModal/deleteModal.component';
 
 @Component({
   selector: 'app-profile-user',
@@ -31,7 +33,8 @@ export class ProfileUserComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private serverService: ServerService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -203,6 +206,16 @@ export class ProfileUserComponent implements OnInit {
       else {}
     }
 
+    onDelete(id) {
+      this.dialog.open(DeleteModalComponent, {
+        data: {
+          id: id,
+          routeTarget: "/user/delete/",
+          routeOrigin: "/",
+          userType: 'user',
+        }
+      })
+    }
 
     redirect() {
       // TEMP SOLUTION TO REFRESH PAGE

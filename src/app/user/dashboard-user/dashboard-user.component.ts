@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { DeleteModalComponent } from 'src/app/deleteModal/deleteModal.component';
 
 @Component({
   selector: 'app-dashboard-user',
@@ -9,8 +11,20 @@ import { ActivatedRoute } from '@angular/router';
 export class DashboardUserComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog
     ) { }
 
   ngOnInit() { }
+
+  onDelete(id) {
+    this.dialog.open(DeleteModalComponent, {
+      data: {
+        id: id,
+        routeTarget: "/ping/delete/",
+        routeOrigin: "/dashboard-user",
+        userType: 'user',
+      }
+    })
+  }
 }

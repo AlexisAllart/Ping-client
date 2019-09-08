@@ -131,6 +131,16 @@
     // background-color: rgb(58, 35, 35);
 }
 
+.delete {
+    font-size: 19px;
+    color: #FF7777;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 .card-ping {
     overflow-x: hidden;
     overflow-y: scroll;

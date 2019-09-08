@@ -409,6 +409,19 @@ button:hover {
     padding: 25px;
 }
 
+.delete {
+    font-size: 19px;
+    color: #FF7777;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+
 // Modified CSS for on/off switch
 .onoffswitch {
     position: relative;
