@@ -143,7 +143,7 @@
                             <div class="words">{{ offer.KeyWordTwo.name }}</div>
                             <div class="words">{{ offer.KeyWordThree.name }}</div>
                         </div>
-                        <!-- <i class="fas fa-plus-circle plus"></i> -->
+                        <i (click)="onDelete(offer.id)" class="fas fa-times delete"></i>
                     </div>
                 </div>
             </div>

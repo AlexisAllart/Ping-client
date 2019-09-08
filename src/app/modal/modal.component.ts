@@ -14,5 +14,7 @@ export class ModalComponent implements OnInit {
     this.user = this.data.user;
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    
+  }
 }

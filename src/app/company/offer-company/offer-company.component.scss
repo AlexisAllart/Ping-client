@@ -376,13 +376,20 @@
     padding: 10px;
 }
 
-.plus {
-    font-size: 40px;
-    color: #60A4FF;
+.delete {
+    font-size: 19px;
+    color: #FF7777;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    right: 40px;
-    bottom: 40px;
+    left: 10px;
+    top: 10px;
     cursor: pointer;
+}
+
+.delete::before {
+    margin-left: 15%;
 }
 
 .key-words {

@@ -261,6 +261,18 @@
     
 }
 
+.delete {
+    font-size: 19px;
+    color: #FF7777;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding-top: 10px;
+    cursor: pointer;
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+
 .image {
     margin:3%;
 }

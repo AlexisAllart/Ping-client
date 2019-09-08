@@ -5,6 +5,8 @@ import { CompanyUser } from 'src/app/models/CompanyUser.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ServerCompanyService } from 'src/app/services/serverCompany.service';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { DeleteModalComponent } from 'src/app/deleteModal/deleteModal.component';
 
 declare let L;
 
@@ -59,7 +61,8 @@ export class OfferCompanyComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private serverCompanyService: ServerCompanyService,
-    private http: HttpClient
+    private http: HttpClient,
+    private dialog: MatDialog
   ) {
     let id = this.companyUserId;
     this.companyUser = this.route.snapshot.data.companyUserList.find(function (x) {
@@ -68,6 +71,7 @@ export class OfferCompanyComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dialog.closeAll();
     this.form = this.fb.group({
       addressCity: ['', Validators.required],
       addressNumber: ['', Validators.required],
@@ -139,5 +143,16 @@ export class OfferCompanyComponent implements OnInit {
         this.map.setView(new L.LatLng(this.data[0].lat,this.data[0].lon), 15);
       });
     }
+  }
+
+  onDelete(id) {
+    this.dialog.open(DeleteModalComponent, {
+      data: {
+        id: id,
+        routeTarget: "/offer/delete/",
+        routeOrigin: "/offer-company",
+        userType: 'companyUser',
+      }
+    })
   }
 }

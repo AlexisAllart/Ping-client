@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ServerCompanyService } from 'src/app/services/serverCompany.service';
+import { MatDialog } from '@angular/material';
+import { DeleteModalComponent } from 'src/app/deleteModal/deleteModal.component';
 
 @Component({
   selector: 'app-profile-company',
@@ -43,6 +45,7 @@ export class ProfileCompanyComponent implements OnInit {
     private router: Router,
     private serverCompanyService: ServerCompanyService,
     private fb: FormBuilder,
+    private dialog: MatDialog
     ) { 
       let id = this.companyUserId;
       this.companyUser = this.route.snapshot.data.companyUserList.find(function(x) {
@@ -281,6 +284,17 @@ export class ProfileCompanyComponent implements OnInit {
       catch (err) {}
     }
     else {}
+  }
+
+  onDelete(id) {
+    this.dialog.open(DeleteModalComponent, {
+      data: {
+        id: id,
+        routeTarget: "/company/delete/",
+        routeOrigin: "/",
+        userType: 'companyUser',
+      }
+    })
   }
 
   redirect() {

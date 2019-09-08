@@ -87,6 +87,7 @@ import { ModalComponent } from './modal/modal.component';
 import { StatusmodalComponent } from './statusmodal/statusmodal.component';
 import { RedirectComponent } from './general/redirect/redirect.component';
 import { TagmodalComponent } from './tagmodal/tagmodal.component';
+import { DeleteModalComponent } from './deleteModal/deleteModal.component';
 
 @NgModule({
   declarations: [
@@ -129,7 +130,8 @@ import { TagmodalComponent } from './tagmodal/tagmodal.component';
     ModalComponent,
     StatusmodalComponent,
     RedirectComponent,
-    TagmodalComponent
+    TagmodalComponent,
+    DeleteModalComponent
   ],
   imports: [
     BrowserModule,
@@ -173,7 +175,8 @@ import { TagmodalComponent } from './tagmodal/tagmodal.component';
   entryComponents: [
     ModalComponent,
     StatusmodalComponent,
-    TagmodalComponent
+    TagmodalComponent,
+    DeleteModalComponent
   ]
 })
 export class AppModule { }
