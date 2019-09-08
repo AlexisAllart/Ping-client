@@ -57,7 +57,7 @@ export class ProfileCompanyComponent implements OnInit {
     this.votrePassword = this.companyUser.Company.password;
 
     this.formAbout = this.fb.group({
-      about: [this.companyUser.Company.about]
+      about: [this.companyUser.Company.about, Validators.required]
     });
     this.formName = this.fb.group({
       name: [this.companyUser.Company.name, Validators.email]

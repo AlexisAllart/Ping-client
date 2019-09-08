@@ -81,6 +81,7 @@ const routes: Routes = [
     userDetails: UserDetailsResolver,
   }},
   {path: 'profile-user', component: ProfileUserComponent, resolve: {
+    keyWordList: KeyWordResolver,
     userDetails: UserDetailsResolver
   }},
   {path: 'search-user', component: SearchUserComponent, resolve: {
