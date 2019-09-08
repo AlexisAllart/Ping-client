@@ -31,7 +31,7 @@
         <div class="new-offre">
             <h2 class="title-un">Nouvelle Offre</h2>
             <div class="formulaires">
-                <form [formGroup]="form" (ngSubmit)="onSubmitOffer()">
+                <form class="form" [formGroup]="form" (ngSubmit)="onSubmitOffer()">
                     <div class="column">
                         <mat-form-field class="offer-input">
                             <mat-label>Emploi proposé</mat-label>
@@ -106,7 +106,7 @@
                         <button class="button">Ajouter offre</button>
                     </div>
                 </form>
-                <form [formGroup]="formKeyWord" (ngSubmit)="onSubmitKeyWord()">
+                <form class="form-bottom" [formGroup]="formKeyWord" (ngSubmit)="onSubmitKeyWord()">
                     <mat-form-field>
                         <mat-label>Ajouter un mot clé</mat-label>
                         <input matInput placeholder="Mot clé" formControlName="name" required>
