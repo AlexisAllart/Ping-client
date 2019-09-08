@@ -42,7 +42,7 @@
                             <div class="form-text">
                                 <mat-form-field>
                                     <input matInput formControlName="email" class="input" type="email"
-                                        placeholder="Email :">
+                                        placeholder="Email : ">
                                 </mat-form-field>
                             </div>
                             <button class="submit"><i class="fas fa-check"></i></button>
@@ -175,7 +175,7 @@
                                         <button class="submit"><i class="fas fa-check"></i></button>
                                     </form>
                                     <ng-template #noFormFacebook>
-                                        <p class="social-text">{{companyUser.Company.facebook}}</p>
+                                        <p class="social-text">Modifier lien Facebook</p>
                                     </ng-template>
                                 </div>
                                 <div class="right-side">
@@ -197,7 +197,7 @@
                                         <button class="submit"><i class="fas fa-check"></i></button>
                                     </form>
                                     <ng-template #noFormTwitter>
-                                        <p class="social-text">{{companyUser.Company.twitter}}</p>
+                                        <p class="social-text">Modifier lien Twitter</p>
                                     </ng-template>
                                 </div>
                                 <div class="right-side">
@@ -219,7 +219,7 @@
                                         <button class="submit"><i class="fas fa-check"></i></button>
                                     </form>
                                     <ng-template #noFormLinkedin>
-                                        <p class="social-text">{{companyUser.Company.linkedin}}</p>
+                                        <p class="social-text">Modifier lien Linkedin</p>
                                     </ng-template>
                                 </div>
                                 <div class="right-side">
@@ -227,7 +227,7 @@
                                 </div>
                             </div>
 
-                            <div class="inputContainer">
+                            <div class="inputContainer social-links">
                                 <div class="left-side">
                                     <i class="fas fa-link site"></i>
                                     <form *ngIf="clickLink else noFormLink" [formGroup]="formLink"
@@ -240,7 +240,7 @@
                                         <button class="submit"><i class="fas fa-check"></i></button>
                                     </form>
                                     <ng-template #noFormLink>
-                                        <p class="social-text">{{companyUser.Company.link}}</p>
+                                        <p class="social-text">Modifier lien de votre site</p>
                                     </ng-template>
                                 </div>
                                 <div class="right-side">
