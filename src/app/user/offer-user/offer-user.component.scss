@@ -10,6 +10,8 @@
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 // *{
 //     border:solid black 1px;
@@ -119,6 +121,8 @@ cursor: pointer;
     padding-left: 20px;
 }
 
+
+
 .description-offer {
     align-content: space-between;
     color: #60A4FF;
@@ -163,6 +167,7 @@ margin-bottom: 0;
     background-color:  #E9F6FF;
     box-shadow: 0 10px 10px rgba(0,0,0,.2);
     border-radius: 10px;
+    overflow-y: scroll;
 }
 
 .logo-company{

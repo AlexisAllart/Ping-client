@@ -13,6 +13,8 @@
     height: 100vh;
     position:relative;
     overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .background {
@@ -46,7 +48,7 @@
 .buttons-top {
     display:flex;
     justify-content: flex-end;
-    margin: 10px;
+    margin: 20px;
 }
 
 .btn-white-top {
