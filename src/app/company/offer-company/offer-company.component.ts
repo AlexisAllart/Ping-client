@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CompanyUser } from 'src/app/models/CompanyUser.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ServerCompanyService } from 'src/app/services/serverCompany.service';
@@ -62,7 +62,8 @@ export class OfferCompanyComponent implements OnInit {
     private fb: FormBuilder,
     private serverCompanyService: ServerCompanyService,
     private http: HttpClient,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) {
     let id = this.companyUserId;
     this.companyUser = this.route.snapshot.data.companyUserList.find(function (x) {
@@ -100,7 +101,7 @@ export class OfferCompanyComponent implements OnInit {
         this.newOffer = this.form.value;
         this.newOffer.latitude = this.latitude;
         this.newOffer.longitude = this.longitude;
-        this.serverCompanyService.request("POST", "/offer/create", this.newOffer).subscribe();
+        this.serverCompanyService.request("POST", "/offer/create", this.newOffer).subscribe(()=>this.redirect());
       }
       catch (err) {
         this.offerInvalid = true;
@@ -115,7 +116,7 @@ export class OfferCompanyComponent implements OnInit {
   onSubmitKeyWord() {
     if (this.formKeyWord.valid) {
       try {
-        this.serverCompanyService.request("POST", "/keyWord/create", this.formKeyWord.value).subscribe();
+        this.serverCompanyService.request("POST", "/keyWord/create", this.formKeyWord.value).subscribe(()=>this.redirect());
       }
       catch (err) {
         this.keyWordInvalid = true;
@@ -154,5 +155,11 @@ export class OfferCompanyComponent implements OnInit {
         userType: 'companyUser',
       }
     })
+  }
+
+  redirect() {
+    // TEMP SOLUTION TO REFRESH PAGE
+    this.router.navigateByUrl('/redirect', {skipLocationChange: true}).then(() =>
+    this.router.navigate(['/offer-company']));
   }
 }
