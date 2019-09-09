@@ -47,7 +47,7 @@
     height: 100%;
     justify-content: center;
     margin-top: 50px;
-    padding:80px;
+    padding: 80px;
     flex-direction: column;
     // background-color: rgb(58, 109, 146);
     overflow-x: scroll;
@@ -62,7 +62,6 @@
     margin-top: 75%;
     flex-direction: column;
     // background-color: rgb(146, 58, 99);
-    
 }
 
 .form-bottom {
@@ -140,6 +139,7 @@
     color: #60A4FF;
     font-size: 12px;
     transition: all 0.5s ease-in-out;
+    outline: none;
 }
 
 .button:hover {
