@@ -221,7 +221,7 @@ export class ProfileUserComponent implements OnInit {
     redirect() {
       // TEMP SOLUTION TO REFRESH PAGE
       this.router.navigateByUrl('/redirect', {skipLocationChange: true}).then(() =>
-      this.router.navigate(['/profil-user']));
+      this.router.navigate(['/profile-user']));
     }
 
 }

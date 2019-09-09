@@ -78,6 +78,24 @@ button:hover {
     color:#707070;
 }
 
+.submit {
+    background-color: white;
+    padding:10px;
+    border-radius:50%;
+    border: 1px solid #60A4FF;
+    color:#60A4FF;
+    outline: none;
+    height: 35px;
+    width: 35px;
+    transition: all 0.1s ease-in-out;
+}
+
+.submit:hover {
+    color: white;
+    border: 1px solid white;
+    background-color:#60A4FF;
+}
+
 
 /********************* Sous-general*****************/
 
@@ -353,16 +371,16 @@ button:hover {
     align-items: center;
 }
 
-.input {
-    width: 140%;
-    padding: 19px 30px 19px 9px;
-    border: 1px solid white;
-    background-color: #60A4FF;
-    outline: none;
-    color: white;
-    margin: 10px;
-    font-size: 10px;
-}
+// .input {
+//     width: 140%;
+//     padding: 19px 30px 19px 9px;
+//     border: 1px solid white;
+//     background-color: #60A4FF;
+//     outline: none;
+//     color: white;
+//     margin: 10px;
+//     font-size: 10px;
+// }
 
 .right-part {
     display: flex;
@@ -404,6 +422,7 @@ button:hover {
     height: auto;
     width: auto;
 }
+
 
 .container {
     padding: 25px;
