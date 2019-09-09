@@ -15,7 +15,9 @@ export class DashboardUserComponent implements OnInit {
     private dialog: MatDialog
     ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.dialog.closeAll();
+  }
 
   onDelete(id) {
     this.dialog.open(DeleteModalComponent, {
