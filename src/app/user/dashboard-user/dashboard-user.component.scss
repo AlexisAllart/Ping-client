@@ -222,6 +222,43 @@
     width: 100px;
 }
 
+.status-legende {
+    // background-color: blue;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    // flex-direction: column;
+    background-color: #E9F6FF;
+    align-items:center;
+    justify-content: center;
+    margin-top: 6%;
+    margin-left: 5%;
+  
+  }
+  
+  .button {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    // background-color: yellow;
+    margin-right:4px;
+  
+  }
+  
+  .button p {
+    margin-left:5px;
+    color: grey;
+  }
+  
+  .blue {
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+   
+  }
+
 
 /************************* logo*******************/
 
