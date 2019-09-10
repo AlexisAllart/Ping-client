@@ -31,7 +31,7 @@
                         <div class="name">{{ selection.User.firstName }} {{ selection.User.lastName }}</div>
                         <div class="date">{{ selection.updatedAt | date : "dd.MM.y" }}</div>
                         <div (click)="onTagPopup(selection.id)" class="message">
-                            <div class="lepoint" [ngStyle]="{'background': selection.Tag.color}"></div>
+                            <div class="lepoint" [ngStyle]="{'background': selection.Tag.color}" matTooltip={{selection.Tag.name}}></div>
                         </div>
                         <div class="btn-download">
                             <a href="http://pingjob.herokuapp.com/{{selection.User.cv}}"><i class="fas fa-arrow-down fleche"></i></a>

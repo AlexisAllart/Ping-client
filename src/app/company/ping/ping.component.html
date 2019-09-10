@@ -36,7 +36,7 @@
                         <div class="job-title"> {{ ping.Offer.title }}</div>
                         <div class="date">{{ ping.updatedAt | date : "dd.MM.y" }}</div>
                         <div (click)="onStatusPopup(ping.id)" class="message">
-                            <div class="lepoint" [ngStyle]="{'background': ping.Status.color}"></div>
+                            <div class="lepoint" [ngStyle]="{'background': ping.Status.color}" matTooltip={{ping.Status.name}}></div>
                         </div>
                         <div class="btn-download">
                             <a href="http://pingjob.herokuapp.com/{{ping.User.cv}}"><i class="fas fa-arrow-down fleche"></i></a>

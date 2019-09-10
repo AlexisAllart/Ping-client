@@ -4,7 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipe } from '../app/pipe/filter.pipe';
-
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 // Services
@@ -155,6 +156,8 @@ import { DeleteModalComponent } from './deleteModal/deleteModal.component';
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
+    OverlayModule,
+    MatTooltipModule,
   ],
   providers: [
     AuthService,

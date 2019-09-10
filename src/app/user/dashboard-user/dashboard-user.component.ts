@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { DeleteModalComponent } from 'src/app/deleteModal/deleteModal.component';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-dashboard-user',
   templateUrl: './dashboard-user.component.html',

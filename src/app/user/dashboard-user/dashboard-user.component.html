@@ -40,7 +40,7 @@
                                     <p class="card-date">{{ ping.createdAt | date : "dd.MM.y" }}</p>
                                 </div>
                                 <div class="card-statut">
-                                    <div class="card-lepoint" [ngStyle]="{'background': ping.Status.color}"></div>
+                                    <div class="card-lepoint" [ngStyle]="{'background': ping.Status.color}" matTooltip={{ping.Status.name}}></div>
                                 </div>
                             </div>
                         </div>
