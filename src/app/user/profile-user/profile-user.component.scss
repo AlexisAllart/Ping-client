@@ -72,18 +72,18 @@ button:hover {
 
 .modif {
     background-color: white;
-    padding:10px;
-    border-radius:50%;
+    padding: 10px;
+    border-radius: 50%;
     border: 1px solid #707070;
-    color:#707070;
+    color: #707070;
 }
 
 .submit {
     background-color: white;
-    padding:10px;
-    border-radius:50%;
+    padding: 10px;
+    border-radius: 50%;
     border: 1px solid #60A4FF;
-    color:#60A4FF;
+    color: #60A4FF;
     outline: none;
     height: 35px;
     width: 35px;
@@ -93,8 +93,9 @@ button:hover {
 .submit:hover {
     color: white;
     border: 1px solid white;
-    background-color:#60A4FF;
+    background-color: #60A4FF;
 }
+
 
 /********************* Sous-general*****************/
 
@@ -165,6 +166,14 @@ button:hover {
     width: 140px;
     object-fit: cover;
     object-position: top;
+    transition: all 0.2s ease-in-out;
+}
+
+.profile:hover {
+    content: '';
+    filter: grayscale(100%);
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .title {
@@ -237,11 +246,11 @@ button:hover {
     // overflow-y: scroll;
 }
 
-.left-side{
-    display:flex;
+.left-side {
+    display: flex;
 }
 
-.social-text{
+.social-text {
     margin-left: 10px;
 }
 
@@ -284,6 +293,8 @@ button:hover {
 .inputContainerForceFull {
     width: 100% !important;
 }
+
+
 /***********************card user *******************/
 
 // .temp-profile-user-card{
@@ -399,7 +410,6 @@ button:hover {
 //     margin: 10px;
 //     font-size: 10px;
 // }
-
 .right-part {
     display: flex;
     flex-direction: column;
@@ -431,7 +441,6 @@ button:hover {
 //     right: 100px;
 // }
 
-
 /***************************** Button on/off*****************************/
 
 .on-off {
@@ -440,7 +449,6 @@ button:hover {
     height: auto;
     width: auto;
 }
-
 
 .container {
     padding: 25px;
