@@ -240,3 +240,13 @@ margin-bottom: 0;
 p{
     color: #fff;
 }
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #60A4FF;
+}
