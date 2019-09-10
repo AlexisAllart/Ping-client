@@ -54,6 +54,7 @@
     margin-top: 40px;
 }
 
+
 .logo-container{
     display: flex;
     flex-direction: row;
@@ -147,4 +148,10 @@
     color: #60A4FF;
     border: 1px solid #60A4FF;
     background-color: white;
+}
+
+.fleche:hover{
+    color:white;
+    border: 1px solid #60A4FF;
+    background-color: #60A4FF;
 }
