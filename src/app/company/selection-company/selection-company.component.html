@@ -43,5 +43,11 @@
                 </div>
             </div>
         </div>
+        <div class="status-legende">
+            <div *ngFor="let tag of route.snapshot.data.tagList" class="button">
+                <div class="status blue" [ngStyle]="{'background-color': tag.color}"></div>
+                <p>{{ tag.name }}</p>
+            </div>
+        </div>
     </div> 
 </div> 
