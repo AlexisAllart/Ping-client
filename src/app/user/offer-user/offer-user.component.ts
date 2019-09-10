@@ -4,6 +4,7 @@ import { ServerService } from 'src/app/services/server.service';
 import { HttpClient } from '@angular/common/http';
 import { OfferDetails } from 'src/app/models/OfferDetails.model';
 
+
 // Permet de manipuler leaflet
 declare let L;
 
@@ -31,7 +32,9 @@ export class OfferUserComponent implements OnInit {
     private route: ActivatedRoute,
     private serverService: ServerService,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    
+
   ) {
       
    }
@@ -64,4 +67,5 @@ export class OfferUserComponent implements OnInit {
     this.serverService.request("POST", "/ping/create", data).subscribe();
     this.router.navigate(['/search-user']);
   }
+ 
 }

@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FilterPipe } from '../app/pipe/filter.pipe';
 
+
+
 // Services
 import { AuthService } from './services/auth.service';
 import { AuthCompanyService } from './services/authCompany.service';
@@ -35,7 +37,8 @@ import {
   MatFormFieldModule,
   MatNativeDateModule,
   MatDatepickerModule,
-  MatDialogModule
+  MatDialogModule,
+  
 } from '@angular/material';
 
 import {
