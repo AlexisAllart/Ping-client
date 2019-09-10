@@ -302,4 +302,16 @@ export class ProfileCompanyComponent implements OnInit {
     this.router.navigateByUrl('/redirect', {skipLocationChange: true}).then(() =>
     this.router.navigate(['/profil-company']));
   }
+
+  selectedFile: File
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0];
+    this.onUploadLogo();
+  }
+
+  onUploadLogo() {
+    const uploadData = new FormData();
+    uploadData.append('logo', this.selectedFile, this.selectedFile.name);
+    this.serverCompanyService.request("PUT", '/company/logo/'+this.companyUser.company_id, uploadData).subscribe(()=>this.redirect());
+  }
 }

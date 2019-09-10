@@ -37,12 +37,10 @@
                 </div>
                 <div class="inputContainer">
                     <div class="left-side">
-                        <form *ngIf="clickEmail else noFormEmail" [formGroup]="formEmail" (ngSubmit)="onSubmitEmail()"
-                            class="form">
+                        <form *ngIf="clickEmail else noFormEmail" [formGroup]="formEmail" (ngSubmit)="onSubmitEmail()" class="form">
                             <div class="form-text">
                                 <mat-form-field>
-                                    <input matInput formControlName="email" class="input" type="email"
-                                        placeholder="Email : ">
+                                    <input matInput formControlName="email" class="input" type="email" placeholder="Email : ">
                                 </mat-form-field>
                             </div>
                             <button class="submit"><i class="fas fa-check"></i></button>
@@ -59,12 +57,10 @@
 
                 <div class="inputContainer">
                     <div class="left-side">
-                        <form *ngIf="clickPhone else noFormPhone" [formGroup]="formPhone" (ngSubmit)="onSubmitPhone()"
-                            class="form">
+                        <form *ngIf="clickPhone else noFormPhone" [formGroup]="formPhone" (ngSubmit)="onSubmitPhone()" class="form">
                             <div class="form-text">
                                 <mat-form-field>
-                                    <input matInput formControlName="phone" class="input" type="text"
-                                        placeholder="Téléphone">
+                                    <input matInput formControlName="phone" class="input" type="text" placeholder="Téléphone">
                                 </mat-form-field>
                             </div>
                             <button class="submit"><i class="fas fa-check"></i></button>
@@ -81,12 +77,10 @@
 
                 <div class="inputContainer">
                     <div class="left-side">
-                        <form *ngIf="clickPassword else noFormPassword" [formGroup]="formPassword"
-                            (ngSubmit)="onSubmitPassword()" class="form">
+                        <form *ngIf="clickPassword else noFormPassword" [formGroup]="formPassword" (ngSubmit)="onSubmitPassword()" class="form">
                             <div class="form-text">
                                 <mat-form-field>
-                                    <input matInput formControlName="password" class="input" type="password"
-                                        placeholder="Mot de passe :">
+                                    <input matInput formControlName="password" class="input" type="password" placeholder="Mot de passe :">
                                 </mat-form-field>
                             </div>
                             <button class="submit"><i class="fas fa-check"></i></button>
@@ -107,13 +101,13 @@
                 <div class="container">
                     <i (click)="onDelete(companyUser.Company.id)" class="fas fa-times delete"></i>
                     <div class="image">
-                        <img class="logo" src="http://pingjob.herokuapp.com/{{ companyUser.Company.logo }}" alt="logo">
+                        <input style="display:none" type="file" (change)="onFileChanged($event)" #fileInput>
+                        <img class="logo" src="http://pingjob.herokuapp.com/{{ companyUser.Company.logo }}" (click)="fileInput.click()" alt="logo">
                     </div>
                     <div class="container-text">
                         <div class="inputContainer">
                             <div class="left-side">
-                                <form *ngIf="clickName else noFormName" [formGroup]="formName"
-                                    (ngSubmit)="onSubmitName()" class="form">
+                                <form *ngIf="clickName else noFormName" [formGroup]="formName" (ngSubmit)="onSubmitName()" class="form">
                                     <div class="form-text">
                                         <mat-form-field>
                                             <mat-label>Nom de l'entreprise</mat-label>
@@ -133,14 +127,11 @@
 
                         <div class="inputContainer">
                             <div class="left-side">
-                                <form *ngIf="clickAbout else noFormAbout" [formGroup]="formAbout"
-                                    (ngSubmit)="onSubmitAbout()" class="form">
+                                <form *ngIf="clickAbout else noFormAbout" [formGroup]="formAbout" (ngSubmit)="onSubmitAbout()" class="form">
                                     <div class="form-text">
                                         <mat-form-field>
                                             <mat-label>Description de l'entreprise</mat-label>
-                                            <textarea matInput placeholder="Description" formControlName="about"
-                                                required cdkTextareaAutosize #autosize="cdkTextareaAutosize"
-                                                cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+                                            <textarea matInput placeholder="Description" formControlName="about" required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
                                         </mat-form-field>
                                     </div>
                                     <button class="submit"><i class="fas fa-check"></i></button>
@@ -164,12 +155,10 @@
                             <div class="inputContainer">
                                 <div class="left-side">
                                     <i class="fab fa-facebook-f social"></i>
-                                    <form *ngIf="clickFacebook else noFormFacebook" [formGroup]="formFacebook"
-                                        (ngSubmit)="onSubmitFacebook()" class="form social-text">
+                                    <form *ngIf="clickFacebook else noFormFacebook" [formGroup]="formFacebook" (ngSubmit)="onSubmitFacebook()" class="form social-text">
                                         <div class="form-text">
                                             <mat-form-field>
-                                                <input matInput placeholder="Facebook" formControlName="facebook"
-                                                    required>
+                                                <input matInput placeholder="Facebook" formControlName="facebook" required>
                                             </mat-form-field>
                                         </div>
                                         <button class="submit"><i class="fas fa-check"></i></button>
@@ -186,12 +175,10 @@
                             <div class="inputContainer">
                                 <div class="left-side">
                                     <i class="fab fa-twitter social"></i>
-                                    <form *ngIf="clickTwitter else noFormTwitter" [formGroup]="formTwitter"
-                                        (ngSubmit)="onSubmitTwitter()" class="form social-text">
+                                    <form *ngIf="clickTwitter else noFormTwitter" [formGroup]="formTwitter" (ngSubmit)="onSubmitTwitter()" class="form social-text">
                                         <div class="form-text">
                                             <mat-form-field>
-                                                <input matInput placeholder="Twitter" formControlName="twitter"
-                                                    required>
+                                                <input matInput placeholder="Twitter" formControlName="twitter" required>
                                             </mat-form-field>
                                         </div>
                                         <button class="submit"><i class="fas fa-check"></i></button>
@@ -208,12 +195,10 @@
                             <div class="inputContainer">
                                 <div class="left-side">
                                     <i class="fab fa-linkedin-in social"></i>
-                                    <form *ngIf="clickLinkedin else noFormLinkedin" [formGroup]="formLinkedin"
-                                        (ngSubmit)="onSubmitLinkedin()" class="form social-text">
+                                    <form *ngIf="clickLinkedin else noFormLinkedin" [formGroup]="formLinkedin" (ngSubmit)="onSubmitLinkedin()" class="form social-text">
                                         <div class="form-text">
                                             <mat-form-field>
-                                                <input matInput placeholder="Linkedin" formControlName="linkedin"
-                                                    required>
+                                                <input matInput placeholder="Linkedin" formControlName="linkedin" required>
                                             </mat-form-field>
                                         </div>
                                         <button class="submit"><i class="fas fa-check"></i></button>
@@ -230,8 +215,7 @@
                             <div class="inputContainer social-links">
                                 <div class="left-side">
                                     <i class="fas fa-link site"></i>
-                                    <form *ngIf="clickLink else noFormLink" [formGroup]="formLink"
-                                        (ngSubmit)="onSubmitLink()" class="form social-text">
+                                    <form *ngIf="clickLink else noFormLink" [formGroup]="formLink" (ngSubmit)="onSubmitLink()" class="form social-text">
                                         <div class="form-text">
                                             <mat-form-field>
                                                 <input matInput placeholder="Link" formControlName="link" required>
