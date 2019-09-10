@@ -40,10 +40,10 @@ export class ProfileUserComponent implements OnInit {
 
   ngOnInit() {
     this.formLastName = this.fb.group({
-      lastname: [this.route.snapshot.data.userDetails.lastName, Validators.required]
+      lastName: [this.route.snapshot.data.userDetails.lastName, Validators.required]
     });
     this.formFirstName = this.fb.group({
-      firstname: [this.route.snapshot.data.userDetails.firstName, Validators.required]
+      firstName: [this.route.snapshot.data.userDetails.firstName, Validators.required]
     });
     this.formEmail = this.fb.group({
       email: [this.route.snapshot.data.userDetails.email, Validators.required]

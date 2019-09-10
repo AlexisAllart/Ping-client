@@ -96,7 +96,6 @@ button:hover {
     background-color:#60A4FF;
 }
 
-
 /********************* Sous-general*****************/
 
 .sous-general {
@@ -211,7 +210,8 @@ button:hover {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    width: 60%;
+    width: 100%;
+    background-color: #3FEF4C;
     /* padding:10px 60px 10px 30px; */
 }
 
@@ -235,6 +235,14 @@ button:hover {
     height: 100%;
     margin: 38px;
     // overflow-y: scroll;
+}
+
+.left-side{
+    display:flex;
+}
+
+.social-text{
+    margin-left: 10px;
 }
 
 .profile-top {
