@@ -130,13 +130,21 @@
 
 
 .btn-white {
-    text-decoration: none;
-    color: #60A4FF;
-    background-color: #fff;
-    padding:10px 20px;
+    outline: none;
+    font-size: 16px;
+    color: white;
+    background-color: #60A4FF;
+    padding: 10px 20px;
     border-radius: 20px;
-    position:absolute;
-    bottom:50px;
-    right:240px;
+    position: absolute;
+    bottom: 50px;
+    right: 240px;
+    transition: all 0.5s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
 
+.btn-white:hover {
+    color: #60A4FF;
+    border: 1px solid #60A4FF;
+    background-color: white;
 }
