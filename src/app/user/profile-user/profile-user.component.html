@@ -322,7 +322,7 @@
                         class="form">
                         <div class="form-text">
                             <mat-form-field>
-                                <input matInput formControlName="lastname" class="input" type="text"
+                                <input matInput formControlName="lastName" class="input" type="text"
                                     placeholder="Nom :">
                             </mat-form-field>
                         </div>
@@ -358,7 +358,7 @@
                             class="form">
                             <div class="form-text">
                                 <mat-form-field>
-                                    <input matInput formControlName="firstname" class="input" type="text"
+                                    <input matInput formControlName="firstName" class="input" type="text"
                                         placeholder="Prenom :">
                                 </mat-form-field>
                             </div>
@@ -374,6 +374,7 @@
                     </div>
                 </div>
 
+                
                 <!-- <form *ngIf="click else noFormFirstNameUser" [formGroup]="formFirstNameUser" class="form-blue" action="">
                     <mat-form-field>
                         <mat-label>Prenom</mat-label>
@@ -410,6 +411,8 @@
                             <button [ngClass]="clickEmail?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickEmail()'></button>
                         </div>
                     </div>
+
+                  
 
                     <!-- <form *ngIf="click else noFormMailUser" [formGroup]="formMailUser" class="form-blue" action="">
                         <mat-form-field>
