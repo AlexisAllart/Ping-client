@@ -10,6 +10,7 @@
     background-attachment: fixed;
     height: 100vh;
 
+    overflow-y: scroll;
 }
 
 .header {
@@ -31,6 +32,7 @@
     margin: 17px;
     color: #60A4FF;
     font-size: 30px;
+    outline:none;
 }
 
 .logo-white {
@@ -150,7 +152,6 @@
     font-size: 20px;
 }
 
-
 .column a{
     text-decoration: none;
     padding: 10px 40px;
@@ -163,6 +164,7 @@
     border-style: solid;
     border-color: #60A4FF;
     border-width: 2px;
+    font-weight: lighter;
 }
 
 .column a:hover{
@@ -197,4 +199,15 @@
 
 .prestation ul li:last-child{
     border-bottom: none;
+}
+
+/******************* scroll bar **********************/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #60A4FF;
 }
