@@ -83,7 +83,9 @@ export class SearchUserComponent implements OnInit {
       "&"+
       this.route.snapshot.data.offerList[i].KeyWordTwo.name +
       "&"+
-      this.route.snapshot.data.offerList[i].KeyWordThree.name;
+      this.route.snapshot.data.offerList[i].KeyWordThree.name+
+      "&"+
+      this.route.snapshot.data.offerList[i].title;
     }
     this.finalOfferList = this.offersWithKeyWords;
     for (let i = 0; i < this.offersWithKeyWords.length; i++) {
