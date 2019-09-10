@@ -199,7 +199,7 @@ export class ProfileCompanyComponent implements OnInit {
   onSubmitAbout(){
     if (this.formAbout.valid) {
       try {
-        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formAbout.value).subscribe(()=>this.redirect());
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formAbout.value).subscribe(()=>this.redirect(),()=>this.redirect());
       }
       catch (err) {}
     }
@@ -209,7 +209,7 @@ export class ProfileCompanyComponent implements OnInit {
   onSubmitName(){
     if (this.formName.valid) {
       try {
-        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formName.value).subscribe(()=>this.redirect());
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formName.value).subscribe(()=>this.redirect(),()=>this.redirect());
       }
       catch (err) {}
     }
@@ -219,7 +219,7 @@ export class ProfileCompanyComponent implements OnInit {
   onSubmitEmail(){
     if (this.formEmail.valid) {
       try {
-        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formEmail.value).subscribe(()=>this.redirect());
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formEmail.value).subscribe(()=>this.redirect(),()=>this.redirect());
       }
       catch (err) {}
     }
@@ -229,7 +229,7 @@ export class ProfileCompanyComponent implements OnInit {
   onSubmitPhone(){
     if (this.formPhone.valid) {
       try {
-        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formPhone.value).subscribe(()=>this.redirect());
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formPhone.value).subscribe(()=>this.redirect(),()=>this.redirect());
       }
       catch (err) {}
     }
@@ -239,7 +239,7 @@ export class ProfileCompanyComponent implements OnInit {
   onSubmitPassword(){
     if (this.formPassword.valid) {
       try {
-        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formPassword.value).subscribe(()=>this.redirect());
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formPassword.value).subscribe(()=>this.redirect(),()=>this.redirect());
       }
       catch (err) {}
     }
@@ -249,7 +249,7 @@ export class ProfileCompanyComponent implements OnInit {
   onSubmitFacebook(){
     if (this.formFacebook.valid) {
       try {
-        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formFacebook.value).subscribe(()=>this.redirect());
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formFacebook.value).subscribe(()=>this.redirect(),()=>this.redirect());
       }
       catch (err) {}
     }
@@ -259,7 +259,7 @@ export class ProfileCompanyComponent implements OnInit {
   onSubmitTwitter(){
     if (this.formTwitter.valid) {
       try {
-        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formTwitter.value).subscribe(()=>this.redirect());
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formTwitter.value).subscribe(()=>this.redirect(),()=>this.redirect());
       }
       catch (err) {}
     }
@@ -269,7 +269,7 @@ export class ProfileCompanyComponent implements OnInit {
   onSubmitLinkedin(){
     if (this.formLinkedin.valid) {
       try {
-        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formLinkedin.value).subscribe(()=>this.redirect());
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formLinkedin.value).subscribe(()=>this.redirect(),()=>this.redirect());
       }
       catch (err) {}
     }
@@ -279,7 +279,7 @@ export class ProfileCompanyComponent implements OnInit {
   onSubmitLink(){
     if (this.formLink.valid) {
       try {
-        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formLink.value).subscribe(()=>this.redirect());
+        this.serverCompanyService.request("PUT", "/company/edit/"+this.companyUser.company_id, this.formLink.value).subscribe(()=>this.redirect(),()=>this.redirect());
       }
       catch (err) {}
     }
@@ -312,6 +312,6 @@ export class ProfileCompanyComponent implements OnInit {
   onUploadLogo() {
     const uploadData = new FormData();
     uploadData.append('logo', this.selectedFile, this.selectedFile.name);
-    this.serverCompanyService.request("PUT", '/company/logo/'+this.companyUser.company_id, uploadData).subscribe(()=>this.redirect());
+    this.serverCompanyService.request("PUT", '/company/logo/'+this.companyUser.company_id, uploadData).subscribe(()=>this.redirect(),()=>this.redirect());
   }
 }

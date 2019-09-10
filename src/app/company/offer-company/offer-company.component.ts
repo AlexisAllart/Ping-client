@@ -101,7 +101,7 @@ export class OfferCompanyComponent implements OnInit {
         this.newOffer = this.form.value;
         this.newOffer.latitude = this.latitude;
         this.newOffer.longitude = this.longitude;
-        this.serverCompanyService.request("POST", "/offer/create", this.newOffer).subscribe(()=>this.redirect());
+        this.serverCompanyService.request("POST", "/offer/create", this.newOffer).subscribe(()=>this.redirect(), () => this.redirect());
       }
       catch (err) {
         this.offerInvalid = true;
@@ -116,7 +116,7 @@ export class OfferCompanyComponent implements OnInit {
   onSubmitKeyWord() {
     if (this.formKeyWord.valid) {
       try {
-        this.serverCompanyService.request("POST", "/keyWord/create", this.formKeyWord.value).subscribe(()=>this.redirect());
+        this.serverCompanyService.request("POST", "/keyWord/create", this.formKeyWord.value).subscribe(()=>this.redirect(), () => this.redirect());
       }
       catch (err) {
         this.keyWordInvalid = true;

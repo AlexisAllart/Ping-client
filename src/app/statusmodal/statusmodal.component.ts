@@ -28,7 +28,7 @@ export class StatusmodalComponent implements OnInit {
   }
 
   click(id) {
-    this.serverCompanyService.request("PUT", "/ping/edit/"+this.ping_id, {status_id: id, company_id: this.company_id}).subscribe(()=>this.redirect());
+    this.serverCompanyService.request("PUT", "/ping/edit/"+this.ping_id, {status_id: id, company_id: this.company_id}).subscribe(()=>this.redirect(),()=>this.redirect());
   }
 
   redirect() {
