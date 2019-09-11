@@ -1,9 +1,9 @@
 <div class="body">
     <div class="logo-and-keywords">
         <header class="header">
-                <div class="return">
-                        <i class="fas fa-arrow-circle-left back return-bis" onclick="history.go(-1)"></i>
-                    </div>
+            <div class="return">
+                <i class="fas fa-arrow-circle-left back return-bis" onclick="history.go(-1)"></i>
+            </div>
             <div class="logo-container">
                 <img class="logo-white" src="assets/logo-ping/logo-blanc.png" alt="">
                 <img class="logo" src="assets/logo-ping/blue_logo.png" alt="">
@@ -34,7 +34,8 @@
             <div class="card-and-mapp">
                 <div *ngIf="ready" class="company-card">
                     <div class="logo-company">
-                        <img class="logo-picture" src="http://pingjob.herokuapp.com/{{offer.CompanyUser.Company.logo}}" alt="logo">
+                        <img class="logo-picture" src="http://pingjob.herokuapp.com/{{offer.CompanyUser.Company.logo}}"
+                            alt="logo">
                     </div>
                     <div class="container-text-company">
                         <h2 class="title-company">A propos de l'entreprise</h2>
@@ -48,13 +49,13 @@
                 <div class="map">
                     <div id="map" class="carte"></div>
                 </div>
+                <div class="ping">
+                    <button class="btn-ping" (click)="onSubmit()">
+                        Je Ping cette offre
+                    </button> ​ ​
+                </div>
             </div> ​
 
-            <div class="ping">
-                <button class="btn-ping" (click)="onSubmit()">
-                <p>Je Ping cette entreprise</p>
-            </button> ​ ​
-            </div>
         </div>
     </div>
 </div>

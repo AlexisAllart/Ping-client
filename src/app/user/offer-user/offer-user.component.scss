@@ -218,29 +218,33 @@ margin-bottom: 0;
 
 .ping{
     display: flex;
-    flex-direction: row-reverse;  
-    margin-right: 2%;
-    height: 5%;
-    position: relative;
+    justify-content: center;
+    margin-top: 20px;
+    // flex-direction: row-reverse;  
+    // margin-right: 2%;
+    // height: 5%;
+    // position: relative;
     
 }
 
 .btn-ping{
+    color: #fff;
     background-color:  #60A4FF;
     outline: none;
     border-radius: 30px;
     width: 150px;
-    float: right;
-    display: flex;
-    align-content: flex-end; 
-    border:none;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0);
     cursor: pointer;
+    transition: all .5s ease-in-out;
+    height: 50px;
 }
 
-p{
-    color: #fff;
+.btn-ping:hover {
+    color: #60A4FF;
+    background-color: #fff;
+    border: 1px solid #60A4FF;
 }
-
 
 ::-webkit-scrollbar {
     width: 10px;
