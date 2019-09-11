@@ -28,7 +28,7 @@
                     <!--CARTE CANDIDAT UN -->
                     <div class="container">
                         <div class="blue">
-                            <i (click)="onDelete(route.snapshot.data.userDetails.id)" class="fas fa-times delete"></i>
+                            <i (click)="onDelete(route.snapshot.data.userDetails.id)" class="fas fa-times delete" matTooltip="Supprimer le Compte"></i>
                             <div class="sous-container">
                                 <input style="display:none" type="file" (change)="onFileChangedPicture($event)" #fileInputPicture>
                                 <img (click)="fileInputPicture.click()" class="profile" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.picture}}">
