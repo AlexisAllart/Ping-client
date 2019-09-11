@@ -80,13 +80,13 @@
                         <form *ngIf="clickPassword else noFormPassword" [formGroup]="formPassword" (ngSubmit)="onSubmitPassword()" class="form">
                             <div class="form-text">
                                 <mat-form-field>
-                                    <input matInput formControlName="password" class="input" type="password" placeholder="Mot de passe :">
+                                    <input matInput formControlName="password" class="input" type="password" placeholder="Nouveau mot de passe :">
                                 </mat-form-field>
                             </div>
                             <button class="submit"><i class="fas fa-check"></i></button>
                         </form>
                         <ng-template #noFormPassword>
-                            <p>Mot de passe :</p>
+                            <p>Modifier mot de passe :</p>
                             <p>{{companyUser.Company.password}}</p>
                         </ng-template>
                     </div>

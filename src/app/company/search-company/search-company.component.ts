@@ -50,8 +50,10 @@ export class SearchCompanyComponent implements OnInit {
       this.usersWithKeyWords[i].KeyWordThree.name +
       "&"+
       this.usersWithKeyWords[i].firstName+
-      "&"+
-      this.usersWithKeyWords[i].lastName;
+      " "+
+      this.usersWithKeyWords[i].lastName+
+      " "+
+      this.usersWithKeyWords[i].firstName;
     }
     this.change();
   }

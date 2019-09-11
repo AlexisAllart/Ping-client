@@ -1,30 +1,35 @@
 /************************* GÉNÉRAL *******************/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
+
 .general {
     display: flex;
 }
+
+
 /******************** Alignement centrale*****************/
-.sous-genral{
-    width:300%;
+
+.sous-genral {
+    width: 300%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position:relative;
-    
+    position: relative;
 }
+
+
 /*********************** title***************************/
+
 .container-title-clear-blue {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: inherit;
     margin-left: 150px;
-
-    
 }
 
 .body-title {
@@ -34,355 +39,339 @@
     align-items: center;
     background-color: white;
     font-family: "Nunito", sans-serif;
-  
-  }
+}
 
-  .title-company {
+.title-company {
     display: flex;
     text-align: center;
     justify-content: center;
-    background-color:  #E9F6FF ;
+    background-color: #E9F6FF;
     width: 450px;
     height: 80px;
     padding: 10px;
     margin: 10%;
     animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
     }
-    
-    @keyframes moveInRight {
-      0% {
-          opacity: 0;
-          transform: translateY(100px);
-      }
-  
-      80% {
-          transform: translateY(-10px);
-      }
-  
-      100% {
-          opacity: 1;
-          transform: translate(0);
-      }
-  }
-  
-    
-    h3 {
+    80% {
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+h3 {
     padding-top: 15px;
     display: flex;
     text-align: center;
-    color:   #60A4FF;
-    }
+    color: #60A4FF;
+}
 
 // /********************* les labels ***************************/
 .container-blue-selection {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 40px;
-  height: 40px;
-  width:800px;
-  margin-left:154px;
-  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    height: 40px;
+    width: 800px;
+    margin-left: 154px;
 }
 
 .container-label {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  font-size: 10px;
-  align-content: space-between;
-  text-align: center;
-  width:800px;
-  height: 40px;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    font-size: 10px;
+    align-content: space-between;
+    text-align: center;
+    width: 800px;
+    height: 40px;
 }
 
-.label-logo-decoy{
-  
-  height: 20px;
-  width: 120px;
-  align-content: center;
-  margin-left:30px;
-  
+.label-logo-decoy {
+    height: 20px;
+    width: 120px;
+    align-content: center;
+    margin-left: 30px;
 }
-.label-logo-decoy2{
-  height: 20px;
-  width: 120px;
-  display: flex;
-  align-content: center;
-  margin-left:30px;
 
+.label-logo-decoy2 {
+    height: 20px;
+    width: 120px;
+    display: flex;
+    align-content: center;
+    margin-left: 30px;
 }
 
 .label-nom {
-  height: 20px;
-  width: 120px;
-  text-align: center;
-  margin-left:30px;
-  
+    height: 20px;
+    width: 120px;
+    text-align: center;
+    margin-left: 30px;
 }
 
-
-.label-date{
-  height: 20px;
-  width: 120px;
-  text-align: center;
-  margin-left:30px;
+.label-date {
+    height: 20px;
+    width: 120px;
+    text-align: center;
+    margin-left: 30px;
 }
-.label-statut{
-  height: 20px;
-  width: 120px;
-  text-align: center;
-  margin-left:30px;
-}
-.label-cv{
-  height: 20px;
-  width: 120px;
-  text-align: center;
-  margin-left:30px;
 
+.label-statut {
+    height: 20px;
+    width: 120px;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.label-cv {
+    height: 20px;
+    width: 120px;
+    text-align: center;
+    margin-left: 30px;
 }
 
 
 /*********************** selection card *************************/
 
-.selection-card{
-  overflow-x: hidden; 
-  overflow-y: scroll;
-  height: 55vh;
-  width: inherit;
-  margin:0px 2px 0px 150px;
-
+.selection-card {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 55vh;
+    width: inherit;
+    margin: 0px 2px 0px 150px;
 }
+
 
 /************************* scrollbar ******************************/
-::-webkit-scrollbar{
-	width: 10px;
+
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-::-webkit-scrollbar-thumb{
-	border-radius: 5px;
-	background: #60A4FF;
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #60A4FF;
 }
 
 
 /************************* CARD *******************/
+
 .container-candidate {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 16px;
-  margin: 16px;
-  width: 800px;
-
-  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    margin: 16px;
+    width: 800px;
 }
 
-// .delete {
-//   font-size: 19px;
-//   color: #FF7777;
-//   border-radius: 50%;
-//   width: 20px;
-//   height: 20px;
-//   margin-right: -20px;
-//   cursor: pointer;
-// }
-
-.container-blue{
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  justify-content: space-between;
-  align-items: center;
-  border: 1.5px solid #60a4ff;
-  padding: 20px;
-  margin-right: 20px;
-  padding-left: 0px;
-  width: 800px;
-  height: 70px;
-
+.delete {
+    font-size: 19px;
+    color: #FF7777;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-right: -20px;
+    cursor: pointer;
+    z-index: 1;
 }
+
+.container-blue {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    border: 1.5px solid #60a4ff;
+    padding: 20px;
+    margin-right: 20px;
+    padding-left: 0px;
+    width: 800px;
+    height: 70px;
+}
+
 .text {
-  display: flex;
-  text-align: center;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  height: 50px;
-  font-size: 15px;
-  color: #60a4ff;
-  width: inherit;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 50px;
+    font-size: 15px;
+    color: #60a4ff;
+    width: inherit;
 }
-.name{
-  height: 20px;
-  width: 120px;
-  align-content: center;
-  
+
+.name {
+    height: 20px;
+    width: 120px;
+    align-content: center;
+}
+
+.date {
+    height: 20px;
+    width: 120px;
+    align-content: center;
+    margin-left: 30px;
 }
 
 
-.date{
-  height: 20px;
-  width: 120px;
-  align-content: center;
-  margin-left:30px;
- 
-}
 /************************* Picture*******************/
-.container-img{
-  width:120px;
-  height:100px;
-  padding:20px;
-  margin:10px;
+
+.container-img {
+    width: 120px;
+    height: 100px;
+    padding: 20px;
+    margin: 10px;
 }
 
 .picture {
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  object-fit: cover;
-  object-position: top;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: top;
 }
+
 
 /************************* Statut *******************/
-.message {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 120px;
-  height: 10px;
-  padding: 5px;
-  
-.lepoint{
-  width: 10px;
-  height: 10px;
-  margin-left:30px;
-  border-radius: 100%;
-  cursor: pointer;
-}
-}
 
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 10px;
+    padding: 5px;
+    .lepoint {
+        width: 10px;
+        height: 10px;
+        margin-left: 30px;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+}
 
 .status-legende {
-  // background-color: blue;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  // flex-direction: column;
-  background-color: #E9F6FF;
-  align-items:center;
-  justify-content: center;
-  margin-top: 6%;
-  margin-left: 5%;
-
+    // background-color: blue;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    // flex-direction: column;
+    background-color: #E9F6FF;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6%;
+    margin-left: 5%;
 }
 
 .button {
-  margin-left: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items:center;
-  justify-content: center;
-  // background-color: yellow;
-  margin-right:4px;
-
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    // background-color: yellow;
+    margin-right: 4px;
 }
 
 .button p {
-  margin-left:5px;
-  color: grey;
+    margin-left: 5px;
+    color: grey;
 }
 
 .blue {
-  width:10px;
-  height:10px;
-  border-radius: 50%;
-
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }
 
 .companyUser {
-  display:flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  // background-color:blue;
-  width:98%;
-  margin-top:5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    // background-color:blue;
+    width: 98%;
+    margin-top: 5px;
 }
 
 .companyUserName {
-  color: rgba(128, 128, 128, 0.541);
-  font-style:italic;
-  font-size:11px;
+    color: rgba(128, 128, 128, 0.541);
+    font-style: italic;
+    font-size: 11px;
 }
+
 
 /************************* btn download*******************/
 
-.btn-download{
-  width: 120px;
-  height: 50px;;
-  padding:10px;
-  
+.btn-download {
+    width: 120px;
+    height: 50px;
+    ;
+    padding: 10px;
 }
 
-.fleche{
-
-  background-color: none;
-  font-size: light;
-  color: grey;
-  border: 1px solid grey;
-  border-radius: 30px;
-  padding: 10px;
-  margin-left:40px;
-  cursor: pointer;
-  transition:all .2s ease-in-out;
-
+.fleche {
+    background-color: none;
+    font-size: light;
+    color: grey;
+    border: 1px solid grey;
+    border-radius: 30px;
+    padding: 10px;
+    margin-left: 40px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
 }
 
 .fleche:hover {
-  transform: translateY(3px);
-  color: #60a4ff;
-  border: 1px solid #60a4ff;
+    transform: translateY(3px);
+    color: #60a4ff;
+    border: 1px solid #60a4ff;
 }
+
+
 /************************* btn small details*******************/
 
-.btn-detail-small{
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
-  margin-left: 30px;
-  width: 120px;
-  height: 50px;
-
+.btn-detail-small {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    margin-left: 30px;
+    width: 120px;
+    height: 50px;
 }
+
 .plus {
- 
-  padding-right: 30px;
-  color: #60a4ff;
-  cursor: pointer;
-  
+    padding-right: 30px;
+    color: #60a4ff;
+    cursor: pointer;
 }
-
 
 //////// pop up /////////
-
-.content
-{
-  
-  margin-left:35%;
-  width:50%;
-  height:30%;
-  background-color: rgb(71, 67, 67);
-  z-index: 9999;
+.content {
+    margin-left: 35%;
+    width: 50%;
+    height: 30%;
+    background-color: rgb(71, 67, 67);
+    z-index: 9999;
 }
 
 .content-text {
-  color: white;
-  margin:0 auto;
-  text-align: center;
-  padding-top:50px;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
 }
-
-

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalComponent } from 'src/app/modal/modal.component';
 import { UserDetailsService } from 'src/app/services/userDetails.service';
 import { TagmodalComponent } from 'src/app/tagmodal/tagmodal.component';
+import { ServerCompanyService } from 'src/app/services/serverCompany.service';
 
 @Component({
   selector: 'app-selection-company',
@@ -18,7 +19,9 @@ export class SelectionCompanyComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private dialog: MatDialog,
-    private userDetailsService: UserDetailsService
+    private userDetailsService: UserDetailsService,
+    private serverCompanyService: ServerCompanyService,
+    private router: Router
   ) {
     let id = this.companyUserId;
     this.companyUser = this.route.snapshot.data.companyUserList.find(function(x) {
@@ -48,5 +51,12 @@ export class SelectionCompanyComponent implements OnInit {
         tagList: this.route.snapshot.data.tagList
       }
     });
+  }
+
+  onDelete(id) {
+    this.serverCompanyService.request("DELETE", "/selection/delete/"+id).subscribe(
+      (res)=>this.router.navigateByUrl('/redirect', {skipLocationChange: true}).then(() => this.router.navigate(['/selection-company'])),
+      (err)=>this.router.navigateByUrl('/redirect', {skipLocationChange: true}).then(() => this.router.navigate(['/selection-company']))
+    );
   }
 }
