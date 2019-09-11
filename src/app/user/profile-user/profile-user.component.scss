@@ -554,14 +554,15 @@
     }
     /*********************** sous General et header *************************/
     .sous-general{
+    margin-top:20px;
     display: flex;
-    // background-color:aqua;
     flex-direction: row;
     width: 100%;
     }
+
     .left-part{
     width: 90%;
-    // background-color: bisque;
+
     }
     .profile-top{
     // background-color: aquamarine;
@@ -589,7 +590,7 @@
         align-self: center;
         text-align: center;
         align-content: center;
-        margin: 28px 0;
+        margin: 38px 0;
         // margin-left: 10%;
         padding: 15px;
         background-color: #60a4ff;
@@ -604,9 +605,7 @@
     flex-direction: row;
     width: inherit;
     align-items: center;
-    // justify-content: flex-start;
-    height: 50%;
-    // padding:40px;
+    height: 40%;
     background-color: #E9F6FF;
     // -webkit-box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
     // -moz-box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
@@ -682,7 +681,8 @@
     }
     .description{
         display: flex;
-        flex-direction: column
+        flex-direction: column;
+        color: #60A4FF;
     }
     .left-side{
 
@@ -699,9 +699,7 @@
     .check{
 
     }
-    .description{
-
-    }
+    
     .right-side{
     display: flex;
     flex-direction:row-reverse;
