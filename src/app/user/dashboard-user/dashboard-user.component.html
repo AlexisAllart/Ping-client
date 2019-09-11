@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <div class="card-container-company">
                         <div class="card-container-blue">
-                            <i (click)="onDelete(ping.id)" class="fas fa-times delete"></i>
+                            <i (click)="onDelete(ping.id)" class="fas fa-times delete" matTooltip="Supprimer ce Ping"></i>
                             <div class="card-container-logo">
                                 <img class="card-logo" src="http://pingjob.herokuapp.com/{{ping.Company.logo}}" />
                             </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="status-legende">
-            <div *ngFor="let status of route.snapshot.data.pingStatusList" class="button">
+            <div *ngFor="let status of route.snapshot.data.statusList" class="button">
                 <div class="status blue" [ngStyle]="{'background-color': status.color}"></div>
                 <p>{{ status.name }}</p>
             </div>

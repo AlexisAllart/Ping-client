@@ -17,13 +17,13 @@
                 <div class="label-cv">CV</div>
                 <div class="label-logo-decoy2"></div>
             </div>
-        </div> 
-        
+        </div>
+
 
         <div class="selection-card">
             <div *ngFor="let selection of route.snapshot.data.selectionList" class="container-candidate">
-                <!-- <i (click)="onDelete(selection.id)" class="fas fa-times delete"></i> -->
                 <div class=container-blue>
+                    <i (click)="onDelete(selection.id)" class="fas fa-times delete" matTooltip="Supprimer"></i>
                     <div class="text">
                         <div class="container-img">
                             <img class="picture" src="http://pingjob.herokuapp.com/{{selection.User.picture}}">
@@ -41,7 +41,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="companyUser">
+                    <p class="companyUserName">Modifié par : {{ selection.CompanyUser.name }}</p>
+                </div>
             </div>
+
         </div>
         <div class="status-legende">
             <div *ngFor="let tag of route.snapshot.data.tagList" class="button">
@@ -49,5 +53,5 @@
                 <p>{{ tag.name }}</p>
             </div>
         </div>
-    </div> 
-</div> 
+    </div>
+</div>

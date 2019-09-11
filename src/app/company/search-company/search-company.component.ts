@@ -34,21 +34,53 @@ export class SearchCompanyComponent implements OnInit {
   private usersWithKeyWords = this.route.snapshot.data.userList;
   private search = '';
   private filteredArray = [];
+  private filteredUsers = [];
+  private addedUsers = [];
+  private newUsers = [];
   
   ngOnInit() {
-    for (let i = 0; i < this.route.snapshot.data.userList.length; i++) {
+    this.filterUsers();
+    this.usersWithKeyWords = this.filteredUsers;
+    for (let i = 0; i < this.usersWithKeyWords.length; i++) {
       this.usersWithKeyWords[i].keyWords =
-      this.route.snapshot.data.userList[i].KeyWordOne.name +
+      this.usersWithKeyWords[i].KeyWordOne.name +
       "&"+
-      this.route.snapshot.data.userList[i].KeyWordTwo.name +
+      this.usersWithKeyWords[i].KeyWordTwo.name +
       "&"+
-      this.route.snapshot.data.userList[i].KeyWordThree.name;
+      this.usersWithKeyWords[i].KeyWordThree.name +
+      "&"+
+      this.usersWithKeyWords[i].firstName+
+      " "+
+      this.usersWithKeyWords[i].lastName+
+      " "+
+      this.usersWithKeyWords[i].firstName;
     }
-    this.filteredArray = this.usersWithKeyWords.filter((v) => v.keyWords.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
+    this.change();
+  }
+
+  filterUsers() {
+    this.route.snapshot.data.userList.forEach(user =>
+      user.available ? this.filteredUsers.push(user):'');
+  }
+
+  sortUsers() {
+    let match = false;
+    this.addedUsers = [];
+    this.newUsers = [];
+    this.filteredArray.forEach(user => {
+      match = false;
+      this.route.snapshot.data.selectionList.forEach(selection => {
+        if (selection.User.id == user.id) {
+          match = true;
+        }
+      });
+      match ? this.addedUsers.push(user) : this.newUsers.push(user) ;
+    });
   }
 
   change() {
     this.filteredArray = this.usersWithKeyWords.filter((v) => v.keyWords.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
+    this.sortUsers();
   }
 
   animateMe(){
@@ -62,6 +94,16 @@ export class SearchCompanyComponent implements OnInit {
     this.serverCompanyService.request("POST", "/selection/create", data).subscribe(()=>this.router.navigateByUrl(
       '/redirect', {skipLocationChange: true}).then(() =>
       this.router.navigate(['/search-company']))
+    );
+  }
+
+  removeSelection(id) {
+    let selection = this.route.snapshot.data.selectionList.find(function(x) {
+      return x.user_id == id;
+    });
+    this.serverCompanyService.request("DELETE", "/selection/delete/"+selection.id).subscribe(
+      (res)=>this.router.navigateByUrl('/redirect', {skipLocationChange: true}).then(() => this.router.navigate(['/search-company'])),
+      (err)=>this.router.navigateByUrl('/redirect', {skipLocationChange: true}).then(() => this.router.navigate(['/search-company']))
     );
   }
 }

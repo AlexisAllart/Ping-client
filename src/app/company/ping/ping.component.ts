@@ -23,7 +23,7 @@ private company_id;
   ) {
     let id = this.companyUserId;
     this.companyUser = this.route.snapshot.data.companyUserList.find(function(x) {
-      return x.id = id;
+      return x.id == id;
     });
   }
 

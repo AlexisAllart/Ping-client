@@ -19,6 +19,7 @@
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
+    position:relative;
 }
 
 
@@ -128,6 +129,8 @@
 
 .container-card-ping {
     width: 100%;
+    height:50%;
+    overflow-y:scroll;
     // background-color: rgb(58, 35, 35);
 }
 
@@ -139,6 +142,41 @@
     height: 20px;
     margin-left: 10px;
     cursor: pointer;
+}
+
+
+.delete:hover {
+    animation:schaler 2s infinite;
+
+}
+
+@keyframes schaler
+  {
+  from {transform: scale(1,1);}
+  40% {transform: scale(0.2,0.2);
+			border-radius:30px;
+			transform:rotate(180deg);
+  }
+  60% {transform: scale(0.2,0.2);
+			border-radius:30px;
+			transform:rotate(-180deg);
+  }
+  to {transform: scale(1,1);}
+ }
+
+/* Safari and Chrome */
+@-webkit-keyframes schaler 
+	{
+  from {-webkit-transform: scale(1,1);}
+  40% {-webkit-transform: scale(0.2,0.2);
+			border-radius:30px;
+			-webkit-transform:rotate(180deg);
+  }
+  60% {-webkit-transform: scale(0.2,0.2);
+			border-radius:30px;
+			-webkit-transform:rotate(-180deg);
+  }
+  to {-webkit-transform: scale(1,1);}
 }
 
 .card-ping {
@@ -223,8 +261,10 @@
 }
 
 .status-legende {
+    position:absolute;
+    bottom:10px;
     // background-color: blue;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     // flex-direction: column;
@@ -232,7 +272,9 @@
     align-items:center;
     justify-content: center;
     margin-top: 6%;
-    margin-left: 5%;
+    // margin-left: 5%;
+    bottom:5px;
+
   
   }
   
@@ -309,4 +351,14 @@
     color: #60a4ff;
     outline: none;
     cursor: pointer;
+    transition: all .3s ease-in-out;
 }
+
+
+.card-plus:hover {
+  color:  #3064a8;
+
+}
+
+
+

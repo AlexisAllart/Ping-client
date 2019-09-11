@@ -60,7 +60,8 @@ const routes: Routes = [
     companyUserList: CompanyUserResolver,
   }},
   {path: 'search-company', component: SearchCompanyComponent, resolve: {
-    userList: UserResolver
+    userList: UserResolver,
+    selectionList: SelectionResolver
   }},
   {path: 'selection-company', component: SelectionCompanyComponent, resolve: {
     companyUserList: CompanyUserResolver,
@@ -73,7 +74,8 @@ const routes: Routes = [
   //component user
   {path: 'dashboard-user', component: DashboardUserComponent, resolve: {
     pingList: PingResolver,
-    userDetails: UserDetailsResolver
+    userDetails: UserDetailsResolver,
+    statusList: StatusResolver
   }},
   {path: 'identification-user', component: IdentificationUserComponent},
   {path: 'offer-user/:id', component: OfferUserComponent, resolve: {

@@ -47,6 +47,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="companyUser">
+                    <p *ngIf="ping.CompanyUser!=null" class="companyUserName">Modifié par : {{ ping.CompanyUser.name }}</p>
+                </div>
             </div>
         </div>
         <div class="status-legende">

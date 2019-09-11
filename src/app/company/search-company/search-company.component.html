@@ -51,7 +51,7 @@
             <div *ngIf="filteredArray.length < 1">
                 Aucun profil ne correspond à vos critères.
             </div>
-            <div *ngFor="let user of filteredArray" class="container">
+            <div *ngFor="let user of newUsers" class="container">
                 <div class="blue">
                     <div class="sous-container">
                         <img class="profile" src="http://pingjob.herokuapp.com/{{user.picture}}">
@@ -79,8 +79,35 @@
                 </div>
                 <div class="btn-check-send">
                     <!-- <i (click)='animateMe()' class="fas fa-check-circle check"></i> -->
-                    <i (click)='addSelection(user.id)' class="fas fa-check-circle check"></i>
+                    <i (click)='addSelection(user.id)' class="fas fa-check check"></i>
                     <!-- <p [@envoi]='state'>Envoyé</p> -->
+                </div>
+            </div>
+            <div *ngFor="let user of addedUsers" class="container">
+                <div class="blue">
+                    <div class="sous-container">
+                        <img class="profile" src="http://pingjob.herokuapp.com/{{user.picture}}">
+                    </div>
+                    <div class="container-text">
+                        <div class="top">
+                            <h4 class="title">{{ user.firstName }} {{ user.lastName }}</h4>
+                            <!-- ?ContractType ici? -->
+                            <!-- <p class="contract-type">CDI</p> -->
+                        </div>
+                        <p class="description">
+                            {{ user.about }}
+                        </p>
+                        <div class="key-words">
+                            <p class="words">{{ user.KeyWordOne.name }}</p>
+                            <p class="words">{{ user.KeyWordTwo.name }}</p>
+                            <p class="words">{{ user.KeyWordThree.name }}</p>
+                        </div>
+                    </div>
+                    <div class="right-side">
+                    </div>
+                </div>
+                <div class="btn-check-send">
+                    <i (click)='removeSelection(user.id)' class="fas fa-times uncheck"></i>
                 </div>
             </div>
         </div>
