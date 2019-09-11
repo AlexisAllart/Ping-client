@@ -24,11 +24,10 @@
 <div class="card-candidat">
 <div class="container-user">
 <div class="blue">
-<i (click)="onDelete(route.snapshot.data.userDetails.id)" class="fas fa-times delete"></i>
+    <i (click)="onDelete(route.snapshot.data.userDetails.id)" class="fas fa-times delete"></i>
 <div class="sous-container">
-<img class="profile" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.picture}}">
-
-
+        <input style="display:none" type="file" (change)="onFileChangedPicture($event)" #fileInputPicture>
+        <img (click)="fileInputPicture.click()" class="profile" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.picture}}">
 <div class="inputContainer">
 <div class="top">
 <h4 class="title">{{ route.snapshot.data.userDetails.firstName }} {{ route.snapshot.data.userDetails.lastName }} </h4>
@@ -92,7 +91,8 @@ cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
 <div class="dark-title">Mon CV</div>
 <div class="cv-import">
 <div class="cv-import-text">Importer un nouveau CV</div>
-<button class="cv-import-button">Choisir un fichier</button>
+<input style="display:none" type="file" (change)="onFileChangedCV($event)" #fileInputCV>
+<button (click)="fileInputCV.click()" class="cv-import-button">Choisir un fichier</button>
 </div>
 <div class="cv-download">
 <div class="cv-download-text">Télécharger mon CV</div>

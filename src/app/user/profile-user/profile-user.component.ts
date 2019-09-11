@@ -229,7 +229,7 @@ export class ProfileUserComponent implements OnInit {
     uploadData.append('picture', this.selectedFilePicture, this.selectedFilePicture.name);
     this.serverService.request("PUT", '/user/picture/' + JSON.parse(localStorage.getItem('id')).id, uploadData).subscribe(() => this.redirect(),() => this.redirect());
   }
-
+  
   selectedFileCV: File
   onFileChangedCV(event) {
     this.selectedFileCV = event.target.files[0];
