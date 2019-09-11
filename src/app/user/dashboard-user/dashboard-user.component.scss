@@ -143,6 +143,41 @@
     cursor: pointer;
 }
 
+
+.delete:hover {
+    animation:schaler 2s infinite;
+
+}
+
+@keyframes schaler
+  {
+  from {transform: scale(1,1);}
+  40% {transform: scale(0.2,0.2);
+			border-radius:30px;
+			transform:rotate(180deg);
+  }
+  60% {transform: scale(0.2,0.2);
+			border-radius:30px;
+			transform:rotate(-180deg);
+  }
+  to {transform: scale(1,1);}
+ }
+
+/* Safari and Chrome */
+@-webkit-keyframes schaler 
+	{
+  from {-webkit-transform: scale(1,1);}
+  40% {-webkit-transform: scale(0.2,0.2);
+			border-radius:30px;
+			-webkit-transform:rotate(180deg);
+  }
+  60% {-webkit-transform: scale(0.2,0.2);
+			border-radius:30px;
+			-webkit-transform:rotate(-180deg);
+  }
+  to {-webkit-transform: scale(1,1);}
+}
+
 .card-ping {
     overflow-x: hidden;
     overflow-y: scroll;
@@ -311,4 +346,14 @@
     color: #60a4ff;
     outline: none;
     cursor: pointer;
+    transition: all .3s ease-in-out;
 }
+
+
+.card-plus:hover {
+   transform: scale(1.2);
+
+}
+
+
+
