@@ -64,34 +64,38 @@
 //     vertical-align: middle;
 // }
 
-.modif {
-    background-color: white;
-    padding: 10px;
-    border-radius: 50%;
-    border: 1px solid #707070;
-    color: #707070;
-}
+// .social {
+//     background-color: #60A4FF;
+//     color: white;
+//     padding: 10px;
+//     margin-bottom: 5%;
+// }
 
-.submit {
-    background-color: white;
-    padding: 10px;
-    border-radius: 50%;
-    border: 1px solid #60A4FF;
-    color: #60A4FF;
-    outline: none;
-    height: 35px;
-    width: 35px;
-    transition: all 0.1s ease-in-out;
-}
+// .modif {
+//     background-color: white;
+//     padding:10px;
+//     border-radius:50%;
+//     border: 1px solid #707070;
+//     color:#707070;
+// }
 
-.submit:hover {
-    color: white;
-    border: 1px solid white;
-    background-color: #60A4FF;
-}
+// .submit {
+//     background-color: white;
+//     padding:10px;
+//     border-radius:50%;
+//     border: 1px solid #60A4FF;
+//     color:#60A4FF;
+//     outline: none;
+//     height: 35px;
+//     width: 35px;
+//     transition: all 0.1s ease-in-out;
+// }
 
-
-/********************* Sous-general*****************/
+// .submit:hover {
+//     color: white;
+//     border: 1px solid white;
+//     background-color:#60A4FF;
+// }
 
 // /********************* Sous-general*****************/
 
@@ -541,7 +545,7 @@
 // }
 
 /*********************** General*************************/
-    .general {
+.general {
     display: flex;
     width: 100%;
     height: 100vh;
@@ -687,86 +691,31 @@
     align-items: flex-start;
     padding: 10px;
     margin: 10px;
-}
-
-.statut {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #3FEF4C;
-}
-
-.plus {
-    color: #60A4FF;
-    font-size: 27px;
-}
-
-.key-words {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 100%;
-    background-color: #3FEF4C;
-    /* padding:10px 60px 10px 30px; */
-}
-
-.words {
-    margin: 2%;
-    background-color: white;
-    color: #60A4FF;
-    padding: 2%;
-    width: 80%;
-    text-align: center;
-    border-radius: 20px;
-}
-
-
-/***************** left-part ********************/
-
-.left-part {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 100%;
-    margin: 38px;
-    // overflow-y: scroll;
-}
-
-.left-side {
-    display: flex;
-}
-
-.social-text {
-    margin-left: 10px;
-}
-
-.profile-top {
-    display: flex;
-    flex-direction: column;
-    height: 40%;
+    }
+    .submit{
+    transition: all 0.5s ease-in-out;
+    }
+    .edit-submit {
     width: 100%;
     height: 30%;
     margin-top: 60%;
     position: relative;
     align-items: center;
-    // height: 128px;
-    width: 80%;
-}
-
-.inputContainerForceFull {
-    width: 100% !important;
-}
-
-
-/***********************card user *******************/
-
-// .temp-profile-user-card{
-//     display: flex;
-//     flex-direction: row;
-//     background-color: pink;
-//     height: 100%; 
-// }
-.profile-bottom {
+    }
+        
+    // .submit {
+    // outline: none;
+    // font-size: 16px;
+    // color: white;
+    // background-color: #60A4FF;
+    // padding: 10px 20px;
+    // border-radius: 20px;
+    // position: absolute;
+    // bottom: 25%;
+    // right: 100px;
+    // }
+    /****************************Key-words****************************/
+    .key-words{
     display: flex;
     flex-direction: row;
     }
@@ -872,18 +821,7 @@
     align-items: center;
     justify-content: space-between;
 }
-
-// .input {
-//     width: 140%;
-//     padding: 19px 30px 19px 9px;
-//     border: 1px solid white;
-//     background-color: #60A4FF;
-//     outline: none;
-//     color: white;
-//     margin: 10px;
-//     font-size: 10px;
-// }
-.right-part {
+.left-side-informations-linkedin{
     display: flex;
     color: #60A4FF;
     width: 100%;
@@ -892,102 +830,17 @@
     align-items: center;
     justify-content: space-between;
 }
-
-// .submit {
-//     outline: none;
-//     font-size: 16px;
-//     color: white;
-//     background-color: #60A4FF;
-//     padding: 10px 20px;
-//     border-radius: 20px;
-//     position: absolute;
-//     bottom: 25%;
-//     right: 100px;
-// }
-
-/***************************** Button on/off*****************************/
-
-.on-off {
-    // background-color: pink;
-    // margin: 48px 0;
-    height: auto;
-    width: auto;
-}
-
-.container {
-    padding: 25px;
-}
-
-.delete {
-    font-size: 19px;
-    color: #FF7777;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    padding-top: 10px;
-    padding-left: 10px;
-    cursor: pointer;
-    align-self: flex-start;
-    justify-self: flex-start;
-}
-
-// Modified CSS for on/off switch
-.onoffswitch {
-    position: relative;
-    width: 78px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-.onoffswitch-checkbox {
-    display: none;
-}
-
-.onoffswitch-label {
-    display: block;
-    overflow: hidden;
-    cursor: pointer;
-    border: 1px solid #999999;
-    border-radius: 20px;
-}
-
-.onoffswitch-inner {
-    width: 200%;
-    margin-left: -100%;
-    -moz-transition: margin 0.3s ease-in 0s;
-    -webkit-transition: margin 0.3s ease-in 0s;
-    -o-transition: margin 0.3s ease-in 0s;
-    transition: margin 0.3s ease-in 0s;
-}
-
-.onoffswitch-inner:before,
-.onoffswitch-inner:after {
-    float: left;
-    width: 50%;
-    height: 30px;
-    padding: 0;
-    line-height: 30px;
-    font-size: 15px;
-    color: white;
-    font-family: Trebuchet, Arial, sans-serif;
-    font-weight: bold;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.onoffswitch-inner:before {
-    content: "ON";
-    padding-left: 11px;
-    background-color: #60A4FF;
-    color: #FFFFFF;
+.form-informations{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
 }
 .form-text-informations{
 
 }
 .submit-informations{
-    
 background-color: white;
     padding: 10px;
     border-radius: 100%;
