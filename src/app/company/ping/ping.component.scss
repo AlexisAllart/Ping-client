@@ -213,12 +213,13 @@
 /************************* CARD *******************/
 .container-candidate {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 16px;
   margin: 16px;
   width: 800px;
+
 
   // background-color: cadetblue;
 }
@@ -304,7 +305,20 @@
   cursor: pointer;
 }
 
+.companyUser {
+  display:flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  // background-color:blue;
+  width:98%;
+  margin-top:5px;
+}
 
+.companyUserName {
+  color: rgba(128, 128, 128, 0.541);
+  font-style:italic;
+  font-size:11px;
+}
 /************************* btn download*******************/
 
 .btn-download{
@@ -323,7 +337,14 @@
   border-radius: 30px;
   padding: 10px;
   cursor: pointer;
+  transition:all .2s ease-in-out;
 
+}
+
+.fleche:hover {
+  transform: translateY(3px);
+  color: #60a4ff;
+  border: 1px solid #60a4ff;
 }
 /************************* btn small details*******************/
 
