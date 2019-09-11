@@ -73,7 +73,8 @@ const routes: Routes = [
   //component user
   {path: 'dashboard-user', component: DashboardUserComponent, resolve: {
     pingList: PingResolver,
-    userDetails: UserDetailsResolver
+    userDetails: UserDetailsResolver,
+    statusList: StatusResolver
   }},
   {path: 'identification-user', component: IdentificationUserComponent},
   {path: 'offer-user/:id', component: OfferUserComponent, resolve: {
