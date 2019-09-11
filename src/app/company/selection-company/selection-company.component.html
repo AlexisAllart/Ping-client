@@ -41,7 +41,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="companyUser">
+                    <p class="companyUserName">Modifié par : {{ companyUser.name }}</p>
+                </div>
             </div>
+           
         </div>
         <div class="status-legende">
             <div *ngFor="let tag of route.snapshot.data.tagList" class="button">
