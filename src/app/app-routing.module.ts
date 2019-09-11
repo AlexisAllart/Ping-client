@@ -60,7 +60,8 @@ const routes: Routes = [
     companyUserList: CompanyUserResolver,
   }},
   {path: 'search-company', component: SearchCompanyComponent, resolve: {
-    userList: UserResolver
+    userList: UserResolver,
+    selectionList: SelectionResolver
   }},
   {path: 'selection-company', component: SelectionCompanyComponent, resolve: {
     companyUserList: CompanyUserResolver,

@@ -99,7 +99,7 @@
         <div class="about">
             <div class="about-bloc">
                 <div class="container">
-                    <i (click)="onDelete(companyUser.Company.id)" class="fas fa-times delete"></i>
+                    <i *ngIf="companyUser.role_id==1" (click)="onDelete(companyUser.Company.id)" class="fas fa-times delete"></i>
                     <div class="image">
                         <input style="display:none" type="file" (change)="onFileChanged($event)" #fileInput>
                         <img class="logo" src="http://pingjob.herokuapp.com/{{ companyUser.Company.logo }}" (click)="fileInput.click()" alt="logo">
