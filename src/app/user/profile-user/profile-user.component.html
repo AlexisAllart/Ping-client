@@ -1,438 +1,192 @@
 <div class="general">
     <app-navbar-user></app-navbar-user>
-
-    <div class="sous-general">
-        <div class="left-part">
-            <div class="profile-top">
-                <div class="profile-top-header">
-                    <div class="dark-title">Mon Profil</div>
-                    <!-- button on/off -->
-                    <!-- <div class="on-off">
-                        <div class="container">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                                <label class="onoffswitch-label" for="myonoffswitch">
-                                    <div class="onoffswitch-inner"></div>
-                                    <div class="onoffswitch-switch"></div>
-                                </label>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- button on/off end -->
-                </div>
-                <!-- <div class="temp-profile-user-card"> -->
-                <!-- <app-blue-card-user></app-blue-card-user> -->
-                <!-- </div> -->
-
-                <div class="card-candidat">
-                    <!--CARTE CANDIDAT UN -->
-                    <div class="container">
-                        <div class="blue">
-                            <i (click)="onDelete(route.snapshot.data.userDetails.id)" class="fas fa-times delete"></i>
-                            <div class="sous-container">
-                                <input style="display:none" type="file" (change)="onFileChangedPicture($event)" #fileInputPicture>
-                                <img (click)="fileInputPicture.click()" class="profile" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.picture}}">
-                            </div>
-                            <div class="container-text">
-                                <div class="top">
-
-                                    <!-- <form *ngIf="click else noFormFirstNameUserCard" [formGroup]="formFirstNameUserCard" (ngSubmit)="onSubmit()" class="form">
-                                                <mat-form-field>
-                                                    <input matInput placeholder="Prenom" formControlName="firstnamecard" required>
-                                                </mat-form-field>
-                                                <button class="submit">Valider</button>
-                                            </form>
-                                            <ng-template #noFormFirstNameUserCard>
-                                                    <h4 class="title">{{ route.snapshot.data.userDetails.firstName }}</h4>
-                                    </ng-template>
-                                    <div class="right-side">
-                                            <button class="far fa-edit modif" (click)='onClick()'></button>
-                                        </div> -->
-
-                                    <!-- <form *ngIf="click else noFormLastNameUserCard" [formGroup]="formLastNameUserCard" (ngSubmit)="onSubmit()" class="form">
-                                                <mat-form-field>
-                                                    <input matInput placeholder="Nom" formControlName="lastnamecard" required>
-                                                </mat-form-field>
-                                                <button class="submit">Valider</button>
-                                            </form>
-                                            <ng-template #noFormLastNameUserCard>
-                                                    <h4 class="title">{{ route.snapshot.data.userDetails.lastName }}</h4>
-                                    </ng-template>
-                                    <div class="right-side">
-                                            <button class="far fa-edit modif" (click)='onClick()'></button>
-                                        </div> -->
-                                    <h4 class="title">{{ route.snapshot.data.userDetails.firstName }} {{ route.snapshot.data.userDetails.lastName }} </h4>
-
-                                </div>
-
-                                <div class="inputContainer">
-                                    <div class="left-side">
-                                        <form *ngIf="clickAbout else noFormAbout" [formGroup]="formAbout" (ngSubmit)="onSubmitAbout()" class="form">
-                                            <div class="form-text">
-                                                <mat-form-field>
-                                                    <mat-label>Description de votre profil</mat-label>
-                                                    <textarea matInput placeholder="Description" formControlName="about" required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
-                                                </mat-form-field>
-                                            </div>
-                                            <button class="submit"><i class="fas fa-check"></i></button>
-                                        </form>
-                                        <ng-template #noFormAbout>
-                                            <p class="description">{{ route.snapshot.data.userDetails.about }}</p>
-                                        </ng-template>
-                                    </div>
-                                    <div class="right-side">
-                                        <button [ngClass]="clickAbout?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickAbout()'></button>
-                                    </div>
-                                </div>
-                                <!-- <form *ngIf="click else noFormDescriptionUser" [formGroup]="formDescriptionUser" (ngSubmit)="onSubmit()" class="form">
-                                        <mat-form-field>
-                                            <mat-label>Description de l'entreprise</mat-label>
-                                            <textarea matInput placeholder="Description" formControlName="description" required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
-                                        </mat-form-field>
-                                        <button class="submit">Valider</button>
-                                    </form>
-                                    <ng-template #noFormDescriptionUser>
-                                        <p>{{ route.snapshot.data.userDetails.about }}</p>
-                                    </ng-template>
-                                    <div class="right-side">
-                                            <button class="far fa-edit modif" (click)='onClick()'></button>
-                                        </div> -->
-                                <!-- <p class="description">
-                                    {{ route.snapshot.data.userDetails.about }}
-                                </p> -->
-                                <div class="key-words">
-                                    <form class="form" [formGroup]="form" (ngSubmit)="onSubmitKeywords()">
-                                        <mat-form-field class="offer-input-keyword">
-                                            <mat-label>Mot clé 1</mat-label>
-                                            <mat-select formControlName="keyWordOne_id" required>
-                                                <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
-                                                    {{ route.snapshot.data.userDetails.KeyWordOne.name }}
-                                                </mat-option>
-                                            </mat-select>
-                                        </mat-form-field>
-                                        <mat-form-field class="offer-input-keyword">
-                                            <mat-label>Mot clé 2</mat-label>
-                                            <mat-select formControlName="keyWordTwo_id" required>
-                                                <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
-                                                    {{ route.snapshot.data.userDetails.KeyWordTwo.name }}
-                                                </mat-option>
-                                            </mat-select>
-                                        </mat-form-field>
-                                        <mat-form-field class="offer-input-keyword">
-                                            <mat-label>Mot clé 3</mat-label>
-                                            <mat-select formControlName="keyWordThree_id" required>
-                                                <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
-                                                    {{ route.snapshot.data.userDetails.KeyWordThree.name }}
-                                                </mat-option>
-                                            </mat-select>
-                                        </mat-form-field>
-                                    </form>
-                                    <!-- <form *ngIf="click else noFormKeywordsUserOne" [formGroup]="formKeywordsUserOne" (ngSubmit)="onSubmit()" class="form">
-                                                <mat-form-field>
-                                                    <input matInput placeholder="keywords" formControlName="keywordsone" required>
-                                                </mat-form-field>
-                                                <button class="submit">Valider</button>
-                                            </form>
-                                            <ng-template #noFormKeywordsUserOne>
-                                    <p class="words">{{ route.snapshot.data.userDetails.KeyWordOne.name }}</p>
-                                    </ng-template>
-                                    <div class="right-side">
-                                            <button class="far fa-edit modif" (click)='onClick()'></button>
-                                        </div>
-
-                                        <form *ngIf="click else noFormKeywordsUserTwo" [formGroup]="formKeywordsUserTwo" (ngSubmit)="onSubmit()" class="form">
-                                                <mat-form-field>
-                                                    <input matInput placeholder="keywords" formControlName="keywordstwo" required>
-                                                </mat-form-field>
-                                                <button class="submit">Valider</button>
-                                            </form>
-                                            <ng-template #noFormKeywordsUserTwo>
-                                  
-                                    <p class="words">{{ route.snapshot.data.userDetails.KeyWordTwo.name }}</p>
-                                   
-                                    </ng-template>
-                                    <div class="right-side">
-                                            <button class="far fa-edit modif" (click)='onClick()'></button>
-                                        </div>
-
-                                        <form *ngIf="click else noFormKeywordsUserThree" [formGroup]="formKeywordsUserThree" (ngSubmit)="onSubmit()" class="form">
-                                                <mat-form-field>
-                                                    <input matInput placeholder="keywords" formControlName="keywordsthree" required>
-                                                </mat-form-field>
-                                                <button class="submit">Valider</button>
-                                            </form>
-                                            <ng-template #noFormKeywordsUserThree>
-                                   
-                                    <p class="words">{{ route.snapshot.data.userDetails.KeyWordThree.name }}</p>
-                                    </ng-template>
-                                    <div class="right-side">
-                                            <button class="far fa-edit modif" (click)='onClick()'></button>
-                                        </div> -->
-                                </div>
-                            </div>
-                            <!-- <div class="right-side">
-                                <div class="statut"></div>
-                                <i class="fas fa-plus-circle plus"></i>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="profile-bottom">
-                <div class="profile-bleft">
-                    <div class="dark-title">Mon CV</div>
-                    <div class="cv-import">
-                        <div class="cv-import-text">Importer un nouveau CV</div>
-                        <input style="display:none" type="file" (change)="onFileChangedCV($event)" #fileInputCV>
-                        <button (click)="fileInputCV.click()" class="cv-import-button">Choisir un fichier</button>
-                    </div>
-                    <div class="cv-download">
-                        <div class="cv-download-text">Télécharger mon CV</div>
-                        <a href="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.cv}}"><i class="fas fa-arrow-circle-down btn-dl"></i></a>
-                    </div>
-                </div>
-                <div class="profile-bright">
-                    <div class="dark-title">Réseaux</div>
-                    <div class="btn-social">
-                        <!-- <div class="logo-social">
-                            <i class="fab fa-facebook-f social"></i>
-                            <i class="fab fa-twitter social"></i>
-                            <i class="fab fa-linkedin-in social"></i>
-                        </div> -->
-                        <div class="link-social">
-                            <div class="inputContainer">
-                                <div class="left-side">
-                                    <i class="fab fa-facebook-f social"></i>
-                                    <form *ngIf="clickFacebook else noFormFacebook" [formGroup]="formFacebook" (ngSubmit)="onSubmitFacebook()" class="form social-text">
-                                        <div class="form-text">
-                                            <mat-form-field>
-                                                <input matInput placeholder="Facebook" formControlName="facebook" required>
-                                            </mat-form-field>
-                                        </div>
-                                        <button class="submit"><i class="fas fa-check"></i></button>
-                                    </form>
-                                    <ng-template #noFormFacebook>
-                                        <p class="social-text">{{route.snapshot.data.userDetails.facebook}}</p>
-                                    </ng-template>
-                                </div>
-                                <div class="right-side">
-                                    <button [ngClass]="clickFacebook?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickFacebook()'></button>
-                                </div>
-                            </div>
-                            <!-- <form *ngIf="click else noFormFacebookUser" [formGroup]="formFacebookUser" (ngSubmit)="onSubmit()" class="form">
-                                        <mat-form-field>
-                                            <input matInput placeholder="Facebook" formControlName="facebook" required>
-                                        </mat-form-field>
-                                        <button class="submit">Valider</button>
-                                    </form>
-                                    <ng-template #noFormFacebookUser>
-                                        <p>{{route.snapshot.data.userDetails.facebook}}</p>
-                                    </ng-template>
-                                    <div class="right-side">
-                                            <button class="far fa-edit modif" (click)='onClick()'></button>
-                                        </div> -->
-
-                            <div class="inputContainer">
-                                <div class="left-side">
-                                    <i class="fab fa-twitter social"></i>
-                                    <form *ngIf="clickTwitter else noFormTwitter" [formGroup]="formTwitter" (ngSubmit)="onSubmitTwitter()" class="form social-text">
-                                        <div class="form-text">
-                                            <mat-form-field>
-                                                <input matInput placeholder="Twitter" formControlName="twitter" required>
-                                            </mat-form-field>
-                                        </div>
-                                        <button class="submit"><i class="fas fa-check"></i></button>
-                                    </form>
-                                    <ng-template #noFormTwitter>
-                                        <p class="social-text">{{route.snapshot.data.userDetails.twitter}}</p>
-                                    </ng-template>
-                                </div>
-                                <div class="right-side">
-                                    <button [ngClass]="clickTwitter?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickTwitter()'></button>
-                                </div>
-                            </div>
-
-                            <!-- <form *ngIf="click else noFormTwitterUser" [formGroup]="formTwitterUser" (ngSubmit)="onSubmit()" class="form">
-                                        <mat-form-field>
-                                            <input matInput placeholder="Twitter" formControlName="twitter" required>
-                                        </mat-form-field>
-                                        <button class="submit">Valider</button>
-                                    </form>
-                                    <ng-template #noFormTwitterUser>
-                                        <p>{{route.snapshot.data.userDetails.twitter}}</p>
-                                    </ng-template>
-                                    <div class="right-side">
-                                            <button class="far fa-edit modif" (click)='onClick()'></button>
-                                        </div> -->
-
-                            <div class="inputContainer">
-                                <div class="left-side">
-                                    <i class="fab fa-linkedin-in social"></i>
-                                    <form *ngIf="clickLinkedin else noFormLinkedin" [formGroup]="formLinkedin" (ngSubmit)="onSubmitLinkedin()" class="form social-text">
-                                        <div class="form-text">
-                                            <mat-form-field>
-                                                <input matInput placeholder="Linkedin" formControlName="linkedin" required>
-                                            </mat-form-field>
-                                        </div>
-                                        <button class="submit"><i class="fas fa-check"></i></button>
-                                    </form>
-                                    <ng-template #noFormLinkedin>
-                                        <p class="social-text">{{route.snapshot.data.userDetails.linkedin}}</p>
-                                    </ng-template>
-                                </div>
-                                <div class="right-side">
-                                    <button [ngClass]="clickLinkedin?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickLinkedin()'></button>
-                                </div>
-                            </div>
-
-                            <!-- <form *ngIf="click else noFormLinkedinUser" [formGroup]="formLinkedinUser" (ngSubmit)="onSubmit()" class="form">
-                                            <mat-form-field>
-                                                <input matInput placeholder="Linkedin" formControlName="linkedin" required>
-                                            </mat-form-field>
-                                            <button class="submit">Valider</button>
-                                        </form>
-                                        <ng-template #noFormLinkedinUser>
-                                            <p>{{route.snapshot.data.userDetails.linkedin}}</p>
-                                        </ng-template>
-                                        <div class="right-side">
-                                                <button class="far fa-edit modif" (click)='onClick()'></button>
-                                            </div> -->
-                            <!-- <a class="link" href="{{route.snapshot.data.userDetails.facebook}}">{{ route.snapshot.data.userDetails.facebook }}</a>
-                            <a class="link" href="{{route.snapshot.data.userDetails.twitter}}">{{ route.snapshot.data.userDetails.twitter }}</a>
-                            <a class="link" href="{{route.snapshot.data.userDetails.linkedin}}">{{ route.snapshot.data.userDetails.linkedin }}</a> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="right-part">
-            <div class="dark-title">Mes informations</div>
-            <div class="inputContainer">
-                <div class="left-side">
-                    <form *ngIf="clickLastName else noFormLastName" [formGroup]="formLastName" (ngSubmit)="onSubmitLastName()" class="form">
-                        <div class="form-text">
-                            <mat-form-field>
-                                <input matInput formControlName="lastName" class="input" type="text" placeholder="Nom :">
-                            </mat-form-field>
-                        </div>
-                        <button class="submit"><i class="fas fa-check"></i></button>
-                    </form>
-                    <ng-template #noFormLastName>
-                        <p>Nom :</p>
-                        <p>{{route.snapshot.data.userDetails.lastName}}</p>
-                    </ng-template>
-                </div>
-                <div class="right-side">
-                    <button [ngClass]="clickLastName?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickLastName()'></button>
-                </div>
-            </div>
-            <!-- <form *ngIf="click else noFormLastNameUser" [formGroup]="formLastNameUser" class="form-blue" action="">
-                <mat-form-field>
-                    <mat-label>Nom</mat-label>
-                    <input matInput formControlName="lastname" placeholder="{{route.snapshot.data.userDetails.lastName}}" value="{{route.snapshot.data.userDetails.lastName}}">
-                </mat-form-field>
-                <button class="submit">Valider</button>
-            </form>
-            <ng-template #noFormLastNameUser>
-                <p>Nom : </p>
-                <p>{{route.snapshot.data.userDetails.lastName}}</p>
-            </ng-template>
-            <div class="right-side">
-                    <button class="far fa-edit modif" (click)='onClick()'></button>
-                </div> -->
-
-            <div class="inputContainer">
-                <div class="left-side">
-                    <form *ngIf="clickFirstName else noFormFirstName" [formGroup]="formFirstName" (ngSubmit)="onSubmitFirstName()" class="form">
-                        <div class="form-text">
-                            <mat-form-field>
-                                <input matInput formControlName="firstName" class="input" type="text" placeholder="Prenom :">
-                            </mat-form-field>
-                        </div>
-                        <button class="submit"><i class="fas fa-check"></i></button>
-                    </form>
-                    <ng-template #noFormFirstName>
-                        <p>Prenom :</p>
-                        <p>{{route.snapshot.data.userDetails.firstName}}</p>
-                    </ng-template>
-                </div>
-                <div class="right-side">
-                    <button [ngClass]="clickFirstName?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickFirstName()'></button>
-                </div>
-            </div>
-
-
-            <!-- <form *ngIf="click else noFormFirstNameUser" [formGroup]="formFirstNameUser" class="form-blue" action="">
-                    <mat-form-field>
-                        <mat-label>Prenom</mat-label>
-                        <input matInput formControlName="firstname" placeholder="{{route.snapshot.data.userDetails.firstName}}" value="{{route.snapshot.data.userDetails.firstName}}">
-                    </mat-form-field>
-                    <button class="submit">Valider</button>
-                </form>
-                <ng-template #noFormFirstNameUser>
-                    <p>Prenom : </p>
-                    <p>{{route.snapshot.data.userDetails.firstName}}</p>
-                </ng-template>
-                <div class="right-side">
-                        <button class="far fa-edit modif" (click)='onClick()'></button>
-                    </div> -->
-
-            <div class="inputContainer">
-                <div class="left-side">
-                    <form *ngIf="clickEmail else noFormEmail" [formGroup]="formEmail" (ngSubmit)="onSubmitEmail()" class="form">
-                        <div class="form-text">
-                            <mat-form-field>
-                                <input matInput formControlName="email" class="input" type="email" placeholder="Email :">
-                            </mat-form-field>
-                        </div>
-                        <button class="submit"><i class="fas fa-check"></i></button>
-                    </form>
-                    <ng-template #noFormEmail>
-                        <p>Email :</p>
-                        <p>{{route.snapshot.data.userDetails.email}}</p>
-                    </ng-template>
-                </div>
-                <div class="right-side">
-                    <button [ngClass]="clickEmail?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickEmail()'></button>
-                </div>
-            </div>
-
-
-
-            <!-- <form *ngIf="click else noFormMailUser" [formGroup]="formMailUser" class="form-blue" action="">
-                        <mat-form-field>
-                            <mat-label>Mail</mat-label>
-                            <input matInput formControlName="email" placeholder="{{route.snapshot.data.userDetails.email}}" value="{{route.snapshot.data.userDetails.email}}">
-                        </mat-form-field>
-                        <button class="submit">Valider</button>
-                    </form>
-                    <ng-template #noFormMailUser>
-                        <p>Email : </p>
-                        <p>{{route.snapshot.data.userDetails.email}}</p>
-                    </ng-template>
-                    <div class="right-side">
-                            <button class="far fa-edit modif" (click)='onClick()'></button>
-                        </div> -->
-            <!-- <mat-form-field>
-                    <mat-label>Prenom</mat-label>
-                    <input matInput placeholder="{{route.snapshot.data.userDetails.firstName}}" value="{{route.snapshot.data.userDetails.firstName}}">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Mail</mat-label>
-                    <input matInput placeholder="{{route.snapshot.data.userDetails.email}}" value="{{route.snapshot.data.userDetails.email}}">
-                </mat-form-field> -->
-            <!-- <mat-form-field>
-                    <mat-label>Mot de passe</mat-label>
-                    <input type="password" matInput placeholder="" value="">
-                </mat-form-field> -->
-            <!-- <div class="edit-form"></div> -->
-            <!-- <div class="edit-submit">
-                    <button class="submit">
-                        <p>Modifier</p>
-                    </button> ​
-                </div> -->
-        </div>
-    </div>
+<div class="sous-general">
+<div class="left-part">
+<div class="profile-top">
+<div class="profile-top-header">
+<div class="dark-title">Mon Profil</div>
+<!-- button on/off -->
+<!-- <div class="on-off">
+<div class="container">
+<div class="onoffswitch">
+<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+<label class="onoffswitch-label" for="myonoffswitch">
+<div class="onoffswitch-inner"></div>
+<div class="onoffswitch-switch"></div>
+</label>
 </div>
+</div>
+</div> -->
+<!-- button on/off end -->
+</div>
+</div>     
+<!------------------------------------------CARTE CANDIDAT ------------------------------------------------>
+<div class="card-candidat">
+<div class="container-user">
+<div class="blue">
+<i (click)="onDelete(route.snapshot.data.userDetails.id)" class="fas fa-times delete"></i>
+<div class="sous-container">
+<img class="profile" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.picture}}">
+
+
+<div class="inputContainer">
+<div class="top">
+<h4 class="title">{{ route.snapshot.data.userDetails.firstName }} {{ route.snapshot.data.userDetails.lastName }} </h4>
+</div>
+
+<div class="left-side">
+<form *ngIf="clickAbout else noFormAbout" [formGroup]="formAbout"(ngSubmit)="onSubmitAbout()" class="form">
+<div class="form-text">
+<mat-form-field>
+<mat-label>Description de votre profil</mat-label>
+<textarea matInput placeholder="Description" formControlName="about"required cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+</mat-form-field>
+</div>
+<button class="submit"><i class="fas fa-check check"></i></button>
+</form>
+<ng-template #noFormAbout>
+<p class="description">{{ route.snapshot.data.userDetails.about }}</p>
+</ng-template>
+</div>
+</div>
+<div class="right-side">
+<button [ngClass]="clickAbout?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickAbout()'></button>
+</div>
+</div>
+</div>
+<!------------------------------------------Key-words ------------------------------------------------>                
+<div class="key-words">
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmitKeywords()">
+<mat-form-field class="offer-input-keyword">
+<mat-label>Mot clé 1</mat-label>
+<mat-select formControlName="keyWordOne_id" required>
+<mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+{{ route.snapshot.data.userDetails.KeyWordOne.name }}
+</mat-option>
+</mat-select>
+</mat-form-field>
+<mat-form-field class="offer-input-keyword">
+<mat-label>Mot clé 2</mat-label>
+<mat-select formControlName="keyWordTwo_id" required>
+<mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+{{ route.snapshot.data.userDetails.KeyWordTwo.name }}
+</mat-option>
+</mat-select>
+</mat-form-field>
+<mat-form-field class="offer-input-keyword">
+<mat-label>Mot clé 3</mat-label>
+<mat-select formControlName="keyWordThree_id" required>
+<mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+{{ route.snapshot.data.userDetails.KeyWordThree.name }}
+</mat-option>
+</mat-select>
+</mat-form-field>
+</form>      
+</div>
+</div>
+</div>        
+ <!--------------------------sous la card -------------------------------------------------------------------------->
+<div class="profile-bottom">
+<div class="profile-bleft">
+<div class="dark-title">Mon CV</div>
+<div class="cv-import">
+<div class="cv-import-text">Importer un nouveau CV</div>
+<button class="cv-import-button">Choisir un fichier</button>
+</div>
+<div class="cv-download">
+<div class="cv-download-text">Télécharger mon CV</div>
+<a href="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.cv}}"><i class="fas fa-arrow-circle-down btn-dl"></i></a>
+</div>
+</div>
+</div>
+</div>
+<!------------------------------------------- Mes informations --------------------------------------------------------------------------------->
+<div class="right-part">
+<div class="dark-title">Mes informations</div>
+            <!------------------------------------------- LastName --------------------------------------------------------------------------------->
+<div class="inputContainer-informations">
+<div class="left-side-informations">
+<form *ngIf="clickLastName else noFormLastName" [formGroup]="formLastName" (ngSubmit)="onSubmitLastName()"class="form-informations">
+<div class="form-text-informations">
+<mat-form-field>
+<input matInput formControlName="lastName" class="input" type="text"placeholder="Nom :">
+</mat-form-field>
+</div>
+<button class="submit-informations"><i class="fas fa-check"></i></button>
+</form>
+<ng-template #noFormLastName>
+<p>Nom :</p>
+<p>{{route.snapshot.data.userDetails.lastName}}</p>
+</ng-template>
+</div>
+<div class="right-side-informations">
+<button [ngClass]="clickLastName?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickLastName()'></button>
+</div>
+</div>
+    <!------------------------------------------- FirstName --------------------------------------------------------------------------------->
+<div class="inputContainer-informations">
+<div class="left-side-informations">
+<form *ngIf="clickFirstName else noFormFirstName" [formGroup]="formFirstName" (ngSubmit)="onSubmitFirstName()"  class="form-informations">
+<div class="form-text-informations">
+<mat-form-field>
+<input matInput formControlName="firstName" class="input" type="text"placeholder="Prenom :">
+</mat-form-field>
+</div>
+<button class="submit-informations"><i class="fas fa-check"></i></button>
+</form>
+<ng-template #noFormFirstName>
+<p>Prenom : </p>
+<p>{{route.snapshot.data.userDetails.firstName}}</p>
+</ng-template>
+</div>
+<div class="right-side-informations">
+<button [ngClass]="clickFirstName?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickFirstName()'></button>
+</div>
+</div>
+<!------------------------------------------- E mail --------------------------------------------------------------------------------->
+<div class="inputContainer-informations">
+<div class="left-side-informations">
+<form *ngIf="clickEmail else noFormEmail" [formGroup]="formEmail" (ngSubmit)="onSubmitEmail()"class="form-informations">
+<div class="form-text-informations">
+<mat-form-field>
+<input matInput formControlName="email" class="input" type="email"placeholder="Email :">
+</mat-form-field>
+</div>
+<button class="submit-informations"><i class="fas fa-check"></i></button>
+</form>
+<ng-template #noFormEmail>
+<p>Email : </p>
+<p>{{route.snapshot.data.userDetails.email}}</p>
+</ng-template>
+</div>
+<div class="right-side-informations">
+<button [ngClass]="clickEmail?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickEmail()'></button>
+</div>
+</div>
+
+<!-------------------------------------------Linkedin--------------------------------------------------------------------------------->
+<div class="inputContainer-information">
+<div class="left-side-informations-linkedin">
+<i class="fab fa-linkedin-in social linkedin"></i> 
+<form *ngIf="clickLinkedin else noFormLinkedin" [formGroup]="formLinkedin" (ngSubmit)="onSubmitLinkedin()" class="form social-text"> 
+<div class="form-text-informations">
+<mat-form-field>
+<input matInput placeholder="Linkedin" formControlName="linkedin"required>
+</mat-form-field>
+</div>
+<button class="submit-informations"><i class="fas fa-check"></i></button>
+</form>
+<ng-template #noFormLinkedin>
+<p class="social-text">{{route.snapshot.data.userDetails.linkedin}}</p>
+</ng-template>
+</div>
+<div class="right-side">
+<button [ngClass]="clickLinkedin?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickLinkedin()'></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+            
