@@ -84,7 +84,54 @@ cdkAutosizeMinRows="1" cdkAutosizeMaxRows="4"></textarea>
 </form>      
 </div>
 </div>
-</div>        
+</div>  
+ <!--------------------------test key-words -------------------------------------------------------------------------->
+ <!-- <div class="key-words-test">
+<form *ngIf="click else noFormKeywordsUserOne" [formGroup]="formKeywordsUserOne" (ngSubmit)="onSubmit()" class="form">
+    <mat-form-field>
+        <input matInput placeholder="keywords" formControlName="keywordsone" required>
+    </mat-form-field>
+    <button class="submit">Valider</button>
+</form>
+<ng-template #noFormKeywordsUserOne>
+    <p class="words">{{ route.snapshot.data.userDetails.KeyWordOne.name }}</p>
+</ng-template>
+<div class="right-side">
+    <button class="far fa-edit modif" (click)='onClick()'></button>
+</div>
+
+<form *ngIf="click else noFormKeywordsUserTwo" [formGroup]="formKeywordsUserTwo" (ngSubmit)="onSubmit()" class="form">
+    <mat-form-field>
+        <input matInput placeholder="keywords" formControlName="keywordstwo" required>
+    </mat-form-field>
+    <button class="submit">Valider</button>
+</form>
+<ng-template #noFormKeywordsUserTwo>
+    <p class="words">{{ route.snapshot.data.userDetails.KeyWordTwo.name }}</p>
+</ng-template>
+<div class="right-side">
+    <button class="far fa-edit modif" (click)='onClick()'></button>
+</div>
+
+<form *ngIf="click else noFormKeywordsUserThree" [formGroup]="formKeywordsUserThree" (ngSubmit)="onSubmit()"
+    class="form">
+    <mat-form-field>
+        <input matInput placeholder="keywords" formControlName="keywordsthree" required>
+    </mat-form-field>
+    <button class="submit">Valider</button>
+</form>
+<ng-template #noFormKeywordsUserThree>
+    <p class="words">{{ route.snapshot.data.userDetails.KeyWordThree.name }}</p>
+</ng-template>
+<div class="right-side">
+    <button class="far fa-edit modif" (click)='onClick()'></button>
+</div> 
+
+<div class="right-side">
+    <div class="statut"></div>
+    <i class="fas fa-plus-circle plus"></i>
+</div>
+</div> -->
  <!--------------------------sous la card -------------------------------------------------------------------------->
 <div class="profile-bottom">
 <div class="profile-bleft">
