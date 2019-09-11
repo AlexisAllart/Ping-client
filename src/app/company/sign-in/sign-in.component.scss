@@ -5,6 +5,10 @@
     // background-color: rgb(175, 106, 106);
 }
 
+img {
+    cursor: pointer;
+}
+
 .logo {
     display: flex;
     // background-color: rgb(80, 52, 52);
@@ -140,7 +144,6 @@
     border: 1px solid #60A4FF;
     background-color: white;
 }
-
 
 .btn-blue {
     outline: none;

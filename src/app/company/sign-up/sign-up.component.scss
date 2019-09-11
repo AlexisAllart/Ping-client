@@ -1,49 +1,45 @@
-
 ///////// GÉNÉRAL ////////
 .general {
     display: flex;
-    height:100vh;
+    height: 100vh;
     // background-color: rgb(175, 106, 106);
 }
 
 .img {
     display: flex;
     // background-color: rgb(80, 52, 52);
-    width:90%;
-    margin:10px;
+    width: 90%;
+    margin: 10px;
     margin-top: 20px;
-    padding:10px;
-
+    padding: 10px;
 }
-:focus{
+
+:focus {
     outline: 0;
 }
 
 ///////// INSCRIPTION ////////
-
-
 .inscription {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width:60%;
-    background-color:#E9F6FF;
-    height:100vh;
+    width: 60%;
+    background-color: #E9F6FF;
+    height: 100vh;
     border-radius: 0% 30% 0% 0%;
     position: relative;
 }
 
 .title-white {
-    background-color:#60A4FF;
-    padding:15px 50px 15px 50px;
+    background-color: #60A4FF;
+    padding: 15px 50px 15px 50px;
     color: white;
     border-radius: 10px;
     font-weight: 100;
     text-transform: uppercase;
     font-size: 17px;
     letter-spacing: 3px;
-   
 }
 
 .back {
@@ -54,28 +50,24 @@
     margin-top: 40px;
 }
 
-
-.logo-container{
+.logo-container {
     display: flex;
     flex-direction: row;
     margin-right: 700px;
     margin-left: 60px;
+    cursor: pointer;
 }
 
-
 ///////// CONNEXION ////////
-
 .connexion {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     // background-color: rgb(76, 19, 141);
-    height:100vh;
-    width:40%;
+    height: 100vh;
+    width: 40%;
     position: relative;
-
-
 }
 
 .price {
@@ -84,31 +76,30 @@
     align-items: center;
     justify-content: space-around;
     border: 2px solid #60A4FF;
-    padding:20px;
-    height:80vh;
-    margin-top:30px;
-    width:40%;
+    padding: 20px;
+    height: 80vh;
+    margin-top: 30px;
+    width: 40%;
     border-radius: 80px 0 0 0;
 }
 
 .title {
     color: #60A4FF;
-    text-align:center;
+    text-align: center;
 }
 
 .subscribe {
     color: #60A4FF;
-    text-align:center;
-    font-weight:100;
-    font-size:17px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 17px;
 }
 
 .fleche {
     border: 1px solid #60A4FF;
-    border-radius:50%;
+    border-radius: 50%;
     color: #60A4FF;
     padding: 10px;
-    
 }
 
 .form {
@@ -118,17 +109,15 @@
 }
 
 .input {
-
-    width:140%;
-    padding:19px 30px 19px 9px;
-    border:1px solid white;
-    background-color:#60A4FF;
-    outline:none;
+    width: 140%;
+    padding: 19px 30px 19px 9px;
+    border: 1px solid white;
+    background-color: #60A4FF;
+    outline: none;
     color: white;
-    margin:10px;
-    font-size:10px;
+    margin: 10px;
+    font-size: 10px;
 }
-
 
 .btn-white {
     outline: none;
@@ -148,10 +137,13 @@
     color: #60A4FF;
     border: 1px solid #60A4FF;
     background-color: white;
+    cursor: pointer;
 }
 
-.fleche:hover{
-    color:white;
+.fleche:hover {
+    color: white;
     border: 1px solid #60A4FF;
     background-color: #60A4FF;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
 }
