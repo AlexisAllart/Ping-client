@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="companyUser">
-                    <p class="companyUserName">Modifié par : {{ companyUser.name }}</p>
+                    <p *ngIf="ping.CompanyUser!=null" class="companyUserName">Modifié par : {{ ping.CompanyUser.name }}</p>
                 </div>
             </div>
         </div>

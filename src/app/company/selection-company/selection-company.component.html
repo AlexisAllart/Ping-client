@@ -17,8 +17,8 @@
                 <div class="label-cv">CV</div>
                 <div class="label-logo-decoy2"></div>
             </div>
-        </div> 
-        
+        </div>
+
 
         <div class="selection-card">
             <div *ngFor="let selection of route.snapshot.data.selectionList" class="container-candidate">
@@ -42,10 +42,10 @@
                     </div>
                 </div>
                 <div class="companyUser">
-                    <p class="companyUserName">Modifié par : {{ companyUser.name }}</p>
+                    <p class="companyUserName">Modifié par : {{ selection.CompanyUser.name }}</p>
                 </div>
             </div>
-           
+
         </div>
         <div class="status-legende">
             <div *ngFor="let tag of route.snapshot.data.tagList" class="button">
@@ -53,5 +53,5 @@
                 <p>{{ tag.name }}</p>
             </div>
         </div>
-    </div> 
-</div> 
+    </div>
+</div>
