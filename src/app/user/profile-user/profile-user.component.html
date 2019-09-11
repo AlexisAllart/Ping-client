@@ -166,7 +166,7 @@ cdkAutosizeMinRows="1" cdkAutosizeMaxRows="4"></textarea>
 </div>
 
 <!-------------------------------------------Linkedin--------------------------------------------------------------------------------->
-<div class="inputContainer-information">
+<!-- <div class="inputContainer-information">
 <div class="left-side-informations-linkedin">
 <i class="fab fa-linkedin-in social linkedin"></i> 
 <form *ngIf="clickLinkedin else noFormLinkedin" [formGroup]="formLinkedin" (ngSubmit)="onSubmitLinkedin()" class="form social-text"> 
@@ -184,7 +184,26 @@ cdkAutosizeMinRows="1" cdkAutosizeMaxRows="4"></textarea>
 <div class="right-side">
 <button [ngClass]="clickLinkedin?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickLinkedin()'></button>
 </div>
-</div>
+</div> -->
+<div class="inputContainer-informations">
+        <div class="left-side-informations">
+            <i class="fab fa-linkedin-in social"></i>
+            <form *ngIf="clickLinkedin else noFormLinkedin" [formGroup]="formLinkedin" (ngSubmit)="onSubmitLinkedin()" class="form social-text">
+                <div class="form-text-informations">
+                    <mat-form-field>
+                        <input matInput placeholder="Linkedin" formControlName="linkedin" required>
+                    </mat-form-field>
+                </div>
+                <button class="submit-informations"><i class="fas fa-check"></i></button>
+            </form>
+            <ng-template #noFormLinkedin>
+                <p class="social-text">Modifier lien Linkedin</p>
+            </ng-template>
+        </div>
+        <div class="right-side-informations">
+            <button [ngClass]="clickLinkedin?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickLinkedin()'></button>
+        </div>
+    </div>
 </div>
 </div>
 </div>
