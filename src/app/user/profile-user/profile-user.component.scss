@@ -560,7 +560,7 @@
     width: 100%;
     }
     .left-part{
-    width: 100%;
+    width: 90%;
     // background-color: bisque;
     }
     .profile-top{
@@ -568,17 +568,35 @@
     }
     .profile-top-header{
         align-content: center;
+        align-self: center;
+        justify-content: center;
+        width: inherit;
     }
     .dark-title{
         align-self: center;
         text-align: center;
+        align-content: center;
         margin: 28px 0;
+        margin-left: 30%;
         padding: 15px;
         background-color: #60a4ff;
         color: #FFFFFF;
         font-size: 20px;
         font-weight: bold;
-        min-width: 100px;
+        width: 200px;
+    }
+    .dark-title-cv{
+        align-self: center;
+        text-align: center;
+        align-content: center;
+        margin: 28px 0;
+        // margin-left: 10%;
+        padding: 15px;
+        background-color: #60a4ff;
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: bold;
+        width: 200px;
     }
     /*********************** card candidate *************************/
     .card-candidat{
@@ -732,7 +750,7 @@
     .profile-bleft{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     }
     .cv-import{
     display: flex;
@@ -742,6 +760,7 @@
     border: 1px solid #60A4FF;
     color: #60A4FF;
     height: 18px;
+    width: 90%;
     align-items: center;
     padding: 16px;
     }
@@ -771,6 +790,7 @@
     border: 1px solid #60A4FF;
     color: #60A4FF;
     height: 18px;
+    width: 90%;
     align-items: center;
     padding: 16px;
     }
