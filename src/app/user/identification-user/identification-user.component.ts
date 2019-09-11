@@ -58,7 +58,18 @@ export class IdentificationUserComponent implements OnInit {
   onSubmitSignUp() {
     if (this.formSignUp.valid) {
       try {
-        this.serverService.request("POST", "/user/create", this.formSignUp.value).subscribe();
+        this.serverService.request("POST", "/user/create", this.formSignUp.value).subscribe(
+          () => {
+            let loginData = {
+              email: this.formSignUp.value.email,
+              password: this.formSignUp.value.password
+            };
+            try {
+              this.authService.login(loginData);
+            }
+            catch(err) {}
+          }
+        );
       }
       catch (err) {
         this.signUpInvalid = true;

@@ -60,7 +60,18 @@ export class SignInComponent implements OnInit {
   onSubmitSignUp() {
     if (this.formSignUp.valid) {
       try {
-        this.serverCompanyService.request("POST", "/companyUser/create", this.formSignUp.value).subscribe();
+        this.serverCompanyService.request("POST", "/companyUser/create", this.formSignUp.value).subscribe(
+          () => {
+            let loginData = {
+              email: this.formSignUp.value.email,
+              password: this.formSignUp.value.password
+            };
+            try {
+              this.authCompanyService.login(loginData);
+            }
+            catch(err) {}
+          }
+        );
       }
       catch (err) {
         this.signUpInvalid = true;
