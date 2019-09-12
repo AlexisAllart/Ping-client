@@ -118,6 +118,7 @@ h3 {
     width: 120px;
     text-align: center;
     margin-left: 30px;
+    cursor: pointer;
 }
 
 .label-date {
@@ -125,6 +126,7 @@ h3 {
     width: 120px;
     text-align: center;
     margin-left: 30px;
+    cursor: pointer;
 }
 
 .label-statut {
@@ -132,6 +134,7 @@ h3 {
     width: 120px;
     text-align: center;
     margin-left: 30px;
+    cursor: pointer;
 }
 
 .label-cv {
@@ -189,39 +192,49 @@ h3 {
     z-index: 1;
 }
 
-
 .delete:hover {
-  animation:schaler 2s infinite;
-
+    animation: schaler 2s infinite;
 }
 
-@keyframes schaler
-{
-from {transform: scale(1,1);}
-40% {transform: scale(0.2,0.2);
-    border-radius:30px;
-    transform:rotate(180deg);
+@keyframes schaler {
+    from {
+        transform: scale(1, 1);
+    }
+    40% {
+        transform: scale(0.2, 0.2);
+        border-radius: 30px;
+        transform: rotate(180deg);
+    }
+    60% {
+        transform: scale(0.2, 0.2);
+        border-radius: 30px;
+        transform: rotate(-180deg);
+    }
+    to {
+        transform: scale(1, 1);
+    }
 }
-60% {transform: scale(0.2,0.2);
-    border-radius:30px;
-    transform:rotate(-180deg);
-}
-to {transform: scale(1,1);}
-}
+
 
 /* Safari and Chrome */
-@-webkit-keyframes schaler 
-{
-from {-webkit-transform: scale(1,1);}
-40% {-webkit-transform: scale(0.2,0.2);
-    border-radius:30px;
-    -webkit-transform:rotate(180deg);
-}
-60% {-webkit-transform: scale(0.2,0.2);
-    border-radius:30px;
-    -webkit-transform:rotate(-180deg);
-}
-to {-webkit-transform: scale(1,1);}
+
+@-webkit-keyframes schaler {
+    from {
+        -webkit-transform: scale(1, 1);
+    }
+    40% {
+        -webkit-transform: scale(0.2, 0.2);
+        border-radius: 30px;
+        -webkit-transform: rotate(180deg);
+    }
+    60% {
+        -webkit-transform: scale(0.2, 0.2);
+        border-radius: 30px;
+        -webkit-transform: rotate(-180deg);
+    }
+    to {
+        -webkit-transform: scale(1, 1);
+    }
 }
 
 .container-blue {
@@ -311,8 +324,8 @@ to {-webkit-transform: scale(1,1);}
     justify-content: center;
     margin-top: 6%;
     margin-left: 5%;
-    position:absolute;
-    bottom:10px;
+    position: absolute;
+    bottom: 10px;
 }
 
 .button {

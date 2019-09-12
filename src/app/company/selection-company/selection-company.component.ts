@@ -74,10 +74,10 @@ export class SelectionCompanyComponent implements OnInit {
   sortById(array) {
     this.idToggle=!this.idToggle;
     if (this.idToggle) {
-      return array.sort((a, b) => (a.id > b.id) ? 1 : -1);
+      return array.sort((a, b) => (a.updatedAt > b.updatedAt) ? 1 : -1);
     }
     else {
-      return array.sort((a, b) => (a.id < b.id) ? 1 : -1);
+      return array.sort((a, b) => (a.updatedAt < b.updatedAt) ? 1 : -1);
     }
   }
 
@@ -85,10 +85,10 @@ export class SelectionCompanyComponent implements OnInit {
   sortByStatus(array) {
     this.statusToggle=!this.statusToggle;
     if (this.statusToggle) {
-      return array.sort((a, b) => (a.status_id > b.status_id) ? 1 : (a.status_id == b.status_id) ? ((a.id < b.id) ? 1 : -1) : -1);
+      return array.sort((a, b) => (a.tag_id > b.tag_id) ? 1 : (a.tag_id == b.tag_id) ? ((a.id < b.id) ? 1 : -1) : -1);
     }
     else {
-      return array.sort((a, b) => (a.status_id < b.status_id) ? 1 : (a.status_id == b.status_id) ? ((a.id < b.id) ? 1 : -1) : -1);
+      return array.sort((a, b) => (a.tag_id < b.tag_id) ? 1 : (a.tag_id == b.tag_id) ? ((a.id < b.id) ? 1 : -1) : -1);
     }
   }
 }
