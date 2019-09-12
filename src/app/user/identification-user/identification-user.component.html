@@ -24,7 +24,7 @@
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Mot de passe</mat-label>
-                    <input matInput placeholder="*******" formControlName="password" required>
+                    <input type="password" matInput placeholder="*******" formControlName="password" required>
                 </mat-form-field>
                 <div class="button">
                     <button class="btn-white">Inscription</button>
@@ -48,7 +48,7 @@
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Mot de passe</mat-label>
-                    <input matInput placeholder="*******" formControlName="password" required>
+                    <input type="password" matInput placeholder="*******" formControlName="password" required>
                 </mat-form-field>
                 <p *ngIf="authService.loginAttempt">Connexion au serveur...</p>
                 <p *ngIf="authService.loginAccepted">Connexion acceptée !</p>

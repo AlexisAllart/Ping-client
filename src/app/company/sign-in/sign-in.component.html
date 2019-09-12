@@ -15,7 +15,7 @@
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Mot de passe entreprise</mat-label>
-                <input matInput placeholder="*******" formControlName="companyPassword" required>
+                <input type="password" matInput placeholder="*******" formControlName="companyPassword" required>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Email de l'utilisateur</mat-label>
@@ -27,7 +27,7 @@
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Mot de passe utilisateur</mat-label>
-                <input matInput placeholder="*******" formControlName="password" required>
+                <input type="password" matInput placeholder="*******" formControlName="password" required>
             </mat-form-field>
             <div class="button">
                 <button class="btn-white">Enregistrer</button>
@@ -47,7 +47,7 @@
             </mat-form-field>
             <mat-form-field>
                 <mat-label>User Mot de passe</mat-label>
-                <input matInput placeholder="*******" formControlName="password" required>
+                <input type="password" matInput placeholder="*******" formControlName="password" required>
             </mat-form-field>
             <p *ngIf="authCompanyService.loginAttempt">Connexion au serveur...</p>
             <p *ngIf="authCompanyService.loginAccepted">Connexion acceptée !</p>
