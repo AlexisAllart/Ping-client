@@ -26,25 +26,19 @@
                     <div class="blue">
                         <i (click)="onDelete(route.snapshot.data.userDetails.id)" class="fas fa-times delete"></i>
                         <div class="sous-container">
-                            <input style="display:none" type="file" (change)="onFileChangedPicture($event)"
-                                #fileInputPicture>
-                            <img (click)="fileInputPicture.click()" class="profile"
-                                src="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.picture}}">
+                            <input style="display:none" type="file" (change)="onFileChangedPicture($event)" #fileInputPicture>
+                            <img (click)="fileInputPicture.click()" class="profile" src="http://pingjob.herokuapp.com/{{route.snapshot.data.userDetails.picture}}">
                             <div class="inputContainer">
                                 <div class="top">
-                                    <h4 class="title">{{ route.snapshot.data.userDetails.firstName }}
-                                        {{ route.snapshot.data.userDetails.lastName }} </h4>
+                                    <h4 class="title">{{ route.snapshot.data.userDetails.firstName }} {{ route.snapshot.data.userDetails.lastName }} </h4>
                                 </div>
 
                                 <div class="left-side">
-                                    <form *ngIf="clickAbout else noFormAbout" [formGroup]="formAbout"
-                                        (ngSubmit)="onSubmitAbout()" class="form">
+                                    <form *ngIf="clickAbout else noFormAbout" [formGroup]="formAbout" (ngSubmit)="onSubmitAbout()" class="form">
                                         <div class="form-text">
                                             <mat-form-field>
                                                 <mat-label>Description de votre profil</mat-label>
-                                                <textarea matInput placeholder="Description" formControlName="about"
-                                                    required cdkTextareaAutosize #autosize="cdkTextareaAutosize"
-                                                    cdkAutosizeMinRows="1" cdkAutosizeMaxRows="4"></textarea>
+                                                <textarea matInput placeholder="Description" formControlName="about" required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="4"></textarea>
                                             </mat-form-field>
                                         </div>
                                         <button class="submit"><i class="fas fa-check check"></i></button>
@@ -55,22 +49,19 @@
                                 </div>
                             </div>
                             <div class="right-side">
-                                <button [ngClass]="clickAbout?'fas fa-times':'far fa-edit'" class="submit"
-                                    (click)='onClickAbout()'></button>
+                                <button [ngClass]="clickAbout?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickAbout()'></button>
                             </div>
                         </div>
                     </div>
                     <!------------------------------------------Key-words ------------------------------------------------>
                     <div class="key-words">
 
-                        <form *ngIf="clickKeywords else noFormKeywords" class="form" [formGroup]="formKeywords"
-                            (ngSubmit)="onSubmitKeywords()">
+                        <form *ngIf="clickKeywords else noFormKeywords" class="form" [formGroup]="formKeywords" (ngSubmit)="onSubmitKeywords()">
                             <mat-form-field class="offer-input-keyword">
                                 <mat-label>Mot clé 1</mat-label>
                                 <mat-select formControlName="keyWordOne_id" required>
-                                    <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList"
-                                        [value]="keyWord.id">
-                                        {{ route.snapshot.data.userDetails.KeyWordOne.name }}
+                                    <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+                                        {{keyWord.name}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
@@ -78,18 +69,16 @@
                             <mat-form-field class="offer-input-keyword">
                                 <mat-label>Mot clé 2</mat-label>
                                 <mat-select formControlName="keyWordTwo_id" required>
-                                    <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList"
-                                        [value]="keyWord.id">
-                                        {{ route.snapshot.data.userDetails.KeyWordTwo.name }}
+                                    <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+                                        {{keyWord.name}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
                             <mat-form-field class="offer-input-keyword">
                                 <mat-label>Mot clé 3</mat-label>
                                 <mat-select formControlName="keyWordThree_id" required>
-                                    <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList"
-                                        [value]="keyWord.id">
-                                        {{ route.snapshot.data.userDetails.KeyWordThree.name }}
+                                    <mat-option *ngFor="let keyWord of route.snapshot.data.keyWordList" [value]="keyWord.id">
+                                        {{keyWord.name}}
                                     </mat-option>
                                 </mat-select>
                             </mat-form-field>
@@ -105,8 +94,7 @@
 
                             </div>
                             <div class="btn-modifier">
-                                <button [ngClass]="clickKeywords?'fas fa-times':'far fa-edit'" class="submit"
-                                    (click)='onClickKeywords()'>
+                                <button [ngClass]="clickKeywords?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickKeywords()'>
                                 </button>
                             </div>
                         </div>
@@ -183,12 +171,10 @@
             <!------------------------------------------- LastName --------------------------------------------------------------------------------->
             <div class="inputContainer-informations">
                 <div class="left-side-informations">
-                    <form *ngIf="clickLastName else noFormLastName" [formGroup]="formLastName"
-                        (ngSubmit)="onSubmitLastName()" class="form-informations">
+                    <form *ngIf="clickLastName else noFormLastName" [formGroup]="formLastName" (ngSubmit)="onSubmitLastName()" class="form-informations">
                         <div class="form-text-informations">
                             <mat-form-field>
-                                <input matInput formControlName="lastName" class="input" type="text"
-                                    placeholder="Nom :">
+                                <input matInput formControlName="lastName" class="input" type="text" placeholder="Nom :">
                             </mat-form-field>
                         </div>
                         <button class="submit-informations"><i class="fas fa-check"></i></button>
@@ -199,19 +185,16 @@
                     </ng-template>
                 </div>
                 <div class="right-side-informations">
-                    <button [ngClass]="clickLastName?'fas fa-times':'far fa-edit'" class="submit"
-                        (click)='onClickLastName()'></button>
+                    <button [ngClass]="clickLastName?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickLastName()'></button>
                 </div>
             </div>
             <!------------------------------------------- FirstName --------------------------------------------------------------------------------->
             <div class="inputContainer-informations">
                 <div class="left-side-informations">
-                    <form *ngIf="clickFirstName else noFormFirstName" [formGroup]="formFirstName"
-                        (ngSubmit)="onSubmitFirstName()" class="form-informations">
+                    <form *ngIf="clickFirstName else noFormFirstName" [formGroup]="formFirstName" (ngSubmit)="onSubmitFirstName()" class="form-informations">
                         <div class="form-text-informations">
                             <mat-form-field>
-                                <input matInput formControlName="firstName" class="input" type="text"
-                                    placeholder="Prenom :">
+                                <input matInput formControlName="firstName" class="input" type="text" placeholder="Prenom :">
                             </mat-form-field>
                         </div>
                         <button class="submit-informations"><i class="fas fa-check"></i></button>
@@ -222,19 +205,16 @@
                     </ng-template>
                 </div>
                 <div class="right-side-informations">
-                    <button [ngClass]="clickFirstName?'fas fa-times':'far fa-edit'" class="submit"
-                        (click)='onClickFirstName()'></button>
+                    <button [ngClass]="clickFirstName?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickFirstName()'></button>
                 </div>
             </div>
             <!------------------------------------------- E mail --------------------------------------------------------------------------------->
             <div class="inputContainer-informations">
                 <div class="left-side-informations">
-                    <form *ngIf="clickEmail else noFormEmail" [formGroup]="formEmail" (ngSubmit)="onSubmitEmail()"
-                        class="form-informations">
+                    <form *ngIf="clickEmail else noFormEmail" [formGroup]="formEmail" (ngSubmit)="onSubmitEmail()" class="form-informations">
                         <div class="form-text-informations">
                             <mat-form-field>
-                                <input matInput formControlName="email" class="input" type="email"
-                                    placeholder="Email :">
+                                <input matInput formControlName="email" class="input" type="email" placeholder="Email :">
                             </mat-form-field>
                         </div>
                         <button class="submit-informations"><i class="fas fa-check"></i></button>
@@ -245,8 +225,7 @@
                     </ng-template>
                 </div>
                 <div class="right-side-informations">
-                    <button [ngClass]="clickEmail?'fas fa-times':'far fa-edit'" class="submit"
-                        (click)='onClickEmail()'></button>
+                    <button [ngClass]="clickEmail?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickEmail()'></button>
                 </div>
             </div>
 
@@ -255,8 +234,7 @@
             <div class="inputContainer-informations">
                 <div class="left-side-informations">
                     <i class="fab fa-linkedin-in social"></i>
-                    <form *ngIf="clickLinkedin else noFormLinkedin" [formGroup]="formLinkedin"
-                        (ngSubmit)="onSubmitLinkedin()" class="form social-text">
+                    <form *ngIf="clickLinkedin else noFormLinkedin" [formGroup]="formLinkedin" (ngSubmit)="onSubmitLinkedin()" class="form social-text">
                         <div class="form-text-informations">
                             <mat-form-field>
                                 <input matInput placeholder="Linkedin" formControlName="linkedin" required>
@@ -269,8 +247,7 @@
                     </ng-template>
                 </div>
                 <div class="right-side-informations">
-                    <button [ngClass]="clickLinkedin?'fas fa-times':'far fa-edit'" class="submit"
-                        (click)='onClickLinkedin()'></button>
+                    <button [ngClass]="clickLinkedin?'fas fa-times':'far fa-edit'" class="submit" (click)='onClickLinkedin()'></button>
                 </div>
             </div>
         </div>

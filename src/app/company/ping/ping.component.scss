@@ -131,9 +131,9 @@ h3 {
     font-size: 10px;
     align-content: space-between;
     text-align: center;
-    width: 800px;
+    width: 850px;
     height: 40px;
-    margin-left: 200px;
+    margin-left: 70px;
 }
 
 .label-logo-decoy {
@@ -194,10 +194,13 @@ h3 {
 /*********************** selection card *************************/
 
 .selection-card {
+    display:flex;
+    flex-direction: column;
+    // justify-content:center;
+    align-items: center;
     overflow-x: hidden;
     overflow-y: scroll;
     height: 55vh;
-    width: inherit;
     margin: 0px 2px 0px 150px;
 }
 
