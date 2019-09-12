@@ -215,7 +215,7 @@ export class SearchUserComponent implements OnInit {
         this.markers[i] = L.marker([this.filteredArray[i].latitude, this.filteredArray[i].longitude], { icon: this.defaultIcon }).bindPopup(
           '<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;">'+
             '<h2>'+this.filteredArray[i].title+'</h2>'+
-            '<img style="width:64px;height:64px;border-radius:100%;" src="http://pingjob.herokuapp.com/'+this.filteredArray[i].CompanyUser.Company.logo+'" alt="logo">'+
+            '<img style="width:64px;height:64px;" src="http://pingjob.herokuapp.com/'+this.filteredArray[i].CompanyUser.Company.logo+'" alt="logo">'+
           '</div>'+
           // '<hr style="width:100%";/>'+
           '<div style="margin-top:20px;margin-bottom:20px;">'+this.filteredArray[i].description+'</div>'+
@@ -231,7 +231,7 @@ export class SearchUserComponent implements OnInit {
         this.markers[i] = L.marker([this.filteredArray[i].latitude, this.filteredArray[i].longitude], { icon: this.redIcon }).bindPopup(
           '<div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;">'+
             '<h2>'+this.filteredArray[i].title+'</h2>'+
-            '<img style="width:64px;height:64px;border-radius:100%;" src="http://pingjob.herokuapp.com/'+this.filteredArray[i].CompanyUser.Company.logo+'" alt="logo">'+
+            '<img style="width:64px;height:64px;" src="http://pingjob.herokuapp.com/'+this.filteredArray[i].CompanyUser.Company.logo+'" alt="logo">'+
           '</div>'+
           // '<hr style="width:100%";/>'+
           '<div style="margin-top:20px;margin-bottom:20px;">'+this.filteredArray[i].description+'</div>'+

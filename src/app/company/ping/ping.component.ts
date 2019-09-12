@@ -75,10 +75,10 @@ private company_id;
   sortById(array) {
     this.idToggle=!this.idToggle;
     if (this.idToggle) {
-      return array.sort((a, b) => (a.id > b.id) ? 1 : -1);
+      return array.sort((a, b) => (a.updatedAt > b.updatedAt) ? 1 : -1);
     }
     else {
-      return array.sort((a, b) => (a.id < b.id) ? 1 : -1);
+      return array.sort((a, b) => (a.updatedAt < b.updatedAt) ? 1 : -1);
     }
   }
 
