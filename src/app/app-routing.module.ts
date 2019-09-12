@@ -38,7 +38,7 @@ const routes: Routes = [
 
   //component general
   {path: '', component: HomeComponent},
-  {path: 'error-404', component: WrongWayComponent},
+  {path: '404', component: WrongWayComponent},
   {path: 'legal', component:CguComponent},
   {path: 'redirect', component:RedirectComponent},
   
@@ -91,6 +91,7 @@ const routes: Routes = [
     offerList: OfferResolver,
     userDetails: UserDetailsResolver
   }},
+  {path: '**', redirectTo: '404'}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
