@@ -1,59 +1,68 @@
-
 /*********************** General*************************/
+
 .general {
     display: flex;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    }
-    /*********************** sous General et header *************************/
-    .sous-general{
-    margin-top:20px;
+}
+
+
+/*********************** sous General et header *************************/
+
+.sous-general {
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     width: 100%;
-    }
+}
 
-    .left-part{
+.left-part {
     width: 90%;
-    }
-    // .profile-top{
-    // // background-color: aquamarine;
-    // }
-    .profile-top-header{
-        align-content: center;
-        align-self: center;
-        justify-content: center;
-        width: inherit;
-    }
-    .dark-title{
-        align-self: center;
-        text-align: center;
-        align-content: center;
-        margin: 28px 0;
-        margin-left: 30%;
-        padding: 15px;
-        background-color: #60a4ff;
-        color: #FFFFFF;
-        font-size: 20px;
-        font-weight: bold;
-        width: 200px;
-    }
-    .dark-title-cv{
-        align-self: center;
-        text-align: center;
-        align-content: center;
-        margin: 38px 0;
-        // margin-left: 10%;
-        padding: 15px;
-        background-color: #60a4ff;
-        color: #FFFFFF;
-        font-size: 20px;
-        font-weight: bold;
-        width: 200px;
-    }
-    /*********************** card candidate *************************/
-    .card-candidat{
+}
+
+// .profile-top{
+// // background-color: aquamarine;
+// }
+.profile-top-header {
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+    width: inherit;
+}
+
+.dark-title {
+    align-self: center;
+    text-align: center;
+    align-content: center;
+    margin: 28px 0;
+    margin-left: 30%;
+    padding: 15px;
+    background-color: #60a4ff;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    width: 200px;
+}
+
+.dark-title-cv {
+    align-self: center;
+    text-align: center;
+    align-content: center;
+    margin: 38px 0;
+    // margin-left: 10%;
+    padding: 15px;
+    background-color: #60a4ff;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    width: 200px;
+}
+
+
+/*********************** card candidate *************************/
+
+.card-candidat {
     display: flex;
     flex-direction: row;
     width: inherit;
@@ -63,10 +72,9 @@
     // -webkit-box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
     // -moz-box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
     // box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
-    
-    }
-    
-    .blue{
+}
+
+.blue {
     background-color: #E9F6FF;
     display: flex;
     flex-direction: row;
@@ -75,9 +83,9 @@
     // -webkit-box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
     // -moz-box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
     // box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
-    
-    }
-    .delete{
+}
+
+.delete {
     font-size: 19px;
     color: #FF7777;
     border-radius: 50%;
@@ -88,96 +96,85 @@
     cursor: pointer;
     align-self: flex-start;
     justify-self: flex-start;
-    }
-    .sous-container{
+}
+
+.sous-container {
     // margin: 10px;
     display: flex;
     width: auto;
     height: 100%;
     flex-direction: row;
-    }
-    .profile{
+}
+
+.profile {
     border-radius: 50%;
     margin: 10px;
     height: 140px;
     width: 140px;
     object-fit: cover;
     object-position: top;
-    }
-    .container-text{
-    
-    width:100%
-    
-    }
+}
 
-    .top{
+.container-text {
+    width: 100%
+}
 
-    }
-    .title{
+.title {
     display: flex;
     flex-direction: column;
     color: #60A4FF;
     // margin-bottom: 10px;
     font-size: 20px;
     // padding:20px;
-    }
-    .inputContainer{
-        width: 70%;
-        margin:10px;
-        
-    }
-    // .inputContainerForceFull {
-    //         width: 100% !important;
-    // }
-    .description{
-        display: flex;
-        flex-direction: column;
-        color: #60A4FF;
-    }
-    .left-side{
+}
 
-    }
-    .form{
+.inputContainer {
+    width: 70%;
+    margin: 10px;
+}
 
-    }
-    .form-text{
-
-    }
-    .about{
-
-    }
-    .check{
-
-    }
-    
-    .right-side{
+// .inputContainerForceFull {
+//         width: 100% !important;
+// }
+.description {
     display: flex;
-    flex-direction:row-reverse;
+    flex-direction: column;
+    color: #60A4FF;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-start;
     padding: 10px;
     margin: 10px;
-    }
-    .submit{
+}
+
+.submit {
     transition: all 0.5s ease-in-out;
-    }
-    .edit-submit {
+}
+
+.edit-submit {
     width: 100%;
     height: 30%;
     margin-top: 60%;
     position: relative;
     align-items: center;
-    }
-    
-    /****************************Key-words****************************/
-    .key-words{
+}
+
+
+/****************************Key-words****************************/
+
+.key-words {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     // padding-bottom:4%;
-    }
-      
-    .words {
+}
+
+.words {
     margin: 1%;
     background-color: white;
     color: #60A4FF;
@@ -186,32 +183,40 @@
     height: 8%;
     text-align: center;
     border-radius: 30px;
-    }
-    .container-modifier{
-        display: flex;
-        justify-content: space-evenly;
-        align-content: space-between;
-    }
-    .container-words{
-        align-self: center;
-        margin:10px;
-        padding: 10px;
-    }
-    .btn-modifier{
-        align-self: center;
-        margin:10px;
-        padding: 10px;
-    }
-    /************************* under the candidat card*************************/
-    .profile-bottom{
-    height:50%;
-    }
-    .profile-bleft{
+}
+
+.container-modifier {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-between;
+}
+
+.container-words {
+    align-self: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.btn-modifier {
+    align-self: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+/************************* under the candidat card*************************/
+
+.profile-bottom {
+    height: 50%;
+}
+
+.profile-bleft {
     display: flex;
     flex-direction: column;
     width: 90%;
-    }
-    .cv-import{
+}
+
+.cv-import {
     display: flex;
     flex-direction: row;
     margin: 10px;
@@ -222,8 +227,9 @@
     width: 90%;
     align-items: center;
     padding: 16px;
-    }
-    .cv-import-button{
+}
+
+.cv-import-button {
     font-family: "Nunito", sans-serif;
     font-size: 0.75em;
     background-color: #FFF;
@@ -231,17 +237,20 @@
     border: 1px solid grey;
     padding: 4px;
     cursor: pointer;
-    }
-    .cv-import-button:focus {
+    transition: all 0.1s ease-in-out;
+}
+
+.cv-import-button:focus {
     outline: none;
-    }
-        
-    .cv-import-button:hover {
+}
+
+.cv-import-button:hover {
     outline: none;
     background-color: grey;
     color: #FFF;
-    }
-    .cv-download{
+}
+
+.cv-download {
     display: flex;
     flex-direction: row;
     margin: 10px;
@@ -252,36 +261,41 @@
     width: 90%;
     align-items: center;
     padding: 16px;
-    }
-    .cv-download-text{
+}
+
+.cv-download-text {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: #60A4FF;
     height: 18px;
     align-items: center;
-    }
-    .btn-dl {
+}
+
+.btn-dl {
     background-color: grey;
     font-size: light;
     color: #FFF;
     border: 1px solid grey;
     border-radius: 100%;
     font-size: 1.5em;
-    }
-        
-    .btn-dl:hover {
+}
+
+.btn-dl:hover {
     background-color: #FFF;
     color: grey;
     border-color: #FFF;
-    }
-    
-    /************************* Mes informations *************************/
-    .right-part{
-    width: 50%;
-    }
+    transform: scale(1.1);
+}
 
-.inputContainer-informations{
+
+/************************* Mes informations *************************/
+
+.right-part {
+    width: 50%;
+}
+
+.inputContainer-informations {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -289,7 +303,8 @@
     height: 128px;
     width: 80%;
 }
-.left-side-informations{
+
+.left-side-informations {
     display: flex;
     color: #60A4FF;
     width: 100%;
@@ -298,7 +313,8 @@
     align-items: center;
     justify-content: space-between;
 }
-.left-side-informations-linkedin{
+
+.left-side-informations-linkedin {
     display: flex;
     color: #60A4FF;
     width: 100%;
@@ -307,17 +323,16 @@
     align-items: center;
     justify-content: space-between;
 }
-.form-informations{
+
+.form-informations {
     display: flex;
     flex-direction: row;
     width: 100%;
     align-items: center;
     justify-content: space-between;
 }
-.form-text-informations{
 
-}
-.submit-informations{
+.submit-informations {
     background-color: white;
     padding: 10px;
     border-radius: 100%;
@@ -327,7 +342,15 @@
     height: 35px;
     width: 35px;
     transition: all 0.1s ease-in-out;
+    cursor: pointer;
 }
+
+.submit-informations:hover {
+    background-color: #60A4FF;
+    border: 1px solid white;
+    color: white;
+}
+
 .submit {
     background-color: white;
     padding: 10px;
@@ -338,6 +361,7 @@
     height: 35px;
     width: 35px;
     transition: all 0.1s ease-in-out;
+    cursor: pointer;
 }
 
 .submit:hover {
@@ -345,126 +369,3 @@
     border: 1px solid white;
     background-color: #60A4FF;
 }
-.right-side-informations{
-
-}
-// .right-side{
-//     display: flex;
-//     flex-direction: row;
-// }
-// .key-words-test{
-//     display: flex;
-//     flex-direction: row;
-// }
-
-//     / /***************************** Button on/off*****************************/
-
-// // .on-off {
-// //     // background-color: pink;
-// //     // margin: 48px 0;
-// //     height: auto;
-// //     width: auto;
-// // }
-
-
-// // .container {
-// //     padding: 25px;
-// // }
-
-// // .delete {
-// //     font-size: 19px;
-// //     color: #FF7777;
-// //     border-radius: 50%;
-// //     width: 20px;
-// //     height: 20px;
-// //     padding-top: 10px;
-// //     padding-left: 10px;
-// //     cursor: pointer;
-// //     align-self: flex-start;
-// //     justify-self: flex-start;
-// // }
-
-// // // Modified CSS for on/off switch
-// // .onoffswitch {
-// //     position: relative;
-// //     width: 78px;
-// //     -webkit-user-select: none;
-// //     -moz-user-select: none;
-// //     -ms-user-select: none;
-// // }
-
-// // .onoffswitch-checkbox {
-// //     display: none;
-// // }
-
-// // .onoffswitch-label {
-// //     display: block;
-// //     overflow: hidden;
-// //     cursor: pointer;
-// //     border: 1px solid #999999;
-// //     border-radius: 20px;
-// // }
-
-// // .onoffswitch-inner {
-// //     width: 200%;
-// //     margin-left: -100%;
-// //     -moz-transition: margin 0.3s ease-in 0s;
-// //     -webkit-transition: margin 0.3s ease-in 0s;
-// //     -o-transition: margin 0.3s ease-in 0s;
-// //     transition: margin 0.3s ease-in 0s;
-// // }
-
-// // .onoffswitch-inner:before,
-// // .onoffswitch-inner:after {
-// //     float: left;
-// //     width: 50%;
-// //     height: 30px;
-// //     padding: 0;
-// //     line-height: 30px;
-// //     font-size: 15px;
-// //     color: white;
-// //     font-family: Trebuchet, Arial, sans-serif;
-// //     font-weight: bold;
-// //     -moz-box-sizing: border-box;
-// //     -webkit-box-sizing: border-box;
-// //     box-sizing: border-box;
-// // }
-
-// // .onoffswitch-inner:before {
-// //     content: "ON";
-// //     padding-left: 11px;
-// //     background-color: #60A4FF;
-// //     color: #FFFFFF;
-// // }
-
-// // .onoffswitch-inner:after {
-// //     content: "OFF";
-// //     padding-right: 11px;
-// //     background-color: #EEEEEE;
-// //     color: #999999;
-// //     text-align: right;
-// // }
-
-// // .onoffswitch-switch {
-// //     width: 26px;
-// //     margin: 2px;
-// //     background: #FFFFFF;
-// //     border: 2px solid #999999;
-// //     border-radius: 20px;
-// //     position: absolute;
-// //     top: 0;
-// //     bottom: 0;
-// //     right: 44px;
-// //     -moz-transition: all 0.3s ease-in 0s;
-// //     -webkit-transition: all 0.3s ease-in 0s;
-// //     -o-transition: all 0.3s ease-in 0s;
-// //     transition: all 0.3s ease-in 0s;
-// // }
-
-// // .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
-// //     margin-left: 0;
-// // }
-
-// // .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
-// //     right: 0px;
-// // }

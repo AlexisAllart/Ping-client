@@ -76,6 +76,7 @@ export class ProfileUserComponent implements OnInit {
     this.clickLinkedin = false;
     this.clickFirstName = false;
     this.clickLastName = false;
+    this.clickKeywords = false;
   }
 
   onClickFacebook() {
@@ -86,6 +87,7 @@ export class ProfileUserComponent implements OnInit {
     this.clickLinkedin = false;
     this.clickFirstName = false;
     this.clickLastName = false;
+    this.clickKeywords = false;
   }
 
   onClickTwitter() {
@@ -96,6 +98,7 @@ export class ProfileUserComponent implements OnInit {
     this.clickLinkedin = false;
     this.clickFirstName = false;
     this.clickLastName = false;
+    this.clickKeywords = false;
   }
 
   onClickLinkedin() {
@@ -106,6 +109,7 @@ export class ProfileUserComponent implements OnInit {
     this.clickLinkedin = !this.clickLinkedin;
     this.clickFirstName = false;
     this.clickLastName = false;
+    this.clickKeywords = false;
   }
 
   onClickEmail() {
@@ -116,6 +120,7 @@ export class ProfileUserComponent implements OnInit {
     this.clickLinkedin = false;
     this.clickFirstName = false;
     this.clickLastName = false;
+    this.clickKeywords = false;
   }
 
   onClickFirstName() {
@@ -126,6 +131,7 @@ export class ProfileUserComponent implements OnInit {
     this.clickLinkedin = false;
     this.clickFirstName = !this.clickFirstName;
     this.clickLastName = false;
+    this.clickKeywords = false;
   }
 
   onClickLastName() {
@@ -136,16 +142,24 @@ export class ProfileUserComponent implements OnInit {
     this.clickLinkedin = false;
     this.clickFirstName = false;
     this.clickLastName = !this.clickLastName;
+    this.clickKeywords = false;
   }
 
   onClickKeywords(){
+    this.clickAbout = false;
+    this.clickFacebook = false;
+    this.clickEmail = false;
+    this.clickTwitter = false;
+    this.clickLinkedin = false;
+    this.clickFirstName = false;
+    this.clickLastName = false;
     this.clickKeywords = !this.clickKeywords;
   }
 
   onSubmitAbout() {
     if (this.formAbout.valid) {
       try {
-        this.serverService.request("PUT", "/user/edit/" + '4', this.formAbout.value).subscribe(() => this.redirect(),() => this.redirect());
+        this.serverService.request("PUT", "/user/edit/" + JSON.parse(localStorage.getItem('id')).id, this.formAbout.value).subscribe(() => this.redirect(),() => this.redirect());
       }
       catch (err) { }
     }
@@ -155,7 +169,7 @@ export class ProfileUserComponent implements OnInit {
   onSubmitFacebook() {
     if (this.formFacebook.valid) {
       try {
-        this.serverService.request("PUT", "/user/edit/" + '4', this.formFacebook.value).subscribe(() => this.redirect(),() => this.redirect());
+        this.serverService.request("PUT", "/user/edit/" + JSON.parse(localStorage.getItem('id')).id, this.formFacebook.value).subscribe(() => this.redirect(),() => this.redirect());
       }
       catch (err) { }
     }
@@ -165,7 +179,7 @@ export class ProfileUserComponent implements OnInit {
   onSubmitTwitter() {
     if (this.formTwitter.valid) {
       try {
-        this.serverService.request("PUT", "/user/edit/" + '4', this.formTwitter.value).subscribe(() => this.redirect(),() => this.redirect());
+        this.serverService.request("PUT", "/user/edit/" + JSON.parse(localStorage.getItem('id')).id, this.formTwitter.value).subscribe(() => this.redirect(),() => this.redirect());
       }
       catch (err) { }
     }
@@ -175,7 +189,7 @@ export class ProfileUserComponent implements OnInit {
   onSubmitLinkedin() {
     if (this.formLinkedin.valid) {
       try {
-        this.serverService.request("PUT", "/user/edit/" + '4', this.formLinkedin.value).subscribe(() => this.redirect(),() => this.redirect());
+        this.serverService.request("PUT", "/user/edit/" + JSON.parse(localStorage.getItem('id')).id, this.formLinkedin.value).subscribe(() => this.redirect(),() => this.redirect());
       }
       catch (err) { }
     }
@@ -185,7 +199,7 @@ export class ProfileUserComponent implements OnInit {
   onSubmitEmail() {
     if (this.formEmail.valid) {
       try {
-        this.serverService.request("PUT", "/user/edit/" + '4', this.formEmail.value).subscribe(() => this.redirect(),() => this.redirect());
+        this.serverService.request("PUT", "/user/edit/" + JSON.parse(localStorage.getItem('id')).id, this.formEmail.value).subscribe(() => this.redirect(),() => this.redirect());
       }
       catch (err) { }
     }
@@ -195,7 +209,7 @@ export class ProfileUserComponent implements OnInit {
   onSubmitFirstName() {
     if (this.formFirstName.valid) {
       try {
-        this.serverService.request("PUT", "/user/edit/" + '4', this.formFirstName.value).subscribe(() => this.redirect(),() => this.redirect());
+        this.serverService.request("PUT", "/user/edit/" + JSON.parse(localStorage.getItem('id')).id, this.formFirstName.value).subscribe(() => this.redirect(),() => this.redirect());
       }
       catch (err) { }
     }
@@ -205,7 +219,17 @@ export class ProfileUserComponent implements OnInit {
   onSubmitLastName() {
     if (this.formLastName.valid) {
       try {
-        this.serverService.request("PUT", "/user/edit/" + '4', this.formLastName.value).subscribe(() => this.redirect(),() => this.redirect());
+        this.serverService.request("PUT", "/user/edit/" + JSON.parse(localStorage.getItem('id')).id, this.formLastName.value).subscribe(() => this.redirect(),() => this.redirect());
+      }
+      catch (err) { }
+    }
+    else { }
+  }
+
+  onSubmitKeywords() {
+    if (this.formKeywords.valid) {
+      try {
+        this.serverService.request("PUT", "/user/edit/" + JSON.parse(localStorage.getItem('id')).id, this.formKeywords.value).subscribe(() => this.redirect(),() => this.redirect());
       }
       catch (err) { }
     }

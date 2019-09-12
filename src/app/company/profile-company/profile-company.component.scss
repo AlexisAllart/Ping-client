@@ -249,7 +249,8 @@
     width: 80%;
     height: 50%;
 }
-.key-words{
+
+.key-words {
     display: flex;
     flex-direction: row;
 }
@@ -265,8 +266,6 @@
     align-self: flex-start;
     justify-self: flex-start;
 }
-
-
 
 .image {
     margin: 3%;
@@ -340,6 +339,7 @@
     height: 35px;
     width: 35px;
     transition: all 0.1s ease-in-out;
+    cursor: pointer;
 }
 
 .submit:hover {
