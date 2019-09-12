@@ -50,4 +50,46 @@ private company_id;
       }
     });
   }
+
+  private nameToggle = false;
+  sortByUserName(array, a, b) {
+    this.nameToggle=!this.nameToggle;
+    if (this.nameToggle) {
+      return array.sort((a, b) => (a.User.lastName > b.User.lastName) ? 1 : (a.User.lastName == b.User.lastName) ? ((a.id < b.id) ? 1 : -1) : -1);
+    } else {
+      return array.sort((a, b) => (a.User.lastName < b.User.lastName) ? 1 : (a.User.lastName == b.User.lastName) ? ((a.id < b.id) ? 1 : -1) : -1);
+    }
+  }
+
+  private titleToggle = false;
+  sortByTitle(array, a, b) {
+    this.titleToggle=!this.titleToggle;
+    if (this.titleToggle) {
+      return array.sort((a, b) => (a.title > b.title) ? 1 : (a.title == b.title) ? ((a.id < b.id) ? 1 : -1) : -1);
+    } else {
+      return array.sort((a, b) => (a.title < b.title) ? 1 : (a.title == b.title) ? ((a.id < b.id) ? 1 : -1) : -1);
+    }
+  }
+
+  private idToggle = false;
+  sortById(array, a, b) {
+    this.idToggle=!this.idToggle;
+    if (this.idToggle) {
+      return array.sort((a, b) => (a.id > b.id) ? 1 : -1);
+    }
+    else {
+      return array.sort((a, b) => (a.id < b.id) ? 1 : -1);
+    }
+  }
+
+  private statusToggle = false;
+  sortByStatus(array, a, b) {
+    this.statusToggle=!this.statusToggle;
+    if (this.statusToggle) {
+      return array.sort((a, b) => (a.status_id > b.status_id) ? 1 : (a.status_id == b.status_id) ? ((a.id < b.id) ? 1 : -1) : -1);
+    }
+    else {
+      return array.sort((a, b) => (a.status_id < b.status_id) ? 1 : (a.status_id == b.status_id) ? ((a.id < b.id) ? 1 : -1) : -1);
+    }
+  }
 }
