@@ -13,7 +13,7 @@ import { DeleteModalComponent } from 'src/app/deleteModal/deleteModal.component'
 export class ProfileUserComponent implements OnInit {
 
   private formAbout: FormGroup;
-  private form: FormGroup;
+  private formKeywords: FormGroup;
   private formFacebook: FormGroup;
   private formTwitter: FormGroup;
   private formLinkedin: FormGroup;
@@ -61,7 +61,7 @@ export class ProfileUserComponent implements OnInit {
     this.formAbout = this.fb.group({
       about: [this.route.snapshot.data.userDetails.about, Validators.required]
     });
-    this.form = this.fb.group({
+    this.formKeywords = this.fb.group({
       keyWordOne_id: [this.route.snapshot.data.userDetails.KeyWordOne.name, Validators.required],
       keyWordTwo_id: [this.route.snapshot.data.userDetails.KeyWordTwo.name, Validators.required],
       keyWordThree_id: [this.route.snapshot.data.userDetails.KeyWordThree.name, Validators.required]

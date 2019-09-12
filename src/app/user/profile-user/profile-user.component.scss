@@ -65,13 +65,7 @@
     // box-shadow: 38px 34px 44px -28px rgba(207,207,207,1);
     
     }
-    // .container-user{
-    // width: inherit;
-    // // display: flex;
-    // // flex-direction: row;
-    // // margin-left: 22%;
-    // // margin: 5px;
-    // }
+    
     .blue{
     background-color: #E9F6FF;
     display: flex;
@@ -179,25 +173,34 @@
     .key-words{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    width: 100%;
-    
+    justify-content: flex-end;
+    // padding-bottom:4%;
     }
       
     .words {
-    margin: 2%;
+    margin: 1%;
     background-color: white;
     color: #60A4FF;
-    padding: 2%;
-    width: 80%;
+    padding: 1%;
+    width: 15%;
+    height: 8%;
     text-align: center;
-    border-radius: 20px;
-        }
-    .form{
-
+    border-radius: 30px;
     }
-    .offer-input-keyword{
-
+    .container-modifier{
+        display: flex;
+        justify-content: space-evenly;
+        align-content: space-between;
+    }
+    .container-words{
+        align-self: center;
+        margin:10px;
+        padding: 10px;
+    }
+    .btn-modifier{
+        align-self: center;
+        margin:10px;
+        padding: 10px;
     }
     /************************* under the candidat card*************************/
     .profile-bottom{
