@@ -113,6 +113,14 @@
     width: 140px;
     object-fit: cover;
     object-position: top;
+    transition: all 0.2s ease-in-out;
+}
+
+.profile:hover {
+    content: '';
+    filter: grayscale(100%);
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .container-text {

@@ -25,7 +25,7 @@
     display: flex;
     justify-content: flex-start;
     background-color: #60A4FF;
-    margin: 0;
+    margin: 30px 0 0 0;
     padding: 15px;
     color: white;
     font-size: 16px;
@@ -399,10 +399,9 @@
     
 }
 
-.delete:hover {
-    animation:schaler 2s infinite;
-
-}
+// .delete:hover {
+//     animation:schaler 2s infinite;
+// }
 
 @keyframes schaler
   {
