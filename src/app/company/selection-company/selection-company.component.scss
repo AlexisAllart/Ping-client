@@ -8,6 +8,8 @@
 
 .general {
     display: flex;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 
@@ -15,7 +17,7 @@
 
 .sous-general {
     display: flex;
-    width: 100%;
+    width: 80%;
     justify-content: center;
     align-items: center;
     flex-direction: column;

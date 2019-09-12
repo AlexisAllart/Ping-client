@@ -8,6 +8,8 @@
 
 .general {
     display: flex;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .status-legende {
@@ -50,7 +52,8 @@
 /******************** Alignement centrale*****************/
 
 .sous-general {
-    width: 300%;
+    display:flex;
+    width: 80%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
