@@ -1,71 +1,71 @@
 /************************* GÉNÉRAL *******************/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
+
 .general {
     display: flex;
-    
 }
 
 .status-legende {
-  // background-color: blue;
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  // flex-direction: column;
-  background-color: #E9F6FF;
-  align-items:center;
-  justify-content: center;
-  margin-top: 6%;
-  // margin-left: 5%;
-  position:absolute;
-  bottom:10px;
-
-
+    // background-color: blue;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    // flex-direction: column;
+    background-color: #E9F6FF;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6%;
+    // margin-left: 5%;
+    position: absolute;
+    bottom: 10px;
 }
 
 .button {
-  margin-left: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items:center;
-  justify-content: center;
-  // background-color: yellow;
-  margin-right:4px;
-
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    // background-color: yellow;
+    margin-right: 4px;
 }
 
 .button p {
-  margin-left:5px;
-  color: grey;
+    margin-left: 5px;
+    color: grey;
 }
 
 .blue {
-  width:10px;
-  height:10px;
-  border-radius: 50%;
- 
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }
+
+
 /******************** Alignement centrale*****************/
-.sous-genral{
-    width:300%;
+
+.sous-genral {
+    width: 300%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position:relative;
-    
+    position: relative;
 }
+
+
 /***********************tittle***************************/
+
 .container-title-clear-blue {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: inherit;
     margin-left: 150px;
-
-    
 }
 
 .body-title {
@@ -75,299 +75,308 @@
     align-items: center;
     background-color: white;
     font-family: "Nunito", sans-serif;
-  
-  }
+}
 
-  .title-company {
+.title-company {
     display: flex;
     text-align: center;
     justify-content: center;
-    background-color:  #E9F6FF ;
+    background-color: #E9F6FF;
     width: 450px;
     height: 80px;
     padding: 10px;
     margin: 10%;
     animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
     }
+    80% {
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
 
-
-    @keyframes moveInRight {
-      0% {
-          opacity: 0;
-          transform: translateY(100px);
-      }
-  
-      80% {
-          transform: translateY(-10px);
-      }
-  
-      100% {
-          opacity: 1;
-          transform: translate(0);
-      }
-  }
-  
-    
-    h3 {
+h3 {
     padding-top: 15px;
     display: flex;
     text-align: center;
-    color:   #60A4FF;
-    }
+    color: #60A4FF;
+}
+
 
 /********************* les labels ***************************/
+
 .container-blue-selection {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 40px;
-  height: 40px;
-  width:800px;
-  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    height: 40px;
+    width: 800px;
 }
+
 .container-label {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  font-size: 10px;
-  align-content: space-between;
-  text-align: center;
-  width:800px;
-  height: 40px;
-  margin-left:200px;
-
-  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    font-size: 10px;
+    align-content: space-between;
+    text-align: center;
+    width: 800px;
+    height: 40px;
+    margin-left: 200px;
 }
 
-.label-logo-decoy{
-  
-  height: 20px;
-  width: 100px;
-  align-content: center;
-  margin-left:30px;
-  
-  
+.label-logo-decoy {
+    height: 20px;
+    width: 100px;
+    align-content: center;
+    margin-left: 30px;
 }
-.label-logo-decoy2{
-  height: 20px;
-  width: 100px;
-  display: flex;
-  align-content: center;
-  margin-left:30px;
-  
+
+.label-logo-decoy2 {
+    height: 20px;
+    width: 100px;
+    display: flex;
+    align-content: center;
+    margin-left: 30px;
 }
 
 .label-nom {
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:70px;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    margin-left: 70px;
+    cursor: pointer;
 }
 
 .label-job-title {
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:30px;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    margin-left: 30px;
+    cursor: pointer;
 }
 
-.label-date{
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:30px;
-}
-.label-statut{
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:30px;
-}
-.label-cv{
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  margin-left:30px;
+.label-date {
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    margin-left: 30px;
+    cursor: pointer;
 }
 
+.label-statut {
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.label-cv {
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    margin-left: 30px;
+}
 
 
 /*********************** selection card *************************/
 
-.selection-card{
-  overflow-x: hidden; 
-  overflow-y: scroll;
-  height: 55vh;
-  width: inherit;
-  margin:0px 2px 0px 150px;
-
+.selection-card {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 55vh;
+    width: inherit;
+    margin: 0px 2px 0px 150px;
 }
+
 
 /************************* scrollbar ******************************/
-::-webkit-scrollbar{
-	width: 10px;
+
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-::-webkit-scrollbar-thumb{
-	border-radius: 5px;
-	background: #60A4FF;
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #60A4FF;
 }
+
+
 /************************* CARD *******************/
+
 .container-candidate {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 16px;
-  margin: 16px;
-  width: 800px;
-
-
-  // background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    margin: 16px;
+    width: 800px;
+    // background-color: cadetblue;
 }
 
-.container-blue{
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  justify-content: space-between;
-  align-items: center;
-  border: 1.5px solid #60a4ff;
-  padding: 20px;
-  margin-right: 20px;
-  padding-left: 0px;
-  width: 800px;
-  height: 70px;
-
+.container-blue {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    border: 1.5px solid #60a4ff;
+    padding: 20px;
+    margin-right: 20px;
+    padding-left: 0px;
+    width: 800px;
+    height: 70px;
 }
+
 .text {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  align-content: space-between;
-  flex-direction: row;
-  margin-left: 50px;
-  height: 50px;
-  font-size: 15px;
-  color: #60a4ff;
-  width: inherit;
-}
-.name{
-  width: 100px;
-  height: inherit;
-  padding:10px;
-  margin:10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    align-content: space-between;
+    flex-direction: row;
+    margin-left: 50px;
+    height: 50px;
+    font-size: 15px;
+    color: #60a4ff;
+    width: inherit;
 }
 
-.job-title{
-  width: 100px;
-  height: inherit;
-  padding:10px;
-  margin:10px;
+.name {
+    width: 100px;
+    height: inherit;
+    padding: 10px;
+    margin: 10px;
 }
 
-.date{
-  width: 100px;
-  height: inherit;
-  padding:10px;
-  margin:10px;
+.job-title {
+    width: 100px;
+    height: inherit;
+    padding: 10px;
+    margin: 10px;
 }
+
+.date {
+    width: 100px;
+    height: inherit;
+    padding: 10px;
+    margin: 10px;
+}
+
+
 /************************* Picture*******************/
-.container-img{
-  width:100px;
-  height:100px;
-  padding:20px;
-  margin:20px;
+
+.container-img {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    margin: 20px;
 }
 
 .picture {
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  object-fit: cover;
-  object-position: top;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: top;
 }
 
+
 /************************* Message*******************/
+
 .message {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 10px;
-  border-radius: 20px;
-  padding: 5px;
-  margin: 5px;
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 10px;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 5px;
 }
-.lepoint{
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  cursor: pointer;
+
+.lepoint {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    cursor: pointer;
 }
 
 .companyUser {
-  display:flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  // background-color:blue;
-  width:98%;
-  margin-top:5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    // background-color:blue;
+    width: 98%;
+    margin-top: 5px;
 }
 
 .companyUserName {
-  color: rgba(128, 128, 128, 0.541);
-  font-style:italic;
-  font-size:11px;
+    color: rgba(128, 128, 128, 0.541);
+    font-style: italic;
+    font-size: 11px;
 }
+
+
 /************************* btn download*******************/
 
-.btn-download{
-  width: 100px;
-  height: 50px;;
-  padding:10px;
-  margin:10px;
+.btn-download {
+    width: 100px;
+    height: 50px;
+    ;
+    padding: 10px;
+    margin: 10px;
 }
 
-.fleche{
-
-  background-color: none;
-  font-size: light;
-  color: grey;
-  border: 1px solid grey;
-  border-radius: 30px;
-  padding: 10px;
-  cursor: pointer;
-  transition:all .2s ease-in-out;
-
+.fleche {
+    background-color: none;
+    font-size: light;
+    color: grey;
+    border: 1px solid grey;
+    border-radius: 30px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
 }
 
 .fleche:hover {
-  transform: translateY(3px);
-  color: #60a4ff;
-  border: 1px solid #60a4ff;
+    transform: translateY(3px);
+    color: #60a4ff;
+    border: 1px solid #60a4ff;
 }
+
+
 /************************* btn small details*******************/
 
-.btn-detail-small{
-  display: flex;
-  flex-direction: row;
-  align-self: flex-end;
-  justify-self: flex-end;
-  width: 100px;
-  height: 31px;
+.btn-detail-small {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    justify-self: flex-end;
+    width: 100px;
+    height: 31px;
 }
+
 .plus {
-  flex-direction: row;
-  align-content: flex-end;
-  align-self: flex-end;
-  justify-content: flex-end;
-  width: 5px;
-  height: 5px;
-  padding: 10px;
-  color: #60a4ff;
-  cursor: pointer;
+    flex-direction: row;
+    align-content: flex-end;
+    align-self: flex-end;
+    justify-content: flex-end;
+    width: 5px;
+    height: 5px;
+    padding: 10px;
+    color: #60a4ff;
+    cursor: pointer;
 }
