@@ -48,9 +48,9 @@
         <!----- CARTES CANDIDATS  ---------->
         <div class="card-candidat">
             <!--CARTE CANDIDAT UN -->
-            <div *ngIf="filteredArray.length < 1">
+            <i class="blue-text" *ngIf="filteredArray.length < 1">
                 Aucun profil ne correspond à vos critères.
-            </div>
+            </i>
             <div *ngFor="let user of newUsers" class="container">
                 <div class="blue">
                     <div class="sous-container">
