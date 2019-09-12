@@ -28,6 +28,7 @@ export class ProfileUserComponent implements OnInit {
   private clickLastName: boolean;
   private clickFirstName: boolean;
   private clickEmail: boolean;
+  private clickKeywords: boolean;
 
 
   constructor(
@@ -135,6 +136,10 @@ export class ProfileUserComponent implements OnInit {
     this.clickLinkedin = false;
     this.clickFirstName = false;
     this.clickLastName = !this.clickLastName;
+  }
+
+  onClickKeywords(){
+    this.clickKeywords = !this.clickKeywords;
   }
 
   onSubmitAbout() {
