@@ -48,7 +48,7 @@
             </div>
             <div class="container">
                 <i class="blue-text" *ngIf="filteredArray.length < 1">
-                    Aucun profil ne correspond à vos critères.
+                    Aucune offre ne correspond à vos critères.
                 </i>
                 <div [@contactsAnimation]="state" *ngFor="let offer of filteredArray">
                     <div *ngIf="offer.show" class="box">
