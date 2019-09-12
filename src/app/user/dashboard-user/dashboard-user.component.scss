@@ -261,8 +261,7 @@
 }
 
 .status-legende {
-    position:absolute;
-    bottom:10px;
+    
     // background-color: blue;
     width: 90%;
     display: flex;
@@ -273,7 +272,8 @@
     justify-content: center;
     margin-top: 6%;
     // margin-left: 5%;
-    bottom:3%;
+    position:absolute;
+    bottom:10px;
 
   
   }
